@@ -1,0 +1,491 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inmobiliaria Iandes | Proyectos Inmobiliarios Premium</title>
+    <meta name="description" content="Descubre la propuesta residencial y comercial de Inmobiliaria Iandes. Diseño contemporáneo, ubicaciones privilegiadas y solidez constructiva en Chile.">
+    <!-- Hojas de Estilo -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- CABECERA PRINCIPAL (NAVBAR) -->
+    <header></header>
+
+    <!-- HERO SECCIÓN COMERCIAL -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="assets/images/hero-mockup.png" alt="Arquitectura Premium Iandes">
+        </div>
+        <div class="container" style="position: relative; z-index: 10; width: 100%;">
+            <div class="hero-content">
+                <span class="hero-subtitle">Diseño, Estilo & Solidez</span>
+                <h1 class="hero-title">Espacios que inspiran tu forma de vivir</h1>
+                <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-weight: 300;">
+                    Desarrollamos proyectos residenciales y comerciales con un alto estándar de arquitectura, ubicados en las zonas con mejor conectividad y plusvalía.
+                </p>
+                <a href="#proyectos" class="btn btn-secondary" style="border-color: #FFFFFF; color: #FFFFFF;">Ver Proyectos</a>
+            </div>
+
+            <!-- BUSCADOR INTEGRADO -->
+            <div class="search-widget reveal">
+                <div class="search-field">
+                    <label for="search-comuna">Comuna</label>
+                    <select id="search-comuna">
+                        <option value="todos">Todas las comunas</option>
+                        <option value="macul">Macul</option>
+                        <option value="nunoa">Ñuñoa</option>
+                        <option value="santa-cruz">Santa Cruz</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label for="search-tipo">Tipo de Proyecto</label>
+                    <select id="search-tipo">
+                        <option value="todos">Todos los tipos</option>
+                        <option value="departamento">Departamentos</option>
+                        <option value="oficina">Oficinas / Comercial</option>
+                    </select>
+                </div>
+                <div class="search-field">
+                    <label for="search-precio">Rango de Precio</label>
+                    <select id="search-precio">
+                        <option value="todos">Cualquier precio</option>
+                        <option value="bajo">Bajo UF 3.000</option>
+                        <option value="medio">UF 3.000 - UF 5.000</option>
+                        <option value="alto">Sobre UF 5.000</option>
+                    </select>
+                </div>
+                <button type="button" id="btn-buscar">Buscar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS DESTACADOS -->
+    <section id="proyectos" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-subtitle">Exclusividad</span>
+                    <h2 class="section-title">Nuestras Obras</h2>
+                </div>
+                <a href="ofertas.html" class="btn-text">Ver Ofertas Temporales</a>
+            </div>
+
+            <!-- Filtros por pestañas -->
+            <ul class="tab-filters">
+                <li><button class="tab-filter-btn active" data-filter="all">Todos los proyectos</button></li>
+                <li><button class="tab-filter-btn" data-filter="entrega-inmediata">Entrega Inmediata</button></li>
+                <li><button class="tab-filter-btn" data-filter="en-verde">En Verde</button></li>
+                <li><button class="tab-filter-btn" data-filter="comercial">Comercial</button></li>
+            </ul>
+
+            <!-- Grid de Tarjetas -->
+            <div class="projects-grid">
+                
+                <!-- Proyecto 1: Andes Macul -->
+                <div class="project-card reveal" data-comuna="macul" data-tipo="departamento" data-estado="en-verde" data-precio="medio">
+                    <span class="project-tag">En Verde</span>
+                    <div class="project-card-image">
+                        <img src="assets/images/hero-mockup.png" alt="Andes Macul">
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-card-location">Macul</span>
+                        <h3 class="project-card-title">Andes Macul</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+                            Edificio residencial de diseño contemporáneo, áreas comunes equipadas y conectividad privilegiada.
+                        </p>
+                        
+                        <div class="project-card-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tipologías</span>
+                                <span class="detail-value">1, 2 y 3 Dorms.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Superficie</span>
+                                <span class="detail-value">Desde 42 m²</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card-footer">
+                            <div class="project-card-price">
+                                <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
+                                UF 3.100
+                            </div>
+                            <a href="proyecto-andes-macul.html" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Ver Ficha</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Andes Ñuñoa -->
+                <div class="project-card reveal" data-comuna="nunoa" data-tipo="departamento" data-estado="entrega-inmediata" data-precio="alto">
+                    <span class="project-tag">Entrega Inmediata</span>
+                    <div class="project-card-image">
+                        <img src="assets/images/hero-mockup.png" alt="Andes Ñuñoa" style="filter: hue-rotate(15deg);">
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-card-location">Ñuñoa</span>
+                        <h3 class="project-card-title">Andes Ñuñoa</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+                            Exclusivos departamentos en barrio residencial consolidado. Terminaciones de primer nivel y amplias terrazas.
+                        </p>
+                        
+                        <div class="project-card-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tipologías</span>
+                                <span class="detail-value">2 y 3 Dorms.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Superficie</span>
+                                <span class="detail-value">Desde 58 m²</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card-footer">
+                            <div class="project-card-price">
+                                <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
+                                UF 5.200
+                            </div>
+                            <a href="proyecto-andes-nunoa.html" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Ver Ficha</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: Camino de la Villa -->
+                <div class="project-card reveal" data-comuna="nunoa" data-tipo="departamento" data-estado="en-verde" data-precio="alto">
+                    <span class="project-tag">En Verde</span>
+                    <div class="project-card-image">
+                        <img src="assets/images/hero-mockup.png" alt="Camino de la Villa" style="filter: saturate(0.5) brightness(0.9);">
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-card-location">Ñuñoa</span>
+                        <h3 class="project-card-title">Camino de la Villa</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+                            Un oasis urbano enfocado en la sustentabilidad, con jardines interiores y arquitectura eco-eficiente.
+                        </p>
+                        
+                        <div class="project-card-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tipologías</span>
+                                <span class="detail-value">1 y 2 Dorms.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Superficie</span>
+                                <span class="detail-value">Desde 38 m²</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card-footer">
+                            <div class="project-card-price">
+                                <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
+                                UF 3.850
+                            </div>
+                            <a href="proyecto-camino-villa.html" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Ver Ficha</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: Altos de Santa Cruz -->
+                <div class="project-card reveal" data-comuna="santa-cruz" data-tipo="departamento" data-estado="entrega-inmediata" data-precio="bajo">
+                    <span class="project-tag">Entrega Inmediata</span>
+                    <div class="project-card-image">
+                        <img src="assets/images/hero-mockup.png" alt="Altos de Santa Cruz" style="filter: sepia(0.2) contrast(1.05);">
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-card-location">Santa Cruz</span>
+                        <h3 class="project-card-title">Altos de Santa Cruz</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+                            Tu vida en la tranquilidad de Colchagua. Departamentos cómodos con excelentes áreas comunes y piscina.
+                        </p>
+                        
+                        <div class="project-card-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tipologías</span>
+                                <span class="detail-value">2 y 3 Dorms.</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Superficie</span>
+                                <span class="detail-value">Desde 55 m²</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card-footer">
+                            <div class="project-card-price">
+                                <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
+                                UF 2.450
+                            </div>
+                            <a href="proyecto-altos-santa-cruz.html" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Ver Ficha</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 5: Work Plaza -->
+                <div class="project-card reveal" data-comuna="nunoa" data-tipo="oficina" data-estado="comercial" data-precio="alto">
+                    <span class="project-tag">Comercial / Oficinas</span>
+                    <div class="project-card-image">
+                        <img src="assets/images/hero-mockup.png" alt="Work Plaza" style="filter: grayscale(80%) brightness(0.85);">
+                    </div>
+                    <div class="project-card-content">
+                        <span class="project-card-location">Ñuñoa</span>
+                        <h3 class="project-card-title">Work Plaza</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+                            Moderno centro de negocios y locales comerciales. El lugar ideal para posicionar tu marca o expandir tu oficina.
+                        </p>
+                        
+                        <div class="project-card-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Tipologías</span>
+                                <span class="detail-value">Plantas Libres / Locales</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Superficie</span>
+                                <span class="detail-value">Desde 32 m²</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card-footer">
+                            <div class="project-card-price">
+                                <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
+                                UF 4.900
+                            </div>
+                            <a href="proyecto-work-plaza.html" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Ver Ficha</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS COMPLEMENTARIOS -->
+    <section class="section services-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-subtitle">Servicios Especializados</span>
+                    <h2 class="section-title">Soluciones a tu Medida</h2>
+                </div>
+            </div>
+
+            <div class="services-grid">
+                <!-- Tarjeta 1 -->
+                <div class="service-card reveal">
+                    <div>
+                        <h3>Invierte en Activos</h3>
+                        <p>Desarrollamos estrategias integrales para inversionistas inmobiliarios (B2B/B2C). Descubre cómo rentabilizar tu capital y asegurar ingresos a largo plazo con asesoría financiera premium.</p>
+                    </div>
+                    <a href="inversionistas.html" class="btn btn-secondary" style="align-self: flex-start;">Quiero Invertir</a>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="service-card reveal">
+                    <div>
+                        <h3>Asesoría en tu Compra</h3>
+                        <p>¿Es tu primera vivienda o buscas renegociar créditos? Nuestros expertos te acompañan en cada paso del proceso bancario y legal para facilitarte el camino a tu nuevo hogar.</p>
+                    </div>
+                    <a href="como-comprar.html" class="btn btn-secondary" style="align-self: flex-start;">Guía de Compra</a>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="service-card reveal">
+                    <div>
+                        <h3>Venta de Terrenos</h3>
+                        <p>Evaluamos y adquirimos terrenos con potencial de desarrollo urbano. Si tienes un paño inmobiliario comercializable, contáctanos para una evaluación formal de factibilidad.</p>
+                    </div>
+                    <a href="contacto.html" class="btn btn-secondary" style="align-self: flex-start;">Enviar Paño</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPUESTA DE VALOR / CONFIANZA -->
+    <section class="section value-section">
+        <div class="container">
+            <div class="value-grid">
+                <div class="value-image reveal">
+                    <img src="assets/images/hero-mockup.png" alt="Diseño Constructivo Premium" style="filter: grayscale(10%) contrast(1.1);">
+                </div>
+                <div class="value-content reveal">
+                    <span class="section-subtitle">¿Por qué Iandes?</span>
+                    <h3>Sólida trayectoria respaldada por detalles impecables</h3>
+                    <p>
+                        En Inmobiliaria Iandes no solo levantamos muros; diseñamos entornos habitacionales pensados para durar. Priorizamos el urbanismo integrado, los materiales nobles de bajo mantenimiento y una postventa ágil y comprometida con el propietario.
+                    </p>
+                    <p>
+                        Nuestros proyectos cuentan con certificaciones de eficiencia energética que reducen los costos de administración y resguardan de mejor manera tu inversión en el tiempo.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <h4>+15</h4>
+                            <p>Años construyendo confianza</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>+2.5k</h4>
+                            <p>Familias felices en su hogar</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>100%</h4>
+                            <p>Calidad en materiales certificados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER DE POSTVENTA -->
+    <section class="postventa-banner">
+        <div class="container">
+            <div class="postventa-banner-content reveal">
+                <span style="font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--color-secondary); font-weight: 500; display: block; margin-bottom: 0.8rem;">Compromiso Continuo</span>
+                <h2>Te acompañamos en tu nuevo hogar</h2>
+                <p>
+                    Porque nuestra relación no termina en la entrega de llaves. Contamos con un canal de postventa independiente y humano enfocado en resolver tus requerimientos de manera ágil, eficiente y transparente.
+                </p>
+                <a href="postventa.html" class="btn">Ingresar al Portal de Propietario</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN BLOG / RECIENTES -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-subtitle">Educación y Novedades</span>
+                    <h2 class="section-title">Centro de Contenidos</h2>
+                </div>
+                <a href="blog.html" class="btn btn-secondary">Ver Todo el Blog</a>
+            </div>
+
+            <div class="blog-recent-grid">
+                <!-- Artículo 1 -->
+                <div class="blog-card reveal">
+                    <div class="blog-card-image">
+                        <img src="assets/images/hero-mockup.png" alt="Inversión Inmobiliaria" style="filter: brightness(0.9);">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-meta">Finanzas | 12 Jun 2026</span>
+                        <h3 class="blog-card-title">Cómo empezar a invertir en departamentos este 2026</h3>
+                        <p class="blog-card-excerpt">Una guía detallada sobre créditos hipotecarios, el bono pie de las inmobiliarias y cómo calcular la plusvalía esperada.</p>
+                        <a href="articulo-1.html" class="blog-card-link">Leer Artículo</a>
+                    </div>
+                </div>
+
+                <!-- Artículo 2 -->
+                <div class="blog-card reveal">
+                    <div class="blog-card-image">
+                        <img src="assets/images/hero-mockup.png" alt="Sustentabilidad" style="filter: sepia(0.1) brightness(0.95);">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-meta">Sustentabilidad | 28 May 2026</span>
+                        <h3 class="blog-card-title">Beneficios del diseño eco-eficiente en departamentos modernos</h3>
+                        <p class="blog-card-excerpt">Descubre cómo los muros aislantes, griferías inteligentes y paneles solares comunes reducen hasta un 30% los gastos comunes.</p>
+                        <a href="articulo-2.html" class="blog-card-link">Leer Artículo</a>
+                    </div>
+                </div>
+
+                <!-- Artículo 3 -->
+                <div class="blog-card reveal">
+                    <div class="blog-card-image">
+                        <img src="assets/images/hero-mockup.png" alt="Decoración" style="filter: contrast(0.9) brightness(0.95);">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-card-meta">Hogar | 15 May 2026</span>
+                        <h3 class="blog-card-title">Maximizando el espacio: Consejos de interiorismo contemporáneo</h3>
+                        <p class="blog-card-excerpt">Te entregamos ideas prácticas para distribuir tus muebles y pintar terrazas pequeñas, logrando una sensación de mayor amplitud.</p>
+                        <a href="articulo-3.html" class="blog-card-link">Leer Artículo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PAGINA (FOOTER) -->
+    <footer></footer>
+
+    <!-- Scripts de Funcionalidad -->
+    <script src="assets/js/main.js"></script>
+    
+    <!-- Filtro de proyectos interactivo en Home -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.tab-filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            if (filterBtns.length > 0 && projectCards.length > 0) {
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        // Cambiar botón activo
+                        filterBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        const filterValue = btn.dataset.filter;
+
+                        projectCards.forEach(card => {
+                            const cardStatus = card.dataset.estado;
+
+                            // Animación de ocultado suave
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(15px)';
+
+                            setTimeout(() => {
+                                if (filterValue === 'all' || cardStatus === filterValue) {
+                                    card.style.display = 'flex';
+                                    setTimeout(() => {
+                                        card.style.opacity = '1';
+                                        card.style.transform = 'translateY(0)';
+                                    }, 50);
+                                } else {
+                                    card.style.display = 'none';
+                                }
+                            }, 300);
+                        });
+                    });
+                });
+            }
+
+            // Buscador funcional
+            const btnBuscar = document.getElementById('btn-buscar');
+            const selectComuna = document.getElementById('search-comuna');
+            const selectTipo = document.getElementById('search-tipo');
+            const selectPrecio = document.getElementById('search-precio');
+
+            if (btnBuscar && selectComuna && selectTipo && selectPrecio) {
+                btnBuscar.addEventListener('click', () => {
+                    const comunaVal = selectComuna.value;
+                    const tipoVal = selectTipo.value;
+                    const precioVal = selectPrecio.value;
+
+                    projectCards.forEach(card => {
+                        const cardComuna = card.dataset.comuna;
+                        const cardTipo = card.dataset.tipo;
+                        const cardPrecio = card.dataset.precio;
+
+                        let matchesComuna = (comunaVal === 'todos' || cardComuna === comunaVal);
+                        let matchesTipo = (tipoVal === 'todos' || cardTipo === tipoVal);
+                        let matchesPrecio = (precioVal === 'todos' || cardPrecio === precioVal);
+
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(15px)';
+
+                        setTimeout(() => {
+                            if (matchesComuna && matchesTipo && matchesPrecio) {
+                                card.style.display = 'flex';
+                                setTimeout(() => {
+                                    card.style.opacity = '1';
+                                    card.style.transform = 'translateY(0)';
+                                }, 50);
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        }, 300);
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

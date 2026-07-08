@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inversionistas B2B | Inmobiliaria Iandes</title>
+    <meta name="description" content="Portal de inversionistas. Invierte con Inmobiliaria Iandes en departamentos con alta plusvalía y rentabilidad. Calculadora ROI y asesoría personalizada.">
+    <!-- Hojas de Estilo -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- CABECERA PRINCIPAL (NAVBAR) -->
+    <header class="scrolled"></header>
+
+    <!-- INNER HERO (CABECERA DE PÁGINA) -->
+    <section class="inner-hero">
+        <div class="inner-hero-bg">
+            <img src="assets/images/inversionistas-hero.png" alt="Inversión Inmobiliaria Iandes" style="filter: grayscale(40%) sepia(0.1) brightness(0.65);">
+        </div>
+        <div class="container" style="position: relative; z-index: 5;">
+            <div class="inner-hero-content">
+                <div class="inner-hero-breadcrumbs">
+                    <a href="index.html">Inicio</a> &nbsp;/&nbsp; Inversionistas
+                </div>
+                <h1 class="inner-hero-title">Inversión Inmobiliaria Estratégica</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROPUESTA DE VALOR PARA INVERSIONISTAS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 700px; margin: 0 auto 4rem auto; justify-content: center;">
+                <div style="width: 100%;">
+                    <span class="section-subtitle">Rentabilidad y Resguardo</span>
+                    <h2 class="section-title" style="font-size: 2.5rem; margin-bottom: 1.5rem;">Crea un patrimonio sólido y escalable</h2>
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem;">
+                        Asesoramos a inversionistas residenciales y comerciales para estructurar portafolios eficientes. Contamos con planes especiales de compra multifamiliar, bonos pie y alianzas de administración de arriendos.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid de Ventajas -->
+            <div class="services-grid" style="margin-bottom: 5rem;">
+                <div class="service-card reveal" style="min-height: auto; padding: 2rem;">
+                    <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.8rem;">Alta Liquidez de Arriendo</h4>
+                    <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0;">
+                        Nuestros proyectos están emplazados en áreas de alta densidad y conectividad en comunas de alta demanda habitacional, garantizando bajas tasas de vacancia.
+                    </p>
+                </div>
+                <div class="service-card reveal" style="min-height: auto; padding: 2rem;">
+                    <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.8rem;">Alianza de Administración</h4>
+                    <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0;">
+                        Disponemos de convenios con gestores de propiedades que se encargan de seleccionar al arrendatario, cobrar el arriendo y mantener tu propiedad sin que tengas que intervenir.
+                    </p>
+                </div>
+                <div class="service-card reveal" style="min-height: auto; padding: 2rem;">
+                    <h4 style="font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 0.8rem;">Bono Pie & Facilidades</h4>
+                    <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 0;">
+                        Facilitamos el acceso al crédito hipotecario con promociones de bono pie del 10% y el pago del pie restante en cómodas cuotas sin interés durante la etapa de construcción.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CALCULADORA DE RETORNO (ROI) INTERACTIVA -->
+            <div id="calculator" class="calculator-module reveal">
+                <div style="margin-bottom: 2.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.5rem;">
+                    <span class="section-subtitle">Simulador de Inversión</span>
+                    <h3 style="font-size: 2.2rem; font-family: var(--font-serif);">Calculadora de Rentabilidad (ROI)</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                        Estima tu dividendo mensual, los ingresos por arriendo y tu retorno de inversión estimado en base a plusvalía y flujos de caja.
+                    </p>
+                </div>
+
+                <div class="calculator-grid">
+                    <!-- Formulario de Inputs -->
+                    <div>
+                        <div class="form-group">
+                            <label for="calc-valor-propiedad">Valor de la Propiedad (UF)</label>
+                            <input type="number" id="calc-valor-propiedad" value="3200" step="50" min="1000" required>
+                            <span style="font-size: 0.7rem; color: var(--color-text-light); margin-top: 0.2rem; display: block;">Ej: Andes Macul (UF 3.200)</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="calc-pie-porcentaje">Porcentaje de Pie (%)</label>
+                            <select id="calc-pie-porcentaje">
+                                <option value="10">10% (Bono Pie del 10%)</option>
+                                <option value="20" selected>20% (Pie Estándar)</option>
+                                <option value="30">30%</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="calc-plazo-anos">Plazo del Crédito (Años)</label>
+                            <select id="calc-plazo-anos">
+                                <option value="15">15 Años</option>
+                                <option value="20" selected>20 Años</option>
+                                <option value="25">25 Años</option>
+                                <option value="30">30 Años</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="calc-tasa-interes">Tasa de Interés Anual Estimada (%)</label>
+                            <input type="number" id="calc-tasa-interes" value="4.5" step="0.1" min="1" max="10" required>
+                        </div>
+                    </div>
+
+                    <!-- Cuadro de Resultados -->
+                    <div class="calculator-results">
+                        <div>
+                            <h4>Proyección Financiera</h4>
+                            
+                            <div class="result-row">
+                                <span class="result-label">Dividendo Mensual</span>
+                                <span id="result-dividendo" class="result-value">UF 14.5</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Arriendo Estimado</span>
+                                <span id="result-arriendo" class="result-value">UF 16.0</span>
+                            </div>
+                            <div class="result-row">
+                                <span class="result-label">Cap Rate (Anual)</span>
+                                <span id="result-cap-rate" class="result-value">4.80%</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="result-row">
+                                <span class="result-label" style="font-weight: 600; color: #FFFFFF;">ROI Estimado Total (Con Plusvalía)</span>
+                                <span id="result-roi" class="result-value large">11.5%</span>
+                            </div>
+                            <p style="font-size: 0.65rem; color: rgba(255,255,255,0.4); text-align: right; margin-top: 1rem;">
+                                * Estimación con supuestos de plusvalía del 4% anual. Sujeto a variaciones de mercado.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORMULARIO DE ASESORÍA ESPECIALIZADA -->
+            <div class="reveal" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 4rem; margin-top: 5rem;">
+                <div style="max-width: 600px; margin: 0 auto;">
+                    <div style="text-align: center; margin-bottom: 2.5rem;">
+                        <span class="section-subtitle">Atención Preferencial B2B</span>
+                        <h3 style="font-size: 2rem; font-family: var(--font-serif);">Solicitar Asesoría para Inversionistas</h3>
+                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
+                            ¿Deseas comprar en bloque o requieres un plan de pago estructurado para optimizar tu carga tributaria? Completa el formulario y un especialista te contactará.
+                        </p>
+                    </div>
+
+                    <form action="#" method="POST" id="form-inversionista">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label for="inv-nombre">Nombre</label>
+                                <input type="text" id="inv-nombre" required placeholder="Juan Pérez">
+                            </div>
+                            <div class="form-group">
+                                <label for="inv-telefono">Teléfono</label>
+                                <input type="tel" id="inv-telefono" required placeholder="+56 9 1234 5678">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inv-email">Email</label>
+                            <input type="email" id="inv-email" required placeholder="nombre@correo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="inv-perfil">Monto Estimado a Invertir</label>
+                            <select id="inv-perfil">
+                                <option value="1">Menos de UF 3.000 (1 propiedad)</option>
+                                <option value="2">UF 3.000 - UF 8.000 (2 a 3 propiedades)</option>
+                                <option value="3">Sobre UF 8.000 (Inversionista Multifamily)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inv-mensaje">Detalle de tu Requerimiento</label>
+                            <textarea id="inv-mensaje" rows="3" placeholder="Hola, me gustaría conocer la disponibilidad de bono pie y las unidades piloto..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Solicitar Asesoría</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PIE DE PAGINA (FOOTER) -->
+    <footer></footer>
+
+    <!-- Scripts de Funcionalidad -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('form-inversionista').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Solicitud de asesoría enviada! Un ejecutivo comercial especializado en inversiones inmobiliarias te contactará en un plazo máximo de 24 horas hábiles.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

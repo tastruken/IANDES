@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postventa | Inmobiliaria Iandes</title>
+    <meta name="description" content="Portal de Postventa. Te acompañamos en tu nuevo hogar. Preguntas frecuentes, canal de atención y asistencia para emergencias domésticas.">
+    <!-- Hojas de Estilo -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- CABECERA PRINCIPAL (NAVBAR) -->
+    <header class="scrolled"></header>
+
+    <!-- INNER HERO (CABECERA DE PÁGINA) -->
+    <section class="inner-hero">
+        <div class="inner-hero-bg">
+            <img src="assets/images/postventa-hero.png" alt="Servicio Postventa Iandes" style="filter: grayscale(60%) contrast(0.9) brightness(0.7);">
+        </div>
+        <div class="container" style="position: relative; z-index: 5;">
+            <div class="inner-hero-content">
+                <div class="inner-hero-breadcrumbs">
+                    <a href="index.html">Inicio</a> &nbsp;/&nbsp; Postventa
+                </div>
+                <h1 class="inner-hero-title">Te acompañamos en tu nuevo hogar</h1>
+            </div>
+        </div>
+    </section>
+
+    <!-- CANAL Y HUMANIZACIÓN -->
+    <section class="section">
+        <div class="container">
+            
+            <div class="postventa-grid">
+                
+                <!-- Columna Izquierda: Formulario e Información -->
+                <div>
+                    <div class="reveal" style="margin-bottom: 3.5rem;">
+                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Compromiso y Respaldo Continuo</h2>
+                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                            En Inmobiliaria Iandes entendemos que la entrega de llaves es solo el inicio de tu experiencia. Nuestro equipo independiente de postventa tiene como misión resolver de manera transparente y eficiente cualquier requerimiento técnico o consulta sobre el funcionamiento de los sistemas e instalaciones de tu departamento.
+                        </p>
+                        <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                            Una vez ingresada tu solicitud a través del formulario oficial, nuestro equipo técnico revisará los detalles y te agendará una visita técnica en un plazo máximo de 5 días hábiles, coordinando según tu disponibilidad.
+                        </p>
+                    </div>
+
+                    <!-- Bloque de Ingreso de Solicitudes -->
+                    <div id="solicitud" class="reveal" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 3rem; margin-bottom: 4rem;">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Ingresar Requerimiento de Postventa</h3>
+                        
+                        <form action="#" method="POST" id="form-postventa">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="pv-nombre">Nombre Propietario</label>
+                                    <input type="text" id="pv-nombre" required placeholder="Ej: Juan Pérez">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pv-rut">RUT Propietario</label>
+                                    <input type="text" id="pv-rut" required placeholder="12.345.678-9">
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="pv-proyecto">Proyecto</label>
+                                    <select id="pv-proyecto" required>
+                                        <option value="">Selecciona tu proyecto</option>
+                                        <option value="andes-macul">Andes Macul</option>
+                                        <option value="andes-nunoa">Andes Ñuñoa</option>
+                                        <option value="camino-villa">Camino de la Villa</option>
+                                        <option value="altos-santa-cruz">Altos de Santa Cruz</option>
+                                        <option value="work-plaza">Work Plaza Oficinas</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pv-depto">Nº Departamento / Oficina</label>
+                                    <input type="text" id="pv-depto" required placeholder="Ej: Depto 502 / Of 304">
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <div class="form-group">
+                                    <label for="pv-email">Email de Contacto</label>
+                                    <input type="email" id="pv-email" required placeholder="nombre@correo.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="pv-telefono">Teléfono</label>
+                                    <input type="tel" id="pv-telefono" required placeholder="+56 9 1234 5678">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="pv-categoria">Categoría del Requerimiento</label>
+                                <select id="pv-categoria" required>
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="filtracion">Filtración / Gasfitería</option>
+                                    <option value="electricidad">Problema Eléctrico</option>
+                                    <option value="terminaciones">Detalles de Pintura / Pisos / Puertas</option>
+                                    <option value="otro">Otro Requerimiento Técnico</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="pv-mensaje">Descripción del Problema</label>
+                                <textarea id="pv-mensaje" rows="4" required placeholder="Describe de forma detallada la incidencia técnica para agilizar la revisión..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Ingresar Solicitud de Postventa</button>
+                        </form>
+                    </div>
+
+                    <!-- Acordeón de Preguntas Frecuentes (FAQ) -->
+                    <div class="faq-section reveal">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 2rem;">Preguntas Frecuentes de Propietarios</h3>
+                        
+                        <div class="faq-accordion">
+                            <!-- FAQ 1 -->
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cuáles son los plazos legales de las garantías de copropiedad?</div>
+                                <div class="faq-answer">
+                                    <p>De acuerdo a la Ley General de Urbanismo y Construcción, los plazos de garantía vigentes a partir de la recepción municipal definitiva son:
+                                    <br>• <strong>10 años</strong> en caso de fallas o defectos que afecten a la estructura soportante del inmueble.
+                                    <br>• <strong>5 años</strong> cuando se trate de fallas o defectos de los elementos constructivos o de las instalaciones.
+                                    <br>• <strong>3 años</strong> para fallas o defectos que afecten a elementos de terminaciones o de acabado.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 2 -->
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cómo se coordina la visita de inspección del técnico?</div>
+                                <div class="faq-answer">
+                                    <p>Una vez ingresada formalmente la solicitud, nuestro supervisor técnico evaluará el caso y se contactará vía telefónica o correo electrónico en un plazo máximo de 48 horas hábiles para coordinar un día y bloque horario (mañana o tarde) para realizar la inspección en tu domicilio.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 3 -->
+                            <div class="faq-item">
+                                <div class="faq-question">¿Qué daños no están cubiertos por la garantía de postventa?</div>
+                                <div class="faq-answer">
+                                    <p>La garantía no cubre daños provocados por el desgaste natural del uso de la vivienda, el nulo o deficiente mantenimiento de las instalaciones (ej: no limpiar sifones de desagües o rejillas de ventilación), modificaciones estructurales o de terminaciones realizadas por el propietario sin autorización previa, o daños accidentales posteriores a la entrega del inmueble.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 4 -->
+                            <div class="faq-item">
+                                <div class="faq-question">¿Dónde puedo descargar el Manual de Uso y Mantenimiento del Hogar?</div>
+                                <div class="faq-answer">
+                                    <p>El Manual de Uso te fue enviado a tu correo en formato digital el día de la firma de acta de entrega. También puedes solicitar una copia digital escribiéndonos con tu RUT y número de departamento a <strong>postventa@iandes.cl</strong>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Columna Derecha: Alertas de Emergencia y Soporte Humanizado -->
+                <div>
+                    
+                    <!-- Tarjeta de Emergencias Domésticas -->
+                    <div class="emergency-card reveal">
+                        <h4>⚠️ Alerta de Emergencias</h4>
+                        <p>
+                            Se considera emergencia únicamente a aquellos eventos graves e imprevistos que afecten la habitabilidad inmediata del hogar o pongan en riesgo la seguridad de las personas:
+                        </p>
+                        <ul style="list-style: disc; padding-left: 1.2rem; font-size: 0.8rem; color: #9B2C2C; margin-bottom: 1.5rem;">
+                            <li>Filtraciones de agua masivas o roturas de cañería.</li>
+                            <li>Corte total del suministro eléctrico interno sin causa externa.</li>
+                            <li>Fuga detectable de gas en calderas, cocinas o ductos.</li>
+                        </ul>
+                        <p style="font-weight: 500; margin-bottom: 0.5rem; color: #C53030;">Teléfonos de Emergencia Directos (24/7):</p>
+                        <div class="emergency-phones">
+                            <a href="tel:+56228409001">📞 +56 2 2840 9001</a>
+                            <a href="tel:+56987654321">📞 +56 9 8765 4321</a>
+                        </div>
+                        <p style="font-size: 0.7rem; color: #C53030; margin-top: 1rem; font-style: italic;">
+                            * Para fallas comunes o detalles cosméticos, por favor use el formulario regular para coordinar visitas normales de mantenimiento.
+                        </p>
+                    </div>
+
+                    <!-- Equipo de Soporte Humanizado -->
+                    <div class="reveal" style="background-color: #FFFFFF; border: 1px solid var(--color-border); padding: 2.5rem; text-align: center;">
+                        <div style="width: 90px; height: 90px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; background-color: var(--color-bg-light);">
+                            <img src="assets/images/postventa-hero.png" alt="Equipo de Clientes Iandes" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transform: scale(1.7); object-position: center 20%;">
+                        </div>
+                        <h4 style="font-family: var(--font-sans); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.2rem;">Equipo de Atención al Propietario</h4>
+                        <p style="font-size: 0.7rem; text-transform: uppercase; color: var(--color-secondary); letter-spacing: 0.1em; margin-bottom: 1rem;">Resolución y Acompañamiento</p>
+                        <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 1.5rem;">
+                            Nuestro equipo está a tu disposición en nuestras oficinas centrales de lunes a viernes de 09:00 a 18:00 horas para resolver cualquier duda administrativa o derivación técnica.
+                        </p>
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-primary); display: block;">soporte@iandes.cl</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PIE DE PAGINA (FOOTER) -->
+    <footer></footer>
+
+    <!-- Scripts de Funcionalidad -->
+    <script src="assets/js/main.js"></script>
+    <script>
+        document.getElementById('form-postventa').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('¡Requerimiento técnico de postventa recibido con éxito! Se ha asignado el ticket Nº PV-2026-904. Nos contactaremos en un plazo máximo de 48 horas hábiles para agendar la visita de inspección técnica.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
