@@ -189,23 +189,50 @@ function initScrollReveal() {
  */
 function initFAQAccordion() {
     const faqQuestions = document.querySelectorAll('.faq-question');
-    if (faqQuestions.length === 0) return;
+    const categoryBtns = document.querySelectorAll('.faq-category-btn');
+    const faqGroupElements = document.querySelectorAll('.faq-group');
 
+    // 1. Acordeón: Manejador de clics para expandir/colapsar
     faqQuestions.forEach(question => {
         question.addEventListener('click', () => {
             const parent = question.parentElement;
             const isActive = parent.classList.contains('active');
+            const siblingItems = parent.parentElement.querySelectorAll('.faq-item');
 
-            // Cerrar otros abiertos (opcional, estilo limpio)
-            document.querySelectorAll('.faq-item').forEach(item => {
+            // Cerrar otros abiertos dentro del mismo grupo
+            siblingItems.forEach(item => {
                 item.classList.remove('active');
+                const ans = item.querySelector('.faq-answer');
+                if (ans) ans.style.maxHeight = null;
             });
 
             if (!isActive) {
                 parent.classList.add('active');
+                const ans = parent.querySelector('.faq-answer');
+                if (ans) ans.style.maxHeight = ans.scrollHeight + 'px';
             }
         });
     });
+
+    // 2. Sidebar: Filtros de categorías
+    if (categoryBtns.length > 0) {
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const targetCategory = btn.dataset.category;
+                
+                faqGroupElements.forEach(group => {
+                    if (targetCategory === 'todos' || group.id === targetCategory) {
+                        group.style.display = 'block';
+                    } else {
+                        group.style.display = 'none';
+                    }
+                });
+            });
+        });
+    }
 }
 
 /**
@@ -551,3 +578,4 @@ function initProjectFilters() {
         });
     });
 }
+

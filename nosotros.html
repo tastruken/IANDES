@@ -79,52 +79,94 @@
                 </div>
             </div>
 
-            <!-- EQUIPO COMERCIAL HUMANIZADO -->
-            <div class="reveal">
-                <div class="section-header" style="margin-bottom: 3.5rem;">
-                    <div class="section-header-left">
-                        <span class="section-subtitle">Asesoría boutique</span>
-                        <h3 style="font-size: 2.2rem; font-family: var(--font-serif);">Nuestro Equipo de Asesores Expertos</h3>
+            <!-- SECCIÓN SALA DE VENTAS & ASESORÍA (CONCEPTO PREMIUM) -->
+            <div class="sales-office-module reveal" style="border: 1px solid var(--color-border); box-shadow: var(--shadow-premium); overflow: hidden; background-color: var(--color-bg-card); margin-top: 4rem;">
+                <!-- Parte Superior: Foto de Fondo con Textos -->
+                <div style="position: relative; padding: 4.5rem 4rem 6.5rem 4rem; background-image: linear-gradient(to right, rgba(5,11,20,0.92) 30%, rgba(5,11,20,0.4) 100%), url('assets/images/proyecto-oficinas.png'); background-size: cover; background-position: center; color: #FFFFFF;">
+                    <div style="max-width: 600px;">
+                        <h3 style="font-size: 1.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 2rem; color: #FFFFFF;">Sala de Ventas</h3>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3.5rem; font-size: 0.85rem;">
+                            <div style="display: flex; gap: 0.8rem; align-items: flex-start;">
+                                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: var(--color-secondary); margin-top: 0.35rem; flex-shrink: 0;"></span>
+                                <div>
+                                    <strong style="display: block; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.7); margin-bottom: 0.2rem;">Horario de atención</strong>
+                                    Lunes a Domingo de 10:00 a 18:00 hrs.
+                                </div>
+                            </div>
+                            
+                            <div style="display: flex; gap: 0.8rem; align-items: flex-start;">
+                                <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background-color: var(--color-secondary); margin-top: 0.35rem; flex-shrink: 0;"></span>
+                                <div>
+                                    <strong style="display: block; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: rgba(255,255,255,0.7); margin-bottom: 0.2rem;">Ubicación</strong>
+                                    Av. Apoquindo 4500, Oficina 901, Las Condes, Santiago.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="border-top: 1px solid rgba(255,255,255,0.15); padding-top: 2rem;">
+                            <h4 style="font-size: 1.6rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: #FFFFFF;">Asesoría</h4>
+                            <p style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-secondary); font-weight: 600; margin-top: 0.3rem;">Nuestras Ejecutivas</p>
+                        </div>
                     </div>
                 </div>
 
-                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem;">
+                <!-- Parte Inferior: Ejecutivas y Datos de Contacto con fotos solapadas -->
+                <div class="executives-container" style="padding: 0 4rem 4.5rem 4rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 4rem; background-color: var(--color-bg-card); position: relative; z-index: 10;">
                     
-                    <!-- Asesor 1 -->
-                    <div style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 2.5rem; text-align: center;">
-                        <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; background-color: var(--color-bg-light);">
-                            <img src="assets/images/nosotros-hero.png" alt="Catalina Rivera" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transform: scale(1.6); object-position: center 20%;">
+                    <!-- Ejecutiva 1 -->
+                    <div style="text-align: center; position: relative;">
+                        <!-- Foto Solapada -->
+                        <div style="width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--color-secondary); overflow: hidden; margin: -70px auto 1.5rem auto; background-color: #FFFFFF; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <img src="assets/images/ejecutiva-ventas.png" alt="Marcela FernÃ¡ndez" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <h4 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.2rem;">Catalina Rivera</h4>
-                        <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-secondary); letter-spacing: 0.1em; margin-bottom: 1.2rem;">Asesora de Ventas - Andes Macul</p>
-                        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1.8rem;">"Mi compromiso es ayudarte a encontrar el departamento ideal que calce perfecto con el estilo de vida que sueñas."</p>
-                        <a href="https://wa.me/56912345678?text=Hola%20Catalina,%20me%20interesa%20conocer%20los%20proyectos%20activos." target="_blank" class="exec-whatsapp-btn" style="margin-top: 0; padding: 0.6rem;">WhatsApp Directo</a>
+                        <h4 style="font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--color-primary); margin-bottom: 0.8rem;">Marcela Fernández</h4>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); align-items: center;">
+                            <a href="https://wa.me/56994375502?text=Hola%20Marcela,%20me%20interesa%20conocer%20los%20proyectos%20de%20Iandes." target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; transition: var(--transition-fast);" onmouseover="this.style.color='var(--color-secondary)'" onmouseout="this.style.color='var(--color-text-muted)'">
+                                <span style="color: var(--color-secondary);">☏</span> +56994375502
+                            </a>
+                            <a href="mailto:marcela.fernandez@iandes.cl" style="display: inline-flex; align-items: center; gap: 0.4rem; transition: var(--transition-fast);" onmouseover="this.style.color='var(--color-secondary)'" onmouseout="this.style.color='var(--color-text-muted)'">
+                                <span style="color: var(--color-secondary);">✉</span> marcela.fernandez@iandes.cl
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Asesor 2 -->
-                    <div style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 2.5rem; text-align: center;">
-                        <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; background-color: var(--color-bg-light);">
-                            <img src="assets/images/nosotros-hero.png" alt="Javiera Muñoz" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transform: scale(1.6); object-position: center 20%;">
+                    <!-- Ejecutiva 2 -->
+                    <div style="text-align: center; position: relative;">
+                        <!-- Foto Solapada -->
+                        <div style="width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--color-secondary); overflow: hidden; margin: -70px auto 1.5rem auto; background-color: #FFFFFF; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <img src="assets/images/ejecutiva-ventas.png" alt="Luciana Epp" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <h4 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.2rem;">Javiera Muñoz</h4>
-                        <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-secondary); letter-spacing: 0.1em; margin-bottom: 1.2rem;">Asesora - Ñuñoa y Camino de la Villa</p>
-                        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1.8rem;">"Te acompaño paso a paso en el proceso de financiamiento y pre-aprobación del crédito hipotecario de forma expedita."</p>
-                        <a href="https://wa.me/56912345678?text=Hola%20Javiera,%20me%20interesa%20cotizar%20en%20los%20proyectos%20de%20%C3%91u%C3%B1oa." target="_blank" class="exec-whatsapp-btn" style="margin-top: 0; padding: 0.6rem;">WhatsApp Directo</a>
+                        <h4 style="font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--color-primary); margin-bottom: 0.8rem;">Luciana Epp</h4>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); align-items: center;">
+                            <a href="https://wa.me/56989265875?text=Hola%20Luciana,%20me%20interesa%20conocer%20los%20proyectos%20de%20Iandes." target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; transition: var(--transition-fast);" onmouseover="this.style.color='var(--color-secondary)'" onmouseout="this.style.color='var(--color-text-muted)'">
+                                <span style="color: var(--color-secondary);">☏</span> +56989265875
+                            </a>
+                            <a href="mailto:luciana.epp@iandes.cl" style="display: inline-flex; align-items: center; gap: 0.4rem; transition: var(--transition-fast);" onmouseover="this.style.color='var(--color-secondary)'" onmouseout="this.style.color='var(--color-text-muted)'">
+                                <span style="color: var(--color-secondary);">✉</span> luciana.epp@iandes.cl
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Asesor 3 -->
-                    <div style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 2.5rem; text-align: center;">
-                        <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; background-color: var(--color-bg-light);">
-                            <img src="assets/images/nosotros-hero.png" alt="Rodrigo Valdés" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transform: scale(1.6); object-position: center 20%;">
+                    <!-- Ejecutiva 3 -->
+                    <div style="text-align: center; position: relative;">
+                        <!-- Foto Solapada -->
+                        <div style="width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--color-secondary); overflow: hidden; margin: -70px auto 1.5rem auto; background-color: #FFFFFF; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                            <img src="assets/images/ejecutiva-ventas.png" alt="Patricia Smith" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
-                        <h4 style="font-family: var(--font-sans); font-size: 1.2rem; font-weight: 600; margin-bottom: 0.2rem;">Rodrigo Valdés</h4>
-                        <p style="font-size: 0.75rem; text-transform: uppercase; color: var(--color-secondary); letter-spacing: 0.1em; margin-bottom: 1.2rem;">Asesor - Altos de Santa Cruz</p>
-                        <p style="font-size: 0.8rem; color: var(--color-text-muted); margin-bottom: 1.8rem;">"Si buscas rentabilizar o descansar en la paz del Valle de Colchagua, te asesoraré sobre los mejores beneficios."</p>
-                        <a href="https://wa.me/56912345678?text=Hola%20Rodrigo,%20me%20interesa%20cotizar%20en%20Altos%20de%20Santa%20Cruz." target="_blank" class="exec-whatsapp-btn" style="margin-top: 0; padding: 0.6rem;">WhatsApp Directo</a>
+                        <h4 style="font-family: var(--font-sans); font-size: 1rem; font-weight: 600; color: var(--color-primary); margin-bottom: 0.8rem;">Patricia Smith</h4>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.75rem; color: var(--color-text-muted); align-items: center;">
+                            <a href="https://wa.me/56933709765?text=Hola%20Patricia,%20me%20interesa%20conocer%20los%20proyectos%20de%20Iandes." target="_blank" style="display: inline-flex; align-items: center; gap: 0.4rem; transition: var(--transition-fast);" onmouseover="this.style.color='var(--color-secondary)'" onmouseout="this.style.color='var(--color-text-muted)'">
+                                <span style="color: var(--color-secondary);">☏</span> +56933709765
+                            </a>
+                            <a href="mailto:patricia.smith@iandes.cl" style="display: inline-flex; align-items: center; gap: 0.4rem; transition: var(--transition-fast);" onmouseover="this.style.color='var(--color-secondary)'" onmouseout="this.style.color='var(--color-text-muted)'">
+                                <span style="color: var(--color-secondary);">✉</span> patricia.smith@iandes.cl
+                            </a>
+                        </div>
                     </div>
-
-                </div>
-            </div>
 
         </div>
     </section>

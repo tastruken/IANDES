@@ -7,24 +7,22 @@
    ========================================================================== 
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght=0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
-
 :root {
-    /* Paleta de Colores */
-    --color-primary: #1A1A1A;       /* Obsidiana / Carbón */
-    --color-secondary: #C5A880;     /* Bronce Templado */
-    --color-accent: #E0C9A6;        /* Champagne Dorado */
-    --color-bg-light: #F9F9F8;      /* Travertino Claro / Lino */
+    /* Paleta de Colores Corporativos */
+    --color-primary: #050B14;       /* Pantone Black C (Midnight Black) */
+    --color-secondary: #FFD100;     /* Pantone Coated 109c (Amarillo Corporativo) */
+    --color-accent: #8F9E9E;        /* Pantone Coated 443c (Gris Corporativo) */
+    --color-bg-light: #F4F6F6;      /* Fondo Claro Harmonizado (Gris de bajo contraste) */
     --color-bg-card: #FFFFFF;       /* Blanco Puro */
-    --color-text-main: #2D2D2D;     /* Carbón Suave para lectura */
-    --color-text-muted: #6C6C6C;    /* Gris Medio */
-    --color-text-light: #9B9B9B;    /* Gris Claro */
-    --color-border: rgba(26, 26, 26, 0.08); /* Bordes sutiles */
-    --color-border-focus: rgba(197, 168, 128, 0.5);
+    --color-text-main: #1D2630;     /* Carbón Oscuro para lectura */
+    --color-text-muted: #5C6873;    /* Gris de Contraste Medio */
+    --color-text-light: #8F9E9E;    /* Gris Claro Corporativo */
+    --color-border: rgba(5, 11, 20, 0.08); /* Bordes sutiles oscuros */
+    --color-border-focus: rgba(255, 209, 0, 0.5);
 
     /* Tipografía */
-    --font-serif: 'Cormorant Garamond', serif;
-    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
     /* Sombras y Efectos */
     --shadow-premium: 0 10px 30px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.01);
@@ -131,6 +129,7 @@ a {
 
 .btn-primary:hover {
     background-color: var(--color-secondary);
+    color: var(--color-primary);
     transform: translateY(-2px);
 }
 
@@ -141,9 +140,9 @@ a {
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    color: var(--color-bg-card);
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-primary);
     transform: translateY(-2px);
 }
 
@@ -333,8 +332,8 @@ nav ul a.active::after {
 }
 
 .dropdown-menu a:hover {
-    background-color: var(--color-bg-light);
-    color: var(--color-secondary) !important;
+    background-color: var(--color-secondary);
+    color: var(--color-primary) !important;
     padding-left: 1.8rem;
 }
 
@@ -1336,7 +1335,7 @@ footer {
 .form-group textarea:focus {
     border-color: var(--color-secondary);
     background-color: #FFFFFF;
-    box-shadow: 0 0 0 3px rgba(197, 168, 128, 0.15);
+    box-shadow: 0 0 0 3px rgba(255, 209, 0, 0.18);
 }
 
 /* Ejecutiva de Ventas Humanizada */
@@ -1350,8 +1349,8 @@ footer {
 }
 
 .exec-photo {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     overflow: hidden;
     background-color: var(--color-bg-light);
@@ -1760,4 +1759,215 @@ footer {
     .article-header h1 {
         font-size: 2.2rem;
     }
+
+    /* Módulo Responsivo Sala de Ventas & Ejecutivas nosotros.html */
+    .sales-office-module > div:first-child {
+        padding: 3.5rem 1.5rem 5rem 1.5rem !important;
+    }
+    .sales-office-module .executives-container {
+        grid-template-columns: 1fr !important;
+        gap: 6.5rem !important;
+        padding: 0 1.5rem 3.5rem 1.5rem !important;
+    }
 }
+
+/* ==========================================================================
+   Preguntas Frecuentes (FAQ Accordion & Layout)
+   ========================================================================== */
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.faq-item {
+    background-color: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    transition: var(--transition-fast);
+}
+
+.faq-item:hover {
+    border-color: var(--color-accent);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: var(--transition-fast);
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+    font-weight: 300;
+}
+
+.faq-item.active {
+    border-color: var(--color-secondary);
+}
+
+.faq-item.active .faq-question {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.faq-item.active .faq-question::after {
+    content: '−';
+    transform: rotate(180deg);
+    color: var(--color-secondary);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+    padding: 0 1.5rem;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 1.5rem 1.8rem 1.5rem;
+    max-height: 500px;
+}
+
+.faq-page-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.faq-sidebar {
+    position: sticky;
+    top: calc(var(--header-height) + 2rem);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-categories {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--color-border);
+    padding-left: 0;
+}
+
+.faq-category-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    padding: 0.8rem 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    position: relative;
+    margin-left: -2px;
+}
+
+.faq-category-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: transparent;
+    transition: var(--transition-fast);
+}
+
+.faq-category-btn.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.faq-category-btn.active::before {
+    background-color: var(--color-secondary);
+}
+
+.faq-search-wrapper {
+    position: relative;
+    margin-bottom: 3rem;
+}
+
+.faq-search-input {
+    width: 100%;
+    padding: 1rem 1.5rem 1rem 3rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-bg-card);
+    outline: none;
+    transition: var(--transition-fast);
+}
+
+.faq-search-input:focus {
+    border-color: var(--color-secondary);
+    box-shadow: 0 0 0 3px rgba(255, 209, 0, 0.18);
+}
+
+.faq-search-icon {
+    position: absolute;
+    left: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+@media (max-width: 992px) {
+    .faq-page-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .faq-sidebar {
+        position: relative;
+        top: 0;
+    }
+    
+    .faq-categories {
+        flex-direction: row;
+        border-left: none;
+        border-bottom: 2px solid var(--color-border);
+        overflow-x: auto;
+        padding-left: 0;
+        padding-bottom: 0;
+    }
+    
+    .faq-category-btn {
+        margin-left: 0;
+        margin-bottom: -2px;
+        padding: 1rem;
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+    }
+    
+    .faq-category-btn::before {
+        display: none;
+    }
+    
+    .faq-category-btn.active {
+        border-bottom-color: var(--color-secondary);
+    }
+}
+
+
