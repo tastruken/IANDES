@@ -258,10 +258,70 @@ function initProjectMediaTabs() {
             mediaViewer.innerHTML = '';
 
             if (type === 'image') {
-                const img = document.createElement('img');
-                img.src = src;
-                img.alt = title;
-                mediaViewer.appendChild(img);
+                if (src.includes(',')) {
+                    const urls = src.split(',').map(url => url.trim());
+                    let carouselHtml = `
+                        <div class="media-carousel">
+                            <div class="media-carousel-slides">
+                    `;
+                    urls.forEach((url, index) => {
+                        carouselHtml += `<img class="media-slide${index === 0 ? ' active' : ''}" src="${url}" alt="${title} - Imagen ${index + 1}">`;
+                    });
+                    carouselHtml += `
+                            </div>
+                            <button class="media-carousel-arrow prev" aria-label="Anterior">&lsaquo;</button>
+                            <button class="media-carousel-arrow next" aria-label="Siguiente">&rsaquo;</button>
+                            <div class="media-carousel-dots">
+                    `;
+                    urls.forEach((_, index) => {
+                        carouselHtml += `<span class="media-carousel-dot${index === 0 ? ' active' : ''}" data-index="${index}"></span>`;
+                    });
+                    carouselHtml += `
+                            </div>
+                        </div>
+                    `;
+                    mediaViewer.innerHTML = carouselHtml;
+
+                    const container = mediaViewer.querySelector('.media-carousel');
+                    const slides = container.querySelectorAll('.media-slide');
+                    const dots = container.querySelectorAll('.media-carousel-dot');
+                    let currentIndex = 0;
+
+                    const showSlide = (index) => {
+                        slides.forEach(s => s.classList.remove('active'));
+                        dots.forEach(d => d.classList.remove('active'));
+                        slides[index].classList.add('active');
+                        dots[index].classList.add('active');
+                        currentIndex = index;
+                    };
+
+                    container.querySelector('.media-carousel-arrow.prev').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        let index = currentIndex - 1;
+                        if (index < 0) index = slides.length - 1;
+                        showSlide(index);
+                    });
+
+                    container.querySelector('.media-carousel-arrow.next').addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        let index = currentIndex + 1;
+                        if (index >= slides.length) index = 0;
+                        showSlide(index);
+                    });
+
+                    dots.forEach(dot => {
+                        dot.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            const index = parseInt(dot.dataset.index);
+                            showSlide(index);
+                        });
+                    });
+                } else {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = title;
+                    mediaViewer.appendChild(img);
+                }
             } else if (type === 'video') {
                 const iframe = document.createElement('iframe');
                 iframe.src = src;
@@ -269,7 +329,10 @@ function initProjectMediaTabs() {
                 iframe.allowFullscreen = true;
                 mediaViewer.appendChild(iframe);
             } else if (type === 'tour360') {
-                // Mock interactivo de un Tour 360° con una overlay elegante
+                const tabBtnInterior = document.getElementById('tab-btn-interior');
+                const bgRaw = tabBtnInterior ? tabBtnInterior.dataset.src : '';
+                const bgSrc = bgRaw ? bgRaw.split(',')[0].trim() : 'assets/images/proyectos/proyecto-andes-nunoa/render.png';
+
                 const overlay = document.createElement('div');
                 overlay.className = 'tour-360-overlay';
                 overlay.innerHTML = `
@@ -277,26 +340,29 @@ function initProjectMediaTabs() {
                     <p style="margin-bottom: 1.5rem; max-width: 400px; font-size: 0.85rem; color: rgba(255,255,255,0.8);">
                         Explora los espacios pilotos interactivos de forma inmersiva directamente desde tu dispositivo.
                     </p>
-                    <button class="btn btn-secondary" style="border-color: #FFFFFF; color: #FFFFFF; font-size:0.7rem;">Iniciar Tour Interactivo</button>
+                    <button class="btn btn-secondary" style="border-color: #FFFFFF; color: #FFFFFF; font-size: 0.7rem;">Iniciar Tour Interactivo</button>
                 `;
                 
                 const img = document.createElement('img');
-                img.src = src;
+                img.src = bgSrc;
                 img.alt = 'Vista 360';
                 
                 mediaViewer.appendChild(img);
                 mediaViewer.appendChild(overlay);
 
-                // Agregar evento para simular carga
                 overlay.querySelector('button').addEventListener('click', (e) => {
                     e.currentTarget.textContent = 'Cargando Entorno Inmersivo...';
                     setTimeout(() => {
-                        overlay.innerHTML = `
-                            <h4 style="color: #E0C9A6;">Entorno Piloto Activo</h4>
-                            <p style="font-size:0.8rem; color: rgba(255,255,255,0.9); margin-bottom: 0.5rem;">Haz arrastre en la pantalla para girar la cámara</p>
-                            <span style="font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7;">[ Modo Demostración Interactivo ]</span>
-                        `;
-                    }, 1200);
+                        const iframe = document.createElement('iframe');
+                        iframe.src = src;
+                        iframe.allow = 'xr-spatial-tracking; vr; gyroscope; accelerometer; autoplay; fullscreen';
+                        iframe.allowFullscreen = true;
+                        iframe.style.width = '100%';
+                        iframe.style.height = '100%';
+                        iframe.style.border = 'none';
+                        mediaViewer.innerHTML = '';
+                        mediaViewer.appendChild(iframe);
+                    }, 500);
                 });
             }
         });
@@ -307,54 +373,272 @@ function initProjectMediaTabs() {
  * 6. Selector de Tipologías en Ficha de Proyecto (Actualiza Cotizador)
  */
 function initProjectTypologySelector() {
-    const typologyRows = document.querySelectorAll('.typology-row');
+    const explorer = document.querySelector('.model-explorer');
     const selectTipologia = document.getElementById('select-tipologia');
     const cotizadorPrice = document.getElementById('cotizador-price');
 
-    if (typologyRows.length === 0) return;
+    // Fallback para la versión antigua si existe en alguna página
+    const typologyRows = document.querySelectorAll('.typology-row');
+    if (typologyRows.length > 0 && !explorer) {
+        typologyRows.forEach(row => {
+            row.addEventListener('click', () => {
+                const tipologiaId = row.dataset.id;
+                const price = row.dataset.price;
+                if (selectTipologia) selectTipologia.value = tipologiaId;
+                if (cotizadorPrice) {
+                    cotizadorPrice.textContent = `Desde UF ${price}`;
+                    cotizadorPrice.style.opacity = '0.5';
+                    setTimeout(() => { cotizadorPrice.style.opacity = '1'; }, 150);
+                }
+                if (window.innerWidth <= 1024) {
+                    const cotizador = document.querySelector('.sidebar-cotizador');
+                    if (cotizador) cotizador.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+        if (selectTipologia) {
+            selectTipologia.addEventListener('change', () => {
+                const selectedOption = selectTipologia.options[selectTipologia.selectedIndex];
+                const price = selectedOption.dataset.price;
+                if (price && cotizadorPrice) {
+                    cotizadorPrice.textContent = `Desde UF ${price}`;
+                }
+            });
+        }
+        return;
+    }
 
-    typologyRows.forEach(row => {
-        row.addEventListener('click', () => {
-            const tipologiaId = row.dataset.id;
-            const price = row.dataset.price;
-            const title = row.dataset.title;
+    if (!explorer) return;
 
-            // Actualizar selector en el formulario
-            if (selectTipologia) {
-                selectTipologia.value = tipologiaId;
+    // Componentes del explorador
+    const track = explorer.querySelector('.model-carousel-track');
+    const cards = explorer.querySelectorAll('.model-card');
+    const prevBtn = explorer.querySelector('.prev-btn');
+    const nextBtn = explorer.querySelector('.next-btn');
+    
+    const detailImg = explorer.querySelector('#selected-model-img');
+    const detailName = explorer.querySelector('#selected-model-name');
+    const detailDorm = explorer.querySelector('#selected-model-dorm');
+    const detailBano = explorer.querySelector('#selected-model-bano');
+    const detailSup = explorer.querySelector('#selected-model-sup');
+    const cotizarActionBtn = explorer.querySelector('#model-cotizar-action');
+    const zoomBtn = explorer.querySelector('#zoom-model-btn');
+
+    // Crear Lightbox dinámicamente si no existe
+    let lightbox = document.getElementById('model-lightbox');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'model-lightbox';
+        lightbox.className = 'model-lightbox';
+        lightbox.innerHTML = `
+            <span class="lightbox-close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Plano">
+        `;
+        document.body.appendChild(lightbox);
+    }
+    const lightboxImg = lightbox.querySelector('#lightbox-img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+    // Estado del carrusel
+    let currentTranslateX = 0;
+    const cardWidth = 240; // flex-basis
+    const gap = 24; // gap de 1.5rem en px
+    const step = cardWidth + gap;
+
+    function updateCarouselNav() {
+        if (!track || !prevBtn || !nextBtn) return;
+        const wrapper = track.parentElement;
+        const maxTranslate = Math.max(0, track.scrollWidth - wrapper.clientWidth);
+
+        if (currentTranslateX >= 0) {
+            prevBtn.classList.add('disabled');
+        } else {
+            prevBtn.classList.remove('disabled');
+        }
+
+        if (Math.abs(currentTranslateX) >= maxTranslate) {
+            nextBtn.classList.add('disabled');
+        } else {
+            nextBtn.classList.remove('disabled');
+        }
+    }
+
+    if (prevBtn && nextBtn && track) {
+        prevBtn.addEventListener('click', () => {
+            currentTranslateX = Math.min(0, currentTranslateX + step);
+            track.style.transform = `translateX(${currentTranslateX}px)`;
+            updateCarouselNav();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const wrapper = track.parentElement;
+            const maxTranslate = Math.max(0, track.scrollWidth - wrapper.clientWidth);
+            currentTranslateX = Math.max(-maxTranslate, currentTranslateX - step);
+            track.style.transform = `translateX(${currentTranslateX}px)`;
+            updateCarouselNav();
+        });
+
+        // Inicializar y recalcular en redimensionamiento
+        window.addEventListener('resize', () => {
+            currentTranslateX = 0;
+            track.style.transform = `translateX(0px)`;
+            updateCarouselNav();
+        });
+        setTimeout(updateCarouselNav, 100);
+    }
+
+    // Manejar selección de tarjeta
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            // Quitar clase activa
+            cards.forEach(c => c.classList.remove('active'));
+            card.classList.add('active');
+
+            const id = card.dataset.id;
+            const price = card.dataset.price;
+            const title = card.dataset.title;
+            const img = card.dataset.img;
+            const dorm = card.dataset.dorm;
+            const bano = card.dataset.bano;
+            const sup = card.dataset.sup;
+
+            // Actualizar vista de detalle con transición suave
+            if (detailImg) {
+                detailImg.style.opacity = '0';
+                detailImg.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    detailImg.src = img;
+                    detailImg.style.opacity = '1';
+                    detailImg.style.transform = 'scale(1)';
+                }, 200);
             }
 
-            // Actualizar precio en la sidebar
+            if (detailName) detailName.textContent = title;
+            if (detailDorm) detailDorm.textContent = dorm;
+            if (detailBano) detailBano.textContent = bano;
+            if (detailSup) detailSup.textContent = sup;
+
+            // Actualizar cotizador lateral
+            if (selectTipologia) {
+                selectTipologia.value = id;
+            }
+
             if (cotizadorPrice) {
                 cotizadorPrice.textContent = `Desde UF ${price}`;
-                // Pequeña animación de parpadeo suave para indicar cambio
                 cotizadorPrice.style.opacity = '0.5';
                 setTimeout(() => {
                     cotizadorPrice.style.opacity = '1';
                 }, 150);
             }
 
-            // Hacer scroll suave al cotizador si es mobile
-            if (window.innerWidth <= 1024) {
-                const cotizador = document.querySelector('.sidebar-cotizador');
-                if (cotizador) {
-                    cotizador.scrollIntoView({ behavior: 'smooth' });
+            // Sincronizar Galería Multimedia con el modelo activo
+            const renderInt = card.dataset.renderInt;
+            const tourUrl = card.dataset.tour;
+            
+            const mediaBadge = document.getElementById('media-selected-model-badge');
+            if (mediaBadge) {
+                mediaBadge.textContent = `Modelo Seleccionado: ${title}`;
+                mediaBadge.style.opacity = '0.5';
+                setTimeout(() => { mediaBadge.style.opacity = '1'; }, 150);
+            }
+            
+            const tabBtnInterior = document.getElementById('tab-btn-interior');
+            const tabBtnTour = document.getElementById('tab-btn-tour');
+            
+            if (tabBtnInterior && renderInt) {
+                tabBtnInterior.dataset.src = renderInt;
+                tabBtnInterior.dataset.title = `Vista Interior ${title}`;
+                const label = tabBtnInterior.querySelector('.media-tab-label');
+                if (label) label.textContent = `Vista Interior`;
+                if (tabBtnInterior.classList.contains('active')) {
+                    tabBtnInterior.click();
+                }
+            }
+            if (tabBtnTour && tourUrl) {
+                tabBtnTour.dataset.src = tourUrl;
+                tabBtnTour.dataset.title = `Recorrido 360° ${title}`;
+                const label = tabBtnTour.querySelector('.media-tab-label');
+                if (label) label.textContent = `Recorrido 360°`;
+                if (tabBtnTour.classList.contains('active')) {
+                    tabBtnTour.click();
                 }
             }
         });
     });
 
-    // Cambiar precio cuando se cambia manualmente el select del cotizador
+    // Acción del botón Cotizar del detalle
+    if (cotizarActionBtn) {
+        cotizarActionBtn.addEventListener('click', () => {
+            const cotizador = document.getElementById('cotizador');
+            if (cotizador) {
+                cotizador.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                // Resaltar el formulario brevemente
+                cotizador.style.transition = 'box-shadow 0.3s ease';
+                cotizador.style.boxShadow = '0 0 20px rgba(230, 126, 34, 0.4)';
+                setTimeout(() => {
+                    cotizador.style.boxShadow = 'var(--shadow-premium)';
+                }, 1000);
+                
+                // Enfocar el primer input del formulario
+                const firstInput = cotizador.querySelector('input, select');
+                if (firstInput) {
+                    setTimeout(() => firstInput.focus(), 800);
+                }
+            }
+        });
+    }
+
+    // Zoom en plano
+    if (zoomBtn && lightbox && lightboxImg) {
+        zoomBtn.addEventListener('click', () => {
+            const activeCard = explorer.querySelector('.model-card.active');
+            if (activeCard) {
+                lightboxImg.src = activeCard.dataset.img;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Evitar scroll
+            }
+        });
+    }
+
+    // Cerrar lightbox
+    if (lightboxClose && lightbox) {
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Sincronizar desde el select de cotizador hacia el explorador
     if (selectTipologia) {
         selectTipologia.addEventListener('change', () => {
-            const selectedOption = selectTipologia.options[selectTipologia.selectedIndex];
-            const price = selectedOption.dataset.price;
-            if (price && cotizadorPrice) {
-                cotizadorPrice.textContent = `Desde UF ${price}`;
+            const val = selectTipologia.value;
+            const targetCard = Array.from(cards).find(c => c.dataset.id === val);
+            if (targetCard) {
+                targetCard.click();
+                
+                // Centrar la tarjeta en el carrusel si no es completamente visible
+                const wrapper = track.parentElement;
+                const cardLeft = targetCard.offsetLeft;
+                const cardRight = cardLeft + cardWidth;
+                const visibleLeft = -currentTranslateX;
+                const visibleRight = visibleLeft + wrapper.clientWidth;
+
+                if (cardLeft < visibleLeft || cardRight > visibleRight) {
+                    currentTranslateX = -Math.min(track.scrollWidth - wrapper.clientWidth, Math.max(0, cardLeft - (wrapper.clientWidth - cardWidth)/2));
+                    track.style.transform = `translateX(${currentTranslateX}px)`;
+                    updateCarouselNav();
+                }
             }
         });
     }
 }
+
 
 /**
  * 7. Calculadora de Retorno de Inversión (Inversionistas B2B)

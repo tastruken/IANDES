@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -16,7 +16,7 @@
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
     <section class="inner-hero">
         <div class="inner-hero-bg">
-            <img src="assets/images/proyecto-oficinas.png" alt="Work Plaza Oficinas" style="filter: grayscale(80%) brightness(0.85);">
+            <img src="assets/images/proyectos/proyecto-work-plaza/render.png" alt="Work Plaza Oficinas" style="filter: grayscale(80%) brightness(0.85);">
         </div>
         <div class="container" style="position: relative; z-index: 5;">
             <div class="inner-hero-content">
@@ -41,20 +41,39 @@
                     
                     <!-- Módulo Multimedia Integrado -->
                     <div class="media-gallery-module reveal">
-                        <div class="media-viewer">
-                            <!-- Por defecto muestra el render principal -->
-                            <img src="assets/images/proyecto-oficinas.png" alt="Render Exterior Work Plaza" style="filter: grayscale(80%) brightness(0.85);">
+                        <div class="media-viewer-container">
+                            <!-- Badge indicador de modelo seleccionado -->
+                            <div class="media-model-badge" id="media-selected-model-badge">Modelo Seleccionado: Modelo W-Mini</div>
+                            <div class="media-viewer">
+                                <!-- Por defecto muestra el render principal -->
+                                <img src="assets/images/proyectos/proyecto-work-plaza/render.png" alt="Render Exterior Work Plaza" style="filter: grayscale(80%) brightness(0.85);">
+                            </div>
                         </div>
                         
                         <div class="media-tabs">
-                            <button class="media-tab-btn active" data-type="image" data-src="assets/images/proyecto-oficinas.png" data-title="Render Exterior">
-                                Render Exterior
+                            <button class="media-tab-btn active" data-type="image" data-src="assets/images/proyectos/proyecto-work-plaza/render.png, assets/images/proyectos/proyecto-work-plaza/render-2.png" data-title="Render Exterior">
+                                <span class="media-tab-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6"/></svg>
+                                </span>
+                                <span class="media-tab-label">Render Exterior</span>
                             </button>
-                            <button class="media-tab-btn" data-type="tour360" data-src="assets/images/proyecto-oficinas.png" data-title="Recorrido 360°">
-                                Recorrido 360°
+                            <button class="media-tab-btn" data-type="image" id="tab-btn-interior" data-src="assets/images/proyectos/proyecto-work-plaza/render-interior.png, assets/images/proyectos/proyecto-work-plaza/render-interior-2.png" data-title="Vista Interior Modelo W-Mini">
+                                <span class="media-tab-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                                </span>
+                                <span class="media-tab-label">Vista Interior</span>
+                            </button>
+                            <button class="media-tab-btn" data-type="tour360" id="tab-btn-tour" data-src="https://my.matterport.com/show/?m=uH1fG94kZ2n" data-title="Recorrido 360° Modelo W-Mini">
+                                <span class="media-tab-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
+                                </span>
+                                <span class="media-tab-label">Recorrido 360°</span>
                             </button>
                             <button class="media-tab-btn" data-type="video" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="Video de Presentación">
-                                Video Entorno
+                                <span class="media-tab-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                </span>
+                                <span class="media-tab-label">Video Entorno</span>
                             </button>
                         </div>
                     </div>
@@ -80,54 +99,79 @@
                         </ul>
                     </div>
 
-                    <!-- Módulo de Tipologías Interactivas -->
-                    <div class="typology-module reveal">
-                        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Tipologías y Disponibilidad</h3>
-                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
-                            * Haz clic en una tipología para actualizar el cotizador y ver el precio correspondiente.
-                        </p>
-                        
-                        <div class="typology-list">
-                            <!-- Tipología 1 -->
-                            <div class="typology-row" data-id="oficina-mini" data-price="4.900" data-title="Planta Libre (Modelo W-Mini)">
-                                <div class="typology-info">
-                                    <h4>Modelo W-Mini</h4>
-                                    <p>Oficina de Planta Libre</p>
-                                </div>
-                                <div class="typology-specs">
-                                    <span style="display: block; font-size: 0.65rem; color: var(--color-text-light);">Sup. Total</span>
-                                    <strong>32.4 m²</strong>
-                                </div>
-                                <div class="typology-availability status-available">
-                                    <span class="status-dot"></span>Disponible
-                                </div>
-                                <div style="text-align: right;">
-                                    <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
-                                    <span style="font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600;">UF 4.900</span>
-                                </div>
+                    <!-- Módulo de Tipologías Interactivas (Explorador de Modelos) -->
+                    <div class="model-explorer reveal">
+                        <div class="model-explorer-header">
+                            <h3 class="model-explorer-title">Descubre tu Modelo Ideal</h3>
+                            <div class="model-explorer-nav">
+                                <button class="model-nav-btn prev-btn" aria-label="Anterior">&lsaquo;</button>
+                                <button class="model-nav-btn next-btn" aria-label="Siguiente">&rsaquo;</button>
                             </div>
+                        </div>
+                        
+                        <div class="model-carousel-wrapper">
+                            <div class="model-carousel-track">
+                                <!-- Tarjeta Modelo W-Mini -->
+                                <div class="model-card active" data-id="oficina-mini" data-price="4.900" data-title="Modelo W-Mini" data-img="assets/images/proyectos/proyecto-work-plaza/plano.png" data-dorm="1 Planta Libre" data-bano="1 Baño" data-sup="32.4 m²" data-render-int="assets/images/proyectos/proyecto-work-plaza/render-interior.png, assets/images/proyectos/proyecto-work-plaza/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=uH1fG94kZ2n">
+                                    <div class="model-card-plan">
+                                        <img src="assets/images/proyectos/proyecto-work-plaza/plano.png" alt="Plano Modelo W-Mini">
+                                    </div>
+                                    <h4 class="model-card-name">Modelo W-Mini</h4>
+                                    <div class="model-card-price">Desde <span class="highlight">UF 4.900</span></div>
+                                    <div class="model-card-specs">
+                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> 1 Pl. Libre</span>
+                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg> 1 Baño</span>
+                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 32.4 m²</span>
+                                    </div>
+                                    <div class="model-card-badge">✓</div>
+                                </div>
 
-                            <!-- Tipología 2 -->
-                            <div class="typology-row" data-id="oficina-maxi" data-price="7.200" data-title="Oficina Premium (Modelo W-Maxi)">
-                                <div class="typology-info">
-                                    <h4>Modelo W-Maxi</h4>
-                                    <p>Oficina Ejecutiva Premium</p>
-                                </div>
-                                <div class="typology-specs">
-                                    <span style="display: block; font-size: 0.65rem; color: var(--color-text-light);">Sup. Total</span>
-                                    <strong>55.1 m²</strong>
-                                </div>
-                                <div class="typology-availability status-last">
-                                    <span class="status-dot"></span>Últimas unidades
-                                </div>
-                                <div style="text-align: right;">
-                                    <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
-                                    <span style="font-family: var(--font-serif); font-size: 1.2rem; font-weight: 600;">UF 7.200</span>
+                                <!-- Tarjeta Modelo W-Maxi -->
+                                <div class="model-card" data-id="oficina-maxi" data-price="7.200" data-title="Modelo W-Maxi" data-img="assets/images/proyectos/proyecto-work-plaza/plano.png" data-dorm="3 Privados" data-bano="2 Baños" data-sup="55.1 m²" data-render-int="assets/images/proyectos/proyecto-work-plaza/render-interior.png, assets/images/proyectos/proyecto-work-plaza/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=sxz74b1m2n">
+                                    <div class="model-card-plan">
+                                        <img src="assets/images/proyectos/proyecto-work-plaza/plano.png" alt="Plano Modelo W-Maxi">
+                                    </div>
+                                    <h4 class="model-card-name">Modelo W-Maxi</h4>
+                                    <div class="model-card-price">Desde <span class="highlight">UF 7.200</span></div>
+                                    <div class="model-card-specs">
+                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> 3 Privados</span>
+                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg> 2 Baños</span>
+                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 55.1 m²</span>
+                                    </div>
+                                    <div class="model-card-badge">✓</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                        <!-- Detalle Seleccionado -->
+                        <div class="model-detail-view">
+                            <div class="model-detail-visual">
+                                <img id="selected-model-img" src="assets/images/proyectos/proyecto-work-plaza/plano.png" alt="Plano Seleccionado">
+                                <button class="model-zoom-btn" id="zoom-model-btn" aria-label="Ampliar plano">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                                </button>
+                            </div>
+                            <div class="model-detail-info">
+                                <h4 id="selected-model-name">Modelo W-Mini</h4>
+                                <hr class="model-divider">
+                                <ul class="model-spec-list">
+                                    <li>
+                                        <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg></span>
+                                        <span class="text" id="selected-model-dorm">1 Planta Libre</span>
+                                    </li>
+                                    <li>
+                                        <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg></span>
+                                        <span class="text" id="selected-model-bano">1 Baño</span>
+                                    </li>
+                                    <li>
+                                        <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg></span>
+                                        <span class="text" id="selected-model-sup">32.4 m² Superficie</span>
+                                    </li>
+                                </ul>
+                                <button class="btn btn-secondary model-cotizar-btn" id="model-cotizar-action">Cotizar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Columna Derecha (Sidebar Cotizador) -->
@@ -167,7 +211,7 @@
                         <!-- Ejecutiva comercial humanizada -->
                         <div class="exec-profile">
                             <div class="exec-photo">
-                                <img src="assets/images/ejecutiva-ventas.png" alt="SebastiÃ¡n Castro" style="width: 100%; height: 100%; object-fit: cover;">
+                                <img src="assets/images/ejecutiva-ventas.png" alt="Sebastián Castro">
                             </div>
                             <div class="exec-info">
                                 <h5>Sebastián Castro</h5>
