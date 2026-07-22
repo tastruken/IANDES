@@ -14,7 +14,24 @@
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
-    <header class="scrolled"></header>
+    <header>
+
+        <!-- Fallback de navegaciÃ³n para SEO/Accesibilidad -->
+        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+            <nav style="display:block;">
+                <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
+                    <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
+                    <li><a href="nosotros.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a></li>
+                    <li><a href="inversionistas.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a></li>
+                    <li><a href="postventa.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a></li>
+                    <li><a href="blog.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
+                    <li><a href="contacto.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+    <main>
 
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
     <section class="inner-hero">
@@ -31,8 +48,27 @@
                 <h1 class="inner-hero-title">Andes Ñuñoa</h1>
                 <p
                     style="color: var(--color-secondary); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem; font-weight: 500;">
-                    Av. Irarrázaval 1400, Ñuñoa, Santiago
+                    Capitán Orella 2575, Ñuñoa, Santiago
                 </p>
+                <div class="inner-hero-specs-bar">
+                    <div class="specs-main-row">
+                        <div class="spec-inline-item" title="Dormitorios">
+                            <img src="assets/images/icons/icon-habitaciones.svg" alt="Dormitorios">
+                            <span>1 - 2</span>
+                        </div>
+                        <div class="spec-inline-item" title="Baños">
+                            <img src="assets/images/icons/icon-baños.svg" alt="Baños">
+                            <span>1 - 2</span>
+                        </div>
+                        <div class="spec-inline-item" title="Superficie">
+                            <img src="assets/images/icons/icon-metros2.svg" alt="Superficie">
+                            <span>Desde 45.0 m²</span>
+                        </div>
+                        <div class="spec-inline-item" style="color: var(--color-secondary); font-weight: 600;">
+                            <span>Desde UF 3.847</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -48,47 +84,50 @@
                     <!-- Módulo Multimedia Integrado -->
                     <div class="media-gallery-module reveal">
                         <div class="media-viewer-container">
-                            <!-- Badge indicador de modelo seleccionado -->
-                            <div class="media-model-badge" id="media-selected-model-badge">Modelo Seleccionado: Modelo D1</div>
-                            <div class="media-viewer">
-                                <!-- Por defecto muestra el render principal -->
-                                <img src="assets/images/proyectos/proyecto-andes-nunoa/render.png" alt="Render Exterior Andes Ñuñoa"
-                                    style="filter: hue-rotate(15deg);">
+                            <div class="media-model-badge" id="media-selected-model-badge">Modelo Seleccionado: TIPO A1</div>
+                            <div class="media-viewer" style="position: relative; padding-top: 56.25%; overflow: hidden; border: 1px solid var(--color-border); background-color: var(--color-primary);">
+                                <img id="selected-media-img" src="assets/images/proyectos/proyecto-andes-nunoa/render.png" alt="Render Exterior Andes Ñuñoa" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: saturate(0.5) brightness(0.9);">
+                                <iframe id="selected-media-iframe" src="" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none; display:none;" allowfullscreen></iframe>
                             </div>
                         </div>
 
                         <div class="media-tabs">
-                            <button class="media-tab-btn active" data-type="image"
-                                data-src="assets/images/proyectos/proyecto-andes-nunoa/render.png, assets/images/proyectos/proyecto-andes-nunoa/render-2.png" data-title="Render Exterior">
+                            <button class="media-tab-btn active" data-view="render-ext" id="tab-btn-exterior">
                                 <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6" />
+                                    </svg>
                                 </span>
                                 <span class="media-tab-label">Render Exterior</span>
                             </button>
-                            <button class="media-tab-btn" data-type="image" id="tab-btn-interior"
-                                data-src="assets/images/proyectos/proyecto-andes-nunoa/render-interior.png, assets/images/proyectos/proyecto-andes-nunoa/render-interior-2.png" data-title="Vista Interior Modelo D1">
+                            <button class="media-tab-btn" data-view="render-int" id="tab-btn-interior">
                                 <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                        <circle cx="12" cy="13" r="4" />
+                                    </svg>
                                 </span>
                                 <span class="media-tab-label">Vista Interior</span>
                             </button>
-                            <button class="media-tab-btn" data-type="tour360" id="tab-btn-tour"
-                                data-src="https://my.matterport.com/show/?m=uH1fG94kZ2n" data-title="Recorrido 360° Modelo D1">
+                            <button class="media-tab-btn" data-view="tour-360" id="tab-btn-tour">
                                 <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" />
+                                    </svg>
                                 </span>
                                 <span class="media-tab-label">Recorrido 360°</span>
                             </button>
-                            <button class="media-tab-btn" data-type="video"
-                                data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="Video de Presentación">
+                            <button class="media-tab-btn" data-view="video" id="tab-btn-video">
                                 <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polygon points="5 3 19 12 5 21 5 3" />
+                                    </svg>
                                 </span>
                                 <span class="media-tab-label">Video Entorno</span>
                             </button>
                         </div>
                     </div>
-
                     <!-- Descripción General -->
                     <div class="reveal" style="margin-bottom: 3.5rem;">
                         <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Exclusividad y tranquilidad en un barrio
@@ -109,109 +148,95 @@
                             biométrico.
                         </p>
 
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Terminaciones de Alto
-                            Estándar</h3>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Terminaciones de Alto Estándar</h3>
                         <ul
-                            style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; color: var(--color-text-main);">
-                            <li>✓ Altura interior libre de 2.50 metros.</li>
-                            <li>✓ Ventanas termopanel con marcos de aluminio anodizado oscuro.</li>
-                            <li>✓ Cocina de concepto integrado con cubiertas de cuarzo y cajones cierre suave.</li>
-                            <li>✓ Baño principal en suite con plato de ducha y mampara de cristal.</li>
-                            <li>✓ Piso fotolaminado de alta gama en dormitorios y estar.</li>
-                            <li>✓ Amplias terrazas con barandas de cristal templado.</li>
+                            style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; color: var(--color-text-main); margin-bottom: 3rem;">
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Altura interior libre de 2.50 metros.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Ventanas termopanel con marcos de aluminio anodizado oscuro.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Cocina de concepto integrado con cubiertas de cuarzo y cajones cierre suave.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Baño principal en suite con plato de ducha y mampara de cristal.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Piso fotolaminado de alta gama en dormitorios y estar.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Amplias terrazas con barandas de cristal templado.</li>
                         </ul>
                     </div>
 
-                    <!-- Módulo de Tipologías Interactivas (Explorador de Modelos) -->
-                    <div class="model-explorer reveal">
-                        <div class="model-explorer-header">
-                            <h3 class="model-explorer-title">Descubre tu Modelo Ideal</h3>
-                            <div class="model-explorer-nav">
-                                <button class="model-nav-btn prev-btn" aria-label="Anterior">&lsaquo;</button>
-                                <button class="model-nav-btn next-btn" aria-label="Siguiente">&rsaquo;</button>
-                            </div>
+                    <!-- Módulo de Tipologías Interactivas (Planos y Modelos) -->
+                    <div class="floorplan-container reveal">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Planos y Modelos</h3>
+                        
+                        <div class="floorplan-nav-tabs">
+                            <button class="floorplan-nav-tab active" data-id="1d1b">DEPTO 1D + 1B</button>
+                            <button class="floorplan-nav-tab" data-id="2d1b">DEPTO 2D + 1B</button>
+                            <button class="floorplan-nav-tab" data-id="2d2b">DEPTO 2D + 2B</button>
                         </div>
                         
-                        <div class="model-carousel-wrapper">
-                            <div class="model-carousel-track">
-                                <!-- Tarjeta Modelo D1 -->
-                                <div class="model-card active" data-id="2d2b" data-price="5.200" data-title="Modelo D1" data-img="assets/images/proyectos/proyecto-andes-nunoa/plano.png" data-dorm="2 Dormitorios" data-bano="2 Baños" data-sup="65.2 m²" data-render-int="assets/images/proyectos/proyecto-andes-nunoa/render-interior.png, assets/images/proyectos/proyecto-andes-nunoa/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=uH1fG94kZ2n">
-                                    <div class="model-card-plan">
-                                        <img src="assets/images/proyectos/proyecto-andes-nunoa/plano.png" alt="Plano Modelo D1">
-                                    </div>
-                                    <h4 class="model-card-name">Modelo D1</h4>
-                                    <div class="model-card-price">Desde <span class="highlight">UF 5.200</span></div>
-                                    <div class="model-card-specs">
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> 2 Dorm.</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg> 2 Baños</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 65.2 m²</span>
-                                    </div>
-                                    <div class="model-card-badge">✓</div>
-                                </div>
-
-                                <!-- Tarjeta Modelo E3 -->
-                                <div class="model-card" data-id="3d2b" data-price="6.800" data-title="Modelo E3" data-img="assets/images/proyectos/proyecto-andes-nunoa/plano.png" data-dorm="3 Dormitorios" data-bano="2 Baños" data-sup="88.7 m²" data-render-int="assets/images/proyectos/proyecto-andes-nunoa/render-interior.png, assets/images/proyectos/proyecto-andes-nunoa/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=sxz74b1m2n">
-                                    <div class="model-card-plan">
-                                        <img src="assets/images/proyectos/proyecto-andes-nunoa/plano.png" alt="Plano Modelo E3">
-                                    </div>
-                                    <h4 class="model-card-name">Modelo E3</h4>
-                                    <div class="model-card-price">Desde <span class="highlight">UF 6.800</span></div>
-                                    <div class="model-card-specs">
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> 3 Dorm.</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg> 2 Baños</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 88.7 m²</span>
-                                    </div>
-                                    <div class="model-card-badge">✓</div>
-                                </div>
-                            </div>
+                        <!-- Sub-pestañas para 1D + 1B -->
+                        <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-1d1b" style="display: flex;">
+                            <button class="floorplan-sub-tab active" data-subid="tipo-a1">TIPO A1</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-a2">TIPO A2</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-a3">TIPO A3</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-a4">TIPO A4</button>
+                        </div>
+                        
+                        <!-- Sub-pestañas para 2D + 1B -->
+                        <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d1b">
+                            <button class="floorplan-sub-tab active" data-subid="tipo-b">TIPO B</button>
                         </div>
 
-                        <!-- Detalle Seleccionado -->
-                        <div class="model-detail-view">
-                            <div class="model-detail-visual">
-                                <img id="selected-model-img" src="assets/images/proyectos/proyecto-andes-nunoa/plano.png" alt="Plano Seleccionado">
-                                <button class="model-zoom-btn" id="zoom-model-btn" aria-label="Ampliar plano">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                        <!-- Sub-pestañas para 2D + 2B -->
+                        <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d2b">
+                            <button class="floorplan-sub-tab active" data-subid="tipo-c1">TIPO C1</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-c2">TIPO C2</button>
+                        </div>
+                        
+                        <div class="floorplan-viewer-grid">
+                            <div class="floorplan-img-box">
+                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-andes-nunoa/plano.png" alt="Plano Seleccionado">
+                                <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                                    </svg>
                                 </button>
                             </div>
-                            <div class="model-detail-info">
-                                <h4 id="selected-model-name">Modelo D1</h4>
-                                <hr class="model-divider">
-                                <ul class="model-spec-list">
-                                    <li>
-                                        <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg></span>
-                                        <span class="text" id="selected-model-dorm">2 Dormitorios</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg></span>
-                                        <span class="text" id="selected-model-bano">2 Baños</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg></span>
-                                        <span class="text" id="selected-model-sup">65.2 m² Superficie</span>
-                                    </li>
+                            <div class="floorplan-details-box">
+                                <h4 id="selected-floorplan-name" style="font-size: 1.5rem; color:var(--color-primary); font-weight:600;">DEPTO 1D + 1B (TIPO A1)</h4>
+                                <div style="font-size: 1.3rem; font-weight: 600; color: var(--color-primary);">Desde <span class="highlight" id="selected-floorplan-price">UF 3.847</span></div>
+                                <hr class="model-divider" style="margin: 0.5rem 0; border: 0; border-top: 1px solid var(--color-border);">
+                                <ul class="floorplan-specs">
+                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg><span id="selected-floorplan-dorm">1 Dormitorio</span></li>
+                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" /></svg><span id="selected-floorplan-bano">1 Baño</span></li>
+                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" /></svg><span id="selected-floorplan-sup">45.0 m² Superficie</span></li>
                                 </ul>
-                                <button class="btn btn-secondary model-cotizar-btn" id="model-cotizar-action">Cotizar</button>
+                                <button class="btn btn-secondary" id="floorplan-cotizar-btn" style="width: 100%; margin-top: 0.5rem;">Cotizar este modelo</button>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <!-- Columna Derecha (Sidebar Cotizador) -->
                 <div>
                     <div id="cotizador" class="sidebar-cotizador reveal">
                         <h3>Cotizar Proyecto</h3>
-                        <span id="cotizador-price" class="price">Desde UF 5.200</span>
-
+                        <span id="cotizador-price" class="price">Desde UF 3.847</span>
+                        
                         <form action="#" method="POST" id="form-cotizar">
                             <div class="form-group">
                                 <label for="select-tipologia">Tipología de Interés</label>
                                 <select id="select-tipologia" required>
-                                    <option value="2d2b" data-price="5.200">Modelo D1 (2D + 2B) - UF 5.200</option>
-                                    <option value="3d2b" data-price="6.800">Modelo E3 (3D + 2B) - UF 6.800</option>
+                                    <option value="1d1b" data-price="3.847">DEPTO 1D + 1B - Desde UF 3.847</option>
+                                    <option value="2d1b" data-price="4.450">DEPTO 2D + 1B - Desde UF 4.450</option>
+                                    <option value="2d2b" data-price="4.980">DEPTO 2D + 2B - Desde UF 4.980</option>
                                 </select>
                             </div>
+                            
+                            <div class="form-group" id="group-sub-tipologia" style="display: none; margin-bottom: 1.5rem;">
+                                <label for="select-sub-tipologia">Tipo de Departamento (1D + 1B)</label>
+                                <select id="select-sub-tipologia">
+                                    <option value="" disabled selected>Selecciona un tipo...</option>
+                                    <!-- Dinámico -->
+                                </select>
+                            </div>
+                            
                             <div class="form-group">
                                 <label for="input-nombre">Nombre Completo</label>
                                 <input type="text" id="input-nombre" required placeholder="Ej: Juan Pérez">
@@ -226,26 +251,23 @@
                             </div>
                             <div class="form-group">
                                 <label for="input-mensaje">Mensaje (Opcional)</label>
-                                <textarea id="input-mensaje" rows="3"
-                                    placeholder="Hola, me gustaría recibir más información de este proyecto..."></textarea>
+                                <textarea id="input-mensaje" rows="3" placeholder="Hola, me gustaría recibir más información de este proyecto..."></textarea>
                             </div>
-
-                            <button type="submit" class="btn btn-primary"
-                                style="width: 100%; margin-bottom: 1rem;">Enviar Solicitud</button>
+                            
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enviar Solicitud</button>
                         </form>
 
                         <!-- Ejecutiva comercial humanizada -->
-                        <div class="exec-profile">
-                            <div class="exec-photo">
-                                <img src="assets/images/ejecutiva-ventas.png" alt="Javiera Muñoz">
+                        <div class="exec-profile" style="display:flex; align-items:center; gap:1rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-top:1rem;">
+                            <div class="exec-photo" style="width:45px; height:45px; border-radius:50%; overflow:hidden;">
+                                <img src="assets/images/ejecutiva-ventas.png" alt="Javiera Muñoz" style="width:100%; height:100%; object-fit:cover;">
                             </div>
                             <div class="exec-info">
-                                <h5>Javiera Muñoz</h5>
-                                <p>Asesora de Ventas - Andes Ñuñoa</p>
+                                <h5 style="margin:0; font-size:0.9rem; font-weight:600;">Javiera Muñoz</h5>
+                                <p style="margin:0; font-size:0.75rem; color:var(--color-text-light);">Asesora de Ventas - Andes Ñuñoa</p>
                             </div>
                         </div>
-                        <a href="https://wa.me/56912345678?text=Hola%20Javiera,%20me%20interesa%20cotizar%20un%20departamento%20en%20Andes%20%C3%91u%C3%B1oa."
-                            target="_blank" class="exec-whatsapp-btn">
+                        <a href="https://wa.me/56912345678?text=Hola%20Javiera,%20me%20interesa%20cotizar%20un%20departamento%20en%20Andes%20%C3%91u%C3%B1oa." target="_blank" class="exec-whatsapp-btn" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; text-decoration:none; padding: 0.8rem; margin-top:1rem; font-size:0.8rem;">
                             Contactar por WhatsApp
                         </a>
                     </div>
@@ -255,18 +277,484 @@
         </div>
     </section>
 
+    <!-- SECCIÓN ENTORNO Y UBICACIÓN -->
+    <section class="section reveal" style="background-color: #FFFFFF; border-top: 1px solid var(--color-border); padding: 5rem 0;">
+        <div class="container">
+            <h2 style="font-size: 2.2rem; margin-bottom: 3.5rem; text-align: center;">El Barrio y Ubicación</h2>
+            
+            <div class="neighborhood-location-grid">
+                <!-- Columna Izquierda: Información del Barrio y Pines -->
+                <div>
+                    <p style="color: var(--color-text-main); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300;">
+                        Ubicado en el corazón residencial de Ñuñoa, en Capitán Orella 2575, <strong>iAndes Ñuñoa</strong> te ofrece la combinación perfecta de diseño, ubicación y calidad de vida. Vive en un entorno tranquilo, conectado y lleno de carácter, donde cada espacio ha sido pensado para acompañarte en tus mejores momentos.
+                    </p>
+                    
+                    <div class="neighborhood-highlights-grid" style="margin-top: 0;">
+                        <div class="highlight-item">
+                            <div class="highlight-image-box">
+                                <img src="assets/images/proyectos/proyecto-andes-nunoa/icono-restaurantes.png" alt="Restaurantes y vida nocturna">
+                            </div>
+                            <span>Restaurantes y vida nocturna</span>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-image-box">
+                                <img src="assets/images/proyectos/proyecto-andes-nunoa/icono-comercio.png" alt="Comercio local">
+                            </div>
+                            <span>Comercio local</span>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-image-box">
+                                <img src="assets/images/proyectos/proyecto-andes-nunoa/icono-ferias.png" alt="Ferias cercanas">
+                            </div>
+                            <span>Ferias cercanas</span>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-image-box">
+                                <img src="assets/images/proyectos/proyecto-andes-nunoa/icono-parques.png" alt="Parques y plazas">
+                            </div>
+                            <span>Parques y plazas</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Columna Derecha: Mapa de Google Maps -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="border: 1px solid var(--color-border); padding: 0.5rem; background: #FFFFFF; box-shadow: var(--shadow-premium);">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.718817757916!2d-70.60337852342084!3d-33.45662769649524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf0cfb89694d%3A0xe2128cd4bc3e8f8!2sCapit%C3%A1n%20Orella%202575%2C%207510165%20%C3%91u%C3%B1oa%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1700000000000!5m2!1ses-419!2scl" 
+                            width="100%" 
+                            height="330" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: 500;">
+                        <span style="color: var(--color-text-muted); display: flex; align-items: center; gap: 0.35rem;">
+                            <svg class="inline-icon" style="color:var(--color-secondary); margin-right: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                            Capitán Orella 2575, Ñuñoa
+                        </span>
+                        <a href="https://maps.app.goo.gl/Pwt9jJ5aT1zD5D4n6" target="_blank" class="btn btn-secondary" style="font-size: 0.7rem; padding: 0.5rem 1rem;">Ver en Google Maps</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PIE DE PAGINA (FOOTER) -->
-    <footer></footer>
+    </main>
+
+    <footer>
+
+        <!-- Fallback de pie de pÃ¡gina para SEO/Accesibilidad -->
+        <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">TÃ©rminos y Condiciones</a>
+                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">PolÃ­tica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+</footer>
 
     <!-- Scripts de Funcionalidad -->
     <script src="assets/js/main.js"></script>
     <script>
+        // Ficha técnica completa de todos los departamentos y sub-tipologías de Andes Ñuñoa
+        const modelData = {
+            // Sub-tipologías de 1D + 1B
+            'tipo-a1': {
+                title: 'DEPTO 1D + 1B (TIPO A1)',
+                price: '3.847',
+                dorm: '1 Dormitorio',
+                bano: '1 Baño',
+                sup: '45.0 m²',
+                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior.png'
+            },
+            'tipo-a2': {
+                title: 'DEPTO 1D + 1B (TIPO A2)',
+                price: '3.920',
+                dorm: '1 Dormitorio',
+                bano: '1 Baño',
+                sup: '46.2 m²',
+                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior.png'
+            },
+            'tipo-a3': {
+                title: 'DEPTO 1D + 1B (TIPO A3)',
+                price: '3.890',
+                dorm: '1 Dormitorio',
+                bano: '1 Baño',
+                sup: '45.5 m²',
+                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior.png'
+            },
+            'tipo-a4': {
+                title: 'DEPTO 1D + 1B (TIPO A4)',
+                price: '3.990',
+                dorm: '1 Dormitorio',
+                bano: '1 Baño',
+                sup: '47.1 m²',
+                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior.png'
+            },
+            // Sub-tipologías de 2D + 1B
+            'tipo-b': {
+                title: 'DEPTO 2D + 1B (TIPO B)',
+                price: '4.450',
+                dorm: '2 Dormitorios',
+                bano: '1 Baño',
+                sup: '58.4 m²',
+                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior-2.png'
+            },
+            // Sub-tipologías de 2D + 2B
+            'tipo-c1': {
+                title: 'DEPTO 2D + 2B (TIPO C1)',
+                price: '4.980',
+                dorm: '2 Dormitorios',
+                bano: '2 Baños',
+                sup: '65.2 m²',
+                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior-2.png'
+            },
+            'tipo-c2': {
+                title: 'DEPTO 2D + 2B (TIPO C2)',
+                price: '5.120',
+                dorm: '2 Dormitorios',
+                bano: '2 Baños',
+                sup: '67.8 m²',
+                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior-2.png'
+            }
+        };
+
+        // Mappings para opciones dinámicas de sub-tipologías en el formulario
+        const subTipologiasOptions = {
+            '1d1b': [
+                { value: 'tipo-a1', label: 'TIPO A1' },
+                { value: 'tipo-a2', label: 'TIPO A2' },
+                { value: 'tipo-a3', label: 'TIPO A3' },
+                { value: 'tipo-a4', label: 'TIPO A4' }
+            ],
+            '2d1b': [
+                { value: 'tipo-b', label: 'TIPO B' }
+            ],
+            '2d2b': [
+                { value: 'tipo-c1', label: 'TIPO C1' },
+                { value: 'tipo-c2', label: 'TIPO C2' }
+            ]
+        };
+
+        const mediaTabs = document.querySelectorAll('.media-tabs .media-tab-btn');
+        const selectedMediaImg = document.getElementById('selected-media-img');
+        const selectedMediaIframe = document.getElementById('selected-media-iframe');
+        const mediaBadge = document.getElementById('media-selected-model-badge');
+
+        const floorplanNavTabs = document.querySelectorAll('.floorplan-nav-tab');
+        const subTabsBlock1D = document.getElementById('floorplan-sub-tabs-1d1b');
+        const subTabsBlock2D1B = document.getElementById('floorplan-sub-tabs-2d1b');
+        const subTabsBlock2D2B = document.getElementById('floorplan-sub-tabs-2d2b');
+        const floorplanSubTabs = document.querySelectorAll('.floorplan-sub-tab');
+
+        const selectedFloorplanImg = document.getElementById('selected-floorplan-img');
+        const selectedFloorplanName = document.getElementById('selected-floorplan-name');
+        const selectedFloorplanPrice = document.getElementById('selected-floorplan-price');
+        const selectedFloorplanDorm = document.getElementById('selected-floorplan-dorm');
+        const selectedFloorplanBano = document.getElementById('selected-floorplan-bano');
+        const selectedFloorplanSup = document.getElementById('selected-floorplan-sup');
+
+        const selectTipologia = document.getElementById('select-tipologia');
+        const groupSubTipologia = document.getElementById('group-sub-tipologia');
+        const selectSubTipologia = document.getElementById('select-sub-tipologia');
+        const cotizadorPrice = document.getElementById('cotizador-price');
+
+        // Video URL constante
+        const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+
+        // Función para obtener la clave activa del modelo actual
+        function getActiveModelKey() {
+            const activeMainTab = document.querySelector('.floorplan-nav-tab.active');
+            if (!activeMainTab) return 'tipo-a1';
+            const id = activeMainTab.dataset.id;
+            
+            if (id === '1d1b') {
+                const activeSubTab = document.querySelector('#floorplan-sub-tabs-1d1b .floorplan-sub-tab.active');
+                return activeSubTab ? activeSubTab.dataset.subid : 'tipo-a1';
+            } else if (id === '2d1b') {
+                const activeSubTab = document.querySelector('#floorplan-sub-tabs-2d1b .floorplan-sub-tab.active');
+                return activeSubTab ? activeSubTab.dataset.subid : 'tipo-b';
+            } else if (id === '2d2b') {
+                const activeSubTab = document.querySelector('#floorplan-sub-tabs-2d2b .floorplan-sub-tab.active');
+                return activeSubTab ? activeSubTab.dataset.subid : 'tipo-c1';
+            }
+            return 'tipo-a1';
+        }
+
+        // Función para actualizar la Galería Multimedia Superior
+        function updateMediaGallery() {
+            const activeViewTab = document.querySelector('.media-tabs .media-tab-btn.active');
+            if (!activeViewTab) return;
+
+            const view = activeViewTab.dataset.view;
+            const modelKey = getActiveModelKey();
+            const data = modelData[modelKey];
+            const mainModelTitle = document.querySelector('.floorplan-nav-tab.active').textContent;
+
+            // Sincronizar el badge del modelo
+            if (mediaBadge) {
+                const compactDorm = data.dorm.replace(" Dormitorios", " Dorms.").replace(" Dormitorio", " Dorm.");
+                mediaBadge.textContent = `Modelo Seleccionado: ${data.title} (${compactDorm} / ${data.bano})`;
+            }
+
+            if (view === 'render-ext') {
+                selectedMediaIframe.style.display = 'none';
+                selectedMediaIframe.src = '';
+                selectedMediaImg.style.display = 'block';
+                selectedMediaImg.src = "assets/images/proyectos/proyecto-andes-nunoa/render.png";
+                selectedMediaImg.alt = "Render Exterior - " + mainModelTitle;
+            } else if (view === 'render-int') {
+                selectedMediaIframe.style.display = 'none';
+                selectedMediaIframe.src = '';
+                selectedMediaImg.style.display = 'block';
+                selectedMediaImg.src = data.renderInt;
+                selectedMediaImg.alt = "Vista Interior - " + data.title;
+            } else if (view === 'tour-360') {
+                selectedMediaImg.style.display = 'none';
+                selectedMediaIframe.style.display = 'block';
+                selectedMediaIframe.src = data.tour;
+            } else if (view === 'video') {
+                selectedMediaImg.style.display = 'none';
+                selectedMediaIframe.style.display = 'block';
+                selectedMediaIframe.src = videoUrl;
+            }
+        }
+
+        // Función para actualizar el Visor de Planos inferior
+        function updateFloorplanViewer(key) {
+            const data = modelData[key];
+            if (!data) return;
+
+            // Actualizar textos e imagen del visor
+            if (selectedFloorplanImg) selectedFloorplanImg.src = data.img;
+            if (selectedFloorplanName) selectedFloorplanName.textContent = data.title;
+            if (selectedFloorplanPrice) selectedFloorplanPrice.textContent = data.price;
+            if (selectedFloorplanDorm) selectedFloorplanDorm.textContent = data.dorm;
+            if (selectedFloorplanBano) selectedFloorplanBano.textContent = data.bano;
+            if (selectedFloorplanSup) selectedFloorplanSup.textContent = `${data.sup} Superficie`;
+        }
+
+        // Función para sincronizar y actualizar el Formulario de Cotización
+        function syncForm() {
+            const mainTab = document.querySelector('.floorplan-nav-tab.active');
+            if (!mainTab) return;
+            const mainId = mainTab.dataset.id;
+            const modelKey = getActiveModelKey();
+            const data = modelData[modelKey];
+
+            // 1. Sincronizar select de Tipología
+            if (selectTipologia) {
+                selectTipologia.value = mainId;
+            }
+
+            // 2. Controlar visibilidad y rellenar dinámicamente las sub-tipologías
+            if (mainId) {
+                if (groupSubTipologia) {
+                    groupSubTipologia.style.display = 'block';
+                    // Cambiar etiqueta dinámicamente
+                    const label = groupSubTipologia.querySelector('label');
+                    if (label) {
+                        let labelText = '1D + 1B';
+                        if (mainId === '2d1b') labelText = '2D + 1B';
+                        if (mainId === '2d2b') labelText = '2D + 2B';
+                        label.textContent = `Tipo de Departamento (${labelText})`;
+                    }
+                }
+                
+                if (selectSubTipologia) {
+                    // Limpiar opciones
+                    selectSubTipologia.innerHTML = '<option value="" disabled selected>Selecciona un tipo...</option>';
+                    
+                    // Cargar opciones correspondientes
+                    const options = subTipologiasOptions[mainId];
+                    options.forEach(opt => {
+                        const el = document.createElement('option');
+                        el.value = opt.value;
+                        el.textContent = opt.label;
+                        selectSubTipologia.appendChild(el);
+                    });
+                    
+                    selectSubTipologia.setAttribute('required', 'required');
+                    
+                    // Sincronizar el valor actual en el select
+                    if (modelKey.startsWith('tipo-')) {
+                        selectSubTipologia.value = modelKey;
+                    }
+                }
+            }
+
+            // 3. Sincronizar precio en formulario
+            if (cotizadorPrice) {
+                cotizadorPrice.textContent = `Desde UF ${data.price}`;
+            }
+        }
+
+        // Handler de clic en las Pestañas de la Galería Multimedia
+        mediaTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                mediaTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                updateMediaGallery();
+            });
+        });
+
+        // Handler de clic en las Pestañas Principales de los Modelos (1D, 2D)
+        floorplanNavTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                floorplanNavTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const mainId = tab.dataset.id;
+
+                // Mostrar u ocultar los bloques de sub-tabs de manera exclusiva
+                if (mainId === '1d1b') {
+                    if (subTabsBlock1D) subTabsBlock1D.style.display = 'flex';
+                    if (subTabsBlock2D1B) subTabsBlock2D1B.style.display = 'none';
+                    if (subTabsBlock2D2B) subTabsBlock2D2B.style.display = 'none';
+                } else if (mainId === '2d1b') {
+                    if (subTabsBlock1D) subTabsBlock1D.style.display = 'none';
+                    if (subTabsBlock2D1B) subTabsBlock2D1B.style.display = 'flex';
+                    if (subTabsBlock2D2B) subTabsBlock2D2B.style.display = 'none';
+                } else if (mainId === '2d2b') {
+                    if (subTabsBlock1D) subTabsBlock1D.style.display = 'none';
+                    if (subTabsBlock2D1B) subTabsBlock2D1B.style.display = 'none';
+                    if (subTabsBlock2D2B) subTabsBlock2D2B.style.display = 'flex';
+                }
+
+                // Actualizar vistas
+                const activeKey = getActiveModelKey();
+                updateFloorplanViewer(activeKey);
+                syncForm();
+                updateMediaGallery();
+            });
+        });
+
+        // Handler de clic en las Sub-pestañas de Distribución (TIPO A1, B, C, etc.)
+        floorplanSubTabs.forEach(subtab => {
+            subtab.addEventListener('click', () => {
+                const parentBlock = subtab.parentElement;
+                parentBlock.querySelectorAll('.floorplan-sub-tab').forEach(st => st.classList.remove('active'));
+                subtab.classList.add('active');
+
+                const activeKey = subtab.dataset.subid;
+                updateFloorplanViewer(activeKey);
+                syncForm();
+                updateMediaGallery();
+            });
+        });
+
+        // Sincronizar de forma inversa si el usuario cambia los selects directamente en el Formulario
+        if (selectTipologia) {
+            selectTipologia.addEventListener('change', (e) => {
+                const val = e.target.value;
+                const tabToActivate = document.querySelector(`.floorplan-nav-tab[data-id="${val}"]`);
+                if (tabToActivate) {
+                    tabToActivate.click();
+                }
+            });
+        }
+        if (selectSubTipologia) {
+            selectSubTipologia.addEventListener('change', (e) => {
+                const val = e.target.value;
+                const subTabToActivate = document.querySelector(`.floorplan-sub-tab[data-subid="${val}"]`);
+                if (subTabToActivate) {
+                    const parentBlock = subTabToActivate.parentElement;
+                    parentBlock.querySelectorAll('.floorplan-sub-tab').forEach(st => st.classList.remove('active'));
+                    subTabToActivate.classList.add('active');
+                    
+                    updateFloorplanViewer(val);
+                    updateMediaGallery();
+                    
+                    // Sincronizar precio
+                    const data = modelData[val];
+                    if (data && cotizadorPrice) {
+                        cotizadorPrice.textContent = `Desde UF ${data.price}`;
+                    }
+                }
+            });
+        }
+
+        // Botón Cotizar del visor de planos (Desplazamiento suave al formulario)
+        const floorplanCotizarBtn = document.getElementById('floorplan-cotizar-btn');
+        if (floorplanCotizarBtn) {
+            floorplanCotizarBtn.addEventListener('click', () => {
+                const cotizador = document.getElementById('cotizador');
+                if (cotizador) {
+                    cotizador.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Destello sutil
+                    cotizador.style.outline = '2px solid var(--color-secondary)';
+                    setTimeout(() => {
+                        cotizador.style.outline = 'none';
+                    }, 1500);
+                }
+            });
+        }
+
+        // Lógica de Zoom del Plano (Lightbox/Modal)
+        const zoomFloorplanBtn = document.getElementById('zoom-floorplan-btn');
+        if (zoomFloorplanBtn) {
+            zoomFloorplanBtn.addEventListener('click', () => {
+                const currentImgSrc = selectedFloorplanImg.src;
+                let lightbox = document.getElementById('model-lightbox');
+                if (!lightbox) {
+                    lightbox = document.createElement('div');
+                    lightbox.id = 'model-lightbox';
+                    lightbox.className = 'model-lightbox';
+                    lightbox.innerHTML = `
+                        <span class="lightbox-close">&times;</span>
+                        <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Plano">
+                    `;
+                    document.body.appendChild(lightbox);
+                    
+                    lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
+                        lightbox.classList.remove('active');
+                    });
+                    lightbox.addEventListener('click', (e) => {
+                        if (e.target === lightbox) lightbox.classList.remove('active');
+                    });
+                }
+                const lightboxImg = lightbox.querySelector('#lightbox-img');
+                if (lightboxImg) lightboxImg.src = currentImgSrc;
+                lightbox.classList.add('active');
+            });
+        }
+
+        // Simular envío de formulario
         document.getElementById('form-cotizar').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('¡Gracias por tu interés! Un asesor comercial se pondrá en contacto contigo a la brevedad.');
             e.target.reset();
+            // Restablecer valores iniciales
+            const defaultTab = document.querySelector('.floorplan-nav-tab[data-id="1d1b"]');
+            if (defaultTab) defaultTab.click();
         });
+
+        // Carga inicial
+        updateFloorplanViewer('tipo-a1');
+        syncForm();
+        updateMediaGallery();
     </script>
 </body>
 
 </html>
+

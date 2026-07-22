@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,24 @@
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
-    <header></header>
+    <header>
+
+        <!-- Fallback de navegaciÃ³n para SEO/Accesibilidad -->
+        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+            <nav style="display:block;">
+                <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
+                    <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
+                    <li><a href="nosotros.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a></li>
+                    <li><a href="inversionistas.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a></li>
+                    <li><a href="postventa.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a></li>
+                    <li><a href="blog.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
+                    <li><a href="contacto.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+    <main>
 
     <!-- HERO SECCIÓN COMERCIAL -->
     <section class="hero">
@@ -27,39 +44,52 @@
                 </p>
                 <a href="#proyectos" class="btn btn-secondary" style="border-color: #FFFFFF; color: #FFFFFF;">Ver Proyectos</a>
             </div>
-
-            <!-- BUSCADOR INTEGRADO -->
-            <div class="search-widget reveal">
-                <div class="search-field">
-                    <label for="search-comuna">Comuna</label>
-                    <select id="search-comuna">
-                        <option value="todos">Todas las comunas</option>
-                        <option value="macul">Macul</option>
-                        <option value="nunoa">Ñuñoa</option>
-                        <option value="santa-cruz">Santa Cruz</option>
-                    </select>
-                </div>
-                <div class="search-field">
-                    <label for="search-tipo">Tipo de Proyecto</label>
-                    <select id="search-tipo">
-                        <option value="todos">Todos los tipos</option>
-                        <option value="departamento">Departamentos</option>
-                        <option value="oficina">Oficinas / Comercial</option>
-                    </select>
-                </div>
-                <div class="search-field">
-                    <label for="search-precio">Rango de Precio</label>
-                    <select id="search-precio">
-                        <option value="todos">Cualquier precio</option>
-                        <option value="bajo">Bajo UF 3.000</option>
-                        <option value="medio">UF 3.000 - UF 5.000</option>
-                        <option value="alto">Sobre UF 5.000</option>
-                    </select>
-                </div>
-                <button type="button" id="btn-buscar">Buscar</button>
-            </div>
         </div>
     </section>
+
+    <!-- BUSCADOR INTEGRADO (FUERA DEL HERO) -->
+    <div class="container" style="position: relative; z-index: 20; margin-top: -3.5rem; margin-bottom: 2rem;">
+        <div class="search-widget reveal" style="margin-top: 0;">
+            <div class="search-field">
+                <label for="search-comuna">Comuna</label>
+                <select id="search-comuna">
+                    <option value="todos">Todas las comunas</option>
+                    <option value="macul">Macul</option>
+                    <option value="nunoa">Ñuñoa</option>
+                    <option value="lo-barnechea">Lo Barnechea</option>
+                    <option value="santa-cruz">Santa Cruz</option>
+                </select>
+            </div>
+            <div class="search-field">
+                <label for="search-tipo">Tipo de Proyecto</label>
+                <select id="search-tipo">
+                    <option value="todos">Todos los tipos</option>
+                    <option value="departamento">Departamentos</option>
+                    <option value="casa">Casas</option>
+                    <option value="oficina">Oficinas / Comercial</option>
+                </select>
+            </div>
+            <div class="search-field">
+                <label for="search-estado">Estado de Entrega</label>
+                <select id="search-estado">
+                    <option value="todos">Todos los estados</option>
+                    <option value="entrega-inmediata">Entrega Inmediata</option>
+                    <option value="en-verde">En Verde</option>
+                    <option value="comercial">Comercial</option>
+                </select>
+            </div>
+            <div class="search-field">
+                <label for="search-precio">Rango de Precio</label>
+                <select id="search-precio">
+                    <option value="todos">Cualquier precio</option>
+                    <option value="bajo">Bajo UF 3.000</option>
+                    <option value="medio">UF 3.000 - UF 5.000</option>
+                    <option value="alto">Sobre UF 5.000</option>
+                </select>
+            </div>
+            <button type="button" id="btn-buscar">Buscar</button>
+        </div>
+    </div>
 
     <!-- PROYECTOS DESTACADOS -->
     <section id="proyectos" class="section">
@@ -72,183 +102,394 @@
                 <a href="ofertas.html" class="btn-text">Ver Ofertas Temporales</a>
             </div>
 
-            <!-- Filtros por pestañas -->
-            <ul class="tab-filters">
-                <li><button class="tab-filter-btn active" data-filter="all">Todos los proyectos</button></li>
-                <li><button class="tab-filter-btn" data-filter="entrega-inmediata">Entrega Inmediata</button></li>
-                <li><button class="tab-filter-btn" data-filter="en-verde">En Verde</button></li>
-                <li><button class="tab-filter-btn" data-filter="comercial">Comercial</button></li>
-            </ul>
 
-            <!-- Grid de Tarjetas -->
-            <div class="projects-grid">
+
+            <!-- Lista de Tarjetas Showcase (Estilo Referencia Identico) -->
+            <div class="projects-showcase-list">
                 
                 <!-- Proyecto 1: Andes Macul -->
-                <div class="project-card reveal" data-comuna="macul" data-tipo="departamento" data-estado="en-verde" data-precio="medio">
-                    <span class="project-tag">En Verde</span>
-                    <div class="project-card-image">
-                        <img src="assets/images/hero-mockup.png" alt="Andes Macul">
-                    </div>
-                    <div class="project-card-content">
-                        <span class="project-card-location">Macul</span>
-                        <h3 class="project-card-title">Andes Macul</h3>
-                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
-                            Edificio residencial de diseño contemporáneo, áreas comunes equipadas y conectividad privilegiada.
-                        </p>
-                        
-                        <div class="project-card-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Tipologías</span>
-                                <span class="detail-value">1, 2 y 3 Dorms.</span>
+                <div class="project-showcase-card reveal" data-comuna="macul" data-tipo="departamento" data-estado="entrega-inmediata" data-precio="medio">
+                    <div class="showcase-image-wrapper">
+                        <span class="project-tag" style="z-index: 12;">Entrega Inmediata</span>
+                        <div class="card-carousel">
+                            <div class="carousel-slides">
+                                <div class="carousel-slide active"><img src="assets/images/home/andes-macul/macul-1.jpg" alt="Andes Macul 1"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-macul/macul-2.jpg" alt="Andes Macul 2"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-macul/macul-3.jpg" alt="Andes Macul 3"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-macul/macul-4.jpg" alt="Andes Macul 4"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-macul/macul-5.jpg" alt="Andes Macul 5"></div>
                             </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Superficie</span>
-                                <span class="detail-value">Desde 42 m²</span>
+                            <button class="carousel-btn prev-btn" aria-label="Anterior">&lsaquo;</button>
+                            <button class="carousel-btn next-btn" aria-label="Siguiente">&rsaquo;</button>
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-info-wrapper">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div class="showcase-title-block">
+                                <div class="showcase-logo-box">
+                                    <img src="assets/images/logos/logo-andes-macul.png" alt="Logo Andes Macul">
+                                </div>
+                                <div class="showcase-title-text">
+                                    <h3 style="font-size: 1.6rem; font-weight: 600; color: #0F172A; margin: 0; line-height: 1.2;">Andes Macul</h3>
+                                    <span style="font-size: 0.9rem; color: #94A3B8; margin-top: 0.2rem; display: block;">Tu espacio, tu ritmo, tu futuro.</span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-size: 0.78rem; color: #64748B; letter-spacing: 0.05em;"><span class="price-square"></span>Desde</div>
+                                <div style="font-size: 2.3rem; font-weight: 400; color: #0F172A; line-height: 1; margin-top: 0.1rem; letter-spacing: -0.02em;">3.740</div>
+                                <div class="price-uf-tag">UF</div>
                             </div>
                         </div>
 
-                        <div class="project-card-footer">
-                            <div class="project-card-price">
-                                <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
-                                UF 3.100
+                        <div class="showcase-full-divider"></div>
+
+                        <p class="showcase-desc">
+                            Diseñado con altos estándares Andes Macul cuenta con un diseño inteligente y funcional ideal para los amantes de la vida urbana. Aquí podrás relajarte y disfrutar de tu propio oasis urbano.
+                        </p>
+
+                        <div class="showcase-specs-table">
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Entrega</span>
+                                <span class="spec-table-val">INMEDIATA</span>
                             </div>
-                            <a href="proyecto-andes-macul.html" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Ver Ficha</a>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Dormitorios</span>
+                                <span class="spec-table-val">1 y 2</span>
+                            </div>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Baños</span>
+                                <span class="spec-table-val">1 y 2</span>
+                            </div>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">¿Cómo llegar?</span>
+                                <span class="spec-table-val">
+                                    <a href="https://maps.google.com/?q=Macul,Santiago" target="_blank" style="color: #0F172A; font-weight: 700; text-decoration: none;">Clic aquí</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <a href="proyecto-andes-macul.html" class="showcase-btn-dark">VER PROYECTO</a>
+                            <a href="contacto.html" class="showcase-btn-gold">COTIZAR</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 2: Andes Ñuñoa -->
-                <div class="project-card reveal" data-comuna="nunoa" data-tipo="departamento" data-estado="entrega-inmediata" data-precio="alto">
-                    <span class="project-tag">Entrega Inmediata</span>
-                    <div class="project-card-image">
-                        <img src="assets/images/hero-mockup.png" alt="Andes Ñuñoa" style="filter: hue-rotate(15deg);">
-                    </div>
-                    <div class="project-card-content">
-                        <span class="project-card-location">Ñuñoa</span>
-                        <h3 class="project-card-title">Andes Ñuñoa</h3>
-                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
-                            Exclusivos departamentos en barrio residencial consolidado. Terminaciones de primer nivel y amplias terrazas.
-                        </p>
-                        
-                        <div class="project-card-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Tipologías</span>
-                                <span class="detail-value">2 y 3 Dorms.</span>
+                <div class="project-showcase-card reveal" data-comuna="nunoa" data-tipo="departamento" data-estado="entrega-inmediata" data-precio="medio">
+                    <div class="showcase-image-wrapper">
+                        <span class="project-tag" style="z-index: 12;">Entrega Inmediata</span>
+                        <div class="card-carousel">
+                            <div class="carousel-slides">
+                                <div class="carousel-slide active"><img src="assets/images/home/andes-nunoa/nunoa-1.jpg" alt="Andes Ñuñoa 1"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-nunoa/nunoa-2.jpg" alt="Andes Ñuñoa 2"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-nunoa/nunoa-3.jpg" alt="Andes Ñuñoa 3"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-nunoa/nunoa-4.jpg" alt="Andes Ñuñoa 4"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-nunoa/nunoa-5.jpg" alt="Andes Ñuñoa 5"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-nunoa/nunoa-6.jpg" alt="Andes Ñuñoa 6"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-nunoa/nunoa-7.jpg" alt="Andes Ñuñoa 7"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/andes-nunoa/nunoa-8.jpg" alt="Andes Ñuñoa 8"></div>
                             </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Superficie</span>
-                                <span class="detail-value">Desde 58 m²</span>
+                            <button class="carousel-btn prev-btn" aria-label="Anterior">&lsaquo;</button>
+                            <button class="carousel-btn next-btn" aria-label="Siguiente">&rsaquo;</button>
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-info-wrapper">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div class="showcase-title-block">
+                                <div class="showcase-logo-box">
+                                    <img src="assets/images/logos/logo-andes-nunoa.jpg" alt="Logo Andes Ñuñoa">
+                                </div>
+                                <div class="showcase-title-text">
+                                    <h3 style="font-size: 1.6rem; font-weight: 600; color: #0F172A; margin: 0; line-height: 1.2;">Andes Ñuñoa</h3>
+                                    <span style="font-size: 0.9rem; color: #94A3B8; margin-top: 0.2rem; display: block;">Diseñado para momentos inolvidables.</span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-size: 0.78rem; color: #64748B; letter-spacing: 0.05em;"><span class="price-square"></span>Desde</div>
+                                <div style="font-size: 2.3rem; font-weight: 400; color: #0F172A; line-height: 1; margin-top: 0.1rem; letter-spacing: -0.02em;">3.847</div>
+                                <div class="price-uf-tag">UF</div>
                             </div>
                         </div>
 
-                        <div class="project-card-footer">
-                            <div class="project-card-price">
-                                <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
-                                UF 5.200
+                        <div class="showcase-full-divider"></div>
+
+                        <p class="showcase-desc">
+                            El ritmo urbano requiere de momentos de calma y ocio, por eso diseñamos espacios para que puedas disfrutar de la mejor experiencia cotidiana. Todo pensado en ti.
+                        </p>
+
+                        <div class="showcase-specs-table">
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Entrega</span>
+                                <span class="spec-table-val">INMEDIATA</span>
                             </div>
-                            <a href="proyecto-andes-nunoa.html" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Ver Ficha</a>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Dormitorios</span>
+                                <span class="spec-table-val">1 y 2</span>
+                            </div>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Baños</span>
+                                <span class="spec-table-val">1 y 2</span>
+                            </div>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">¿Cómo llegar?</span>
+                                <span class="spec-table-val">
+                                    <a href="https://maps.google.com/?q=Nunoa,Santiago" target="_blank" style="color: #0F172A; font-weight: 700; text-decoration: none;">Clic aquí</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <a href="proyecto-andes-nunoa.html" class="showcase-btn-dark">VER PROYECTO</a>
+                            <a href="contacto.html" class="showcase-btn-gold">COTIZAR</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 3: Camino de la Villa -->
-                <div class="project-card reveal" data-comuna="nunoa" data-tipo="departamento" data-estado="en-verde" data-precio="alto">
-                    <span class="project-tag">En Verde</span>
-                    <div class="project-card-image">
-                        <img src="assets/images/hero-mockup.png" alt="Camino de la Villa" style="filter: saturate(0.5) brightness(0.9);">
-                    </div>
-                    <div class="project-card-content">
-                        <span class="project-card-location">Ñuñoa</span>
-                        <h3 class="project-card-title">Camino de la Villa</h3>
-                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
-                            Un oasis urbano enfocado en la sustentabilidad, con jardines interiores y arquitectura eco-eficiente.
-                        </p>
-                        
-                        <div class="project-card-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Tipologías</span>
-                                <span class="detail-value">1 y 2 Dorms.</span>
+                <div class="project-showcase-card reveal" data-comuna="lo-barnechea" data-tipo="departamento" data-estado="en-verde" data-precio="alto">
+                    <div class="showcase-image-wrapper">
+                        <span class="project-tag" style="z-index: 12;">1er Semestre 2028</span>
+                        <div class="card-carousel">
+                            <div class="carousel-slides">
+                                <div class="carousel-slide active"><img src="assets/images/home/camino-villa/villa-1.jpg" alt="Camino de la Villa 1"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/camino-villa/villa-2.jpg" alt="Camino de la Villa 2"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/camino-villa/villa-3.jpg" alt="Camino de la Villa 3"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/camino-villa/villa-4.jpg" alt="Camino de la Villa 4"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/camino-villa/villa-5.jpg" alt="Camino de la Villa 5"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/camino-villa/villa-6.jpg" alt="Camino de la Villa 6"></div>
                             </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Superficie</span>
-                                <span class="detail-value">Desde 38 m²</span>
+                            <button class="carousel-btn prev-btn" aria-label="Anterior">&lsaquo;</button>
+                            <button class="carousel-btn next-btn" aria-label="Siguiente">&rsaquo;</button>
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-info-wrapper">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div class="showcase-title-block">
+                                <div class="showcase-logo-box">
+                                    <img src="assets/images/logos/logo-camino-a-la-villa.png" alt="Logo Camino de la Villa">
+                                </div>
+                                <div class="showcase-title-text">
+                                    <h3 style="font-size: 1.6rem; font-weight: 600; color: #0F172A; margin: 0; line-height: 1.2;">Camino de la Villa</h3>
+                                    <span style="font-size: 0.9rem; color: #94A3B8; margin-top: 0.2rem; display: block;">Tu vida en equilibrio</span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-size: 0.78rem; color: #64748B; letter-spacing: 0.05em;"><span class="price-square"></span>Desde</div>
+                                <div style="font-size: 2.3rem; font-weight: 400; color: #0F172A; line-height: 1; margin-top: 0.1rem; letter-spacing: -0.02em;">9.651</div>
+                                <div class="price-uf-tag">UF</div>
                             </div>
                         </div>
 
-                        <div class="project-card-footer">
-                            <div class="project-card-price">
-                                <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
-                                UF 3.850
+                        <div class="showcase-full-divider"></div>
+
+                        <p class="showcase-desc">
+                            En un mundo que va rápido, a veces lo que mas valoramos es lo que se mueve lento: el silencio, el espacio, la luz natural, la privacidad. Camino de la villa nace desde ese anhelo.
+                        </p>
+
+                        <div class="showcase-specs-table">
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Entrega</span>
+                                <span class="spec-table-val">1er semestre 2028</span>
                             </div>
-                            <a href="proyecto-camino-villa.html" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Ver Ficha</a>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Dormitorios</span>
+                                <span class="spec-table-val">1, 2 y 3</span>
+                            </div>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Baños</span>
+                                <span class="spec-table-val">1, 2 y 3</span>
+                            </div>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">¿Cómo llegar?</span>
+                                <span class="spec-table-val">
+                                    <a href="https://maps.google.com/?q=Camino+de+La+Villa+671,Lo+Barnechea" target="_blank" style="color: #0F172A; font-weight: 700; text-decoration: none;">Clic aquí</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <a href="proyecto-camino-villa.html" class="showcase-btn-dark">VER PROYECTO</a>
+                            <a href="contacto.html" class="showcase-btn-gold">COTIZAR</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 4: Altos de Santa Cruz -->
-                <div class="project-card reveal" data-comuna="santa-cruz" data-tipo="departamento" data-estado="entrega-inmediata" data-precio="bajo">
-                    <span class="project-tag">Entrega Inmediata</span>
-                    <div class="project-card-image">
-                        <img src="assets/images/hero-mockup.png" alt="Altos de Santa Cruz" style="filter: sepia(0.2) contrast(1.05);">
-                    </div>
-                    <div class="project-card-content">
-                        <span class="project-card-location">Santa Cruz</span>
-                        <h3 class="project-card-title">Altos de Santa Cruz</h3>
-                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
-                            Tu vida en la tranquilidad de Colchagua. Departamentos cómodos con excelentes áreas comunes y piscina.
-                        </p>
-                        
-                        <div class="project-card-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Tipologías</span>
-                                <span class="detail-value">2 y 3 Dorms.</span>
+                <div class="project-showcase-card reveal" data-comuna="santa-cruz" data-tipo="casa" data-estado="entrega-inmediata" data-precio="bajo">
+                    <div class="showcase-image-wrapper">
+                        <span class="project-tag" style="z-index: 12;">Entrega Inmediata</span>
+                        <div class="card-carousel">
+                            <div class="carousel-slides">
+                                <div class="carousel-slide active"><img src="assets/images/home/altos-santa-cruz/altos-1.jpg" alt="Altos de Santa Cruz 1"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/altos-santa-cruz/altos-2.jpg" alt="Altos de Santa Cruz 2"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/altos-santa-cruz/altos-3.jpg" alt="Altos de Santa Cruz 3"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/altos-santa-cruz/altos-4.jpg" alt="Altos de Santa Cruz 4"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/altos-santa-cruz/altos-5.jpg" alt="Altos de Santa Cruz 5"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/altos-santa-cruz/altos-6.jpg" alt="Altos de Santa Cruz 6"></div>
                             </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Superficie</span>
-                                <span class="detail-value">Desde 55 m²</span>
+                            <button class="carousel-btn prev-btn" aria-label="Anterior">&lsaquo;</button>
+                            <button class="carousel-btn next-btn" aria-label="Siguiente">&rsaquo;</button>
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-info-wrapper">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div class="showcase-title-block">
+                                <div class="showcase-logo-box">
+                                    <img src="assets/images/logos/logo-altos-de-santa-cruz.png" alt="Logo Altos de Santa Cruz">
+                                </div>
+                                <div class="showcase-title-text">
+                                    <h3 style="font-size: 1.6rem; font-weight: 600; color: #0F172A; margin: 0; line-height: 1.2;">Altos de Santa Cruz</h3>
+                                    <span style="font-size: 0.9rem; color: #94A3B8; margin-top: 0.2rem; display: block;">Donde cada amanecer se siente único</span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-size: 0.78rem; color: #64748B; letter-spacing: 0.05em;"><span class="price-square"></span>Desde</div>
+                                <div style="font-size: 2.3rem; font-weight: 400; color: #0F172A; line-height: 1; margin-top: 0.1rem; letter-spacing: -0.02em;">2.450</div>
+                                <div class="price-uf-tag">UF</div>
                             </div>
                         </div>
 
-                        <div class="project-card-footer">
-                            <div class="project-card-price">
-                                <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
-                                UF 2.450
+                        <div class="showcase-full-divider"></div>
+
+                        <p class="showcase-desc">
+                            Altos de Santa Cruz es un proyecto inmobiliario ubicado en la comuna de Santa Cruz, en pleno Valle de Colchagua, que combina un entorno tranquilo con una propuesta habitacional funcional y bien planificada.
+                        </p>
+
+                        <div class="showcase-specs-table">
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Entrega</span>
+                                <span class="spec-table-val">INMEDIATA</span>
                             </div>
-                            <a href="proyecto-altos-santa-cruz.html" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Ver Ficha</a>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Dormitorios</span>
+                                <span class="spec-table-val">3</span>
+                            </div>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Baños</span>
+                                <span class="spec-table-val">2</span>
+                            </div>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">¿Cómo llegar?</span>
+                                <span class="spec-table-val">
+                                    <a href="https://maps.google.com/?q=Santa+Cruz,Chile" target="_blank" style="color: #0F172A; font-weight: 700; text-decoration: none;">Clic aquí</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <a href="proyecto-altos-santa-cruz.html" class="showcase-btn-dark">VER PROYECTO</a>
+                            <a href="contacto.html" class="showcase-btn-gold">COTIZAR</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Proyecto 5: Work Plaza -->
-                <div class="project-card reveal" data-comuna="nunoa" data-tipo="oficina" data-estado="comercial" data-precio="alto">
-                    <span class="project-tag">Comercial / Oficinas</span>
-                    <div class="project-card-image">
-                        <img src="assets/images/hero-mockup.png" alt="Work Plaza" style="filter: grayscale(80%) brightness(0.85);">
-                    </div>
-                    <div class="project-card-content">
-                        <span class="project-card-location">Ñuñoa</span>
-                        <h3 class="project-card-title">Work Plaza</h3>
-                        <p style="color: var(--color-text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
-                            Moderno centro de negocios y locales comerciales. El lugar ideal para posicionar tu marca o expandir tu oficina.
-                        </p>
-                        
-                        <div class="project-card-details">
-                            <div class="detail-item">
-                                <span class="detail-label">Tipologías</span>
-                                <span class="detail-value">Plantas Libres / Locales</span>
+                <div class="project-showcase-card reveal" data-comuna="lo-barnechea" data-tipo="oficina" data-estado="comercial" data-precio="medio">
+                    <div class="showcase-image-wrapper">
+                        <span class="project-tag" style="z-index: 12;">Comercial / Oficinas</span>
+                        <div class="card-carousel">
+                            <div class="carousel-slides">
+                                <div class="carousel-slide active"><img src="assets/images/home/work-plaza/plaza-1.jpg" alt="Work Plaza 1"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/work-plaza/plaza-2.jpg" alt="Work Plaza 2"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/work-plaza/plaza-3.jpg" alt="Work Plaza 3"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/work-plaza/plaza-4.jpg" alt="Work Plaza 4"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/work-plaza/plaza-5.jpg" alt="Work Plaza 5"></div>
+                                <div class="carousel-slide"><img src="assets/images/home/work-plaza/plaza-6.jpg" alt="Work Plaza 6"></div>
                             </div>
-                            <div class="detail-item">
-                                <span class="detail-label">Superficie</span>
-                                <span class="detail-value">Desde 32 m²</span>
+                            <button class="carousel-btn prev-btn" aria-label="Anterior">&lsaquo;</button>
+                            <button class="carousel-btn next-btn" aria-label="Siguiente">&rsaquo;</button>
+                            <div class="carousel-dots">
+                                <span class="dot active"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-info-wrapper">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div class="showcase-title-block">
+                                <div class="showcase-logo-box">
+                                    <img src="assets/images/logos/logo-work-plaza.jpg" alt="Logo Work Plaza">
+                                </div>
+                                <div class="showcase-title-text">
+                                    <h3 style="font-size: 1.6rem; font-weight: 600; color: #0F172A; margin: 0; line-height: 1.2;">Work Plaza</h3>
+                                    <span style="font-size: 0.9rem; color: #94A3B8; margin-top: 0.2rem; display: block;">El más alto estándar de arquitectura y diseño para tu oficina.</span>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <div style="font-size: 0.78rem; color: #64748B; letter-spacing: 0.05em;"><span class="price-square"></span>Desde</div>
+                                <div style="font-size: 2.3rem; font-weight: 400; color: #0F172A; line-height: 1; margin-top: 0.1rem; letter-spacing: -0.02em;">4.900</div>
+                                <div class="price-uf-tag">UF</div>
                             </div>
                         </div>
 
-                        <div class="project-card-footer">
-                            <div class="project-card-price">
-                                <span style="font-size: 0.65rem; display: block; color: var(--color-text-light);">Desde</span>
-                                UF 4.900
+                        <div class="showcase-full-divider"></div>
+
+                        <p class="showcase-desc">
+                            Espacios diseñados para elevar la productividad y el bienestar de tu equipo. Modernos espacios de trabajo colaborativo, zonas de descanso, salas de reuniones, cafetería, gimnasio y más. Cada detalle ha sido cuidadosamente considerado para ofrecer un ambiente inspirador y funcional.
+                        </p>
+
+                        <div class="showcase-specs-table">
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Entrega</span>
+                                <span class="spec-table-val">INMEDIATA</span>
                             </div>
-                            <a href="proyecto-work-plaza.html" class="btn btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.7rem;">Ver Ficha</a>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Dormitorios</span>
+                                <span class="spec-table-val">1 y 2</span>
+                            </div>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">Baños</span>
+                                <span class="spec-table-val">1 y 2</span>
+                            </div>
+                            <div class="spec-table-row">
+                                <span class="spec-table-label">¿Cómo llegar?</span>
+                                <span class="spec-table-val">
+                                    <a href="https://maps.google.com/?q=Av.+La+Dehesa+222,Lo+Barnechea" target="_blank" style="color: #0F172A; font-weight: 700; text-decoration: none;">Clic aquí</a>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                            <a href="proyecto-work-plaza.html" class="showcase-btn-dark">VER PROYECTO</a>
+                            <a href="contacto.html" class="showcase-btn-gold">COTIZAR</a>
                         </div>
                     </div>
                 </div>
@@ -403,89 +644,26 @@
     </section>
 
     <!-- PIE DE PAGINA (FOOTER) -->
-    <footer></footer>
+    </main>
+
+    <footer>
+
+        <!-- Fallback de pie de pÃ¡gina para SEO/Accesibilidad -->
+        <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">TÃ©rminos y Condiciones</a>
+                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">PolÃ­tica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+</footer>
 
     <!-- Scripts de Funcionalidad -->
     <script src="assets/js/main.js"></script>
-    
-    <!-- Filtro de proyectos interactivo en Home -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterBtns = document.querySelectorAll('.tab-filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-
-            if (filterBtns.length > 0 && projectCards.length > 0) {
-                filterBtns.forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        // Cambiar botón activo
-                        filterBtns.forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-
-                        const filterValue = btn.dataset.filter;
-
-                        projectCards.forEach(card => {
-                            const cardStatus = card.dataset.estado;
-
-                            // Animación de ocultado suave
-                            card.style.opacity = '0';
-                            card.style.transform = 'translateY(15px)';
-
-                            setTimeout(() => {
-                                if (filterValue === 'all' || cardStatus === filterValue) {
-                                    card.style.display = 'flex';
-                                    setTimeout(() => {
-                                        card.style.opacity = '1';
-                                        card.style.transform = 'translateY(0)';
-                                    }, 50);
-                                } else {
-                                    card.style.display = 'none';
-                                }
-                            }, 300);
-                        });
-                    });
-                });
-            }
-
-            // Buscador funcional
-            const btnBuscar = document.getElementById('btn-buscar');
-            const selectComuna = document.getElementById('search-comuna');
-            const selectTipo = document.getElementById('search-tipo');
-            const selectPrecio = document.getElementById('search-precio');
-
-            if (btnBuscar && selectComuna && selectTipo && selectPrecio) {
-                btnBuscar.addEventListener('click', () => {
-                    const comunaVal = selectComuna.value;
-                    const tipoVal = selectTipo.value;
-                    const precioVal = selectPrecio.value;
-
-                    projectCards.forEach(card => {
-                        const cardComuna = card.dataset.comuna;
-                        const cardTipo = card.dataset.tipo;
-                        const cardPrecio = card.dataset.precio;
-
-                        let matchesComuna = (comunaVal === 'todos' || cardComuna === comunaVal);
-                        let matchesTipo = (tipoVal === 'todos' || cardTipo === tipoVal);
-                        let matchesPrecio = (precioVal === 'todos' || cardPrecio === precioVal);
-
-                        card.style.opacity = '0';
-                        card.style.transform = 'translateY(15px)';
-
-                        setTimeout(() => {
-                            if (matchesComuna && matchesTipo && matchesPrecio) {
-                                card.style.display = 'flex';
-                                setTimeout(() => {
-                                    card.style.opacity = '1';
-                                    card.style.transform = 'translateY(0)';
-                                }, 50);
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        }, 300);
-                    });
-                });
-            }
-        });
-    </script>
 
 </body>
 </html>
+
+

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,24 @@
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
-    <header class="scrolled"></header>
+    <header class="scrolled">
+
+        <!-- Fallback de navegaciÃ³n para SEO/Accesibilidad -->
+        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+            <nav style="display:block;">
+                <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
+                    <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
+                    <li><a href="nosotros.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a></li>
+                    <li><a href="inversionistas.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a></li>
+                    <li><a href="postventa.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a></li>
+                    <li><a href="blog.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
+                    <li><a href="contacto.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+    <main>
 
     <!-- INNER HERO (CABECERA DE PÁGINA) -->
     <section class="inner-hero">
@@ -116,9 +133,25 @@
     </section>
 
     <!-- PIE DE PAGINA (FOOTER) -->
-    <footer></footer>
+    </main>
+
+    <footer>
+
+        <!-- Fallback de pie de pÃ¡gina para SEO/Accesibilidad -->
+        <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">TÃ©rminos y Condiciones</a>
+                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">PolÃ­tica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+</footer>
 
     <!-- Scripts de Funcionalidad -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+

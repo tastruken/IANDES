@@ -7,16 +7,66 @@
     <meta name="description" content="Centro de negocios Work Plaza en Ñuñoa. Oficinas y locales comerciales premium con excelente conectividad, áreas comunes y salas de reuniones equipadas.">
     <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Estilos de la sección Sala de Ventas */
+        .sales-room-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .sales-room-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+        
+        .how-to-get-buttons a {
+            box-shadow: var(--shadow-small);
+        }
+        
+        .how-to-get-buttons a:hover {
+            border-color: var(--color-accent) !important;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .carbon-footprint-banner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
-    <header class="scrolled"></header>
+    <header>
+
+        <!-- Fallback de navegaciÃ³n para SEO/Accesibilidad -->
+        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+            <nav style="display:block;">
+                <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
+                    <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
+                    <li><a href="nosotros.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a></li>
+                    <li><a href="inversionistas.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a></li>
+                    <li><a href="postventa.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a></li>
+                    <li><a href="blog.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
+                    <li><a href="contacto.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+    <main>
 
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
     <section class="inner-hero">
         <div class="inner-hero-bg">
-            <img src="assets/images/proyectos/proyecto-work-plaza/render.png" alt="Work Plaza Oficinas" style="filter: grayscale(80%) brightness(0.85);">
+            <img src="assets/images/proyectos/proyecto-work-plaza/render.png" alt="Work Plaza Oficinas">
         </div>
         <div class="container" style="position: relative; z-index: 5;">
             <div class="inner-hero-content">
@@ -25,8 +75,23 @@
                 </div>
                 <h1 class="inner-hero-title">Work Plaza</h1>
                 <p style="color: var(--color-secondary); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem; font-weight: 500;">
-                    Av. Irarrázaval 3300, Ñuñoa, Santiago
+                    Av. La Dehesa 222, Lo Barnechea, Región Metropolitana
                 </p>
+                <div class="inner-hero-specs-bar">
+                    <div class="specs-main-row">
+                        <div class="spec-inline-item" title="Oficinas">
+                            <svg class="icon-svg" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                            <span>Planta Libre / Modulares</span>
+                        </div>
+                        <div class="spec-inline-item" title="Superficie">
+                            <img src="assets/images/icons/icon-metros2.svg" alt="Superficie">
+                            <span>60 - 120 m²</span>
+                        </div>
+                        <div class="spec-inline-item" style="color: var(--color-secondary); font-weight: 600;">
+                            <span>Desde UF 4.900</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -43,10 +108,10 @@
                     <div class="media-gallery-module reveal">
                         <div class="media-viewer-container">
                             <!-- Badge indicador de modelo seleccionado -->
-                            <div class="media-model-badge" id="media-selected-model-badge">Modelo Seleccionado: Modelo W-Mini</div>
+                            <div class="media-model-badge" id="media-selected-model-badge">Modelo Seleccionado: Oficina 60 m²</div>
                             <div class="media-viewer">
                                 <!-- Por defecto muestra el render principal -->
-                                <img src="assets/images/proyectos/proyecto-work-plaza/render.png" alt="Render Exterior Work Plaza" style="filter: grayscale(80%) brightness(0.85);">
+                                <img src="assets/images/proyectos/proyecto-work-plaza/render.png" alt="Render Exterior Work Plaza">
                             </div>
                         </div>
                         
@@ -57,13 +122,13 @@
                                 </span>
                                 <span class="media-tab-label">Render Exterior</span>
                             </button>
-                            <button class="media-tab-btn" data-type="image" id="tab-btn-interior" data-src="assets/images/proyectos/proyecto-work-plaza/render-interior.png, assets/images/proyectos/proyecto-work-plaza/render-interior-2.png" data-title="Vista Interior Modelo W-Mini">
+                            <button class="media-tab-btn" data-type="image" id="tab-btn-interior" data-src="assets/images/proyectos/proyecto-work-plaza/render-interior.png, assets/images/proyectos/proyecto-work-plaza/render-interior-2.png" data-title="Vista Interior Oficina 60 m²">
                                 <span class="media-tab-icon-wrapper">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                                 </span>
                                 <span class="media-tab-label">Vista Interior</span>
                             </button>
-                            <button class="media-tab-btn" data-type="tour360" id="tab-btn-tour" data-src="https://my.matterport.com/show/?m=uH1fG94kZ2n" data-title="Recorrido 360° Modelo W-Mini">
+                            <button class="media-tab-btn" data-type="tour360" id="tab-btn-tour" data-src="https://my.matterport.com/show/?m=uH1fG94kZ2n" data-title="Recorrido 360° Oficina 60 m²">
                                 <span class="media-tab-icon-wrapper">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
                                 </span>
@@ -80,23 +145,37 @@
 
                     <!-- Descripción General -->
                     <div class="reveal" style="margin-bottom: 3.5rem;">
-                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">El hub de negocios definitivo con conectividad de primer nivel</h2>
+                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">El primer edificio de oficinas en Chile que purifica el aire</h2>
                         <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                            Work Plaza representa una propuesta revolucionaria en espacios corporativos y comerciales en la comuna de Ñuñoa. Pensado para pymes, profesionales independientes y empresas en expansión, este edificio de vanguardia arquitectónica combina plantas libres altamente adaptables con áreas colaborativas abiertas y salas de directorios completamente automatizadas.
+                            La tecnología de fotohidroionización PHI permite reducir olores, contaminantes del aire, los compuestos orgánicos volátiles, el humo, las bacterias, el moho y los virus. Se instala en los conductos de aire, creando un proceso de oxigenación avanzada que consiste en hidroperóxidos, iones ozono, iones superóxido e iones hidróxido. Todos oxidantes amigables, es decir, que retornan al oxígeno e hidrógeno después de la oxidación del contaminante. Estos oxidantes y la energía UV matan microbios en la unidad HVAC y también por todo el ambiente.
                         </p>
                         <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
-                            Su ubicación estratégica a pasos de la estación de Metro y paraderos principales, junto con un nutrido zócalo comercial de servicios, restaurantes y cafeterías, garantiza un flujo permanente de público y una inmejorable calidad de vida laboral para ti y tus colaboradores.
+                            Workplaza redefine el estándar de espacios corporativos, integrando tecnología de purificación ambiental que mejora la calidad del aire en cada rincón del edificio. Más que oficinas, es un entorno que respira contigo.
                         </p>
                         
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Servicios Corporativos Integrados</h3>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Descubre todo lo que tenemos para ti</h3>
                         <ul style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; color: var(--color-text-main);">
-                            <li>✓ Recepción corporativa centralizada con control de accesos.</li>
-                            <li>✓ 4 Salas de reuniones inteligentes con pantallas interactivas y climatización.</li>
-                            <li>✓ Zonas de Coffee Break y terrazas panorámicas en el piso 12.</li>
-                            <li>✓ Estacionamientos de visitas y cargadores rápidos para vehículos eléctricos.</li>
-                            <li>✓ Planta libre de diseño modular con ductos de climatización centralizada.</li>
-                            <li>✓ Sistema de climatización de alta eficiencia y vidrios reflectantes.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Plantas tipo de oficina con superficies desde 60 hasta 120 m² y opciones de planta libre.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Cerradura digital: chapas eléctricas de bajo consumo de energía.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Registro de accesos con contraseña digital y llave electrónica por Bluetooth/chip y app.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Fachada con revestimiento bioactivo de porcelanato Hydrotec italiana.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Neutralización solar de óxidos de azufre y nitrógeno, liberando oxígeno limpio.</li>
+                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tecnología PHI que purifica el aire de manera permanente.</li>
                         </ul>
+                    </div>
+
+                    <!-- Módulo de Huella de Carbono y Sustentabilidad -->
+                    <div class="carbon-footprint-banner reveal" style="margin-bottom: 3.5rem; background: var(--color-bg-light); border: 1px solid var(--color-border); border-radius: 8px; padding: 2rem; display: flex; align-items: center; gap: 2rem; box-shadow: var(--shadow-small);">
+                        <div style="flex: 0 0 160px; text-align: center;">
+                            <img src="assets/images/proyectos/proyecto-work-plaza/huella-carbono-transparent.png" alt="Certificación Huella de Carbono" style="max-width: 100%; max-height: 140px; height: auto; object-fit: contain;">
+                        </div>
+                        <div>
+                            <span style="color: var(--color-secondary); font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.4rem;">Compromiso Ambiental</span>
+                            <h3 style="font-size: 1.3rem; margin-bottom: 0.6rem; color: var(--color-primary);">Medición y Reducción de Huella de Carbono</h3>
+                            <p style="color: var(--color-text-main); font-size: 0.9rem; line-height: 1.6; margin: 0;">
+                                Work Plaza cuenta con cuantificación y certificación de Huella de Carbono en su proceso constructivo y operativo, respaldando una edificación sostenible que minimiza el impacto ambiental y promueve un entorno corporativo eco-eficiente.
+                            </p>
+                        </div>
                     </div>
 
                     <!-- Módulo de Tipologías Interactivas (Explorador de Modelos) -->
@@ -112,33 +191,33 @@
                         <div class="model-carousel-wrapper">
                             <div class="model-carousel-track">
                                 <!-- Tarjeta Modelo W-Mini -->
-                                <div class="model-card active" data-id="oficina-mini" data-price="4.900" data-title="Modelo W-Mini" data-img="assets/images/proyectos/proyecto-work-plaza/plano.png" data-dorm="1 Planta Libre" data-bano="1 Baño" data-sup="32.4 m²" data-render-int="assets/images/proyectos/proyecto-work-plaza/render-interior.png, assets/images/proyectos/proyecto-work-plaza/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=uH1fG94kZ2n">
+                                <div class="model-card active" data-id="oficina-mini" data-price="4.900" data-title="Oficina 60 m²" data-img="assets/images/proyectos/proyecto-work-plaza/plano-oficina.png" data-dorm="1 Planta Libre" data-bano="1 Baño" data-sup="60.0 m²" data-render-int="assets/images/proyectos/proyecto-work-plaza/render-interior.png, assets/images/proyectos/proyecto-work-plaza/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=uH1fG94kZ2n">
                                     <div class="model-card-plan">
-                                        <img src="assets/images/proyectos/proyecto-work-plaza/plano.png" alt="Plano Modelo W-Mini">
+                                        <img src="assets/images/proyectos/proyecto-work-plaza/plano-oficina.png" alt="Plano Oficina 60 m²">
                                     </div>
-                                    <h4 class="model-card-name">Modelo W-Mini</h4>
+                                    <h4 class="model-card-name">Oficina 60 m²</h4>
                                     <div class="model-card-price">Desde <span class="highlight">UF 4.900</span></div>
                                     <div class="model-card-specs">
                                         <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> 1 Pl. Libre</span>
                                         <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg> 1 Baño</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 32.4 m²</span>
+                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 60.0 m²</span>
                                     </div>
-                                    <div class="model-card-badge">✓</div>
+                                    <div class="model-card-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-primary);"><polyline points="20 6 9 17 4 12"/></svg></div>
                                 </div>
 
                                 <!-- Tarjeta Modelo W-Maxi -->
-                                <div class="model-card" data-id="oficina-maxi" data-price="7.200" data-title="Modelo W-Maxi" data-img="assets/images/proyectos/proyecto-work-plaza/plano.png" data-dorm="3 Privados" data-bano="2 Baños" data-sup="55.1 m²" data-render-int="assets/images/proyectos/proyecto-work-plaza/render-interior.png, assets/images/proyectos/proyecto-work-plaza/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=sxz74b1m2n">
+                                <div class="model-card" data-id="oficina-maxi" data-price="9.400" data-title="Oficina 120 m²" data-img="assets/images/proyectos/proyecto-work-plaza/plano-oficina.png" data-dorm="3 Privados" data-bano="2 Baños" data-sup="120.0 m²" data-render-int="assets/images/proyectos/proyecto-work-plaza/render-interior.png, assets/images/proyectos/proyecto-work-plaza/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=sxz74b1m2n">
                                     <div class="model-card-plan">
-                                        <img src="assets/images/proyectos/proyecto-work-plaza/plano.png" alt="Plano Modelo W-Maxi">
+                                        <img src="assets/images/proyectos/proyecto-work-plaza/plano-oficina.png" alt="Plano Oficina 120 m²">
                                     </div>
-                                    <h4 class="model-card-name">Modelo W-Maxi</h4>
-                                    <div class="model-card-price">Desde <span class="highlight">UF 7.200</span></div>
+                                    <h4 class="model-card-name">Oficina 120 m²</h4>
+                                    <div class="model-card-price">Desde <span class="highlight">UF 9.400</span></div>
                                     <div class="model-card-specs">
                                         <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> 3 Privados</span>
                                         <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg> 2 Baños</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 55.1 m²</span>
+                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 120.0 m²</span>
                                     </div>
-                                    <div class="model-card-badge">✓</div>
+                                    <div class="model-card-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-primary);"><polyline points="20 6 9 17 4 12"/></svg></div>
                                 </div>
                             </div>
                         </div>
@@ -146,13 +225,13 @@
                         <!-- Detalle Seleccionado -->
                         <div class="model-detail-view">
                             <div class="model-detail-visual">
-                                <img id="selected-model-img" src="assets/images/proyectos/proyecto-work-plaza/plano.png" alt="Plano Seleccionado">
+                                <img id="selected-model-img" src="assets/images/proyectos/proyecto-work-plaza/plano-oficina.png" alt="Plano Seleccionado">
                                 <button class="model-zoom-btn" id="zoom-model-btn" aria-label="Ampliar plano">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
                                 </button>
                             </div>
                             <div class="model-detail-info">
-                                <h4 id="selected-model-name">Modelo W-Mini</h4>
+                                <h4 id="selected-model-name">Oficina 60 m²</h4>
                                 <hr class="model-divider">
                                 <ul class="model-spec-list">
                                     <li>
@@ -165,7 +244,7 @@
                                     </li>
                                     <li>
                                         <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg></span>
-                                        <span class="text" id="selected-model-sup">32.4 m² Superficie</span>
+                                        <span class="text" id="selected-model-sup">60.0 m² Superficie</span>
                                     </li>
                                 </ul>
                                 <button class="btn btn-secondary model-cotizar-btn" id="model-cotizar-action">Cotizar</button>
@@ -184,8 +263,8 @@
                             <div class="form-group">
                                 <label for="select-tipologia">Tipología de Interés</label>
                                 <select id="select-tipologia" required>
-                                    <option value="oficina-mini" data-price="4.900">Modelo W-Mini (32 m²) - UF 4.900</option>
-                                    <option value="oficina-maxi" data-price="7.200">Modelo W-Maxi (55 m²) - UF 7.200</option>
+                                    <option value="oficina-mini" data-price="4.900">Oficina 60 m² - UF 4.900</option>
+                                    <option value="oficina-maxi" data-price="9.400">Oficina 120 m² - UF 9.400</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -228,8 +307,93 @@
         </div>
     </section>
 
+    <!-- SECCIÓN SALA DE VENTAS -->
+    <section class="section sales-room-section" style="border-top: 1px solid var(--color-border); background-color: var(--color-bg-light); padding: 5rem 0;">
+        <div class="container">
+            <div class="sales-room-grid">
+                <!-- Columna Izquierda: Información -->
+                <div class="reveal">
+                    <h2 style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 1.5rem; font-family: var(--font-serif);">Sala de ventas</h2>
+                    <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                        Te esperamos en nuestra sala de ventas ubicada en Work Plaza en <strong>Av. La Dehesa 222</strong>, Lo Barnechea.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 1rem; color: var(--color-primary); font-family: var(--font-sans); font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Horarios de atención:</h4>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                            <strong>Lunes a viernes:</strong> 10:30 a 14:00 / 15:00 a 18:00 hrs.
+                        </p>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            <strong>Sábados:</strong> 10:00 a 14:00 hrs.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                            <strong>Teléfono de contacto:</strong> +56 2 1234 5678
+                        </p>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            <strong>WhatsApp:</strong> +56 9 8164 5225
+                        </p>
+                    </div>
+                    
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem;">
+                        Nuestro equipo estará encantado de atenderte y acompañarte en cada paso de tu decisión.
+                    </p>
+                    
+                    <!-- Botones de Cómo Llegar -->
+                    <div class="how-to-get-buttons" style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
+                        <a href="https://waze.com/ul?q=Av.+La+Dehesa+222,+Lo+Barnechea" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/waze logo.png" alt="Waze" style="height: 32px; width: 32px; object-fit: contain; border-radius: 4px; vertical-align: middle;">
+                                <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #05B4E3;">Waze</span>
+                            </div>
+                            <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Av.+La+Dehesa+222,+Lo+Barnechea" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.png" alt="Google Maps" style="height: 32px; width: 32px; object-fit: contain; vertical-align: middle;">
+                                <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #5F6368;">Google Maps</span>
+                            </div>
+                            <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Columna Derecha: Mapa -->
+                <div class="reveal">
+                    <div style="border: 1px solid var(--color-border); height: 380px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium);">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Av.%20La%20Dehesa%20222,%20Lo%20Barnechea&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PIE DE PAGINA (FOOTER) -->
-    <footer></footer>
+    </main>
+
+    <footer>
+
+        <!-- Fallback de pie de pÃ¡gina para SEO/Accesibilidad -->
+        <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">TÃ©rminos y Condiciones</a>
+                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">PolÃ­tica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+</footer>
 
     <!-- Scripts de Funcionalidad -->
     <script src="assets/js/main.js"></script>
@@ -242,3 +406,5 @@
     </script>
 </body>
 </html>
+
+

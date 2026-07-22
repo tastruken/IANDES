@@ -11,7 +11,23 @@
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
-    <header class="scrolled"></header>
+    <header class="scrolled">
+
+        <!-- Fallback de navegaciÃ³n para SEO/Accesibilidad -->
+        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+            <nav style="display:block;">
+                <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
+                    <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
+                    <li><a href="nosotros.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a></li>
+                    <li><a href="inversionistas.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a></li>
+                    <li><a href="postventa.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a></li>
+                    <li><a href="blog.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
+                    <li><a href="contacto.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
 
     <!-- INNER HERO (CABECERA DE PÁGINA) -->
     <section class="inner-hero">
@@ -148,6 +164,46 @@
                         <div class="faq-accordion">
                             <!-- FAQ 8 -->
                             <div class="faq-item">
+                                <div class="faq-question">¿Cómo puedo hacer seguimiento al estado de mi propiedad después de la compra?</div>
+                                <div class="faq-answer">
+                                    <p>Una vez realizada la compra, recibirás actualizaciones periódicas por correo electrónico sobre el avance del proyecto. También puedes contactarnos directamente para conocer el estado actual.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 9 -->
+                            <div class="faq-item">
+                                <div class="faq-question">¿A quién debo contactar si detecto un problema en mi propiedad?</div>
+                                <div class="faq-answer">
+                                    <p>Nuestro equipo de postventa está disponible para ayudarte. Puedes llenar tus datos en este formulario o llamar directamente a nuestro número de atención <strong>+56979984756</strong></p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 10 -->
+                            <div class="faq-item">
+                                <div class="faq-question">¿Cómo reporto una observación o desperfecto?</div>
+                                <div class="faq-answer">
+                                    <p>Debes completar el formulario de postventa en nuestro sitio web o enviarnos un correo a <strong>contacto@iandes.cl</strong> detallando el problema, adjuntando fotos si es posible.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 11 -->
+                            <div class="faq-item">
+                                <div class="faq-question">¿La garantía cubre todos los desperfectos?</div>
+                                <div class="faq-answer">
+                                    <p>La garantía cubre desperfectos relacionados con la construcción, terminaciones o instalaciones básicas. No incluye daños por mal uso o intervenciones externas.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 12 -->
+                            <div class="faq-item">
+                                <div class="faq-question">¿Qué pasa si no estoy conforme con la respuesta del área postventa?</div>
+                                <div class="faq-answer">
+                                    <p>Puedes escalar el caso escribiendo directamente a <strong>contacto@iandes.cl</strong>. Nos comprometemos a darte una solución transparente y justa.</p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ 11 -->
+                            <div class="faq-item">
                                 <div class="faq-question">¿Cuáles son los plazos legales de garantía para una vivienda nueva?</div>
                                 <div class="faq-answer">
                                     <p>Según la Ley General de Urbanismo y Construcción (LGUC), las garantías computan a partir de la recepción definitiva municipal:</p>
@@ -157,7 +213,7 @@
                                 </div>
                             </div>
                             
-                            <!-- FAQ 9 -->
+                            <!-- FAQ 12 -->
                             <div class="faq-item">
                                 <div class="faq-question">¿Cómo se realiza el ingreso oficial de solicitudes de postventa?</div>
                                 <div class="faq-answer">
@@ -165,7 +221,7 @@
                                 </div>
                             </div>
                             
-                            <!-- FAQ 10 -->
+                            <!-- FAQ 13 -->
                             <div class="faq-item">
                                 <div class="faq-question">¿Qué tipo de daños o reparaciones no cubre la garantía de postventa?</div>
                                 <div class="faq-answer">
@@ -183,9 +239,23 @@
     </section>
 
     <!-- PIE DE PAGINA (FOOTER) -->
-    <footer></footer>
+    <footer>
+
+        <!-- Fallback de pie de pÃ¡gina para SEO/Accesibilidad -->
+        <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">TÃ©rminos y Condiciones</a>
+                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">PolÃ­tica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+</footer>
 
     <!-- Scripts de Funcionalidad -->
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+

@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     initProjectTypologySelector();
     initInvestorCalculator();
     initProjectFilters();
+    initCardCarousels();
 });
 
 /**
@@ -246,12 +247,14 @@ function initProjectMediaTabs() {
 
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
+            const type = button.dataset.type;
+            const src = button.dataset.src;
+            if (!type || !src) return; // Ignorar si no tiene los atributos requeridos (manejado por el script de la propia página)
+
             // Quitar clase activa de botones
             tabButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
-            const type = button.dataset.type;
-            const src = button.dataset.src;
             const title = button.dataset.title || '';
 
             // Limpiar visor
@@ -521,6 +524,7 @@ function initProjectTypologySelector() {
             // Actualizar cotizador lateral
             if (selectTipologia) {
                 selectTipologia.value = id;
+                selectTipologia.dispatchEvent(new Event('change'));
             }
 
             if (cotizadorPrice) {
@@ -537,7 +541,19 @@ function initProjectTypologySelector() {
             
             const mediaBadge = document.getElementById('media-selected-model-badge');
             if (mediaBadge) {
-                mediaBadge.textContent = `Modelo Seleccionado: ${title}`;
+                let specsText = "";
+                if (dorm && bano) {
+                    let compactDorm = dorm
+                        .replace(" Dormitorios", " Dorms.")
+                        .replace(" Dormitorio", " Dorm.")
+                        .replace(" Planta Libre", " Pl. Libre")
+                        .replace(" Privados", " Privados");
+                    let compactBano = bano
+                        .replace(" Baños", " Baños")
+                        .replace(" Baño", " Baño");
+                    specsText = ` (${compactDorm} / ${compactBano})`;
+                }
+                mediaBadge.textContent = `Modelo Seleccionado: ${title}${specsText}`;
                 mediaBadge.style.opacity = '0.5';
                 setTimeout(() => { mediaBadge.style.opacity = '1'; }, 150);
             }
@@ -637,6 +653,28 @@ function initProjectTypologySelector() {
             }
         });
     }
+
+    // Actualizar badge inicial de la galería multimedia al cargar la página
+    const initialActiveCard = Array.from(cards).find(c => c.classList.contains('active'));
+    const initialMediaBadge = document.getElementById('media-selected-model-badge');
+    if (initialActiveCard && initialMediaBadge) {
+        const title = initialActiveCard.dataset.title;
+        const dorm = initialActiveCard.dataset.dorm;
+        const bano = initialActiveCard.dataset.bano;
+        let specsText = "";
+        if (dorm && bano) {
+            let compactDorm = dorm
+                .replace(" Dormitorios", " Dorms.")
+                .replace(" Dormitorio", " Dorm.")
+                .replace(" Planta Libre", " Pl. Libre")
+                .replace(" Privados", " Privados");
+            let compactBano = bano
+                .replace(" Baños", " Baños")
+                .replace(" Baño", " Baño");
+            specsText = ` (${compactDorm} / ${compactBano})`;
+        }
+        initialMediaBadge.textContent = `Modelo Seleccionado: ${title}${specsText}`;
+    }
 }
 
 
@@ -727,17 +765,18 @@ function initInvestorCalculator() {
 }
 
 /**
- * 8. Filtros Comerciales (Buscador y Pestañas en Home)
+ * 8. Filtros Comerciales (Buscador Integrado y Filtros en Home)
  */
 function initProjectFilters() {
     const btnBuscar = document.getElementById('btn-buscar');
     const searchComuna = document.getElementById('search-comuna');
     const searchTipo = document.getElementById('search-tipo');
+    const searchEstado = document.getElementById('search-estado');
     const searchPrecio = document.getElementById('search-precio');
     
     const tabBtns = document.querySelectorAll('.tab-filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    const projectsGrid = document.querySelector('.projects-grid');
+    const projectCards = document.querySelectorAll('.project-showcase-card, .project-card');
+    const projectsGrid = document.querySelector('.projects-showcase-list, .projects-grid');
     
     if (projectCards.length === 0) return;
 
@@ -748,10 +787,11 @@ function initProjectFilters() {
         noResultsMsg.id = 'no-results-msg';
         noResultsMsg.style.display = 'none';
         noResultsMsg.style.textAlign = 'center';
-        noResultsMsg.style.padding = '5rem 2rem';
+        noResultsMsg.style.padding = '4rem 2rem';
         noResultsMsg.style.gridColumn = '1 / -1';
-        noResultsMsg.style.fontFamily = 'var(--font-serif)';
-        noResultsMsg.style.fontSize = '1.4rem';
+        noResultsMsg.style.width = '100%';
+        noResultsMsg.style.fontFamily = 'var(--font-sans)';
+        noResultsMsg.style.fontSize = '1.2rem';
         noResultsMsg.style.color = 'var(--color-text-muted)';
         noResultsMsg.innerHTML = `
             <p>No encontramos proyectos que coincidan con tu búsqueda.</p>
@@ -762,9 +802,9 @@ function initProjectFilters() {
         document.getElementById('btn-reset-filters').addEventListener('click', () => {
             if (searchComuna) searchComuna.value = 'todos';
             if (searchTipo) searchTipo.value = 'todos';
+            if (searchEstado) searchEstado.value = 'todos';
             if (searchPrecio) searchPrecio.value = 'todos';
             
-            // Reset tabs
             tabBtns.forEach(btn => {
                 if (btn.dataset.filter === 'todos') {
                     btn.classList.add('active');
@@ -777,36 +817,29 @@ function initProjectFilters() {
         });
     }
 
-    // Estado activo de filtros
-    let activeState = 'todos';
-    let activeComuna = 'todos';
-    let activeTipo = 'todos';
-    let activePrecio = 'todos';
-
     // Función principal de filtrado
-    const filterProjects = (state, comuna, tipo, precio) => {
+    const filterProjects = (comuna, tipo, estado, precio) => {
         let visibleCount = 0;
         
         projectCards.forEach(card => {
-            const cardState = card.dataset.estado;
             const cardComuna = card.dataset.comuna;
             const cardTipo = card.dataset.tipo;
+            const cardEstado = card.dataset.estado;
             const cardPrecio = card.dataset.precio;
 
-            const stateMatch = (state === 'todos' || cardState === state);
             const comunaMatch = (comuna === 'todos' || cardComuna === comuna);
             const tipoMatch = (tipo === 'todos' || cardTipo === tipo);
+            const estadoMatch = (estado === 'todos' || cardEstado === estado);
             const precioMatch = (precio === 'todos' || cardPrecio === precio);
 
-            if (stateMatch && comunaMatch && tipoMatch && precioMatch) {
-                card.style.display = 'block';
-                // Añadir clase active para gatillar transiciones CSS
+            if (comunaMatch && tipoMatch && estadoMatch && precioMatch) {
+                card.classList.remove('is-hidden');
                 setTimeout(() => {
                     card.classList.add('active');
                 }, 50);
                 visibleCount++;
             } else {
-                card.style.display = 'none';
+                card.classList.add('is-hidden');
                 card.classList.remove('active');
             }
         });
@@ -816,50 +849,226 @@ function initProjectFilters() {
         }
     };
 
+    const triggerFilter = () => {
+        const c = searchComuna ? searchComuna.value : 'todos';
+        const t = searchTipo ? searchTipo.value : 'todos';
+        const e = searchEstado ? searchEstado.value : 'todos';
+        const p = searchPrecio ? searchPrecio.value : 'todos';
+        filterProjects(c, t, e, p);
+    };
+
     // Handler del botón Buscar
     if (btnBuscar) {
         btnBuscar.addEventListener('click', () => {
-            activeComuna = searchComuna ? searchComuna.value : 'todos';
-            activeTipo = searchTipo ? searchTipo.value : 'todos';
-            activePrecio = searchPrecio ? searchPrecio.value : 'todos';
+            triggerFilter();
             
-            // Al buscar, resetear las tabs a "Todos" para evitar choques confusos
-            tabBtns.forEach(btn => {
-                if (btn.dataset.filter === 'todos') {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-            activeState = 'todos';
-
-            filterProjects(activeState, activeComuna, activeTipo, activePrecio);
-            
-            // Desplazar un poco la vista si es móvil para ver resultados
-            if (window.innerWidth <= 768 && projectsGrid) {
+            // Desplazar suavemente hasta los proyectos
+            if (projectsGrid) {
                 projectsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     }
 
-    // Handlers de las pestañas (Tabs)
+    // Filtrado automático al cambiar selecciones en los dropdowns
+    [searchComuna, searchTipo, searchEstado, searchPrecio].forEach(select => {
+        if (select) {
+            select.addEventListener('change', triggerFilter);
+        }
+    });
+
+    // Handlers para pestañas de filtro si existen en otras vistas
     tabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             tabBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             
-            activeState = btn.dataset.filter;
-            
-            // Al presionar una pestaña comercial, reseteamos el buscador para evitar confusión
+            const filterState = btn.dataset.filter;
             if (searchComuna) searchComuna.value = 'todos';
             if (searchTipo) searchTipo.value = 'todos';
+            if (searchEstado) searchEstado.value = filterState;
             if (searchPrecio) searchPrecio.value = 'todos';
-            activeComuna = 'todos';
-            activeTipo = 'todos';
-            activePrecio = 'todos';
 
-            filterProjects(activeState, activeComuna, activeTipo, activePrecio);
+            triggerFilter();
         });
     });
 }
+
+/**
+ * 9. Interceptor de Alertas del Navegador (Toast Premium)
+ */
+window.alert = function(message) {
+    showPremiumToast(message);
+};
+
+function showPremiumToast(message) {
+    // Eliminar toast anterior si existe para evitar acumulaciones
+    const oldToast = document.querySelector('.premium-toast');
+    if (oldToast) {
+        oldToast.remove();
+    }
+
+    // Crear elementos de la alerta flotante
+    const toast = document.createElement('div');
+    toast.className = 'premium-toast';
+    toast.innerHTML = `
+        <span class="premium-toast-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><polyline points="20 6 9 17 4 12"/></svg>
+        </span>
+        <div class="premium-toast-message">${message}</div>
+        <button class="premium-toast-close" aria-label="Cerrar">×</button>
+    `;
+
+    document.body.appendChild(toast);
+
+    // Animación de entrada
+    setTimeout(() => {
+        toast.classList.add('show');
+    }, 50);
+
+    // Cerrar al hacer clic en el botón de cruz
+    const closeBtn = toast.querySelector('.premium-toast-close');
+    closeBtn.addEventListener('click', () => {
+        dismissToast(toast);
+    });
+
+    // Cierre automático después de 5 segundos
+    setTimeout(() => {
+        dismissToast(toast);
+    }, 5000);
+}
+
+function dismissToast(toast) {
+    if (!toast) return;
+    toast.classList.remove('show');
+    setTimeout(() => {
+        toast.remove();
+    }, 400);
+}
+
+/**
+ * 10. Carruseles de Imágenes en Tarjetas Showcase (Lazy-View Autoplay con Observer)
+ */
+function initCardCarousels() {
+    const carousels = document.querySelectorAll('.card-carousel');
+    if (carousels.length === 0) return;
+
+    carousels.forEach(carousel => {
+        const slides = carousel.querySelectorAll('.carousel-slide');
+        const dots = carousel.querySelectorAll('.carousel-dots .dot');
+        const prevBtn = carousel.querySelector('.prev-btn');
+        const nextBtn = carousel.querySelector('.next-btn');
+        if (slides.length <= 1) return;
+
+        let currentIndex = 0;
+        let autoplayInterval = null;
+        let isHovered = false;
+        let isVisible = false;
+
+        const showSlide = (index) => {
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            currentIndex = index;
+
+            slides.forEach((slide, i) => {
+                if (i === currentIndex) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            dots.forEach((dot, i) => {
+                if (i === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        };
+
+        const stopAutoplay = () => {
+            if (autoplayInterval) {
+                clearInterval(autoplayInterval);
+                autoplayInterval = null;
+            }
+        };
+
+        const startAutoplay = () => {
+            stopAutoplay();
+            if (isVisible && !isHovered) {
+                autoplayInterval = setInterval(() => {
+                    showSlide(currentIndex + 1);
+                }, 4500);
+            }
+        };
+
+        const resetAutoplay = () => {
+            stopAutoplay();
+            startAutoplay();
+        };
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                showSlide(currentIndex + 1);
+                resetAutoplay();
+            });
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                showSlide(currentIndex - 1);
+                resetAutoplay();
+            });
+        }
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                showSlide(i);
+                resetAutoplay();
+            });
+        });
+
+        carousel.addEventListener('mouseenter', () => {
+            isHovered = true;
+            stopAutoplay();
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            isHovered = false;
+            startAutoplay();
+        });
+
+        // IntersectionObserver: Solo arranca cuando la tarjeta entra a la pantalla del usuario
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        isVisible = true;
+                        // Resetear siempre a la foto 1 (index 0) al ponerse en pantalla
+                        showSlide(0);
+                        startAutoplay();
+                    } else {
+                        isVisible = false;
+                        stopAutoplay();
+                    }
+                });
+            }, {
+                threshold: 0.35 // Inicia cuando al menos el 35% del carrusel es visible
+            });
+
+            observer.observe(carousel);
+        } else {
+            // Fallback para navegadores antiguos
+            isVisible = true;
+            showSlide(0);
+            startAutoplay();
+        }
+    });
+}
+
 

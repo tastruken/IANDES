@@ -5,16 +5,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Camino de la Villa | Inmobiliaria Iandes</title>
-    <meta name="description"
-        content="Edificio Camino de la Villa. Proyecto residencial eco-eficiente de 1 y 2 dormitorios en Ñuñoa. Ahorro energético y áreas verdes comunes.">
+    <meta name="description" content="Edificio Camino de la Villa. Proyecto residencial eco-eficiente de 1 y 2 dormitorios en Ñuñoa. Ahorro energético y áreas verdes comunes.">
     <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Estilos del Módulo de Planos y Modelos Camino de la Villa */
+        .floorplan-container {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .floorplan-nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .floorplan-nav-tab {
+            background: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            padding: 0.8rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            color: var(--color-primary);
+            outline: none;
+            text-transform: uppercase;
+        }
+
+        .floorplan-nav-tab:hover {
+            border-color: var(--color-accent);
+            background: #FFFFFF;
+        }
+
+        .floorplan-nav-tab.active {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: #FFFFFF;
+        }
+
+        /* Sub-pestañas para 3D + 3B */
+        .floorplan-sub-tabs {
+            display: none;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .floorplan-sub-tab {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            color: var(--color-text-main);
+            outline: none;
+            text-transform: uppercase;
+        }
+
+        .floorplan-sub-tab:hover {
+            border-color: var(--color-secondary);
+        }
+
+        .floorplan-sub-tab.active {
+            background: var(--color-secondary);
+            border-color: var(--color-secondary);
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* Visor y detalles */
+        .floorplan-viewer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .floorplan-img-box {
+            position: relative;
+            background: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+        }
+
+        .floorplan-img-box img {
+            max-width: 100%;
+            max-height: 320px;
+            object-fit: contain;
+        }
+
+        .floorplan-details-box {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .floorplan-specs {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin: 0.8rem 0;
+            padding: 0;
+        }
+
+        .floorplan-specs li {
+            display: flex;
+            align-items: center;
+            font-size: 0.88rem;
+            color: var(--color-text-main);
+        }
+
+        .floorplan-specs li svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            color: var(--color-text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .floorplan-viewer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .floorplan-img-box {
+                min-height: 250px;
+            }
+        }
+
+        /* Estilos de la sección Sala de Ventas */
+        .sales-room-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .sales-room-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+        
+        .how-to-get-buttons a {
+            box-shadow: var(--shadow-small);
+        }
+        
+        .how-to-get-buttons a:hover {
+            border-color: var(--color-accent) !important;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
-    <header class="scrolled"></header>
+    <header>
+
+        <!-- Fallback de navegaciÃ³n para SEO/Accesibilidad -->
+        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+            <nav style="display:block;">
+                <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
+                    <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
+                    <li><a href="nosotros.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a></li>
+                    <li><a href="inversionistas.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a></li>
+                    <li><a href="postventa.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a></li>
+                    <li><a href="blog.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
+                    <li><a href="contacto.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+    <main>
 
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
     <section class="inner-hero">
@@ -31,13 +212,31 @@
                 <h1 class="inner-hero-title">Camino de la Villa</h1>
                 <p
                     style="color: var(--color-secondary); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem; font-weight: 500;">
-                    Diagonal Oriente 1900, Ñuñoa, Santiago
+                    Camino de La Villa 671, Lo Barnechea
                 </p>
+                <div class="inner-hero-specs-bar">
+                    <div class="specs-main-row">
+                        <div class="spec-inline-item" title="Dormitorios">
+                            <img src="assets/images/icons/icon-habitaciones.svg" alt="Dormitorios">
+                            <span>1 - 3</span>
+                        </div>
+                        <div class="spec-inline-item" title="Baños">
+                            <img src="assets/images/icons/icon-baños.svg" alt="Baños">
+                            <span>1 - 3</span>
+                        </div>
+                        <div class="spec-inline-item" title="Superficie">
+                            <img src="assets/images/icons/icon-metros2.svg" alt="Superficie">
+                            <span>Desde 38.6 m²</span>
+                        </div>
+                        <div class="spec-inline-item" style="color: var(--color-secondary); font-weight: 600;">
+                            <span>Desde UF 9.651</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- FICHA DETALLADA DE PROYECTO -->
     <section class="section">
         <div class="container">
             <div class="project-details-grid">
@@ -48,60 +247,43 @@
                     <!-- Módulo Multimedia Integrado -->
                     <div class="media-gallery-module reveal">
                         <div class="media-viewer-container">
-                            <!-- Badge indicador de modelo seleccionado -->
-                            <div class="media-model-badge" id="media-selected-model-badge">Modelo Seleccionado: Modelo
-                                V1</div>
-                            <div class="media-viewer">
-                                <!-- Por defecto muestra el render principal -->
-                                <img src="assets/images/proyectos/proyecto-camino-villa/render.png"
-                                    alt="Render Exterior Camino de la Villa"
-                                    style="filter: saturate(0.5) brightness(0.9);">
+                            <div class="media-model-badge" id="media-selected-model-badge">Modelo Seleccionado: DEPTO 1D 2B</div>
+                            <div class="media-viewer" style="position: relative; padding-top: 56.25%; overflow: hidden; border: 1px solid var(--color-border); background-color: var(--color-primary);">
+                                <img id="selected-media-img" src="assets/images/proyectos/proyecto-camino-villa/render.png" alt="Render Exterior Camino de la Villa" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: saturate(0.5) brightness(0.9);">
+                                <iframe id="selected-media-iframe" src="" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none; display:none;" allowfullscreen></iframe>
                             </div>
                         </div>
 
                         <div class="media-tabs">
-                            <button class="media-tab-btn active" data-type="image"
-                                data-src="assets/images/proyectos/proyecto-camino-villa/render.png, assets/images/proyectos/proyecto-camino-villa/render-2.png"
-                                data-title="Render Exterior">
+                            <button class="media-tab-btn active" data-view="render-ext" id="tab-btn-exterior">
                                 <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path
-                                            d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6" />
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6" />
                                     </svg>
                                 </span>
                                 <span class="media-tab-label">Render Exterior</span>
                             </button>
-                            <button class="media-tab-btn" data-type="image" id="tab-btn-interior"
-                                data-src="assets/images/proyectos/proyecto-camino-villa/render-interior.png, assets/images/proyectos/proyecto-camino-villa/render-interior-2.png"
-                                data-title="Vista Interior Modelo V1">
+                            <button class="media-tab-btn" data-view="render-int" id="tab-btn-interior">
                                 <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path
-                                            d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                                         <circle cx="12" cy="13" r="4" />
                                     </svg>
                                 </span>
                                 <span class="media-tab-label">Vista Interior</span>
                             </button>
-                            <button class="media-tab-btn" data-type="tour360" id="tab-btn-tour"
-                                data-src="https://my.matterport.com/show/?m=uH1fG94kZ2n"
-                                data-title="Recorrido 360° Modelo V1">
+                            <button class="media-tab-btn" data-view="tour-360" id="tab-btn-tour">
                                 <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <circle cx="12" cy="12" r="10" />
                                         <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" />
                                     </svg>
                                 </span>
                                 <span class="media-tab-label">Recorrido 360°</span>
                             </button>
-                            <button class="media-tab-btn" data-type="video"
-                                data-src="https://www.youtube.com/embed/dQw4w9WgXcQ" data-title="Video de Presentación">
+                            <button class="media-tab-btn" data-view="video" id="tab-btn-video">
                                 <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <polygon points="5 3 19 12 5 21 5 3" />
                                     </svg>
                                 </span>
@@ -112,150 +294,74 @@
 
                     <!-- Descripción General -->
                     <div class="reveal" style="margin-bottom: 3.5rem;">
-                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Sustentabilidad y modernidad integrada en
-                            un oasis verde</h2>
-                        <p
-                            style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                            Edificio Camino de la Villa nace de la inquietud por crear un entorno habitacional
-                            verdaderamente sustentable y respetuoso con el medio ambiente en la comuna de Ñuñoa. Este
-                            desarrollo inmobiliario implementa tecnologías eco-eficientes avanzadas que no solo
-                            disminuyen la huella ecológica, sino que se traducen en un ahorro directo y permanente en el
-                            consumo eléctrico y de agua de los departamentos.
+                        <h2 style="font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--color-primary);">El valor de vivir inserto, en la naturaleza indómita.</h2>
+                        <p style="color: var(--color-secondary); letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.9rem; font-weight: 600; margin-bottom: 1.5rem;">
+                            Flexibilidad & Nobleza
                         </p>
-                        <p
-                            style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
-                            El diseño cuenta con un gran parque interior arbolado con especies nativas de bajo consumo
-                            hídrico, senderos peatonales de adoquines permeables, estacionamiento exclusivo para
-                            bicicletas con estación de servicio mecánico, y paneles fotovoltaicos en azoteas destinados
-                            a iluminar y climatizar las zonas comunes del edificio.
+                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                            En un mundo que va rápido, a veces lo que mas valoramos es lo que se mueve lento: el silencio, el espacio, la luz natural, la privacidad. Camino de la villa nace desde ese anhelo. Un edificio íntimo de 16 departamentos, diseñado para quienes buscan habitar de forma consciente, un equilibrio con el entorno y con su propia manera de vivir.
+                        </p>
+                        <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
+                            Aquí cada metro cuadrado tiene un propósito. Cada vista abre al verde. Cada material fue pensado para durar. Y cada espacio se adapta a la etapa de vida que estés viviendo, sin perder el diseño ni la nobleza. Ya sea porque vienes de una casa que hoy te queda grande, o porque estás dando el primer paso hacia un lugar que te representa. Porque a veces, avanzar no significa tener más. Significa tener lo justo, tener lo que importa.
                         </p>
 
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Atributos de Eficiencia
-                            Energética</h3>
-                        <ul
-                            style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; color: var(--color-text-main);">
-                            <li>✓ Certificación de Eficiencia Energética (CEE) Nivel A.</li>
-                            <li>✓ Sistema de paneles solares fotovoltaicos para iluminación común.</li>
-                            <li>✓ Reutilización de aguas grises tratadas para el riego de áreas verdes.</li>
-                            <li>✓ Ventanas termopanel de PVC con aislamiento térmico y acústico reforzado.</li>
-                            <li>✓ Sensores de movimiento e iluminación LED en pasillos comunes.</li>
-                            <li>✓ Griferías y sanitarios ecológicos con aireadores de caudal reducido.</li>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem; border-bottom: 1px solid var(--color-border); padding-bottom: 0.5rem;">Atributos del Proyecto</h3>
+                        <ul style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; color: var(--color-text-main); padding: 0;">
+                            <li style="display:flex; align-items:center;"><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Certificación de Eficiencia Energética (CEE) Nivel A.</li>
+                            <li style="display:flex; align-items:center;"><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Sistema de paneles solares para áreas comunes.</li>
+                            <li style="display:flex; align-items:center;"><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Reutilización de aguas grises para riego de jardines.</li>
+                            <li style="display:flex; align-items:center;"><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Ventanas termopanel con aislamiento acústico.</li>
                         </ul>
                     </div>
 
-                    <!-- Módulo de Tipologías Interactivas (Explorador de Modelos) -->
-                    <div class="model-explorer reveal">
-                        <div class="model-explorer-header">
-                            <h3 class="model-explorer-title">Descubre tu Modelo Ideal</h3>
-                            <div class="model-explorer-nav">
-                                <button class="model-nav-btn prev-btn" aria-label="Anterior">&lsaquo;</button>
-                                <button class="model-nav-btn next-btn" aria-label="Siguiente">&rsaquo;</button>
-                            </div>
+                    <!-- Módulo de Tipologías Interactivas (Planos y Modelos) -->
+                    <div class="floorplan-container reveal">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Planos y Modelos</h3>
+                        
+                        <div class="floorplan-nav-tabs">
+                            <button class="floorplan-nav-tab active" data-id="1d2b">DEPTO 1D 2B</button>
+                            <button class="floorplan-nav-tab" data-id="2d2b">DEPTO 2D + 2B</button>
+                            <button class="floorplan-nav-tab" data-id="3d3b">DEPTO 3D + 3B</button>
                         </div>
-
-                        <div class="model-carousel-wrapper">
-                            <div class="model-carousel-track">
-                                <!-- Tarjeta Modelo V1 -->
-                                <div class="model-card active" data-id="1d1b" data-price="3.850" data-title="Modelo V1"
-                                    data-img="assets/images/proyectos/proyecto-camino-villa/plano.png"
-                                    data-dorm="1 Dormitorio" data-bano="1 Baño" data-sup="38.6 m²"
-                                    data-render-int="assets/images/proyectos/proyecto-camino-villa/render-interior.png, assets/images/proyectos/proyecto-camino-villa/render-interior-2.png"
-                                    data-tour="https://my.matterport.com/show/?m=uH1fG94kZ2n">
-                                    <div class="model-card-plan">
-                                        <img src="assets/images/proyectos/proyecto-camino-villa/plano.png"
-                                            alt="Plano Modelo V1">
-                                    </div>
-                                    <h4 class="model-card-name">Modelo V1</h4>
-                                    <div class="model-card-price">Desde <span class="highlight">UF 3.850</span></div>
-                                    <div class="model-card-specs">
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" />
-                                            </svg> 1 Dorm.</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" />
-                                            </svg> 1 Baño</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24">
-                                                <rect x="3" y="3" width="18" height="18" rx="2" />
-                                                <path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" />
-                                            </svg> 38.6 m²</span>
-                                    </div>
-                                    <div class="model-card-badge">✓</div>
-                                </div>
-
-                                <!-- Tarjeta Modelo V2 -->
-                                <div class="model-card" data-id="2d2b" data-price="4.950" data-title="Modelo V2"
-                                    data-img="assets/images/proyectos/proyecto-camino-villa/plano.png"
-                                    data-dorm="2 Dormitorios" data-bano="2 Baños" data-sup="59.2 m²"
-                                    data-render-int="assets/images/proyectos/proyecto-camino-villa/render-interior.png, assets/images/proyectos/proyecto-camino-villa/render-interior-2.png"
-                                    data-tour="https://my.matterport.com/show/?m=sxz74b1m2n">
-                                    <div class="model-card-plan">
-                                        <img src="assets/images/proyectos/proyecto-camino-villa/plano.png"
-                                            alt="Plano Modelo V2">
-                                    </div>
-                                    <h4 class="model-card-name">Modelo V2</h4>
-                                    <div class="model-card-price">Desde <span class="highlight">UF 4.950</span></div>
-                                    <div class="model-card-specs">
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" />
-                                            </svg> 2 Dorm.</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" />
-                                            </svg> 2 Baños</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24">
-                                                <rect x="3" y="3" width="18" height="18" rx="2" />
-                                                <path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" />
-                                            </svg> 59.2 m²</span>
-                                    </div>
-                                    <div class="model-card-badge">✓</div>
-                                </div>
-                            </div>
+                        
+                        <!-- Sub-pestañas para los tipos de 2D + 2B -->
+                        <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d2b">
+                            <button class="floorplan-sub-tab active" data-subid="tipo-a">TIPO A</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-f">TIPO F</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-j">TIPO J</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-h">TIPO H</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-l">TIPO L</button>
                         </div>
-
-                        <!-- Detalle Seleccionado -->
-                        <div class="model-detail-view">
-                            <div class="model-detail-visual">
-                                <img id="selected-model-img"
-                                    src="assets/images/proyectos/proyecto-camino-villa/plano.png"
-                                    alt="Plano Seleccionado">
-                                <button class="model-zoom-btn" id="zoom-model-btn" aria-label="Ampliar plano">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        
+                        <!-- Sub-pestañas para los tipos de 3D + 3B -->
+                        <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-3d3b">
+                            <button class="floorplan-sub-tab active" data-subid="tipo-b">TIPO B</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-d">TIPO D</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-g">TIPO G</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-i">TIPO I</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-k">TIPO K</button>
+                            <button class="floorplan-sub-tab" data-subid="tipo-m">TIPO M</button>
+                        </div>
+                        
+                        <div class="floorplan-viewer-grid">
+                            <div class="floorplan-img-box">
+                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-camino-villa/plano.png" alt="Plano Seleccionado">
+                                <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
                                     </svg>
                                 </button>
                             </div>
-                            <div class="model-detail-info">
-                                <h4 id="selected-model-name">Modelo V1</h4>
-                                <hr class="model-divider">
-                                <ul class="model-spec-list">
-                                    <li>
-                                        <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" />
-                                            </svg></span>
-                                        <span class="text" id="selected-model-dorm">1 Dormitorio</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24">
-                                                <path
-                                                    d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" />
-                                            </svg></span>
-                                        <span class="text" id="selected-model-bano">1 Baño</span>
-                                    </li>
-                                    <li>
-                                        <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24">
-                                                <rect x="3" y="3" width="18" height="18" rx="2" />
-                                                <path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" />
-                                            </svg></span>
-                                        <span class="text" id="selected-model-sup">38.6 m² Superficie</span>
-                                    </li>
+                            <div class="floorplan-details-box">
+                                <h4 id="selected-floorplan-name" style="font-size: 1.5rem; color:var(--color-primary); font-weight:600;">DEPTO 1D 2B</h4>
+                                <div style="font-size: 1.3rem; font-weight: 600; color: var(--color-primary);">Desde <span class="highlight" id="selected-floorplan-price">UF 9.651</span></div>
+                                <hr class="model-divider" style="margin: 0.5rem 0; border: 0; border-top: 1px solid var(--color-border);">
+                                <ul class="floorplan-specs">
+                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg><span id="selected-floorplan-dorm">1 Dormitorio</span></li>
+                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" /></svg><span id="selected-floorplan-bano">2 Baños</span></li>
+                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" /></svg><span id="selected-floorplan-sup">45.2 m² Superficie</span></li>
                                 </ul>
-                                <button class="btn btn-secondary model-cotizar-btn"
-                                    id="model-cotizar-action">Cotizar</button>
+                                <button class="btn btn-secondary" id="floorplan-cotizar-btn" style="width: 100%; margin-top: 0.5rem;">Cotizar este modelo</button>
                             </div>
                         </div>
                     </div>
@@ -265,16 +371,31 @@
                 <div>
                     <div id="cotizador" class="sidebar-cotizador reveal">
                         <h3>Cotizar Proyecto</h3>
-                        <span id="cotizador-price" class="price">Desde UF 3.850</span>
+                        <span id="cotizador-price" class="price">Desde UF 9.651</span>
 
                         <form action="#" method="POST" id="form-cotizar">
                             <div class="form-group">
                                 <label for="select-tipologia">Tipología de Interés</label>
                                 <select id="select-tipologia" required>
-                                    <option value="1d1b" data-price="3.850">Modelo V1 (1D + 1B) - UF 3.850</option>
-                                    <option value="2d2b" data-price="4.950">Modelo V2 (2D + 2B) - UF 4.950</option>
+                                    <option value="1d2b" data-price="9.651">DEPTO 1D 2B (45 m²) - UF 9.651</option>
+                                    <option value="2d2b" data-price="12.450">DEPTO 2D + 2B (68 m²) - UF 12.450</option>
+                                    <option value="3d3b" data-price="15.800">DEPTO 3D + 3B (92 m²) - UF 15.800</option>
                                 </select>
                             </div>
+                            
+                            <div class="form-group" id="group-sub-tipologia" style="display: none; margin-bottom: 1.5rem;">
+                                <label for="select-sub-tipologia">Tipo de Departamento (3D + 3B)</label>
+                                <select id="select-sub-tipologia">
+                                    <option value="" disabled selected>Selecciona un tipo...</option>
+                                    <option value="tipo-b">TIPO B</option>
+                                    <option value="tipo-d">TIPO D</option>
+                                    <option value="tipo-g">TIPO G</option>
+                                    <option value="tipo-i">TIPO I</option>
+                                    <option value="tipo-k">TIPO K</option>
+                                    <option value="tipo-m">TIPO M</option>
+                                </select>
+                            </div>
+                            
                             <div class="form-group">
                                 <label for="input-nombre">Nombre Completo</label>
                                 <input type="text" id="input-nombre" required placeholder="Ej: Juan Pérez">
@@ -289,26 +410,23 @@
                             </div>
                             <div class="form-group">
                                 <label for="input-mensaje">Mensaje (Opcional)</label>
-                                <textarea id="input-mensaje" rows="3"
-                                    placeholder="Hola, me gustaría recibir más información de este proyecto..."></textarea>
+                                <textarea id="input-mensaje" rows="3" placeholder="Hola, me gustaría recibir más información de este proyecto..."></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary"
-                                style="width: 100%; margin-bottom: 1rem;">Enviar Solicitud</button>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enviar Solicitud</button>
                         </form>
 
                         <!-- Ejecutiva comercial humanizada -->
-                        <div class="exec-profile">
-                            <div class="exec-photo">
-                                <img src="assets/images/ejecutiva-ventas.png" alt="Javiera Muñoz">
+                        <div class="exec-profile" style="display:flex; align-items:center; gap:1rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-top:1rem;">
+                            <div class="exec-photo" style="width:45px; height:45px; border-radius:50%; overflow:hidden;">
+                                <img src="assets/images/ejecutiva-ventas.png" alt="Javiera Muñoz" style="width:100%; height:100%; object-fit:cover;">
                             </div>
                             <div class="exec-info">
-                                <h5>Javiera Muñoz</h5>
-                                <p>Asesora de Ventas - Camino de la Villa</p>
+                                <h5 style="margin:0; font-size:0.9rem; font-weight:600;">Javiera Muñoz</h5>
+                                <p style="margin:0; font-size:0.75rem; color:var(--color-text-light);">Asesora de Ventas - Camino de la Villa</p>
                             </div>
                         </div>
-                        <a href="https://wa.me/56912345678?text=Hola%20Javiera,%20me%20interesa%20cotizar%20un%20departamento%20en%20Camino%20de%20la%20Villa."
-                            target="_blank" class="exec-whatsapp-btn">
+                        <a href="https://wa.me/56912345678?text=Hola%20Javiera,%20me%20interesa%20cotizar%20un%20departamento%20en%20Camino%20de%20la%20Villa." target="_blank" class="exec-whatsapp-btn" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; text-decoration:none; padding: 0.8rem; margin-top:1rem; font-size:0.8rem;">
                             Contactar por WhatsApp
                         </a>
                     </div>
@@ -318,18 +436,542 @@
         </div>
     </section>
 
+    <!-- SECCIÓN SALA DE VENTAS -->
+    <section class="section sales-room-section" style="border-top: 1px solid var(--color-border); background-color: var(--color-bg-light); padding: 5rem 0;">
+        <div class="container">
+            <div class="sales-room-grid">
+                <!-- Columna Izquierda: Información -->
+                <div class="reveal">
+                    <h2 style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 1.5rem; font-family: var(--font-serif);">Sala de ventas</h2>
+                    <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                        Te esperamos en nuestra sala de ventas ubicada en <strong>Work Plaza</strong> en Av. La Dehesa 222, Lo Barnechea.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 1rem; color: var(--color-primary); font-family: var(--font-sans); font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Horarios de atención:</h4>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                            <strong>Lunes a viernes:</strong> 10:30 a 14:00 / 15.00 a 18:00 hrs.
+                        </p>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            <strong>Sábados:</strong> 10:00 a 14:00 hrs.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                            <strong>Teléfono de contacto:</strong> +56 2 1234 5678
+                        </p>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            <strong>WhatsApp:</strong> +56 9 8164 5225
+                        </p>
+                    </div>
+                    
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem;">
+                        Nuestro equipo estará encantado de atenderte y acompañarte en cada paso de tu decisión.
+                    </p>
+                    
+                    <!-- Botones de Cómo Llegar -->
+                    <div class="how-to-get-buttons" style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
+                        <a href="https://waze.com/ul?q=Av.+La+Dehesa+222,+Lo+Barnechea" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/waze logo.png" alt="Waze" style="height: 32px; width: 32px; object-fit: contain; border-radius: 4px; vertical-align: middle;">
+                                <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #05B4E3;">Waze</span>
+                            </div>
+                            <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Av.+La+Dehesa+222,+Lo+Barnechea" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.png" alt="Google Maps" style="height: 32px; width: 32px; object-fit: contain; vertical-align: middle;">
+                                <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #5F6368;">Google Maps</span>
+                            </div>
+                            <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Columna Derecha: Mapa -->
+                <div class="reveal">
+                    <div style="border: 1px solid var(--color-border); height: 380px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium);">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Av.%20La%20Dehesa%20222,%20Lo%20Barnechea&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PIE DE PAGINA (FOOTER) -->
-    <footer></footer>
+    </main>
+
+    <footer>
+
+        <!-- Fallback de pie de pÃ¡gina para SEO/Accesibilidad -->
+        <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">TÃ©rminos y Condiciones</a>
+                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">PolÃ­tica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+</footer>
 
     <!-- Scripts de Funcionalidad -->
     <script src="assets/js/main.js"></script>
     <script>
+        // Ficha técnica completa de todos los departamentos y sub-tipologías
+        const modelData = {
+            '1d2b': {
+                title: 'DEPTO 1D 2B',
+                price: '9.651',
+                dorm: '1 Dormitorio',
+                bano: '2 Baños',
+                sup: '45.2 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+            },
+            // Sub-tipologías de 2D + 2B
+            'tipo-a': {
+                title: 'DEPTO 2D + 2B (TIPO A)',
+                price: '12.450',
+                dorm: '2 Dormitorios',
+                bano: '2 Baños',
+                sup: '68.4 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
+            },
+            'tipo-f': {
+                title: 'DEPTO 2D + 2B (TIPO F)',
+                price: '12.600',
+                dorm: '2 Dormitorios',
+                bano: '2 Baños',
+                sup: '69.1 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
+            },
+            'tipo-j': {
+                title: 'DEPTO 2D + 2B (TIPO J)',
+                price: '12.550',
+                dorm: '2 Dormitorios',
+                bano: '2 Baños',
+                sup: '68.8 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
+            },
+            'tipo-h': {
+                title: 'DEPTO 2D + 2B (TIPO H)',
+                price: '12.750',
+                dorm: '2 Dormitorios',
+                bano: '2 Baños',
+                sup: '70.2 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
+            },
+            'tipo-l': {
+                title: 'DEPTO 2D + 2B (TIPO L)',
+                price: '12.500',
+                dorm: '2 Dormitorios',
+                bano: '2 Baños',
+                sup: '68.5 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
+            },
+            // Sub-tipologías de 3D + 3B
+            'tipo-b': {
+                title: 'DEPTO 3D + 3B (TIPO B)',
+                price: '15.800',
+                dorm: '3 Dormitorios',
+                bano: '3 Baños',
+                sup: '92.1 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+            },
+            'tipo-d': {
+                title: 'DEPTO 3D + 3B (TIPO D)',
+                price: '16.100',
+                dorm: '3 Dormitorios',
+                bano: '3 Baños',
+                sup: '93.5 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+            },
+            'tipo-g': {
+                title: 'DEPTO 3D + 3B (TIPO G)',
+                price: '15.950',
+                dorm: '3 Dormitorios',
+                bano: '3 Baños',
+                sup: '92.8 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+            },
+            'tipo-i': {
+                title: 'DEPTO 3D + 3B (TIPO I)',
+                price: '16.400',
+                dorm: '3 Dormitorios',
+                bano: '3 Baños',
+                sup: '94.2 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+            },
+            'tipo-k': {
+                title: 'DEPTO 3D + 3B (TIPO K)',
+                price: '15.850',
+                dorm: '3 Dormitorios',
+                bano: '3 Baños',
+                sup: '92.3 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+            },
+            'tipo-m': {
+                title: 'DEPTO 3D + 3B (TIPO M)',
+                price: '16.250',
+                dorm: '3 Dormitorios',
+                bano: '3 Baños',
+                sup: '93.9 m²',
+                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
+                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+            }
+        };
+
+        // Mappings para opciones dinámicas de sub-tipologías en el formulario
+        const subTipologiasOptions = {
+            '2d2b': [
+                { value: 'tipo-a', label: 'TIPO A' },
+                { value: 'tipo-f', label: 'TIPO F' },
+                { value: 'tipo-j', label: 'TIPO J' },
+                { value: 'tipo-h', label: 'TIPO H' },
+                { value: 'tipo-l', label: 'TIPO L' }
+            ],
+            '3d3b': [
+                { value: 'tipo-b', label: 'TIPO B' },
+                { value: 'tipo-d', label: 'TIPO D' },
+                { value: 'tipo-g', label: 'TIPO G' },
+                { value: 'tipo-i', label: 'TIPO I' },
+                { value: 'tipo-k', label: 'TIPO K' },
+                { value: 'tipo-m', label: 'TIPO M' }
+            ]
+        };
+
+        const mediaTabs = document.querySelectorAll('.media-tabs .media-tab-btn');
+        const selectedMediaImg = document.getElementById('selected-media-img');
+        const selectedMediaIframe = document.getElementById('selected-media-iframe');
+        const mediaBadge = document.getElementById('media-selected-model-badge');
+
+        const floorplanNavTabs = document.querySelectorAll('.floorplan-nav-tab');
+        const subTabsBlock2D = document.getElementById('floorplan-sub-tabs-2d2b');
+        const subTabsBlock3D = document.getElementById('floorplan-sub-tabs-3d3b');
+        const floorplanSubTabs = document.querySelectorAll('.floorplan-sub-tab');
+
+        const selectedFloorplanImg = document.getElementById('selected-floorplan-img');
+        const selectedFloorplanName = document.getElementById('selected-floorplan-name');
+        const selectedFloorplanPrice = document.getElementById('selected-floorplan-price');
+        const selectedFloorplanDorm = document.getElementById('selected-floorplan-dorm');
+        const selectedFloorplanBano = document.getElementById('selected-floorplan-bano');
+        const selectedFloorplanSup = document.getElementById('selected-floorplan-sup');
+
+        const selectTipologia = document.getElementById('select-tipologia');
+        const groupSubTipologia = document.getElementById('group-sub-tipologia');
+        const selectSubTipologia = document.getElementById('select-sub-tipologia');
+        const cotizadorPrice = document.getElementById('cotizador-price');
+
+        // Video URL constante
+        const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+
+        // Función para obtener la clave activa del modelo actual
+        function getActiveModelKey() {
+            const activeMainTab = document.querySelector('.floorplan-nav-tab.active');
+            if (!activeMainTab) return '1d2b';
+            const id = activeMainTab.dataset.id;
+            
+            if (id === '2d2b') {
+                const activeSubTab = document.querySelector('#floorplan-sub-tabs-2d2b .floorplan-sub-tab.active');
+                return activeSubTab ? activeSubTab.dataset.subid : 'tipo-a';
+            } else if (id === '3d3b') {
+                const activeSubTab = document.querySelector('#floorplan-sub-tabs-3d3b .floorplan-sub-tab.active');
+                return activeSubTab ? activeSubTab.dataset.subid : 'tipo-b';
+            }
+            return id;
+        }
+
+        // Función para actualizar la Galería Multimedia Superior
+        function updateMediaGallery() {
+            const activeViewTab = document.querySelector('.media-tabs .media-tab-btn.active');
+            if (!activeViewTab) return;
+
+            const view = activeViewTab.dataset.view;
+            const modelKey = getActiveModelKey();
+            const data = modelData[modelKey];
+            const mainModelTitle = document.querySelector('.floorplan-nav-tab.active').textContent;
+
+            // Sincronizar el badge del modelo
+            if (mediaBadge) {
+                const compactDorm = data.dorm.replace(" Dormitorios", " Dorms.").replace(" Dormitorio", " Dorm.");
+                mediaBadge.textContent = `Modelo Seleccionado: ${data.title} (${compactDorm} / ${data.bano})`;
+            }
+
+            if (view === 'render-ext') {
+                selectedMediaIframe.style.display = 'none';
+                selectedMediaIframe.src = '';
+                selectedMediaImg.style.display = 'block';
+                selectedMediaImg.src = "assets/images/proyectos/proyecto-camino-villa/render.png";
+                selectedMediaImg.alt = "Render Exterior - " + mainModelTitle;
+            } else if (view === 'render-int') {
+                selectedMediaIframe.style.display = 'none';
+                selectedMediaIframe.src = '';
+                selectedMediaImg.style.display = 'block';
+                selectedMediaImg.src = data.renderInt;
+                selectedMediaImg.alt = "Vista Interior - " + data.title;
+            } else if (view === 'tour-360') {
+                selectedMediaImg.style.display = 'none';
+                selectedMediaIframe.style.display = 'block';
+                selectedMediaIframe.src = data.tour;
+            } else if (view === 'video') {
+                selectedMediaImg.style.display = 'none';
+                selectedMediaIframe.style.display = 'block';
+                selectedMediaIframe.src = videoUrl;
+            }
+        }
+
+        // Función para actualizar el Visor de Planos inferior
+        function updateFloorplanViewer(key) {
+            const data = modelData[key];
+            if (!data) return;
+
+            // Actualizar textos e imagen del visor
+            if (selectedFloorplanImg) selectedFloorplanImg.src = data.img;
+            if (selectedFloorplanName) selectedFloorplanName.textContent = data.title;
+            if (selectedFloorplanPrice) selectedFloorplanPrice.textContent = data.price;
+            if (selectedFloorplanDorm) selectedFloorplanDorm.textContent = data.dorm;
+            if (selectedFloorplanBano) selectedFloorplanBano.textContent = data.bano;
+            if (selectedFloorplanSup) selectedFloorplanSup.textContent = `${data.sup} Superficie`;
+        }
+
+        // Función para sincronizar y actualizar el Formulario de Cotización
+        function syncForm() {
+            const mainTab = document.querySelector('.floorplan-nav-tab.active');
+            if (!mainTab) return;
+            const mainId = mainTab.dataset.id;
+            const modelKey = getActiveModelKey();
+            const data = modelData[modelKey];
+
+            // 1. Sincronizar select de Tipología
+            if (selectTipologia) {
+                selectTipologia.value = mainId;
+            }
+
+            // 2. Controlar visibilidad y rellenar dinámicamente las sub-tipologías
+            if (mainId === '2d2b' || mainId === '3d3b') {
+                if (groupSubTipologia) {
+                    groupSubTipologia.style.display = 'block';
+                    // Cambiar etiqueta dinámicamente
+                    const label = groupSubTipologia.querySelector('label');
+                    if (label) {
+                        label.textContent = `Tipo de Departamento (${mainId === '2d2b' ? '2D + 2B' : '3D + 3B'})`;
+                    }
+                }
+                
+                if (selectSubTipologia) {
+                    // Guardar valor anterior para no perder la selección
+                    const prevVal = selectSubTipologia.value;
+                    
+                    // Limpiar opciones
+                    selectSubTipologia.innerHTML = '<option value="" disabled selected>Selecciona un tipo...</option>';
+                    
+                    // Cargar opciones correspondientes
+                    const options = subTipologiasOptions[mainId];
+                    options.forEach(opt => {
+                        const el = document.createElement('option');
+                        el.value = opt.value;
+                        el.textContent = opt.label;
+                        selectSubTipologia.appendChild(el);
+                    });
+                    
+                    selectSubTipologia.setAttribute('required', 'required');
+                    
+                    // Intentar restablecer valor o usar el actual
+                    if (modelKey.startsWith('tipo-')) {
+                        selectSubTipologia.value = modelKey;
+                    }
+                }
+            } else {
+                if (groupSubTipologia) groupSubTipologia.style.display = 'none';
+                if (selectSubTipologia) {
+                    selectSubTipologia.removeAttribute('required');
+                    selectSubTipologia.innerHTML = '<option value="" disabled selected>Selecciona un tipo...</option>';
+                    selectSubTipologia.value = '';
+                }
+            }
+
+            // 3. Sincronizar precio en formulario
+            if (cotizadorPrice) {
+                cotizadorPrice.textContent = `Desde UF ${data.price}`;
+            }
+        }
+
+        // Handler de clic en las Pestañas de la Galería Multimedia
+        mediaTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                mediaTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                updateMediaGallery();
+            });
+        });
+
+        // Handler de clic en las Pestañas Principales de los Modelos (1D, 2D, 3D)
+        floorplanNavTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                floorplanNavTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const mainId = tab.dataset.id;
+
+                // Mostrar u ocultar los bloques de sub-tabs de manera exclusiva
+                if (mainId === '2d2b') {
+                    if (subTabsBlock2D) subTabsBlock2D.style.display = 'flex';
+                    if (subTabsBlock3D) subTabsBlock3D.style.display = 'none';
+                } else if (mainId === '3d3b') {
+                    if (subTabsBlock2D) subTabsBlock2D.style.display = 'none';
+                    if (subTabsBlock3D) subTabsBlock3D.style.display = 'flex';
+                } else {
+                    if (subTabsBlock2D) subTabsBlock2D.style.display = 'none';
+                    if (subTabsBlock3D) subTabsBlock3D.style.display = 'none';
+                }
+
+                // Actualizar vistas
+                const activeKey = getActiveModelKey();
+                updateFloorplanViewer(activeKey);
+                syncForm();
+                updateMediaGallery();
+            });
+        });
+
+        // Handler de clic en las Sub-pestañas de Distribución (TIPO A, B, D, etc.)
+        floorplanSubTabs.forEach(subtab => {
+            subtab.addEventListener('click', () => {
+                const parentBlock = subtab.parentElement;
+                parentBlock.querySelectorAll('.floorplan-sub-tab').forEach(st => st.classList.remove('active'));
+                subtab.classList.add('active');
+
+                const activeKey = subtab.dataset.subid;
+                updateFloorplanViewer(activeKey);
+                syncForm();
+                updateMediaGallery();
+            });
+        });
+
+        // Sincronizar de forma inversa si el usuario cambia los selects directamente en el Formulario
+        if (selectTipologia) {
+            selectTipologia.addEventListener('change', (e) => {
+                const val = e.target.value;
+                const tabToActivate = document.querySelector(`.floorplan-nav-tab[data-id="${val}"]`);
+                if (tabToActivate) {
+                    tabToActivate.click();
+                }
+            });
+        }
+        if (selectSubTipologia) {
+            selectSubTipologia.addEventListener('change', (e) => {
+                const val = e.target.value;
+                const subTabToActivate = document.querySelector(`.floorplan-sub-tab[data-subid="${val}"]`);
+                if (subTabToActivate) {
+                    const parentBlock = subTabToActivate.parentElement;
+                    parentBlock.querySelectorAll('.floorplan-sub-tab').forEach(st => st.classList.remove('active'));
+                    subTabToActivate.classList.add('active');
+                    
+                    updateFloorplanViewer(val);
+                    updateMediaGallery();
+                    
+                    // Sincronizar precio
+                    const data = modelData[val];
+                    if (data && cotizadorPrice) {
+                        cotizadorPrice.textContent = `Desde UF ${data.price}`;
+                    }
+                }
+            });
+        }
+
+        // Botón Cotizar del visor de planos (Desplazamiento suave al formulario)
+        const floorplanCotizarBtn = document.getElementById('floorplan-cotizar-btn');
+        if (floorplanCotizarBtn) {
+            floorplanCotizarBtn.addEventListener('click', () => {
+                const cotizador = document.getElementById('cotizador');
+                if (cotizador) {
+                    cotizador.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    // Destello sutil
+                    cotizador.style.outline = '2px solid var(--color-secondary)';
+                    setTimeout(() => {
+                        cotizador.style.outline = 'none';
+                    }, 1500);
+                }
+            });
+        }
+
+        // Lógica de Zoom del Plano (Lightbox/Modal)
+        const zoomFloorplanBtn = document.getElementById('zoom-floorplan-btn');
+        if (zoomFloorplanBtn) {
+            zoomFloorplanBtn.addEventListener('click', () => {
+                const currentImgSrc = selectedFloorplanImg.src;
+                let lightbox = document.getElementById('model-lightbox');
+                if (!lightbox) {
+                    lightbox = document.createElement('div');
+                    lightbox.id = 'model-lightbox';
+                    lightbox.className = 'model-lightbox';
+                    lightbox.innerHTML = `
+                        <span class="lightbox-close">&times;</span>
+                        <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Plano">
+                    `;
+                    document.body.appendChild(lightbox);
+                    
+                    lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
+                        lightbox.classList.remove('active');
+                    });
+                    lightbox.addEventListener('click', (e) => {
+                        if (e.target === lightbox) lightbox.classList.remove('active');
+                    });
+                }
+                const lightboxImg = lightbox.querySelector('#lightbox-img');
+                if (lightboxImg) lightboxImg.src = currentImgSrc;
+                lightbox.classList.add('active');
+            });
+        }
+
+        // Simular envío de formulario
         document.getElementById('form-cotizar').addEventListener('submit', (e) => {
             e.preventDefault();
             alert('¡Gracias por tu interés! Un asesor comercial se pondrá en contacto contigo a la brevedad.');
             e.target.reset();
+            if (groupSubTipologia) {
+                groupSubTipologia.style.display = 'none';
+                selectSubTipologia.removeAttribute('required');
+            }
         });
+
+        // Carga inicial
+        updateFloorplanViewer('1d2b');
+        syncForm();
+        updateMediaGallery();
     </script>
 </body>
 
 </html>
+

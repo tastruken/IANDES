@@ -3,7 +3,7 @@
    Estilo Premium para Inmobiliaria Iandes
    Estética: Constructora / Estudio de Arquitectura de Gama Alta
    Colores: Blanco Lino (Travertino), Obsidiana (Carbón) y Bronce Templado
-   Tipografías: Cormorant Garamond (Editorial Serif) & Plus Jakarta Sans (Sleek Sans)
+   Tipografías: Helvetica Neue
    ========================================================================== 
 */
 
@@ -54,6 +54,10 @@ body {
     color: var(--color-text-main);
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+main {
+    display: block;
 }
 
 /* Scrollbar Personalizada */
@@ -210,8 +214,24 @@ header.scrolled {
     transition: var(--transition-fast);
 }
 
+.logo .logo-dark {
+    display: none !important;
+}
+
+.logo .logo-white {
+    display: block !important;
+}
+
 header.scrolled .logo {
     color: var(--color-primary); /* Oscuro al hacer scroll */
+}
+
+header.scrolled .logo .logo-dark {
+    display: block !important;
+}
+
+header.scrolled .logo .logo-white {
+    display: none !important;
 }
 
 .logo span {
@@ -612,6 +632,339 @@ header.scrolled .hamburger span {
     width: 100%;
 }
 
+/* ==========================================================================
+   TARJETAS SHOWCASE HORIZONTAL ALTERNADAS (ZIG-ZAG GRANDES Y ELEGANTES)
+   ========================================================================== */
+.projects-showcase-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 3rem !important;
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+}
+
+.projects-showcase-list .project-showcase-card {
+    background-color: #FFFFFF !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: 10px !important;
+    padding: 2.2rem 2.6rem !important;
+    box-shadow: var(--shadow-premium) !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2.8rem !important;
+    align-items: center !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.projects-showcase-list .project-showcase-card.is-hidden {
+    display: none !important;
+}
+
+.projects-showcase-list .project-showcase-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Alternancia Zig-Zag:
+   - Impares (1, 3, 5): Información a la IZQUIERDA, Foto a la DERECHA
+   - Pares (2, 4): Foto a la IZQUIERDA, Información a la DERECHA
+*/
+.projects-showcase-list .project-showcase-card:nth-child(odd) .showcase-info-wrapper {
+    order: 1 !important;
+}
+
+.projects-showcase-list .project-showcase-card:nth-child(odd) .showcase-image-wrapper {
+    order: 2 !important;
+}
+
+.projects-showcase-list .project-showcase-card:nth-child(even) .showcase-image-wrapper {
+    order: 1 !important;
+}
+
+.projects-showcase-list .project-showcase-card:nth-child(even) .showcase-info-wrapper {
+    order: 2 !important;
+}
+
+.projects-showcase-list .showcase-image-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 420px !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+}
+
+/* Carrusel de Imágenes en Tarjeta */
+.card-carousel {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 420px !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
+}
+
+.carousel-slides {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 420px !important;
+}
+
+.carousel-slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out !important;
+}
+
+.carousel-slide.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.carousel-slide img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    transition: transform 0.5s ease !important;
+}
+
+.projects-showcase-list .project-showcase-card:hover .carousel-slide.active img {
+    transform: scale(1.04) !important;
+}
+
+/* Botones de navegación del carrusel */
+.carousel-btn {
+    position: absolute !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: rgba(15, 23, 42, 0.55) !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.4rem !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: background 0.3s ease, transform 0.2s ease !important;
+    backdrop-filter: blur(4px) !important;
+}
+
+.carousel-btn:hover {
+    background: rgba(15, 23, 42, 0.9) !important;
+    transform: translateY(-50%) scale(1.1) !important;
+}
+
+.carousel-btn.prev-btn {
+    left: 12px !important;
+}
+
+.carousel-btn.next-btn {
+    right: 12px !important;
+}
+
+/* Indicadores de puntos (Dots) */
+.carousel-dots {
+    position: absolute !important;
+    bottom: 14px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    display: flex !important;
+    gap: 6px !important;
+    z-index: 10 !important;
+    background: rgba(0, 0, 0, 0.35) !important;
+    padding: 5px 12px !important;
+    border-radius: 14px !important;
+    backdrop-filter: blur(4px) !important;
+}
+
+.carousel-dots .dot {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+}
+
+.carousel-dots .dot.active {
+    width: 22px !important;
+    border-radius: 4px !important;
+    background: var(--color-secondary) !important;
+}
+
+.projects-showcase-list .showcase-info-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+}
+
+/* Logo box y Cabecera de Proyecto */
+.projects-showcase-list .showcase-title-block {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.2rem !important;
+}
+
+.projects-showcase-list .showcase-logo-box {
+    width: 95px !important;
+    height: 85px !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+}
+
+.projects-showcase-list .showcase-logo-box img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.projects-showcase-list .showcase-title-text {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.projects-showcase-list .price-square {
+    display: inline-block !important;
+    width: 10px !important;
+    height: 10px !important;
+    background-color: var(--color-secondary) !important;
+    margin-right: 4px !important;
+    vertical-align: middle !important;
+}
+
+.projects-showcase-list .price-uf-tag {
+    background-color: var(--color-secondary) !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    font-size: 0.75rem !important;
+    padding: 2px 6px !important;
+    display: inline-block !important;
+    margin-left: auto !important;
+    margin-top: 0.2rem !important;
+    text-align: right !important;
+}
+
+.projects-showcase-list .showcase-full-divider {
+    height: 2px !important;
+    background-color: var(--color-secondary) !important;
+    margin: 1.2rem 0 !important;
+    width: 100% !important;
+}
+
+.projects-showcase-list .showcase-desc {
+    font-size: 0.92rem !important;
+    color: #475569 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.2rem !important;
+}
+
+.projects-showcase-list .showcase-specs-table {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    margin-bottom: 1.5rem !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    border: none !important;
+    width: 100% !important;
+}
+
+.projects-showcase-list .spec-table-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0.7rem 0 !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+    font-size: 0.9rem !important;
+    width: 100% !important;
+}
+
+.projects-showcase-list .spec-table-label {
+    color: #0F172A !important;
+    font-weight: 600 !important;
+}
+
+.projects-showcase-list .spec-table-val {
+    color: #475569 !important;
+    font-weight: 500 !important;
+    text-align: right !important;
+}
+
+/* Botones de Acción de la Ficha */
+.projects-showcase-list .showcase-btn-dark {
+    background-color: #1E293B !important;
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 0.78rem !important;
+    padding: 0.75rem 1.2rem !important;
+    text-align: center !important;
+    border-radius: 2px !important;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease !important;
+}
+
+.projects-showcase-list .showcase-btn-dark:hover {
+    background-color: #0F172A !important;
+}
+
+.projects-showcase-list .showcase-btn-gold {
+    background-color: var(--color-secondary) !important;
+    color: #000000 !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 0.78rem !important;
+    padding: 0.75rem 1.2rem !important;
+    text-align: center !important;
+    border-radius: 2px !important;
+    text-decoration: none !important;
+    transition: filter 0.2s ease !important;
+}
+
+.projects-showcase-list .showcase-btn-gold:hover {
+    filter: brightness(0.95) !important;
+}
+
+@media (max-width: 992px) {
+    .projects-showcase-list .project-showcase-card {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+        padding: 1.5rem !important;
+    }
+    .projects-showcase-list .project-showcase-card:nth-child(odd) .showcase-info-wrapper,
+    .projects-showcase-list .project-showcase-card:nth-child(odd) .showcase-image-wrapper,
+    .projects-showcase-list .project-showcase-card:nth-child(even) .showcase-image-wrapper,
+    .projects-showcase-list .project-showcase-card:nth-child(even) .showcase-info-wrapper {
+        order: initial !important;
+    }
+    .projects-showcase-list .showcase-image-wrapper {
+        height: 260px !important;
+    }
+}
+
 /* Tarjetas de Proyectos */
 .projects-grid {
     display: grid;
@@ -694,31 +1047,51 @@ header.scrolled .hamburger span {
     margin-bottom: 1.2rem;
 }
 
-.project-card-details {
+.project-specs-clean {
     display: flex;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 0.75rem;
     border-top: 1px solid var(--color-border);
     padding-top: 1.2rem;
     margin-bottom: 1.5rem;
 }
 
-.detail-item {
+.specs-main-row {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-.detail-label {
-    font-size: 0.6rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-text-light);
-}
-
-.detail-value {
+.spec-inline-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--color-primary);
+    color: var(--color-text-main);
+}
+
+.spec-inline-item .icon-svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+.specs-status-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+}
+
+.specs-status-row .icon-svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-accent);
+    flex-shrink: 0;
 }
 
 .project-card-footer {
@@ -1122,11 +1495,66 @@ footer {
 }
 
 .inner-hero-breadcrumbs {
+    display: none;
     font-size: 0.7rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--color-secondary);
     margin-bottom: 0.5rem;
+}
+
+.inner-hero-specs-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.inner-hero-specs-bar .specs-main-row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.inner-hero-specs-bar .spec-inline-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--color-bg-card);
+}
+
+.inner-hero-specs-bar .spec-inline-item img {
+    width: 2.2rem;
+    height: 2.2rem;
+    object-fit: contain;
+    vertical-align: middle;
+    filter: brightness(0) saturate(100%) invert(80%) sepia(68%) saturate(1982%) hue-rotate(359deg) brightness(103%) contrast(106%);
+}
+
+.inner-hero-specs-bar .spec-inline-item .icon-svg {
+    width: 2.2rem;
+    height: 2.2rem;
+    color: var(--color-secondary);
+    flex-shrink: 0;
+}
+
+.inner-hero-specs-bar .specs-status-row {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-secondary);
+}
+
+.inner-hero-specs-bar .specs-status-row .icon-svg {
+    width: 14px;
+    height: 14px;
+    color: var(--color-secondary);
+    flex-shrink: 0;
 }
 
 /* PLANTILLA DE FICHA DE PROYECTO INTERACTIVO */
@@ -1451,7 +1879,7 @@ footer {
     background-color: #FFFFFF;
     border: 1px solid rgba(5, 11, 20, 0.06);
     border-radius: 6px;
-    padding: 1.5rem;
+    padding: 1.5rem 0.75rem;
     text-align: center;
     cursor: pointer;
     transition: var(--transition-fast);
@@ -1524,7 +1952,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.3rem;
     font-size: 0.7rem;
     color: var(--color-text-muted);
     border-top: 1px solid rgba(5, 11, 20, 0.05);
@@ -1535,11 +1963,12 @@ footer {
     display: flex;
     align-items: center;
     gap: 0.2rem;
+    white-space: nowrap;
 }
 
 .model-card-specs span:not(:last-child)::after {
     content: '|';
-    margin-left: 0.5rem;
+    margin-left: 0.3rem;
     color: rgba(5, 11, 20, 0.15);
 }
 
@@ -2627,5 +3056,352 @@ footer {
         border-bottom-color: var(--color-secondary);
     }
 }
+
+/* ==========================================================================
+   Toast Notification & Financial Tooltips
+   ========================================================================== */
+
+/* Premium Toast Notification */
+.premium-toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--color-primary);
+    color: var(--color-bg-card);
+    padding: 1.25rem 2rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    border-left: 4px solid var(--color-secondary);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+.premium-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.premium-toast-icon {
+    color: var(--color-secondary);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.premium-toast-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-left: 1.5rem;
+    transition: var(--transition-fast);
+    line-height: 1;
+}
+
+.premium-toast-close:hover {
+    color: #FFFFFF;
+}
+
+/* Financial Tooltips */
+.tooltip-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+    height: 14px;
+    background-color: rgba(5, 11, 20, 0.08);
+    color: var(--color-text-muted);
+    border-radius: 50%;
+    font-size: 0.65rem;
+    font-weight: bold;
+    cursor: help;
+    margin-left: 0.35rem;
+    position: relative;
+    transition: var(--transition-fast);
+}
+
+.tooltip-trigger:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.tooltip-trigger::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    font-family: var(--font-sans);
+    font-weight: 300;
+    line-height: 1.3;
+    text-transform: none;
+    width: 220px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 1000;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.tooltip-trigger:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Inline SVG Icon Utility */
+.inline-icon {
+    display: inline-flex;
+    align-self: center;
+    width: 1rem;
+    height: 1rem;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    vertical-align: middle;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Módulo de Planos y Modelos Interactivo (Explorador de Tipologías)
+   ========================================================================== */
+.floorplan-container {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.floorplan-nav-tabs {
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.floorplan-nav-tab {
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    padding: 0.8rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    color: var(--color-primary);
+    outline: none;
+    text-transform: uppercase;
+}
+
+.floorplan-nav-tab:hover {
+    border-color: var(--color-accent);
+    background: #FFFFFF;
+}
+
+.floorplan-nav-tab.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #FFFFFF;
+}
+
+.floorplan-sub-tabs {
+    display: none;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.floorplan-sub-tab {
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    color: var(--color-text-main);
+    outline: none;
+    text-transform: uppercase;
+}
+
+.floorplan-sub-tab:hover {
+    border-color: var(--color-secondary);
+}
+
+.floorplan-sub-tab.active {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.floorplan-viewer-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.floorplan-img-box {
+    position: relative;
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+}
+
+.floorplan-img-box img {
+    max-width: 100%;
+    max-height: 320px;
+    object-fit: contain;
+}
+
+.floorplan-details-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.floorplan-specs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0.8rem 0;
+    padding: 0;
+}
+
+.floorplan-specs li {
+    display: flex;
+    align-items: center;
+    font-size: 0.88rem;
+    color: var(--color-text-main);
+}
+
+.floorplan-specs li svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+    .floorplan-viewer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .floorplan-img-box {
+        min-height: 250px;
+    }
+}
+
+/* ==========================================================================
+   Highlight del Entorno / Barrio (Andes Ñuñoa)
+   ========================================================================== */
+.neighborhood-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.highlight-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.highlight-icon-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: var(--color-secondary);
+    border: 4px solid #000000;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-icon-wrapper svg.custom-icon {
+    transform: rotate(45deg);
+    width: 42px;
+    height: 42px;
+    fill: none;
+    stroke: #000000;
+    stroke-width: 3.5px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.highlight-item span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-main);
+    line-height: 1.4;
+    max-width: 130px;
+}
+
+@media (max-width: 576px) {
+    .neighborhood-highlights-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1rem;
+    }
+}
+
+.neighborhood-location-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 4rem;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .neighborhood-location-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+.highlight-image-box {
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.highlight-image-box img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
 
 

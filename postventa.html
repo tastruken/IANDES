@@ -11,7 +11,24 @@
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
-    <header class="scrolled"></header>
+    <header class="scrolled">
+
+        <!-- Fallback de navegaciÃ³n para SEO/Accesibilidad -->
+        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+            <nav style="display:block;">
+                <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
+                    <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
+                    <li><a href="nosotros.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a></li>
+                    <li><a href="inversionistas.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a></li>
+                    <li><a href="postventa.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a></li>
+                    <li><a href="blog.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
+                    <li><a href="contacto.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+    <main>
 
     <!-- INNER HERO (CABECERA DE PÁGINA) -->
     <section class="inner-hero">
@@ -32,23 +49,50 @@
     <section class="section">
         <div class="container">
             
-            <div class="postventa-grid">
-                
-                <!-- Columna Izquierda: Formulario e Información -->
-                <div>
-                    <div class="reveal" style="margin-bottom: 3.5rem;">
-                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Compromiso y Respaldo Continuo</h2>
-                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                            En Inmobiliaria Iandes entendemos que la entrega de llaves es solo el inicio de tu experiencia. Nuestro equipo independiente de postventa tiene como misión resolver de manera transparente y eficiente cualquier requerimiento técnico o consulta sobre el funcionamiento de los sistemas e instalaciones de tu departamento.
-                        </p>
-                        <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
-                            Una vez ingresada tu solicitud a través del formulario oficial, nuestro equipo técnico revisará los detalles y te agendará una visita técnica en un plazo máximo de 5 días hábiles, coordinando según tu disponibilidad.
-                        </p>
-                    </div>
+            <!-- Encabezado de Sección y Tarjetas de Acceso Rápido -->
+            <div class="reveal" style="text-align: center; max-width: 900px; margin: 0 auto 3.5rem auto;">
+                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-secondary); font-weight: 600; display: block; margin-bottom: 0.5rem;">Canal Oficial de Atención al Propietario</span>
+                <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; font-family: var(--font-serif);">Compromiso y Respaldo Continuo</h2>
+                <p style="color: var(--color-text-muted); font-size: 1rem; line-height: 1.8;">
+                    En Inmobiliaria Iandes la entrega de llaves es el inicio de nuestra relación. Nuestro equipo independiente de postventa resuelve con transparencia y eficiencia cualquier requerimiento técnico o consulta sobre las instalaciones de tu propiedad.
+                </p>
 
-                    <!-- Bloque de Ingreso de Solicitudes -->
-                    <div id="solicitud" class="reveal" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 3rem; margin-bottom: 4rem;">
-                        <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Ingresar Requerimiento de Postventa</h3>
+                <!-- 3 Tarjetas de Resumen Horizontal con Iconografía Vectorial -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; text-align: left;">
+                    <div style="background-color: #FFFFFF; border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 6px; box-shadow: var(--shadow-premium);">
+                        <div style="width: 38px; height: 38px; border-radius: 50%; background-color: rgba(255, 209, 0, 0.15); display: flex; align-items: center; justify-content: center; color: var(--color-primary); margin-bottom: 0.8rem;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        </div>
+                        <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--color-primary); margin-bottom: 0.3rem;">Solicitud Digital</h4>
+                        <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Completa el formulario en línea y recibe asignación de ticket de inspección.</p>
+                    </div>
+                    <div style="background-color: #FFFFFF; border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 6px; box-shadow: var(--shadow-premium);">
+                        <div style="width: 38px; height: 38px; border-radius: 50%; background-color: rgba(255, 209, 0, 0.15); display: flex; align-items: center; justify-content: center; color: var(--color-primary); margin-bottom: 0.8rem;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--color-primary); margin-bottom: 0.3rem;">Línea Directa</h4>
+                        <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Llama directamente a nuestro teléfono de atención: <strong>+56 9 7998 4756</strong>.</p>
+                    </div>
+                    <div style="background-color: #FFFFFF; border: 1px solid var(--color-border); padding: 1.5rem; border-radius: 6px; box-shadow: var(--shadow-premium);">
+                        <div style="width: 38px; height: 38px; border-radius: 50%; background-color: rgba(255, 209, 0, 0.15); display: flex; align-items: center; justify-content: center; color: var(--color-primary); margin-bottom: 0.8rem;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <h4 style="font-size: 0.95rem; font-weight: 600; color: var(--color-primary); margin-bottom: 0.3rem;">Oficina Huechuraba</h4>
+                        <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; margin: 0;">Atención presencial en Av. del Cóndor 600 (Lun a Vie de 09:00 a 18:00 hrs).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grilla Principal Equilibrada -->
+            <div class="postventa-grid" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2.5rem; align-items: start;">
+                
+                <!-- Columna Izquierda: Formulario -->
+                <div>
+                    <div id="solicitud" class="reveal" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 2.5rem; border-radius: 8px; box-shadow: var(--shadow-premium);">
+                        <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem; font-family: var(--font-sans); font-weight: 600;">Ingresar Requerimiento de Postventa</h3>
+                        <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 2rem;">
+                            Ingresa tus datos a continuación. Un técnico especialista revisará tu requerimiento y coordinará la visita según tu disponibilidad.
+                        </p>
                         
                         <form action="#" method="POST" id="form-postventa">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
@@ -103,98 +147,167 @@
                                 <textarea id="pv-mensaje" rows="4" required placeholder="Describe de forma detallada la incidencia técnica para agilizar la revisión..."></textarea>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">Ingresar Solicitud de Postventa</button>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem;">Ingresar Solicitud de Postventa</button>
                         </form>
                     </div>
-
-                    
                 </div>
 
-                <!-- Columna Derecha: Alertas de Emergencia y Soporte Humanizado -->
+                <!-- Columna Derecha: Tarjetas de Atención u Oficina -->
                 <div>
                     
-                    <!-- Tarjeta de Emergencias Domésticas -->
-                    <div class="emergency-card reveal">
-                        <div class="emergency-header">
-                            <span class="emergency-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-                                    <line x1="12" y1="9" x2="12" y2="13"/>
-                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
-                                </svg>
-                            </span>
-                            <h4>Alerta de Emergencias</h4>
+                    <!-- Tarjeta de Contacto Directo -->
+                    <div class="reveal" style="background-color: #FFFFFF; border: 1px solid var(--color-border); padding: 2rem; border-radius: 8px; margin-bottom: 2rem; box-shadow: var(--shadow-premium);">
+                        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(255, 209, 0, 0.15); display: flex; align-items: center; justify-content: center; color: var(--color-primary);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            </div>
+                            <div>
+                                <h4 style="font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600; margin: 0; color: var(--color-primary);">Teléfono de Atención Directa</h4>
+                                <span style="font-size: 0.75rem; color: var(--color-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Contacto Postventa</span>
+                            </div>
                         </div>
-                        <p class="emergency-intro">
-                            Se considera emergencia únicamente a aquellos eventos graves e imprevistos que afecten la habitabilidad inmediata del hogar o pongan en riesgo la seguridad de las personas:
+
+                        <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+                            Comunícate directamente con nuestro equipo de atención a clientes para resolver tus consultas o guiarte en el proceso:
                         </p>
-                        <ul class="emergency-list">
-                            <li>
-                                <span class="bullet-dot"></span>
-                                <span>Filtraciones de agua masivas o roturas de cañería.</span>
-                            </li>
-                            <li>
-                                <span class="bullet-dot"></span>
-                                <span>Corte total del suministro eléctrico interno sin causa externa.</span>
-                            </li>
-                            <li>
-                                <span class="bullet-dot"></span>
-                                <span>Fuga detectable de gas en calderas, cocinas o ductos.</span>
-                            </li>
-                        </ul>
-                        <p class="emergency-phone-label">Teléfonos de Emergencia Directos (24/7):</p>
-                        <div class="emergency-phones">
-                            <a href="tel:+56228409001" class="emergency-phone-link">
-                                <svg class="phone-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                </svg>
-                                <span>+56 2 2840 9001</span>
-                            </a>
-                            <a href="tel:+56987654321" class="emergency-phone-link">
-                                <svg class="phone-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                                </svg>
-                                <span>+56 9 8765 4321</span>
+
+                        <div style="margin-bottom: 1rem;">
+                            <a href="tel:+56979984756" class="btn btn-primary" style="width: 100%; padding: 0.85rem 1rem; font-size: 0.9rem; font-weight: 600; justify-content: center; text-decoration: none; gap: 0.6rem;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                Llama al +56 9 7998 4756
                             </a>
                         </div>
-                        <p class="emergency-footer">
-                            * Para fallas comunes o detalles cosméticos, por favor use el formulario regular para coordinar visitas normales de mantenimiento.
-                        </p>
                     </div>
 
-                    <!-- Equipo de Soporte Humanizado -->
-                    <div class="reveal" style="background-color: #FFFFFF; border: 1px solid var(--color-border); padding: 2.5rem; text-align: center;">
-                        <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin: 0 auto 1.5rem auto; background-color: var(--color-bg-light);">
-                            <img src="assets/images/ejecutiva-ventas.png" alt="Equipo de Clientes Iandes" style="width: 100%; height: 100%; object-fit: cover;">
+                    <!-- Oficina de Atención Postventa -->
+                    <div class="reveal" style="background-color: #FFFFFF; border: 1px solid var(--color-border); padding: 2rem; border-radius: 8px; box-shadow: var(--shadow-premium);">
+                        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+                            <div style="width: 40px; height: 40px; border-radius: 50%; background-color: rgba(255, 209, 0, 0.15); display: flex; align-items: center; justify-content: center; color: var(--color-primary);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                            <div>
+                                <h4 style="font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600; margin: 0; color: var(--color-primary);">Oficina de Atención Postventa</h4>
+                                <span style="font-size: 0.75rem; color: var(--color-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Huechuraba</span>
+                            </div>
                         </div>
-                        <h4 style="font-family: var(--font-sans); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.2rem;">Equipo de Atención al Propietario</h4>
-                        <p style="font-size: 0.7rem; text-transform: uppercase; color: var(--color-secondary); letter-spacing: 0.1em; margin-bottom: 1rem;">Resolución y Acompañamiento</p>
-                        <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 1.5rem;">
-                            Nuestro equipo está a tu disposición en nuestras oficinas centrales de lunes a viernes de 09:00 a 18:00 horas para resolver cualquier duda administrativa o derivación técnica.
+
+                        <p style="font-size: 0.9rem; color: var(--color-text-main); font-weight: 600; margin-bottom: 0.3rem;">
+                            Av. del Cóndor 600
                         </p>
-                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--color-primary); display: block;">soporte@iandes.cl</span>
+                        <p style="font-size: 0.82rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 1.2rem;">
+                            Av. del Cóndor 600, 8580676 Huechuraba, Región Metropolitana
+                            <br><span style="font-size: 0.75rem; color: var(--color-text-muted);">Horario: Lunes a Viernes de 09:00 a 18:00 hrs.</span>
+                            <br><span style="font-size: 0.75rem; color: var(--color-text-muted);">Email: soporte@iandes.cl</span>
+                        </p>
+
+                        <!-- Botones Waze & Google Maps -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; margin-bottom: 1.2rem;">
+                            <a href="https://waze.com/ul?q=Av.+del+Condor+600,+Huechuraba" target="_blank" rel="noopener noreferrer" class="btn" style="padding: 0.5rem 0.8rem; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem; background-color: #33CCFF; color: #FFFFFF; border: none; border-radius: 4px; font-weight: 600; text-decoration: none;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm0-4h-2V7h2v7z"/></svg>
+                                Ir con Waze
+                            </a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Av.+del+Condor+600,+Huechuraba" target="_blank" rel="noopener noreferrer" class="btn" style="padding: 0.5rem 0.8rem; font-size: 0.7rem; display: flex; align-items: center; justify-content: center; gap: 0.4rem; background-color: #4285F4; color: #FFFFFF; border: none; border-radius: 4px; font-weight: 600; text-decoration: none;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                Google Maps
+                            </a>
+                        </div>
+
+                        <!-- Mapa Interactivo -->
+                        <div style="width: 100%; height: 190px; border-radius: 6px; overflow: hidden; border: 1px solid var(--color-border);">
+                            <iframe src="https://maps.google.com/maps?q=Av.%20del%20Condor%20600,%208580676%20Huechuraba,%20Region%20Metropolitana&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
 
                 </div>
 
             </div>
 
-            <!-- Apartado de Preguntas Frecuentes (FAQ Central) -->
-            <div class="reveal" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 4rem 3rem; text-align: center; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: 4rem auto 0 auto;">
-                <h3 style="font-size: 1.8rem; margin-bottom: 1rem; font-family: var(--font-sans); font-weight: 600;">¿Tienes dudas sobre las garantías o plazos?</h3>
-                <p style="color: var(--color-text-muted); font-size: 1rem; max-width: 600px; line-height: 1.7; margin-bottom: 2rem;">
-                    Hemos preparado una sección completa de preguntas frecuentes para propietarios donde encontrarás respuestas rápidas sobre plazos de postventa, mantención de artefactos y coordinaciones técnicas.
-                </p>
-                <a href="preguntas-frecuentes.html" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.9rem 2.5rem;">
-                    Ver Preguntas Frecuentes
-                </a>
+            <!-- Preguntas Frecuentes Postventa – Inmobiliaria iAndes -->
+            <div class="reveal" style="margin-top: 3.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div style="border-bottom: 1px solid var(--color-border); padding-bottom: 0.8rem; margin-bottom: 1.8rem; text-align: center;">
+                    <h3 style="font-size: 1.5rem; font-family: var(--font-sans); font-weight: 600; color: var(--color-primary); margin-bottom: 0.3rem;">Preguntas Frecuentes Postventa</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.85rem;">Resolución inmediata sobre el seguimiento y atención técnica de tu propiedad.</p>
+                </div>
+
+                <div class="faq-accordion" style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    
+                    <!-- Pregunta 1 -->
+                    <details style="background-color: #FFFFFF; border: 1px solid var(--color-border); border-radius: 6px; padding: 0.9rem 1.2rem; cursor: pointer; transition: var(--transition-fast);" open>
+                        <summary style="font-size: 0.92rem; font-weight: 600; color: var(--color-primary); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem;">
+                            <span>¿Cómo puedo hacer seguimiento al estado de mi propiedad después de la compra?</span>
+                            <span style="font-size: 0.75rem; color: var(--color-secondary); font-weight: 600;">▼</span>
+                        </summary>
+                        <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed var(--color-border);">
+                            Una vez realizada la compra, recibirás actualizaciones periódicas por correo electrónico sobre el avance del proyecto. También puedes contactarnos directamente para conocer el estado actual.
+                        </p>
+                    </details>
+
+                    <!-- Pregunta 2 -->
+                    <details style="background-color: #FFFFFF; border: 1px solid var(--color-border); border-radius: 6px; padding: 0.9rem 1.2rem; cursor: pointer; transition: var(--transition-fast);">
+                        <summary style="font-size: 0.92rem; font-weight: 600; color: var(--color-primary); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem;">
+                            <span>¿A quién debo contactar si detecto un problema en mi propiedad?</span>
+                            <span style="font-size: 0.75rem; color: var(--color-secondary); font-weight: 600;">▼</span>
+                        </summary>
+                        <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed var(--color-border);">
+                            Nuestro equipo de postventa está disponible para ayudarte. Puedes llenar tus datos en este formulario o llamar directamente a nuestro número de atención <a href="tel:+56979984756" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">+56979984756</a>
+                        </p>
+                    </details>
+
+                    <!-- Pregunta 3 -->
+                    <details style="background-color: #FFFFFF; border: 1px solid var(--color-border); border-radius: 6px; padding: 0.9rem 1.2rem; cursor: pointer; transition: var(--transition-fast);">
+                        <summary style="font-size: 0.92rem; font-weight: 600; color: var(--color-primary); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem;">
+                            <span>¿Cómo reporto una observación o desperfecto?</span>
+                            <span style="font-size: 0.75rem; color: var(--color-secondary); font-weight: 600;">▼</span>
+                        </summary>
+                        <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed var(--color-border);">
+                            Debes completar el formulario de postventa en nuestro sitio web o enviarnos un correo a <a href="mailto:contacto@iandes.cl" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">contacto@iandes.cl</a> detallando el problema, adjuntando fotos si es posible.
+                        </p>
+                    </details>
+
+                    <!-- Pregunta 4 -->
+                    <details style="background-color: #FFFFFF; border: 1px solid var(--color-border); border-radius: 6px; padding: 0.9rem 1.2rem; cursor: pointer; transition: var(--transition-fast);">
+                        <summary style="font-size: 0.92rem; font-weight: 600; color: var(--color-primary); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem;">
+                            <span>¿La garantía cubre todos los desperfectos?</span>
+                            <span style="font-size: 0.75rem; color: var(--color-secondary); font-weight: 600;">▼</span>
+                        </summary>
+                        <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed var(--color-border);">
+                            La garantía cubre desperfectos relacionados con la construcción, terminaciones o instalaciones básicas. No incluye daños por mal uso o intervenciones externas.
+                        </p>
+                    </details>
+
+                    <!-- Pregunta 5 -->
+                    <details style="background-color: #FFFFFF; border: 1px solid var(--color-border); border-radius: 6px; padding: 0.9rem 1.2rem; cursor: pointer; transition: var(--transition-fast);">
+                        <summary style="font-size: 0.92rem; font-weight: 600; color: var(--color-primary); list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 0.8rem;">
+                            <span>¿Qué pasa si no estoy conforme con la respuesta del área postventa?</span>
+                            <span style="font-size: 0.75rem; color: var(--color-secondary); font-weight: 600;">▼</span>
+                        </summary>
+                        <p style="color: var(--color-text-muted); font-size: 0.88rem; line-height: 1.6; margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed var(--color-border);">
+                            Puedes escalar el caso escribiendo directamente a <a href="mailto:contacto@iandes.cl" style="color: var(--color-primary); font-weight: 600; text-decoration: underline;">contacto@iandes.cl</a>. Nos comprometemos a darte una solución transparente y justa.
+                        </p>
+                    </details>
+
+                </div>
             </div>
 
         </div>
     </section>
 
     <!-- PIE DE PAGINA (FOOTER) -->
-    <footer></footer>
+    </main>
+
+    <footer>
+
+        <!-- Fallback de pie de pÃ¡gina para SEO/Accesibilidad -->
+        <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">TÃ©rminos y Condiciones</a>
+                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">PolÃ­tica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+</footer>
 
     <!-- Scripts de Funcionalidad -->
     <script src="assets/js/main.js"></script>
@@ -207,3 +320,5 @@
     </script>
 </body>
 </html>
+
+

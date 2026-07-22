@@ -7,11 +7,57 @@
     <meta name="description" content="Departamentos en Altos de Santa Cruz. Encuentra la tranquilidad en el Valle de Colchagua con amplias áreas comunes, piscina y conectividad.">
     <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        /* Estilos de la sección Sala de Ventas */
+        .sales-room-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .sales-room-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .santa-cruz-desc-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+        
+        .how-to-get-buttons a {
+            box-shadow: var(--shadow-small);
+        }
+        
+        .how-to-get-buttons a:hover {
+            border-color: var(--color-accent) !important;
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
-    <header class="scrolled"></header>
+    <header>
+
+        <!-- Fallback de navegaciÃ³n para SEO/Accesibilidad -->
+        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+            <nav style="display:block;">
+                <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
+                    <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
+                    <li><a href="nosotros.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a></li>
+                    <li><a href="inversionistas.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a></li>
+                    <li><a href="postventa.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a></li>
+                    <li><a href="blog.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
+                    <li><a href="contacto.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+</header>
+    <main>
 
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
     <section class="inner-hero">
@@ -25,8 +71,27 @@
                 </div>
                 <h1 class="inner-hero-title">Altos de Santa Cruz</h1>
                 <p style="color: var(--color-secondary); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem; font-weight: 500;">
-                    Av. Errázuriz 850, Santa Cruz, Región de O'Higgins
+                    Adriano Díaz 911, Santa Cruz, Región de O'Higgins
                 </p>
+                <div class="inner-hero-specs-bar">
+                    <div class="specs-main-row">
+                        <div class="spec-inline-item" title="Dormitorios">
+                            <img src="assets/images/icons/icon-habitaciones.svg" alt="Dormitorios">
+                            <span>3</span>
+                        </div>
+                        <div class="spec-inline-item" title="Baños">
+                            <img src="assets/images/icons/icon-baños.svg" alt="Baños">
+                            <span>2</span>
+                        </div>
+                        <div class="spec-inline-item" title="Superficie">
+                            <img src="assets/images/icons/icon-metros2.svg" alt="Superficie">
+                            <span>66.61 m²</span>
+                        </div>
+                        <div class="spec-inline-item" style="color: var(--color-secondary); font-weight: 600;">
+                            <span>Desde UF 2.450</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -43,7 +108,7 @@
                     <div class="media-gallery-module reveal">
                         <div class="media-viewer-container">
                             <!-- Badge indicador de modelo seleccionado -->
-                            <div class="media-model-badge" id="media-selected-model-badge">Modelo Seleccionado: Modelo S1</div>
+                            <div class="media-model-badge" id="media-selected-model-badge">Modelo Seleccionado: Casa 3D + 2B</div>
                             <div class="media-viewer">
                                 <!-- Por defecto muestra el render principal -->
                                 <img src="assets/images/proyectos/proyecto-altos-santa-cruz/render.png" alt="Render Exterior Altos de Santa Cruz" style="filter: sepia(0.2) contrast(1.05);">
@@ -57,13 +122,13 @@
                                 </span>
                                 <span class="media-tab-label">Render Exterior</span>
                             </button>
-                            <button class="media-tab-btn" data-type="image" id="tab-btn-interior" data-src="assets/images/proyectos/proyecto-altos-santa-cruz/render-interior.png, assets/images/proyectos/proyecto-altos-santa-cruz/render-interior-2.png" data-title="Vista Interior Modelo S1">
+                            <button class="media-tab-btn" data-type="image" id="tab-btn-interior" data-src="assets/images/proyectos/proyecto-altos-santa-cruz/render-interior.png, assets/images/proyectos/proyecto-altos-santa-cruz/render-interior-2.png" data-title="Vista Interior Casa 3D + 2B">
                                 <span class="media-tab-icon-wrapper">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                                 </span>
                                 <span class="media-tab-label">Vista Interior</span>
                             </button>
-                            <button class="media-tab-btn" data-type="tour360" id="tab-btn-tour" data-src="https://my.matterport.com/show/?m=uH1fG94kZ2n" data-title="Recorrido 360° Modelo S1">
+                            <button class="media-tab-btn" data-type="tour360" id="tab-btn-tour" data-src="https://my.matterport.com/show/?m=uH1fG94kZ2n" data-title="Recorrido 360° Casa 3D + 2B">
                                 <span class="media-tab-icon-wrapper">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
                                 </span>
@@ -80,23 +145,59 @@
 
                     <!-- Descripción General -->
                     <div class="reveal" style="margin-bottom: 3.5rem;">
-                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Tu vida con la tranquilidad y aire limpio del Valle de Colchagua</h2>
-                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                            Altos de Santa Cruz representa el equilibrio ideal entre la vida de provincia y las comodidades del equipamiento moderno. Diseñado con una arquitectura de líneas suaves y tonos tierra integrados con el paisaje colchagüino, este condominio cerrado ofrece un entorno seguro, familiar y apacible para vivir o descansar los fines de semana.
-                        </p>
-                        <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
-                            El condominio cuenta con accesos controlados las 24 horas, conserjería centralizada, un extenso parque interior con juegos infantiles de madera tratada, amplias piscinas para adultos y niños, salas multiuso y zonas de quinchos ideales para compartir en familia. Todo a minutos de la plaza de armas de Santa Cruz, centros de salud, comercios y reconocidas viñas del sector.
+                        <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--color-primary); font-family: var(--font-serif);">El amanecer de tu vida en Santa Cruz</h2>
+                        
+                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem;">
+                            Altos de Santa Cruz es un proyecto inmobiliario ubicado en la comuna de Santa Cruz, en pleno Valle de Colchagua, que combina un entorno tranquilo con una propuesta habitacional funcional y bien planificada.
                         </p>
                         
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Equipamiento del Condominio</h3>
-                        <ul style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; color: var(--color-text-main);">
-                            <li>✓ Acceso único controlado las 24 horas del día.</li>
-                            <li>✓ Extenso parque de áreas verdes comunes con piscina.</li>
-                            <li>✓ Quinchos techados e independientes.</li>
-                            <li>✓ Departamentos con aislación térmica exterior (Sistema EIFS).</li>
-                            <li>✓ Cocinas americanas con muebles y logia integrada.</li>
-                            <li>✓ Closet terminados en todos los dormitorios.</li>
-                        </ul>
+                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                            El proyecto ofrece una vivienda cómoda, en un barrio residencial consolidado, con buena conexión a los servicios de la comuna y a su entorno urbano.
+                        </p>
+                        
+                        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; margin-top: 2rem; color: var(--color-primary); font-family: var(--font-sans);">Casas diseñadas para la vida familiar</h3>
+                        
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem;">
+                            En su primera etapa, Altos de Santa Cruz contempla un total de 84 casas aisladas, de 3 dormitorios y 2 baños, con una distribución eficiente y espacios pensados para el uso diario. El proyecto considera además 2.258,55 m2 de áreas verdes, aportando espacios que fomenten la vida de barrio y el bienestar de sus residentes.
+                        </p>
+                        
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem;">
+                            Altos de Santa Cruz ofrece una alternativa habitacional sólida, en un entorno con identidad local, buena calidad de vida y un diseño orientado a la funcionalidad y durabilidad del hogar.
+                        </p>
+                        
+                        <!-- Grilla de Atributos Destacados -->
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.8rem 1.5rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+                            <!-- 1. Dormitorios -->
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <img src="assets/images/icons/icon-habitaciones.svg" alt="Dormitorios" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">3 dormitorios</span>
+                            </div>
+                            <!-- 2. Baños -->
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <img src="assets/images/icons/icon-baños.svg" alt="Baños" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">2 baños</span>
+                            </div>
+                            <!-- 3. Superficie -->
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <img src="assets/images/icons/icon-metros2.svg" alt="Superficie" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">Sup. construida: 66,61 m²</span>
+                            </div>
+                            <!-- 4. Estacionamiento -->
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <img src="assets/images/icons/icon-estacionamiento.svg" alt="Estacionamiento" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">1 estacionamiento</span>
+                            </div>
+                            <!-- 5. Termopanel -->
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <img src="assets/images/icons/icon-termopanel.svg" alt="Termopanel" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">ventanas termopanel en dormitorios</span>
+                            </div>
+                            <!-- 6. Piso cerámico -->
+                            <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                <img src="assets/images/icons/icon-ceramica.svg" alt="Piso Cerámico" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">piso cerámico</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Módulo de Tipologías Interactivas (Explorador de Modelos) -->
@@ -111,49 +212,19 @@
                         
                         <div class="model-carousel-wrapper">
                             <div class="model-carousel-track">
-                                <!-- Tarjeta Modelo S1 -->
-                                <div class="model-card active" data-id="2d1b" data-price="2.450" data-title="Modelo S1" data-img="assets/images/proyectos/proyecto-altos-santa-cruz/plano.png" data-dorm="2 Dormitorios" data-bano="1 Baño" data-sup="55.1 m²" data-render-int="assets/images/proyectos/proyecto-altos-santa-cruz/render-interior.png, assets/images/proyectos/proyecto-altos-santa-cruz/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=uH1fG94kZ2n">
+                                <!-- Tarjeta Casa 3D + 2B -->
+                                <div class="model-card active" data-id="3d2b" data-price="2.450" data-title="Casa 3D + 2B" data-img="assets/images/proyectos/proyecto-altos-santa-cruz/plano.png" data-dorm="3 Dormitorios" data-bano="2 Baños" data-sup="66.61 m²" data-render-int="assets/images/proyectos/proyecto-altos-santa-cruz/render-interior.png, assets/images/proyectos/proyecto-altos-santa-cruz/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=uH1fG94kZ2n">
                                     <div class="model-card-plan">
-                                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/plano.png" alt="Plano Modelo S1">
+                                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/plano.png" alt="Plano Casa 3D + 2B">
                                     </div>
-                                    <h4 class="model-card-name">Modelo S1</h4>
+                                    <h4 class="model-card-name">Casa 3D + 2B</h4>
                                     <div class="model-card-price">Desde <span class="highlight">UF 2.450</span></div>
-                                    <div class="model-card-specs">
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> 2 Dorm.</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg> 1 Baño</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 55.1 m²</span>
-                                    </div>
-                                    <div class="model-card-badge">✓</div>
-                                </div>
-
-                                <!-- Tarjeta Modelo S2 -->
-                                <div class="model-card" data-id="2d2b" data-price="2.800" data-title="Modelo S2" data-img="assets/images/proyectos/proyecto-altos-santa-cruz/plano.png" data-dorm="2 Dormitorios" data-bano="2 Baños" data-sup="62.4 m²" data-render-int="assets/images/proyectos/proyecto-altos-santa-cruz/render-interior.png, assets/images/proyectos/proyecto-altos-santa-cruz/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=sxz74b1m2n">
-                                    <div class="model-card-plan">
-                                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/plano.png" alt="Plano Modelo S2">
-                                    </div>
-                                    <h4 class="model-card-name">Modelo S2</h4>
-                                    <div class="model-card-price">Desde <span class="highlight">UF 2.800</span></div>
-                                    <div class="model-card-specs">
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> 2 Dorm.</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg> 2 Baños</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 62.4 m²</span>
-                                    </div>
-                                    <div class="model-card-badge">✓</div>
-                                </div>
-
-                                <!-- Tarjeta Modelo S3 -->
-                                <div class="model-card" data-id="3d2b" data-price="3.250" data-title="Modelo S3" data-img="assets/images/proyectos/proyecto-altos-santa-cruz/plano.png" data-dorm="3 Dormitorios" data-bano="2 Baños" data-sup="73.1 m²" data-render-int="assets/images/proyectos/proyecto-altos-santa-cruz/render-interior.png, assets/images/proyectos/proyecto-altos-santa-cruz/render-interior-2.png" data-tour="https://my.matterport.com/show/?m=uH1fG94kZ2n">
-                                    <div class="model-card-plan">
-                                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/plano.png" alt="Plano Modelo S3">
-                                    </div>
-                                    <h4 class="model-card-name">Modelo S3</h4>
-                                    <div class="model-card-price">Desde <span class="highlight">UF 3.250</span></div>
                                     <div class="model-card-specs">
                                         <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg> 3 Dorm.</span>
                                         <span><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg> 2 Baños</span>
-                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 73.1 m²</span>
+                                        <span><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg> 66.61 m²</span>
                                     </div>
-                                    <div class="model-card-badge">✓</div>
+                                    <div class="model-card-badge"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="color:var(--color-primary);"><polyline points="20 6 9 17 4 12"/></svg></div>
                                 </div>
                             </div>
                         </div>
@@ -167,20 +238,20 @@
                                 </button>
                             </div>
                             <div class="model-detail-info">
-                                <h4 id="selected-model-name">Modelo S1</h4>
+                                <h4 id="selected-model-name">Casa 3D + 2B</h4>
                                 <hr class="model-divider">
                                 <ul class="model-spec-list">
                                     <li>
                                         <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg></span>
-                                        <span class="text" id="selected-model-dorm">2 Dormitorios</span>
+                                        <span class="text" id="selected-model-dorm">3 Dormitorios</span>
                                     </li>
                                     <li>
                                         <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4"/></svg></span>
-                                        <span class="text" id="selected-model-bano">1 Baño</span>
+                                        <span class="text" id="selected-model-bano">2 Baños</span>
                                     </li>
                                     <li>
                                         <span class="icon"><svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3"/></svg></span>
-                                        <span class="text" id="selected-model-sup">55.1 m² Superficie</span>
+                                        <span class="text" id="selected-model-sup">66.61 m² Superficie</span>
                                     </li>
                                 </ul>
                                 <button class="btn btn-secondary model-cotizar-btn" id="model-cotizar-action">Cotizar</button>
@@ -244,8 +315,90 @@
         </div>
     </section>
 
+    <!-- SECCIÓN SALA DE VENTAS -->
+    <section class="section sales-room-section" style="border-top: 1px solid var(--color-border); background-color: var(--color-bg-light); padding: 5rem 0;">
+        <div class="container">
+            <div class="sales-room-grid">
+                <!-- Columna Izquierda: Información -->
+                <div class="reveal">
+                    <h2 style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 1.5rem; font-family: var(--font-serif);">Sala de ventas</h2>
+                    <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                        Te esperamos en nuestra sala de ventas ubicada en <strong>Adriano Díaz 911</strong>, Santa Cruz, O'Higgins.
+                    </p>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 1rem; color: var(--color-primary); font-family: var(--font-sans); font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Horarios de atención:</h4>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                            <strong>Lunes a sábado:</strong> 10:00 a 18:30 hrs.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                            <strong>Teléfono de contacto:</strong> +56 2 1234 5678
+                        </p>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            <strong>WhatsApp:</strong> +56 9 8164 5225
+                        </p>
+                    </div>
+                    
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem;">
+                        Nuestro equipo estará encantado de atenderte y acompañarte en cada paso de tu decisión.
+                    </p>
+                    
+                    <!-- Botones de Cómo Llegar -->
+                    <div class="how-to-get-buttons" style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
+                        <a href="https://waze.com/ul?q=Adriano+Diaz+911,+Santa+Cruz" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/waze logo.png" alt="Waze" style="height: 32px; width: 32px; object-fit: contain; border-radius: 4px; vertical-align: middle;">
+                                <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #05B4E3;">Waze</span>
+                            </div>
+                            <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Adriano+Diaz+911,+Santa+Cruz" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.png" alt="Google Maps" style="height: 32px; width: 32px; object-fit: contain; vertical-align: middle;">
+                                <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #5F6368;">Google Maps</span>
+                            </div>
+                            <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Columna Derecha: Mapa -->
+                <div class="reveal">
+                    <div style="border: 1px solid var(--color-border); height: 380px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium);">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=Adriano%20Diaz%20911,%20Santa%20Cruz&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PIE DE PAGINA (FOOTER) -->
-    <footer></footer>
+    </main>
+
+    <footer>
+
+        <!-- Fallback de pie de pÃ¡gina para SEO/Accesibilidad -->
+        <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
+            <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div style="display:flex; gap:1.5rem;">
+                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">TÃ©rminos y Condiciones</a>
+                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">PolÃ­tica de Privacidad</a>
+                </div>
+            </div>
+        </div>
+</footer>
 
     <!-- Scripts de Funcionalidad -->
     <script src="assets/js/main.js"></script>
@@ -258,3 +411,5 @@
     </script>
 </body>
 </html>
+
+
