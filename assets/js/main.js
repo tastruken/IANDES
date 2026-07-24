@@ -165,6 +165,16 @@ function initScrollReveal() {
     const reveals = document.querySelectorAll('.reveal');
     if (reveals.length === 0) return;
 
+    // 1. Revelar de inmediato ÚNICAMENTE el primer bloque que se ve en la pantalla inicial (bajo el hero)
+    const initialFoldLimit = window.innerHeight * 0.85;
+    reveals.forEach(reveal => {
+        const rect = reveal.getBoundingClientRect();
+        if (rect.top > 0 && rect.top < initialFoldLimit) {
+            reveal.classList.add('active');
+        }
+    });
+
+    // 2. Para todos los bloques siguientes (abajo del pliegue inicial), animar ÚNICAMENTE al deslizar (scroll)
     if ('IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -178,7 +188,11 @@ function initScrollReveal() {
             rootMargin: '0px 0px -50px 0px'
         });
 
-        reveals.forEach(reveal => observer.observe(reveal));
+        reveals.forEach(reveal => {
+            if (!reveal.classList.contains('active')) {
+                observer.observe(reveal);
+            }
+        });
     } else {
         // Fallback si no está soportado
         reveals.forEach(reveal => reveal.classList.add('active'));
@@ -565,7 +579,7 @@ function initProjectTypologySelector() {
                 tabBtnInterior.dataset.src = renderInt;
                 tabBtnInterior.dataset.title = `Vista Interior ${title}`;
                 const label = tabBtnInterior.querySelector('.media-tab-label');
-                if (label) label.textContent = `Vista Interior`;
+                if (label) label.textContent = `Interior`;
                 if (tabBtnInterior.classList.contains('active')) {
                     tabBtnInterior.click();
                 }
@@ -1070,5 +1084,115 @@ function initCardCarousels() {
         }
     });
 }
+
+/* ==========================================================================
+   GLOBAL LIGHTBOX CON NAVEGACIÓN Y CARRUSEL ENTRE FOTOS
+   ========================================================================== */
+function openGalleryLightbox(imagesList, startIndex = 0) {
+    if (!imagesList || imagesList.length === 0) return;
+    
+    let lightbox = document.getElementById('model-lightbox');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'model-lightbox';
+        lightbox.className = 'model-lightbox';
+        lightbox.innerHTML = `
+            <span class="lightbox-close">&times;</span>
+            <button class="lightbox-nav-btn prev-btn" id="lightbox-prev" aria-label="Anterior">&lsaquo;</button>
+            <div style="position: relative; max-width: 90vw; max-height: 85vh; display: flex; flex-direction: column; align-items: center;">
+                <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Foto">
+                <div id="lightbox-counter" style="margin-top: 10px; color: #FFFFFF; background: rgba(0,0,0,0.65); padding: 4px 14px; border-radius: 12px; font-size: 0.85rem; font-weight: 500; backdrop-filter: blur(4px);"></div>
+            </div>
+            <button class="lightbox-nav-btn next-btn" id="lightbox-next" aria-label="Siguiente">&rsaquo;</button>
+        `;
+        document.body.appendChild(lightbox);
+    }
+    
+    const lightboxImg = lightbox.querySelector('#lightbox-img');
+    const lightboxClose = lightbox.querySelector('.lightbox-close');
+    const prevBtn = lightbox.querySelector('#lightbox-prev');
+    const nextBtn = lightbox.querySelector('#lightbox-next');
+    const counter = lightbox.querySelector('#lightbox-counter');
+    
+    let currentIndex = startIndex;
+    
+    function updateSlide() {
+        if (lightboxImg) lightboxImg.src = imagesList[currentIndex];
+        if (counter) {
+            if (imagesList.length > 1) {
+                counter.style.display = 'block';
+                counter.textContent = `${currentIndex + 1} / ${imagesList.length}`;
+            } else {
+                counter.style.display = 'none';
+            }
+        }
+        if (imagesList.length > 1) {
+            if (prevBtn) prevBtn.style.display = 'flex';
+            if (nextBtn) nextBtn.style.display = 'flex';
+        } else {
+            if (prevBtn) prevBtn.style.display = 'none';
+            if (nextBtn) nextBtn.style.display = 'none';
+        }
+    }
+    
+    updateSlide();
+    lightbox.classList.add('active');
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.removeEventListener('keydown', handleKeyDown);
+    }
+    
+    function handleKeyDown(e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowLeft' && imagesList.length > 1) {
+            currentIndex = (currentIndex - 1 + imagesList.length) % imagesList.length;
+            updateSlide();
+        } else if (e.key === 'ArrowRight' && imagesList.length > 1) {
+            currentIndex = (currentIndex + 1) % imagesList.length;
+            updateSlide();
+        }
+    }
+    
+    document.addEventListener('keydown', handleKeyDown);
+    
+    if (lightboxClose) {
+        lightboxClose.onclick = closeLightbox;
+    }
+    lightbox.onclick = (e) => {
+        if (e.target === lightbox) closeLightbox();
+    };
+    
+    if (prevBtn) {
+        prevBtn.onclick = (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + imagesList.length) % imagesList.length;
+            updateSlide();
+        };
+    }
+    
+    if (nextBtn) {
+        nextBtn.onclick = (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % imagesList.length;
+            updateSlide();
+        };
+    }
+}
+
+// Inicialización de tarjetas de galería para abrir el lightbox interactivo
+document.addEventListener('DOMContentLoaded', () => {
+    const galleryCards = Array.from(document.querySelectorAll('.gallery-card'));
+    if (galleryCards.length > 0) {
+        const imageSources = galleryCards.map(card => card.querySelector('img')?.src).filter(Boolean);
+        galleryCards.forEach((card, idx) => {
+            card.addEventListener('click', () => {
+                openGalleryLightbox(imageSources, idx);
+            });
+        });
+    }
+});
 
 

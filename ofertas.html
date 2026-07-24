@@ -3,17 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofertas y Oportunidades de Compra | Inmobiliaria Iandes</title>
-    <meta name="description" content="Descubre promociones exclusivas, descuentos de temporada y bonos pie para comprar tu departamento en Inmobiliaria Iandes.">
+    <title>Nuestras Promociones | Inmobiliaria Iandes</title>
+    <meta name="description" content="Descubre nuestras promociones exclusivas: pago del pie con tarjeta de crédito, programa recomienda un amigo, gastos operacionales gratis y bases protocolizadas.">
     <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .promo-badge {
+            background-color: var(--color-secondary);
+            color: #FFFFFF;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+        .bases-card {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            padding: 2rem;
+            border-radius: 6px;
+            transition: var(--transition-fast);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .bases-card:hover {
+            border-color: var(--color-accent);
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
     <header class="scrolled">
 
-        <!-- Fallback de navegaciÃ³n para SEO/Accesibilidad -->
+        <!-- Fallback de navegación para SEO/Accesibilidad -->
         <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
             <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
             <nav style="display:block;">
@@ -33,78 +62,176 @@
     <!-- INNER HERO (CABECERA DE PÁGINA) -->
     <section class="inner-hero">
         <div class="inner-hero-bg">
-            <img src="assets/images/proyecto-residencial.png" alt="Ofertas Inmobiliarias Iandes" style="filter: grayscale(20%) sepia(0.05) brightness(0.6);">
+            <img src="assets/images/proyecto-residencial.png" alt="Nuestras Promociones Inmobiliarias Iandes" style="filter: grayscale(20%) sepia(0.05) brightness(0.6);">
         </div>
         <div class="container" style="position: relative; z-index: 5;">
             <div class="inner-hero-content">
                 <div class="inner-hero-breadcrumbs">
-                    <a href="index.html">Inicio</a> &nbsp;/&nbsp; Ofertas
+                    <a href="index.html">Inicio</a> &nbsp;/&nbsp; Nuestras Promociones
                 </div>
-                <h1 class="inner-hero-title">Oportunidades Exclusivas</h1>
+                <h1 class="inner-hero-title">Nuestras Promociones</h1>
             </div>
         </div>
     </section>
 
-    <!-- LISTADO DE OFERTAS DINGÁMICAS -->
+    <!-- LISTADO DE PROMOCIONES DINÁMICAS -->
     <section class="section">
         <div class="container">
             
             <div class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto 5rem auto;">
-                <span class="section-subtitle">Promociones Especiales</span>
-                <h2 style="font-size: 2.5rem; font-family: var(--font-serif); margin-bottom: 1rem;">Acelera tu compra con incentivos únicos</h2>
+                <span class="section-subtitle">Incentivos Exclusivos</span>
+                <h2 style="font-size: 2.5rem; font-family: var(--font-serif); margin-bottom: 1rem;">Beneficios pensados para tu facilidades de compra</h2>
                 <p style="color: var(--color-text-muted); font-size: 0.95rem;">
-                    Conoce los descuentos temporales y beneficios de financiamiento que tenemos vigentes este mes para ayudarte a concretar la compra de tu propiedad.
+                    Conoce las promociones vigentes de Inmobiliaria Iandes y descarga las bases protocolizadas de cada beneficio para una compra transparente y segura.
                 </p>
             </div>
 
-            <!-- Listado de tarjetas de oferta -->
+            <!-- Listado de tarjetas de oferta / promoción -->
             <div style="display: flex; flex-direction: column; gap: 3rem;">
                 
-                <!-- Oferta 1 -->
+                <!-- Promoción 1: Pago del pie con tarjeta de crédito -->
                 <div class="reveal" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); display: grid; grid-template-columns: 1.2fr 1.8fr; align-items: center; box-shadow: var(--shadow-premium);">
                     <div style="position: relative; padding-top: 75%; height: 100%; overflow: hidden; background-color: var(--color-primary);">
-                        <img src="assets/images/proyecto-residencial.png" alt="Bono Pie" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; filter: brightness(0.85) grayscale(10%);">
+                        <img src="assets/images/proyecto-residencial.png" alt="Pago del pie con tarjeta de crédito" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; filter: brightness(0.85) grayscale(10%);">
                     </div>
                     <div style="padding: 3.5rem;">
-                        <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary); display: block; margin-bottom: 0.5rem;">Bono Pie 10%</span>
-                        <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.2rem; color: var(--color-primary);">Duplica tu pie sin costo adicional</h3>
+                        <span class="promo-badge">Facilidad Financiera</span>
+                        <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.2rem; color: var(--color-primary);">Pago del pie con Tarjeta de Crédito</h3>
                         <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2rem;">
-                            Válido en Edificio Andes Macul y Camino de la Villa. Te otorgamos un bono correspondiente al 10% del valor del departamento. Si cuentas con un 10% de ahorro propio, podrás firmar promesa completando un 20% de pie exigido por los bancos, mejorando las condiciones de tu crédito hipotecario.
+                            Paga la cuota inicial o pie de tu propiedad en hasta 30 cuotas sin interés utilizando tu tarjeta de crédito preferida (Transbank / Webpay). Organiza tus flujos de dinero sin necesidad de solicitar un préstamo de consumo ni comprometer tu liquidez inmediata.
                         </p>
-                        <a href="proyecto-andes-macul.html" class="btn btn-primary" style="font-size: 0.7rem; padding: 0.7rem 1.8rem;">Ver Proyecto Andes Macul</a>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="contacto.html" class="btn btn-primary" style="font-size: 0.75rem; padding: 0.75rem 1.8rem;">Solicitar Promoción</a>
+                            <a href="#bases-protocolizadas" class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.75rem 1.8rem;">Ver Bases Protocolizadas</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Oferta 2 -->
+                <!-- Promoción 2: Recomienda un amigo -->
                 <div class="reveal" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); display: grid; grid-template-columns: 1.2fr 1.8fr; align-items: center; box-shadow: var(--shadow-premium);">
                     <div style="position: relative; padding-top: 75%; height: 100%; overflow: hidden; background-color: var(--color-primary);">
-                        <img src="assets/images/proyecto-residencial.png" alt="Descuento de Lanzamiento" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; filter: brightness(0.85) contrast(1.1) sepia(0.05);">
+                        <img src="assets/images/proyecto-residencial.png" alt="Recomienda un amigo" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; filter: brightness(0.85) contrast(1.1) sepia(0.05);">
                     </div>
                     <div style="padding: 3.5rem;">
-                        <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary); display: block; margin-bottom: 0.5rem;">Descuento Exclusivo</span>
-                        <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.2rem; color: var(--color-primary);">Hasta UF 300 de descuento por firma rápida</h3>
+                        <span class="promo-badge">Programa Referidos</span>
+                        <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.2rem; color: var(--color-primary);">Recomienda un Amigo y Gana</h3>
                         <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2rem;">
-                            Por este mes, accede a descuentos especiales en unidades seleccionadas de 2 y 3 dormitorios en Edificio Andes Ñuñoa. Asegura la mayor rentabilidad o el dividendo más bajo coordinando tu visita técnica al piloto hoy mismo.
+                            Si ya eres cliente o comprador de Inmobiliaria Iandes, refiere a tus amigos, familiares o conocidos. Si firman la promesa de compra en cualquiera de nuestros proyectos activos, ambos recibirán una Giftcard de hasta $500.000 o abono directo a los gastos de escritura.
                         </p>
-                        <a href="proyecto-andes-nunoa.html" class="btn btn-primary" style="font-size: 0.7rem; padding: 0.7rem 1.8rem;">Ver Proyecto Andes Ñuñoa</a>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="contacto.html" class="btn btn-primary" style="font-size: 0.75rem; padding: 0.75rem 1.8rem;">Inscribir a un Referido</a>
+                            <a href="#bases-protocolizadas" class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.75rem 1.8rem;">Ver Bases Protocolizadas</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Oferta 3 -->
+                <!-- Promoción 3: Gastos operacionales gratis -->
                 <div class="reveal" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); display: grid; grid-template-columns: 1.2fr 1.8fr; align-items: center; box-shadow: var(--shadow-premium);">
                     <div style="position: relative; padding-top: 75%; height: 100%; overflow: hidden; background-color: var(--color-primary);">
-                        <img src="assets/images/proyecto-residencial.png" alt="Pie en cuotas" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; filter: brightness(0.8) grayscale(40%);">
+                        <img src="assets/images/proyecto-residencial.png" alt="Gastos operacionales gratis" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; filter: brightness(0.8) grayscale(40%);">
                     </div>
                     <div style="padding: 3.5rem;">
-                        <span style="font-size: 0.65rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-secondary); display: block; margin-bottom: 0.5rem;">Facilidades de Pago</span>
-                        <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.2rem; color: var(--color-primary);">Paga tu pie en hasta 30 cuotas sin interés</h3>
+                        <span class="promo-badge">Ahorro Directo</span>
+                        <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.2rem; color: var(--color-primary);">Gastos Operacionales Gratis</h3>
                         <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2rem;">
-                            Al comprar tu departamento en verde o en blanco, distribuye el pago de tu pie en cómodas cuotas fijas mensuales mediante tarjeta de crédito o cheques, adaptando tu presupuesto mensual de forma eficiente y ordenada.
+                            Nos hacemos cargo del 100% de los gastos operacionales asociados a la escrituración de tu crédito hipotecario (tasación, estudio de títulos, borrador de escritura y notaría). Un ahorro de hasta UF 40 directo en tu bolsillo al momento del cierre.
                         </p>
-                        <a href="contacto.html" class="btn btn-primary" style="font-size: 0.7rem; padding: 0.7rem 1.8rem;">Solicitar Información</a>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="contacto.html" class="btn btn-primary" style="font-size: 0.75rem; padding: 0.75rem 1.8rem;">Cotizar con Beneficio</a>
+                            <a href="#bases-protocolizadas" class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.75rem 1.8rem;">Ver Bases Protocolizadas</a>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Promoción 4: Bono Pie 10% -->
+                <div class="reveal" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); display: grid; grid-template-columns: 1.2fr 1.8fr; align-items: center; box-shadow: var(--shadow-premium);">
+                    <div style="position: relative; padding-top: 75%; height: 100%; overflow: hidden; background-color: var(--color-primary);">
+                        <img src="assets/images/proyecto-residencial.png" alt="Bono Pie 10%" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit: cover; filter: brightness(0.85) sepia(0.1);">
+                    </div>
+                    <div style="padding: 3.5rem;">
+                        <span class="promo-badge">Bono Directo</span>
+                        <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.2rem; color: var(--color-primary);">Bono Pie del 10%</h3>
+                        <p style="font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 2rem;">
+                            En unidades seleccionadas te otorgamos un bono pie equivalente al 10% del valor total de la propiedad. Al contar con un 10% de ahorro propio, completas el 20% necesario para obtener mejores tasas e intereses en la banca.
+                        </p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="proyecto-andes-macul.html" class="btn btn-primary" style="font-size: 0.75rem; padding: 0.75rem 1.8rem;">Ver Proyectos Aplicables</a>
+                            <a href="#bases-protocolizadas" class="btn btn-secondary" style="font-size: 0.75rem; padding: 0.75rem 1.8rem;">Ver Bases Protocolizadas</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- SECCIÓN DE BASES PROTOCOLIZADAS -->
+            <div id="bases-protocolizadas" class="reveal" style="margin-top: 6rem; background: var(--color-bg-light); border: 1px solid var(--color-border); border-radius: 8px; padding: 3.5rem;">
+                <div style="margin-bottom: 2.5rem; text-align: center; max-width: 650px; margin-left: auto; margin-right: auto;">
+                    <span class="section-subtitle">Transparencia Legal</span>
+                    <h3 style="font-size: 2.2rem; font-family: var(--font-serif); color: var(--color-primary);">Bases Protocolizadas de Promociones</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                        Todas nuestras promociones se encuentran debidamente protocolizadas ante Notaría Pública. Revisa los términos, vigencias y condiciones legales en los siguientes documentos oficializados.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
+                    
+                    <!-- Base 1 -->
+                    <div class="bases-card">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--color-primary); margin: 0;">Bases: Pago Pie Tarjeta de Crédito</h4>
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Protocolizado en Notaría Pública. Establece cuotas sin interés, montos máximos por transacción y vigencia del convenio Transbank / Webpay.
+                            </p>
+                        </div>
+                        <a href="javascript:void(0)" onclick="alert('Descargando Bases Legal Protocolizada: Pago de Pie con Tarjeta de Crédito (Formato PDF)');" class="btn btn-secondary" style="font-size: 0.75rem; text-align: center; width: 100%;">Descargar Bases (PDF)</a>
+                    </div>
+
+                    <!-- Base 2 -->
+                    <div class="bases-card">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--color-primary); margin: 0;">Bases: Recomienda un Amigo</h4>
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Reglamento del programa de referidos de Inmobiliaria Iandes, entrega de Giftcard y validación de promesa firmada por el recomendado.
+                            </p>
+                        </div>
+                        <a href="javascript:void(0)" onclick="alert('Descargando Bases Legal Protocolizada: Programa Recomienda un Amigo (Formato PDF)');" class="btn btn-secondary" style="font-size: 0.75rem; text-align: center; width: 100%;">Descargar Bases (PDF)</a>
+                    </div>
+
+                    <!-- Base 3 -->
+                    <div class="bases-card">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--color-primary); margin: 0;">Bases: Gastos Operacionales Gratis</h4>
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Condiciones de bonificación del costo de estudio de títulos, notaría, tasación y gastos operacionales bancarios.
+                            </p>
+                        </div>
+                        <a href="javascript:void(0)" onclick="alert('Descargando Bases Legal Protocolizada: Gastos Operacionales Gratis (Formato PDF)');" class="btn btn-secondary" style="font-size: 0.75rem; text-align: center; width: 100%;">Descargar Bases (PDF)</a>
+                    </div>
+
+                    <!-- Base 4 -->
+                    <div class="bases-card">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                                <h4 style="font-size: 1.05rem; font-weight: 600; color: var(--color-primary); margin: 0;">Bases: Bono Pie del 10%</h4>
+                            </div>
+                            <p style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; margin-bottom: 1.5rem;">
+                                Certificación de abono del 10% del pie por parte de la inmobiliaria en la escrituración de la promesa de compraventa.
+                            </p>
+                        </div>
+                        <a href="javascript:void(0)" onclick="alert('Descargando Bases Legal Protocolizada: Bono Pie 10% (Formato PDF)');" class="btn btn-secondary" style="font-size: 0.75rem; text-align: center; width: 100%;">Descargar Bases (PDF)</a>
+                    </div>
+
+                </div>
             </div>
 
         </div>
@@ -115,13 +242,13 @@
 
     <footer>
 
-        <!-- Fallback de pie de pÃ¡gina para SEO/Accesibilidad -->
+        <!-- Fallback de pie de página para SEO/Accesibilidad -->
         <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
             <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
                 <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
                 <div style="display:flex; gap:1.5rem;">
-                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">TÃ©rminos y Condiciones</a>
-                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">PolÃ­tica de Privacidad</a>
+                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">Términos y Condiciones</a>
+                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">Política de Privacidad</a>
                 </div>
             </div>
         </div>
@@ -131,5 +258,3 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-

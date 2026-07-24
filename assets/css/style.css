@@ -107,6 +107,13 @@ a {
     position: relative;
 }
 
+/* Espaciado continuo tras la cabecera hero */
+.hero + .section,
+.inner-hero + .section,
+main > .section:first-of-type {
+    padding-top: 3.5rem;
+}
+
 /* Botones Premium */
 .btn {
     display: inline-flex;
@@ -1256,6 +1263,13 @@ header.scrolled .hamburger span {
     border-color: var(--color-accent);
 }
 
+@media (max-width: 992px) {
+    .postventa-banner-grid {
+        grid-template-columns: 1fr !important;
+        gap: 3rem !important;
+    }
+}
+
 /* SECCIÓN BLOG / RECIENTES */
 .blog-recent-grid {
     display: grid;
@@ -1455,14 +1469,15 @@ footer {
 
 /* ESTRUCTURAS COMUNES DE PÁGINAS INTERNAS (HERO SIMPLE) */
 .inner-hero {
-    height: 40vh;
-    min-height: 320px;
+    height: 280px;
+    min-height: 250px;
     background-color: var(--color-primary);
     color: var(--color-bg-card);
     position: relative;
     display: flex;
-    align-items: flex-end;
-    padding-bottom: 4rem;
+    align-items: center;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
 }
 
 .inner-hero-bg {
@@ -1585,6 +1600,7 @@ footer {
 }
 
 .media-model-badge {
+    display: none !important;
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -2167,12 +2183,13 @@ footer {
 .lightbox-content {
     margin: auto;
     display: block;
-    max-width: 90%;
+    max-width: 90vw;
     max-height: 85vh;
     object-fit: contain;
-    background-color: #FFFFFF;
-    padding: 2rem;
-    border-radius: 8px;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 6px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
     animation: zoom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -2191,6 +2208,43 @@ footer {
 .lightbox-close:hover {
     color: #E67E22;
     transform: scale(1.1);
+}
+
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    user-select: none;
+}
+.lightbox-nav-btn:hover {
+    background: rgba(255, 255, 255, 0.35);
+    border-color: #FFFFFF;
+    transform: translateY(-50%) scale(1.1);
+}
+.lightbox-nav-btn.prev-btn {
+    left: 25px;
+}
+.lightbox-nav-btn.next-btn {
+    right: 25px;
+}
+@media (max-width: 768px) {
+    .lightbox-nav-btn.prev-btn { left: 10px; width: 42px; height: 42px; font-size: 1.5rem; }
+    .lightbox-nav-btn.next-btn { right: 10px; width: 42px; height: 42px; font-size: 1.5rem; }
 }
 
 @keyframes zoom {
@@ -2688,8 +2742,8 @@ footer {
 /* ANIMACIÓN DE REVELADO (SCROLL REVEAL) */
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(25px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: transform, opacity;
 }
 
@@ -3400,6 +3454,106 @@ footer {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
+}
+
+/* ==========================================================================
+   BARRA PRINCIPAL DE PUNTOS CLAVE DEL PROYECTO (HERO SPECS BAR FLOTANTE)
+   ========================================================================== */
+.inner-hero:has(.hero-project-bar),
+.inner-hero.project-hero {
+    position: relative !important;
+    min-height: 520px !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding-top: 6.5rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.inner-hero .inner-hero-content {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.hero-project-bar {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    margin-top: 2.5rem;
+}
+
+.hero-project-bar-card {
+    background: rgba(15, 23, 42, 0.32);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 1.2rem 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.hero-project-bar-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.2rem;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .hero-project-bar-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-project-bar-card {
+        padding: 1rem 1.2rem;
+    }
+    .hero-project-bar-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+.hero-bar-item {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.hero-bar-item svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--color-secondary);
+}
+
+.hero-bar-label {
+    font-size: 0.62rem;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+    display: block;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.hero-bar-value {
+    font-size: 0.82rem;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    display: block;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+.hero-bar-value.highlight {
+    color: var(--color-secondary);
 }
 
 

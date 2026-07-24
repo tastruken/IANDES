@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Andes Macul | Inmobiliaria Iandes</title>
-    <meta name="description" content="Descubre Edificio Andes Macul. Departamentos de 1, 2 y 3 dormitorios de diseño premium, excelente plusvalía y conectividad en el corazón de Macul.">
+    <meta name="description" content="Departamentos de 1 y 2 dormitorios en un consolidado barrio residencial de Macul. Disfruta una ubicación estratégica con excelente conectividad, cercano a la futura Línea 8 de Metro, comercio y servicios.">
     <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
     
@@ -32,6 +32,31 @@
             border-color: var(--color-accent) !important;
             transform: translateY(-2px);
         }
+        
+        .btn-download-pdf {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            width: 100%;
+            margin-top: 0.75rem;
+            padding: 0.85rem 1rem;
+            background-color: var(--color-bg-light);
+            color: var(--color-primary);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: var(--transition-fast);
+            box-shadow: var(--shadow-small);
+        }
+        .btn-download-pdf:hover {
+            background-color: var(--color-primary) !important;
+            color: #FFFFFF !important;
+            border-color: var(--color-primary) !important;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -39,7 +64,7 @@
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
     <header>
 
-        <!-- Fallback de navegaciÃ³n para SEO/Accesibilidad -->
+        <!-- Fallback de navegación para SEO/Accesibilidad -->
         <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
             <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
             <nav style="display:block;">
@@ -57,11 +82,11 @@
     <main>
 
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
-    <section class="inner-hero">
+    <section class="inner-hero project-hero">
         <div class="inner-hero-bg">
             <img src="assets/images/proyectos/proyecto-andes-macul/render.png" alt="Edificio Andes Macul">
         </div>
-        <div class="container" style="position: relative; z-index: 5;">
+        <div class="container" style="position: relative; z-index: 5; margin-top: auto; margin-bottom: auto;">
             <div class="inner-hero-content">
                 <div class="inner-hero-breadcrumbs">
                     <a href="index.html">Inicio</a> &nbsp;/&nbsp; <a href="index.html#proyectos">Proyectos</a> &nbsp;/&nbsp; Andes Macul
@@ -70,23 +95,63 @@
                 <p style="color: var(--color-secondary); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem; font-weight: 500;">
                     Los Clarines 3093, Macul, Santiago
                 </p>
-                <div class="inner-hero-specs-bar">
-                    <div class="specs-main-row">
-                        <div class="spec-inline-item" title="Dormitorios">
-                            <img src="assets/images/icons/icon-habitaciones.svg" alt="Dormitorios">
-                            <span>1 - 2</span>
+            </div>
+        </div>
+
+        <!-- BARRA PRINCIPAL DE PUNTOS CLAVE DEL PROYECTO -->
+        <div class="hero-project-bar">
+            <div class="container">
+                <div class="hero-project-bar-card">
+                    <div class="hero-project-bar-grid">
+                        
+                        <div class="hero-bar-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div>
+                                <span class="hero-bar-label">COMUNA</span>
+                                <span class="hero-bar-value">MACUL</span>
+                            </div>
                         </div>
-                        <div class="spec-inline-item" title="Baños">
-                            <img src="assets/images/icons/icon-baños.svg" alt="Baños">
-                            <span>1 - 2</span>
+
+                        <div class="hero-bar-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            <div>
+                                <span class="hero-bar-label">TIPO DE PROYECTO</span>
+                                <span class="hero-bar-value">DEPARTAMENTO</span>
+                            </div>
                         </div>
-                        <div class="spec-inline-item" title="Superficie">
-                            <img src="assets/images/icons/icon-metros2.svg" alt="Superficie">
-                            <span>Desde 42.5 m²</span>
+
+                        <div class="hero-bar-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
+                            <div>
+                                <span class="hero-bar-label">DORMITORIOS</span>
+                                <span class="hero-bar-value">1 Y 2 DORMITORIOS</span>
+                            </div>
                         </div>
-                        <div class="spec-inline-item" style="color: var(--color-secondary); font-weight: 600;">
-                            <span>Desde UF 3.740</span>
+
+                        <div class="hero-bar-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                            <div>
+                                <span class="hero-bar-label">SUPERFICIE</span>
+                                <span class="hero-bar-value">DESDE 42.5 M²</span>
+                            </div>
                         </div>
+
+                        <div class="hero-bar-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                            <div>
+                                <span class="hero-bar-label">PRECIO EN UF</span>
+                                <span class="hero-bar-value highlight">DESDE UF 3.920</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-bar-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>
+                            <div>
+                                <span class="hero-bar-label">FECHA ENTREGA</span>
+                                <span class="hero-bar-value">EN VERDE / 2026</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -104,30 +169,39 @@
                     <!-- Módulo Multimedia Integrado -->
                     <div class="media-gallery-module reveal">
                         <div class="media-viewer-container">
-                            <div class="media-model-badge" id="media-selected-model-badge">Modelo Seleccionado: TIPO C</div>
                             <div class="media-viewer" style="position: relative; padding-top: 56.25%; overflow: hidden; border: 1px solid var(--color-border); background-color: var(--color-primary);">
-                                <img id="selected-media-img" src="assets/images/proyectos/proyecto-andes-macul/render.png" alt="Render Exterior Andes Macul" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: saturate(0.5) brightness(0.9);">
+                                <img id="selected-media-img" src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-1.jpg" alt="Vista Interior Andes Macul" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: saturate(0.5) brightness(0.9);">
                                 <iframe id="selected-media-iframe" src="" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none; display:none;" allowfullscreen></iframe>
+                                
+                                <!-- Botones del carrusel para Vista Interior -->
+                                <button id="media-carousel-prev" aria-label="Anterior" style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&lsaquo;</button>
+                                <button id="media-carousel-next" aria-label="Siguiente" style="position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&rsaquo;</button>
+                                <div id="media-carousel-counter" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 10; background: rgba(0,0,0,0.65); color: #fff; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(4px);">1 / 5</div>
                             </div>
                         </div>
 
                         <div class="media-tabs">
-                            <button class="media-tab-btn active" data-view="render-ext" id="tab-btn-exterior">
-                                <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6" />
-                                    </svg>
-                                </span>
-                                <span class="media-tab-label">Render Exterior</span>
-                            </button>
-                            <button class="media-tab-btn" data-view="render-int" id="tab-btn-interior">
+                            <button class="media-tab-btn active" data-view="render-int" id="tab-btn-interior">
                                 <span class="media-tab-icon-wrapper">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
                                         <circle cx="12" cy="13" r="4" />
                                     </svg>
                                 </span>
-                                <span class="media-tab-label">Vista Interior</span>
+                                <span class="media-tab-label">Interior</span>
+                            </button>
+                            <button class="media-tab-btn" data-view="amenities" id="tab-btn-amenities">
+                                <span class="media-tab-icon-wrapper">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path>
+                                        <path d="M1 21h22"></path>
+                                        <path d="M9 7h1"></path>
+                                        <path d="M9 11h1"></path>
+                                        <path d="M14 7h1"></path>
+                                        <path d="M14 11h1"></path>
+                                    </svg>
+                                </span>
+                                <span class="media-tab-label">Amenities</span>
                             </button>
                             <button class="media-tab-btn" data-view="tour-360" id="tab-btn-tour">
                                 <span class="media-tab-icon-wrapper">
@@ -151,23 +225,74 @@
 
                     <!-- Descripción General -->
                     <div class="reveal" style="margin-bottom: 3.5rem;">
-                        <h2 style="font-size: 2.2rem; margin-bottom: 1.5rem;">Vanguardia urbana en un sector de alta plusvalía</h2>
-                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1.5rem;">
-                            Edificio Andes Macul combina de forma impecable el diseño residencial contemporáneo con la calidez de un espacio pensado para tu bienestar familiar. Ubicado en una avenida estratégica con excelente locomoción y cercanía a estaciones de Metro, este proyecto te conecta de manera ágil con universidades, colegios, supermercados y centros comerciales.
+                        <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem;">Vanguardia urbana en un sector de alta plusvalía</h2>
+                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1.8rem;">
+                            Departamentos de 1 y 2 dormitorios en un consolidado barrio residencial de Macul. Disfruta una ubicación estratégica con excelente conectividad, cercano a la futura Línea 8 de Metro, comercio y servicios.
                         </p>
-                        <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2rem;">
-                            Equipado con salas de coworking totalmente amobladas, gimnasio de alto rendimiento con máquinas de última generación, piscina en azotea con vista despejada de la cordillera, quinchos independientes y estacionamientos con pre-instalación para carga de autos eléctricos. Todo con un estándar constructivo sismo-resistente y materiales certificados.
-                        </p>
-                        
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Especificaciones Técnicas Premium</h3>
-                        <ul style="list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.85rem; color: var(--color-text-main);">
-                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Ventanas de PVC con cristales termopanel aislantes.</li>
-                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Puerta de acceso enchapada en madera nativa.</li>
-                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Cocinas equipadas con encimera vitrocerámica, horno y campana.</li>
-                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Pisos de porcelanato de alta resistencia en living y cocina.</li>
-                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Barandas de cristal templado en terrazas.</li>
-                            <li><svg class="inline-icon" style="color:var(--color-secondary); stroke-width:3; width:0.85rem; height:0.85rem; margin-right:0.5rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Calefacción por radiadores eléctricos individuales.</li>
-                        </ul>
+
+                        <!-- Grilla de Equipamiento con Iconos -->
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">Equipamiento del Edificio</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.85rem; margin-bottom: 2.2rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons-prueba/icon-coworking.svg" alt="Sala Coworking" style="width: 20px; height: 20px;">
+                                </div>
+                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Sala Coworking</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons-prueba/icon-gimnasio.svg" alt="Gimnasio Equipado" style="width: 20px; height: 20px;">
+                                </div>
+                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Gimnasio Equipado</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons-prueba/icon-piscina.svg" alt="Piscina en Azotea" style="width: 20px; height: 20px;">
+                                </div>
+                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Piscina en Azotea</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons-prueba/icon-quincho.svg" alt="Quinchos Privados" style="width: 20px; height: 20px;">
+                                </div>
+                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Quinchos Privados</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons-prueba/icon-cargadores-ev.svg" alt="Cargadores EV" style="width: 20px; height: 20px;">
+                                </div>
+                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Cargadores EV</span>
+                            </div>
+                        </div>
+
+                        <!-- Grilla de Especificaciones Técnicas -->
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">Especificaciones Técnicas</h3>
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.85rem;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <img src="assets/images/icons-prueba/icon-termopanel.svg" alt="Termopanel" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Ventanas PVC con termopanel</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <img src="assets/images/icons-prueba/icon-puerta.svg" alt="Puerta" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Puerta enchapada en madera</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <img src="assets/images/icons-prueba/icon-cocina.svg" alt="Cocina" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Cocina equipada completa</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <img src="assets/images/icons-prueba/icon-porcelanato.svg" alt="Porcelanato" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Porcelanato en estar y cocina</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <img src="assets/images/icons-prueba/icon-barandas.svg" alt="Barandas" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Barandas de cristal en terraza</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                <img src="assets/images/icons-prueba/icon-calefaccion.svg" alt="Calefacción" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Calefacción eléctrica individual</span>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Módulo de Tipologías Interactivas (Planos y Modelos) -->
@@ -201,7 +326,7 @@
                         
                         <div class="floorplan-viewer-grid">
                             <div class="floorplan-img-box">
-                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-andes-macul/plano.png" alt="Plano Seleccionado">
+                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__C.png" alt="Plano Seleccionado">
                                 <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
@@ -210,14 +335,26 @@
                             </div>
                             <div class="floorplan-details-box">
                                 <h4 id="selected-floorplan-name" style="font-size: 1.5rem; color:var(--color-primary); font-weight:600;">DEPTO 1D + 1B (TIPO C)</h4>
-                                <div style="font-size: 1.3rem; font-weight: 600; color: var(--color-primary);">Desde <span class="highlight" id="selected-floorplan-price">UF 3.740</span></div>
+                                <div style="font-size: 1.3rem; font-weight: 600; color: var(--color-primary);">Desde <span class="highlight" id="selected-floorplan-price">UF 3.920</span></div>
                                 <hr class="model-divider" style="margin: 0.5rem 0; border: 0; border-top: 1px solid var(--color-border);">
                                 <ul class="floorplan-specs">
                                     <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg><span id="selected-floorplan-dorm">1 Dormitorio</span></li>
                                     <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" /></svg><span id="selected-floorplan-bano">1 Baño</span></li>
-                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" /></svg><span id="selected-floorplan-sup">42.5 m² Superficie</span></li>
+                                    <li id="selected-floorplan-sup-util-item" style="display:flex; align-items:center;"><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18" /></svg><span id="selected-floorplan-sup-util">Superficie Útil: 36,08 m²</span></li>
+                                    <li id="selected-floorplan-terraza-item" style="display:flex; align-items:center;"><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M3 12h18M3 6h18M3 18h18" /></svg><span id="selected-floorplan-terraza">Terraza: 2,76 m²</span></li>
+                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" /></svg><span id="selected-floorplan-sup">Superficie Total: 38,84 m²</span></li>
                                 </ul>
                                 <button class="btn btn-secondary" id="floorplan-cotizar-btn" style="width: 100%; margin-top: 0.5rem;">Cotizar este modelo</button>
+                                <a href="assets/images/proyectos/proyecto-andes-macul/andes-macul.pdf" target="_blank" rel="noopener" class="btn-download-pdf">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                        <polyline points="10 9 9 9 8 9"/>
+                                    </svg>
+                                    Ver Brochure PDF
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -227,13 +364,13 @@
                 <div>
                     <div id="cotizador" class="sidebar-cotizador reveal">
                         <h3>Cotizar Proyecto</h3>
-                        <span id="cotizador-price" class="price">Desde UF 3.740</span>
+                        <span id="cotizador-price" class="price">Desde UF 3.920</span>
                         
                         <form action="#" method="POST" id="form-cotizar">
                             <div class="form-group">
                                 <label for="select-tipologia">Tipología de Interés</label>
                                 <select id="select-tipologia" required>
-                                    <option value="1d1b" data-price="3.740">DEPTO 1D + 1B - Desde UF 3.740</option>
+                                    <option value="1d1b" data-price="3.920">DEPTO 1D + 1B - Desde UF 3.920</option>
                                     <option value="2d1b" data-price="4.150">DEPTO 2D + 1B - Desde UF 4.150</option>
                                     <option value="2d2b" data-price="4.620">DEPTO 2D + 2B - Desde UF 4.620</option>
                                 </select>
@@ -284,6 +421,47 @@
                 </div>
 
             </div>
+    </section>
+
+    <!-- GALERÍA DE FOTOS DEL PROYECTO -->
+    <section class="section" style="border-top: 1px solid var(--color-border); padding: 4.5rem 0; background-color: #FFFFFF;">
+        <div class="container">
+            <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+                <span class="section-subtitle">Imágenes del Proyecto</span>
+                <h2 style="font-size: 2.2rem; font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 0.8rem;">Galería Fotográfica</h2>
+            </div>
+            
+            <div class="photo-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-1.jpg" alt="Foto Andes Macul 1" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                </div>
+
+                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-2.jpg" alt="Foto Andes Macul 2" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                </div>
+
+                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-3.jpg" alt="Foto Andes Macul 3" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                </div>
+
+                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-4.jpg" alt="Foto Andes Macul 4" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                </div>
+
+                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-5.jpg" alt="Foto Andes Macul 5" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -325,7 +503,7 @@
                     <div class="how-to-get-buttons" style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
                         <a href="https://waze.com/ul?q=Los+Clarines+3093,+Macul" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
                             <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="assets/images/proyectos/proyecto-camino-villa/waze logo.png" alt="Waze" style="height: 32px; width: 32px; object-fit: contain; border-radius: 4px; vertical-align: middle;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.png" alt="Waze" style="height: 32px; width: 32px; object-fit: contain; border-radius: 4px; vertical-align: middle;">
                                 <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #05B4E3;">Waze</span>
                             </div>
                             <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
@@ -363,13 +541,13 @@
 
     <footer>
 
-        <!-- Fallback de pie de pÃ¡gina para SEO/Accesibilidad -->
+        <!-- Fallback de pie de página para SEO/Accesibilidad -->
         <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
             <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
                 <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
                 <div style="display:flex; gap:1.5rem;">
-                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">TÃ©rminos y Condiciones</a>
-                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">PolÃ­tica de Privacidad</a>
+                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">Términos y Condiciones</a>
+                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">Política de Privacidad</a>
                 </div>
             </div>
         </div>
@@ -383,11 +561,14 @@
             // Sub-tipologías de 1D + 1B
             'tipo-c': {
                 title: 'DEPTO 1D + 1B (TIPO C)',
-                price: '3.740',
+                price: '3.920',
                 dorm: '1 Dormitorio',
                 bano: '1 Baño',
-                sup: '42.5 m²',
-                img: 'assets/images/proyectos/proyecto-andes-macul/plano.png',
+                supUtil: '36,08 m²',
+                terraza: '2,76 m²',
+                supTotal: '38,84 m²',
+                sup: '38,84 m²',
+                img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__C.png',
                 tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior.png'
             },
@@ -396,8 +577,11 @@
                 price: '3.850',
                 dorm: '1 Dormitorio',
                 bano: '1 Baño',
-                sup: '43.8 m²',
-                img: 'assets/images/proyectos/proyecto-andes-macul/plano.png',
+                supUtil: '31,72 m²',
+                terraza: '2,88 m²',
+                supTotal: '34,60 m²',
+                sup: '34,60 m²',
+                img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__C1.png',
                 tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior.png'
             },
@@ -407,8 +591,11 @@
                 price: '4.150',
                 dorm: '2 Dormitorios',
                 bano: '1 Baño',
-                sup: '54.2 m²',
-                img: 'assets/images/proyectos/proyecto-andes-macul/plano.png',
+                supUtil: '42,45 m²',
+                terraza: '2,41 m²',
+                supTotal: '44,86 m²',
+                sup: '44,86 m²',
+                img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__B.png',
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png'
             },
@@ -417,8 +604,11 @@
                 price: '4.280',
                 dorm: '2 Dormitorios',
                 bano: '1 Baño',
-                sup: '55.6 m²',
-                img: 'assets/images/proyectos/proyecto-andes-macul/plano.png',
+                supUtil: '44,45 m²',
+                terraza: '3,26 m²',
+                supTotal: '47,71 m²',
+                sup: '47,71 m²',
+                img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__B1.png',
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png'
             },
@@ -428,8 +618,11 @@
                 price: '4.620',
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
-                sup: '61.8 m²',
-                img: 'assets/images/proyectos/proyecto-andes-macul/plano.png',
+                supUtil: '59,36 m²',
+                terraza: '7,27 m²',
+                supTotal: '66,63 m²',
+                sup: '66,63 m²',
+                img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__A1.png',
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png'
             },
@@ -438,8 +631,11 @@
                 price: '4.850',
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
-                sup: '63.5 m²',
-                img: 'assets/images/proyectos/proyecto-andes-macul/plano.png',
+                supUtil: '57,29 m²',
+                terraza: '2,65 m²',
+                supTotal: '59,94 m²',
+                sup: '59,94 m²',
+                img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__D.png',
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png'
             },
@@ -448,8 +644,11 @@
                 price: '4.750',
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
-                sup: '62.4 m²',
-                img: 'assets/images/proyectos/proyecto-andes-macul/plano.png',
+                supUtil: '49,21 m²',
+                terraza: '3,19 m²',
+                supTotal: '52,40 m²',
+                sup: '52,40 m²',
+                img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__A2.png',
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png'
             }
@@ -517,6 +716,79 @@
             return 'tipo-c';
         }
 
+        // Array de fotos reales para la Vista Interior en Andes Macul
+        const andesMaculFotos = [
+            "assets/images/proyectos/proyecto-andes-macul/fotos/macul-1.jpg",
+            "assets/images/proyectos/proyecto-andes-macul/fotos/macul-2.jpg",
+            "assets/images/proyectos/proyecto-andes-macul/fotos/macul-3.jpg",
+            "assets/images/proyectos/proyecto-andes-macul/fotos/macul-4.jpg",
+            "assets/images/proyectos/proyecto-andes-macul/fotos/macul-5.jpg"
+        ];
+        let currentFotoIndex = 0;
+
+        // Array de fotos/renders para los Amenities en Andes Macul
+        const andesMaculAmenities = [
+            "assets/images/proyectos/proyecto-andes-macul/render.png",
+            "assets/images/proyectos/proyecto-andes-macul/render-2.png",
+            "assets/images/proyectos/proyecto-andes-macul/fotos/macul-2.jpg",
+            "assets/images/proyectos/proyecto-andes-macul/fotos/macul-5.jpg"
+        ];
+        let currentAmenitiesIndex = 0;
+
+        const mediaCarouselPrev = document.getElementById('media-carousel-prev');
+        const mediaCarouselNext = document.getElementById('media-carousel-next');
+        const mediaCarouselCounter = document.getElementById('media-carousel-counter');
+
+        function updateInteriorCarousel() {
+            if (selectedMediaImg) {
+                selectedMediaImg.src = andesMaculFotos[currentFotoIndex];
+                selectedMediaImg.alt = "Vista Interior - Foto " + (currentFotoIndex + 1);
+            }
+            if (mediaCarouselCounter) {
+                mediaCarouselCounter.textContent = (currentFotoIndex + 1) + " / " + andesMaculFotos.length;
+            }
+        }
+
+        function updateAmenitiesCarousel() {
+            if (selectedMediaImg) {
+                selectedMediaImg.src = andesMaculAmenities[currentAmenitiesIndex];
+                selectedMediaImg.alt = "Amenities - Foto/Render " + (currentAmenitiesIndex + 1);
+            }
+            if (mediaCarouselCounter) {
+                mediaCarouselCounter.textContent = (currentAmenitiesIndex + 1) + " / " + andesMaculAmenities.length;
+            }
+        }
+
+        if (mediaCarouselPrev) {
+            mediaCarouselPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const activeViewTab = document.querySelector('.media-tabs .media-tab-btn.active');
+                const view = activeViewTab ? activeViewTab.dataset.view : 'render-int';
+                if (view === 'amenities') {
+                    currentAmenitiesIndex = (currentAmenitiesIndex - 1 + andesMaculAmenities.length) % andesMaculAmenities.length;
+                    updateAmenitiesCarousel();
+                } else {
+                    currentFotoIndex = (currentFotoIndex - 1 + andesMaculFotos.length) % andesMaculFotos.length;
+                    updateInteriorCarousel();
+                }
+            });
+        }
+
+        if (mediaCarouselNext) {
+            mediaCarouselNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const activeViewTab = document.querySelector('.media-tabs .media-tab-btn.active');
+                const view = activeViewTab ? activeViewTab.dataset.view : 'render-int';
+                if (view === 'amenities') {
+                    currentAmenitiesIndex = (currentAmenitiesIndex + 1) % andesMaculAmenities.length;
+                    updateAmenitiesCarousel();
+                } else {
+                    currentFotoIndex = (currentFotoIndex + 1) % andesMaculFotos.length;
+                    updateInteriorCarousel();
+                }
+            });
+        }
+
         // Función para actualizar la Galería Multimedia Superior
         function updateMediaGallery() {
             const activeViewTab = document.querySelector('.media-tabs .media-tab-btn.active');
@@ -525,7 +797,6 @@
             const view = activeViewTab.dataset.view;
             const modelKey = getActiveModelKey();
             const data = modelData[modelKey];
-            const mainModelTitle = document.querySelector('.floorplan-nav-tab.active').textContent;
 
             // Sincronizar el badge del modelo
             if (mediaBadge) {
@@ -533,24 +804,34 @@
                 mediaBadge.textContent = `Modelo Seleccionado: ${data.title} (${compactDorm} / ${data.bano})`;
             }
 
-            if (view === 'render-ext') {
+            if (view === 'render-int') {
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
-                selectedMediaImg.src = "assets/images/proyectos/proyecto-andes-macul/render.png";
-                selectedMediaImg.alt = "Render Exterior - " + mainModelTitle;
-            } else if (view === 'render-int') {
+                if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
+                if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
+                if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
+                updateInteriorCarousel();
+            } else if (view === 'amenities') {
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
-                selectedMediaImg.src = data.renderInt;
-                selectedMediaImg.alt = "Vista Interior - " + data.title;
+                if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
+                if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
+                if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
+                updateAmenitiesCarousel();
             } else if (view === 'tour-360') {
                 selectedMediaImg.style.display = 'none';
+                if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
+                if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
+                if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
                 selectedMediaIframe.style.display = 'block';
                 selectedMediaIframe.src = data.tour;
             } else if (view === 'video') {
                 selectedMediaImg.style.display = 'none';
+                if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
+                if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
+                if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
                 selectedMediaIframe.style.display = 'block';
                 selectedMediaIframe.src = videoUrl;
             }
@@ -567,7 +848,38 @@
             if (selectedFloorplanPrice) selectedFloorplanPrice.textContent = data.price;
             if (selectedFloorplanDorm) selectedFloorplanDorm.textContent = data.dorm;
             if (selectedFloorplanBano) selectedFloorplanBano.textContent = data.bano;
-            if (selectedFloorplanSup) selectedFloorplanSup.textContent = `${data.sup} Superficie`;
+
+            const supUtilItem = document.getElementById('selected-floorplan-sup-util-item');
+            const supUtilSpan = document.getElementById('selected-floorplan-sup-util');
+            if (supUtilItem && supUtilSpan) {
+                if (data.supUtil) {
+                    supUtilItem.style.display = 'flex';
+                    supUtilItem.style.alignItems = 'center';
+                    supUtilSpan.textContent = `Superficie Útil: ${data.supUtil}`;
+                } else {
+                    supUtilItem.style.display = 'none';
+                }
+            }
+
+            const terrazaItem = document.getElementById('selected-floorplan-terraza-item');
+            const terrazaSpan = document.getElementById('selected-floorplan-terraza');
+            if (terrazaItem && terrazaSpan) {
+                if (data.terraza) {
+                    terrazaItem.style.display = 'flex';
+                    terrazaItem.style.alignItems = 'center';
+                    terrazaSpan.textContent = `Terraza: ${data.terraza}`;
+                } else {
+                    terrazaItem.style.display = 'none';
+                }
+            }
+
+            if (selectedFloorplanSup) {
+                if (data.supTotal) {
+                    selectedFloorplanSup.textContent = `Superficie Total: ${data.supTotal}`;
+                } else {
+                    selectedFloorplanSup.textContent = `${data.sup} Superficie`;
+                }
+            }
         }
 
         // Función para sincronizar y actualizar el Formulario de Cotización
