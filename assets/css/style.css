@@ -364,15 +364,17 @@ nav ul a.active::after {
     padding-left: 1.8rem;
 }
 
-/* Mostrar al pasar el cursor (Desktop) */
+/* Mostrar al pasar el cursor o al hacer clic (Desktop) */
 @media (min-width: 769px) {
-    .dropdown:hover .dropdown-menu {
+    .dropdown:hover .dropdown-menu,
+    .dropdown.active .dropdown-menu {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
     }
     
-    .dropdown:hover .dropdown-trigger .arrow {
+    .dropdown:hover .dropdown-trigger .arrow,
+    .dropdown.active .dropdown-trigger .arrow {
         transform: rotate(180deg);
         color: var(--color-secondary);
     }
@@ -579,7 +581,7 @@ header.scrolled .hamburger span {
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--color-secondary);
+    color: var(--color-text-muted);
     margin-bottom: 0.8rem;
     display: block;
 }
@@ -746,39 +748,88 @@ header.scrolled .hamburger span {
     transform: scale(1.04) !important;
 }
 
-/* Botones de navegación del carrusel */
-.carousel-btn {
+/* Botones de navegación del carrusel (Diseño Minimalista Sin Círculo) */
+.carousel-btn,
+#media-carousel-prev,
+#media-carousel-next,
+#lightbox-prev,
+#lightbox-next,
+.lightbox-nav-btn {
     position: absolute !important;
     top: 50% !important;
     transform: translateY(-50%) !important;
-    background: rgba(15, 23, 42, 0.55) !important;
-    color: #FFFFFF !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    color: rgba(255, 255, 255, 0.9) !important;
     border: none !important;
-    width: 38px !important;
-    height: 38px !important;
-    border-radius: 50% !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 1.4rem !important;
+    font-size: 2.2rem !important;
     line-height: 1 !important;
     cursor: pointer !important;
-    z-index: 10 !important;
-    transition: background 0.3s ease, transform 0.2s ease !important;
-    backdrop-filter: blur(4px) !important;
+    z-index: 20 !important;
+    transition: transform 0.2s ease, opacity 0.2s ease !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.75)) !important;
+    padding: 0.5rem !important;
 }
 
-.carousel-btn:hover {
-    background: rgba(15, 23, 42, 0.9) !important;
-    transform: translateY(-50%) scale(1.1) !important;
+.carousel-btn:hover,
+#media-carousel-prev:hover,
+#media-carousel-next:hover,
+#lightbox-prev:hover,
+#lightbox-next:hover,
+.lightbox-nav-btn:hover {
+    background: transparent !important;
+    color: #FFFFFF !important;
+    transform: translateY(-50%) scale(1.25) !important;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.95)) !important;
 }
 
-.carousel-btn.prev-btn {
+.carousel-btn.prev-btn,
+#media-carousel-prev,
+#lightbox-prev {
     left: 12px !important;
 }
 
-.carousel-btn.next-btn {
+.carousel-btn.next-btn,
+#media-carousel-next,
+#lightbox-next {
     right: 12px !important;
+}
+
+/* Botón Ver en Grande estilo negro corporativo */
+.open-lightbox-btn {
+    background-color: #0F172A !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    padding: 0.5rem 0.95rem !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    display: inline-flex;
+    align-items: center !important;
+    gap: 0.45rem !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.2s ease !important;
+}
+
+.open-lightbox-btn.hidden,
+.open-lightbox-btn[style*="display: none"],
+.open-lightbox-btn[style*="display:none"] {
+    display: none !important;
+}
+
+.open-lightbox-btn:hover {
+    background-color: #1E293B !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5) !important;
 }
 
 /* Indicadores de puntos (Dots) */
@@ -3228,6 +3279,21 @@ footer {
     vertical-align: middle;
     margin-right: 0.5rem;
     flex-shrink: 0;
+}
+
+/* Estilos de la sección Sala de Ventas */
+.sales-room-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .sales-room-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
 }
 
 /* ==========================================================================

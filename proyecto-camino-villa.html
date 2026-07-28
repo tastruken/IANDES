@@ -109,6 +109,150 @@
             max-width: 100%;
             max-height: 320px;
             object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Controles de carrusel de planos multi-nivel */
+        .floorplan-carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--color-border);
+            color: var(--color-primary);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+
+        .floorplan-carousel-btn:hover {
+            background: var(--color-primary);
+            color: #FFFFFF;
+            border-color: var(--color-primary);
+        }
+
+        .floorplan-carousel-prev {
+            left: 0.75rem;
+        }
+
+        .floorplan-carousel-next {
+            right: 0.75rem;
+        }
+
+        .floorplan-carousel-counter {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: rgba(0, 32, 74, 0.88);
+            color: #FFFFFF;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            z-index: 10;
+            letter-spacing: 0.05em;
+        }
+
+        .floorplan-level-tabs {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            gap: 0.4rem;
+            z-index: 10;
+        }
+
+        .floorplan-level-tab {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--color-primary);
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        .floorplan-level-tab:hover {
+            border-color: var(--color-primary);
+        }
+
+        .floorplan-level-tab.active {
+            background: var(--color-primary);
+            color: #FFFFFF;
+            border-color: var(--color-primary);
+        }
+
+        /* Controles de navegación en Lightbox Zoom (Pantalla Completa) */
+        .lightbox-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10001;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .lightbox-nav-btn:hover {
+            background: #FFFFFF;
+            color: var(--color-primary);
+            border-color: #FFFFFF;
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-level-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            z-index: 10001;
+        }
+
+        .lightbox-level-tabs .floorplan-level-tab {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lightbox-level-tabs .floorplan-level-tab:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lightbox-level-tabs .floorplan-level-tab.active {
+            background: #FFFFFF;
+            color: var(--color-primary);
+            border-color: #FFFFFF;
+            font-weight: 700;
         }
 
         .floorplan-details-box {
@@ -200,7 +344,7 @@
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
     <section class="inner-hero project-hero">
         <div class="inner-hero-bg">
-            <img src="assets/images/proyectos/proyecto-camino-villa/render.png" alt="Edificio Camino de la Villa" style="filter: saturate(0.5) brightness(0.9);">
+            <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-1.jpg" alt="Edificio Camino de la Villa">
         </div>
         <div class="container" style="position: relative; z-index: 5; margin-top: auto; margin-bottom: auto;">
             <div class="inner-hero-content">
@@ -292,6 +436,12 @@
                                 <button id="media-carousel-prev" aria-label="Anterior" style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&lsaquo;</button>
                                 <button id="media-carousel-next" aria-label="Siguiente" style="position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&rsaquo;</button>
                                 <div id="media-carousel-counter" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 10; background: rgba(0,0,0,0.65); color: #fff; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(4px);">1 / 6</div>
+                                
+                                <!-- Botón Ver en Grande / Pantalla Completa -->
+                                <button id="open-lightbox-btn" class="open-lightbox-btn" title="Ver imágenes en grande" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 12; background-color: #0F172A; color: #FFFFFF; border: none; padding: 0.5rem 0.95rem; border-radius: 4px; cursor: pointer; font-size: 0.78rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 14px rgba(0,0,0,0.4); transition: all 0.2s ease;">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                    <span>Ver en grande</span>
+                                </button>
                             </div>
                         </div>
 
@@ -360,19 +510,19 @@
                         <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">Atributos del Proyecto</h3>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.85rem;">
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-calefaccion.svg" alt="CEE Nivel A" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-certificacion.svg" alt="CEE Nivel A" style="width: 32px; height: 32px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Certificación Energética CEE Nivel A</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-cargadores-ev.svg" alt="Paneles solares" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-paneles-solares.svg" alt="Paneles solares" style="width: 32px; height: 32px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Paneles solares para áreas comunes</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-piscina.svg" alt="Aguas grises" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-reutilizacion-agua.svg" alt="Aguas grises" style="width: 32px; height: 32px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Reutilización de aguas grises</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-termopanel.svg" alt="Termopanel" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-aislamiento-acustico.svg" alt="Termopanel" style="width: 32px; height: 32px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Termopanel con aislamiento acústico</span>
                             </div>
                         </div>
@@ -408,8 +558,23 @@
                         </div>
                         
                         <div class="floorplan-viewer-grid">
-                            <div class="floorplan-img-box">
-                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-camino-villa/plano.png" alt="Plano Seleccionado">
+                            <div class="floorplan-img-box" id="floorplan-img-container">
+                                <div class="floorplan-level-tabs" id="floorplan-level-tabs" style="display: none;"></div>
+                                
+                                <button class="floorplan-carousel-btn floorplan-carousel-prev" id="floorplan-carousel-prev" aria-label="Plano anterior" style="display: none;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 18l-6-6 6-6" />
+                                    </svg>
+                                </button>
+                                
+                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-camino-villa/planos/Plano-1D2B.png" alt="Plano Seleccionado">
+                                
+                                <button class="floorplan-carousel-btn floorplan-carousel-next" id="floorplan-carousel-next" aria-label="Siguiente plano" style="display: none;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 18l6-6-6-6" />
+                                    </svg>
+                                </button>
+
                                 <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
@@ -483,7 +648,7 @@
                         <!-- Ejecutiva comercial humanizada -->
                         <div class="exec-profile" style="display:flex; align-items:center; gap:1rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-top:1rem;">
                             <div class="exec-photo" style="width:45px; height:45px; border-radius:50%; overflow:hidden;">
-                                <img src="assets/images/ejecutiva-ventas.png" alt="Javiera Muñoz" style="width:100%; height:100%; object-fit:cover;">
+                                <img src="assets/images/nosotros/ejecutiva-ventas.png" alt="Javiera Muñoz" style="width:100%; height:100%; object-fit:cover;">
                             </div>
                             <div class="exec-info">
                                 <h5 style="margin:0; font-size:0.9rem; font-weight:600;">Javiera Muñoz</h5>
@@ -535,27 +700,27 @@
                     </p>
                     
                     <!-- Botones de Cómo Llegar -->
-                    <div class="how-to-get-buttons" style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
-                        <a href="https://waze.com/ul?q=Av.+La+Dehesa+222,+Lo+Barnechea" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.png" alt="Waze" style="height: 32px; width: 32px; object-fit: contain; border-radius: 4px; vertical-align: middle;">
-                                <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #05B4E3;">Waze</span>
+                    <div class="how-to-get-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="https://waze.com/ul?q=Av.+La+Dehesa+222,+Lo+Barnechea" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                            <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.png" alt="Waze" style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
+                            <div>
+                                <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #05B4E3; line-height: 1.1;">Waze</div>
+                                <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
                             </div>
-                            <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
                         </a>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Av.+La+Dehesa+222,+Lo+Barnechea" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.png" alt="Google Maps" style="height: 32px; width: 32px; object-fit: contain; vertical-align: middle;">
-                                <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #5F6368;">Google Maps</span>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Av.+La+Dehesa+222,+Lo+Barnechea" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                            <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.png" alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
+                            <div>
+                                <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #EA4335; line-height: 1.1;">Google Maps</div>
+                                <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
                             </div>
-                            <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
                         </a>
                     </div>
                 </div>
                 
                 <!-- Columna Derecha: Mapa -->
                 <div class="reveal">
-                    <div style="border: 1px solid var(--color-border); height: 380px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium);">
+                    <div style="border: 1px solid var(--color-border); height: 480px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium); border-radius: 8px;">
                         <iframe 
                             src="https://maps.google.com/maps?q=Av.%20La%20Dehesa%20222,%20Lo%20Barnechea&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
@@ -647,8 +812,8 @@
                 dorm: '1 Dormitorio',
                 bano: '2 Baños',
                 sup: '45.2 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-1D2B.png'],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
             },
             // Sub-tipologías de 2D + 2B
@@ -658,8 +823,8 @@
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
                 sup: '68.4 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-A.png'],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
             },
             'tipo-f': {
@@ -668,8 +833,8 @@
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
                 sup: '69.1 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-F.png'],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
             },
             'tipo-j': {
@@ -678,8 +843,11 @@
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
                 sup: '68.8 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                images: [
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-J1.png',
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-J2.png'
+                ],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
             },
             'tipo-h': {
@@ -688,8 +856,8 @@
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
                 sup: '70.2 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-H.png'],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
             },
             'tipo-l': {
@@ -698,8 +866,11 @@
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
                 sup: '68.5 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
+                images: [
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-L1.png',
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-L2.png'
+                ],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
             },
             // Sub-tipologías de 3D + 3B
@@ -709,8 +880,8 @@
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
                 sup: '92.1 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-B.png'],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
             },
             'tipo-d': {
@@ -719,8 +890,8 @@
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
                 sup: '93.5 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-D.png'],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
             },
             'tipo-g': {
@@ -729,8 +900,8 @@
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
                 sup: '92.8 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-G.png'],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
             },
             'tipo-i': {
@@ -739,8 +910,8 @@
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
                 sup: '94.2 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-I.png'],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
             },
             'tipo-k': {
@@ -749,8 +920,11 @@
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
                 sup: '92.3 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                images: [
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-K1.png',
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-K2.png'
+                ],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
             },
             'tipo-m': {
@@ -759,8 +933,11 @@
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
                 sup: '93.9 m²',
-                img: 'assets/images/proyectos/proyecto-camino-villa/plano.png',
-                tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
+                images: [
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-M1.png',
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-M2.png'
+                ],
+                tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
                 renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
             }
         };
@@ -857,6 +1034,8 @@
             if (mediaCarouselCounter) {
                 mediaCarouselCounter.textContent = (currentFotoIndex + 1) + " / " + caminoVillaFotos.length;
             }
+            window.currentProjectPhotos = caminoVillaFotos;
+            window.currentProjectIndex = currentFotoIndex;
         }
 
         function updateAmenitiesCarousel() {
@@ -867,7 +1046,13 @@
             if (mediaCarouselCounter) {
                 mediaCarouselCounter.textContent = (currentAmenitiesIndex + 1) + " / " + caminoVillaAmenities.length;
             }
+            window.currentProjectPhotos = caminoVillaAmenities;
+            window.currentProjectIndex = currentAmenitiesIndex;
         }
+
+        // Inicializar array activo en window para el lightbox
+        window.currentProjectPhotos = caminoVillaFotos;
+        window.currentProjectIndex = 0;
 
         if (mediaCarouselPrev) {
             mediaCarouselPrev.addEventListener('click', (e) => {
@@ -915,10 +1100,12 @@
                 mediaBadge.textContent = `Modelo Seleccionado: ${data.title} (${compactDorm} / ${data.bano})`;
             }
 
+            const openLightboxBtn = document.getElementById('open-lightbox-btn');
             if (view === 'render-ext') {
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
+                if (openLightboxBtn) openLightboxBtn.style.display = 'inline-flex';
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
@@ -928,6 +1115,7 @@
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
+                if (openLightboxBtn) openLightboxBtn.style.display = 'inline-flex';
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
@@ -936,6 +1124,7 @@
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
+                if (openLightboxBtn) openLightboxBtn.style.display = 'inline-flex';
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
@@ -944,17 +1133,113 @@
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
+                if (openLightboxBtn) openLightboxBtn.style.display = 'none';
                 selectedMediaImg.style.display = 'none';
                 selectedMediaIframe.style.display = 'block';
-                selectedMediaIframe.src = data.tour;
+                selectedMediaIframe.src = (data && data.tour) ? data.tour : "https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1";
             } else if (view === 'video') {
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
+                if (openLightboxBtn) openLightboxBtn.style.display = 'none';
                 selectedMediaImg.style.display = 'none';
                 selectedMediaIframe.style.display = 'block';
                 selectedMediaIframe.src = videoUrl;
             }
+        }
+
+        // Lógica y variables del Carrusel de Planos Multi-Nivel
+        let currentFloorplanImageIndex = 0;
+        const floorplanCarouselPrev = document.getElementById('floorplan-carousel-prev');
+        const floorplanCarouselNext = document.getElementById('floorplan-carousel-next');
+        const floorplanCarouselCounter = document.getElementById('floorplan-carousel-counter');
+        const floorplanLevelTabs = document.getElementById('floorplan-level-tabs');
+        const floorplanImgContainer = document.getElementById('floorplan-img-container');
+
+        function renderFloorplanImage(images) {
+            if (!images || images.length === 0) return;
+            if (currentFloorplanImageIndex >= images.length) currentFloorplanImageIndex = 0;
+
+            if (selectedFloorplanImg) {
+                selectedFloorplanImg.style.opacity = '0.3';
+                setTimeout(() => {
+                    selectedFloorplanImg.src = images[currentFloorplanImageIndex];
+                    selectedFloorplanImg.style.opacity = '1';
+                }, 120);
+            }
+
+            if (images.length > 1) {
+                if (floorplanCarouselPrev) floorplanCarouselPrev.style.display = 'flex';
+                if (floorplanCarouselNext) floorplanCarouselNext.style.display = 'flex';
+
+                if (floorplanLevelTabs) {
+                    floorplanLevelTabs.innerHTML = '';
+                    images.forEach((_, idx) => {
+                        const tabBtn = document.createElement('button');
+                        tabBtn.className = 'floorplan-level-tab' + (idx === currentFloorplanImageIndex ? ' active' : '');
+                        tabBtn.textContent = `Plano ${idx + 1}`;
+                        tabBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            currentFloorplanImageIndex = idx;
+                            renderFloorplanImage(images);
+                        });
+                        floorplanLevelTabs.appendChild(tabBtn);
+                    });
+                    floorplanLevelTabs.style.display = 'flex';
+                }
+            } else {
+                if (floorplanCarouselPrev) floorplanCarouselPrev.style.display = 'none';
+                if (floorplanCarouselNext) floorplanCarouselNext.style.display = 'none';
+                if (floorplanLevelTabs) floorplanLevelTabs.style.display = 'none';
+            }
+        }
+
+        if (floorplanCarouselPrev) {
+            floorplanCarouselPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const activeKey = getActiveModelKey();
+                const data = modelData[activeKey];
+                const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + images.length) % images.length;
+                renderFloorplanImage(images);
+            });
+        }
+
+        if (floorplanCarouselNext) {
+            floorplanCarouselNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const activeKey = getActiveModelKey();
+                const data = modelData[activeKey];
+                const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % images.length;
+                renderFloorplanImage(images);
+            });
+        }
+
+        // Deslizar con gestos táctiles (Swipe)
+        if (floorplanImgContainer) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            floorplanImgContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            floorplanImgContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 40) {
+                    const activeKey = getActiveModelKey();
+                    const data = modelData[activeKey];
+                    const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                    if (images.length > 1) {
+                        if (diff > 0) {
+                            currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % images.length;
+                        } else {
+                            currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + images.length) % images.length;
+                        }
+                        renderFloorplanImage(images);
+                    }
+                }
+            }, { passive: true });
         }
 
         // Función para actualizar el Visor de Planos inferior
@@ -962,8 +1247,10 @@
             const data = modelData[key];
             if (!data) return;
 
-            // Actualizar textos e imagen del visor
-            if (selectedFloorplanImg) selectedFloorplanImg.src = data.img;
+            const images = data.images || (data.img ? [data.img] : []);
+            currentFloorplanImageIndex = 0;
+            renderFloorplanImage(images);
+
             if (selectedFloorplanName) selectedFloorplanName.textContent = data.title;
             if (selectedFloorplanPrice) selectedFloorplanPrice.textContent = data.price;
             if (selectedFloorplanDorm) selectedFloorplanDorm.textContent = data.dorm;
@@ -1131,11 +1418,14 @@
             });
         }
 
-        // Lógica de Zoom del Plano (Lightbox/Modal)
+        // Lógica de Zoom del Plano (Lightbox / Modal Completo)
         const zoomFloorplanBtn = document.getElementById('zoom-floorplan-btn');
         if (zoomFloorplanBtn) {
             zoomFloorplanBtn.addEventListener('click', () => {
-                const currentImgSrc = selectedFloorplanImg.src;
+                const activeKey = getActiveModelKey();
+                const data = modelData[activeKey];
+                const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                
                 let lightbox = document.getElementById('model-lightbox');
                 if (!lightbox) {
                     lightbox = document.createElement('div');
@@ -1143,7 +1433,16 @@
                     lightbox.className = 'model-lightbox';
                     lightbox.innerHTML = `
                         <span class="lightbox-close">&times;</span>
-                        <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Plano">
+                        <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Plano anterior">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-width: 90vw; position: relative;">
+                            <div class="lightbox-level-tabs" id="lightbox-level-tabs"></div>
+                            <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Plano">
+                        </div>
+                        <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Siguiente plano">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
                     `;
                     document.body.appendChild(lightbox);
                     
@@ -1153,9 +1452,97 @@
                     lightbox.addEventListener('click', (e) => {
                         if (e.target === lightbox) lightbox.classList.remove('active');
                     });
+
+                    // Navegación con teclado (Flechas)
+                    window.addEventListener('keydown', (e) => {
+                        if (!lightbox.classList.contains('active')) return;
+                        if (e.key === 'Escape') {
+                            lightbox.classList.remove('active');
+                        } else if (e.key === 'ArrowRight') {
+                            const curKey = getActiveModelKey();
+                            const curImages = modelData[curKey] ? (modelData[curKey].images || [modelData[curKey].img]) : [];
+                            if (curImages.length > 1) {
+                                currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % curImages.length;
+                                const lbImg = lightbox.querySelector('#lightbox-img');
+                                if (lbImg) lbImg.src = curImages[currentFloorplanImageIndex];
+                                renderFloorplanImage(curImages);
+                                updateLightboxTabs(lightbox, curImages);
+                            }
+                        } else if (e.key === 'ArrowLeft') {
+                            const curKey = getActiveModelKey();
+                            const curImages = modelData[curKey] ? (modelData[curKey].images || [modelData[curKey].img]) : [];
+                            if (curImages.length > 1) {
+                                currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + curImages.length) % curImages.length;
+                                const lbImg = lightbox.querySelector('#lightbox-img');
+                                if (lbImg) lbImg.src = curImages[currentFloorplanImageIndex];
+                                renderFloorplanImage(curImages);
+                                updateLightboxTabs(lightbox, curImages);
+                            }
+                        }
+                    });
                 }
+
+                function updateLightboxTabs(lb, imgs) {
+                    const levelTabs = lb.querySelector('#lightbox-level-tabs');
+                    if (levelTabs && imgs.length > 1) {
+                        levelTabs.innerHTML = '';
+                        imgs.forEach((_, idx) => {
+                            const tabBtn = document.createElement('button');
+                            tabBtn.className = 'floorplan-level-tab' + (idx === currentFloorplanImageIndex ? ' active' : '');
+                            tabBtn.textContent = `Plano ${idx + 1}`;
+                            tabBtn.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                currentFloorplanImageIndex = idx;
+                                const lbImg = lb.querySelector('#lightbox-img');
+                                if (lbImg) lbImg.src = imgs[currentFloorplanImageIndex];
+                                renderFloorplanImage(imgs);
+                                updateLightboxTabs(lb, imgs);
+                            });
+                            levelTabs.appendChild(tabBtn);
+                        });
+                        levelTabs.style.display = 'flex';
+                    }
+                }
+
                 const lightboxImg = lightbox.querySelector('#lightbox-img');
-                if (lightboxImg) lightboxImg.src = currentImgSrc;
+                const lightboxPrev = lightbox.querySelector('#lightbox-prev');
+                const lightboxNext = lightbox.querySelector('#lightbox-next');
+                const lightboxLevelTabs = lightbox.querySelector('#lightbox-level-tabs');
+
+                function updateLightbox() {
+                    if (images.length === 0) return;
+                    if (currentFloorplanImageIndex >= images.length) currentFloorplanImageIndex = 0;
+                    
+                    if (lightboxImg) lightboxImg.src = images[currentFloorplanImageIndex];
+                    renderFloorplanImage(images);
+
+                    if (images.length > 1) {
+                        if (lightboxPrev) lightboxPrev.style.display = 'flex';
+                        if (lightboxNext) lightboxNext.style.display = 'flex';
+                        updateLightboxTabs(lightbox, images);
+                    } else {
+                        if (lightboxPrev) lightboxPrev.style.display = 'none';
+                        if (lightboxNext) lightboxNext.style.display = 'none';
+                        if (lightboxLevelTabs) lightboxLevelTabs.style.display = 'none';
+                    }
+                }
+
+                if (lightboxPrev) {
+                    lightboxPrev.onclick = (e) => {
+                        e.stopPropagation();
+                        currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + images.length) % images.length;
+                        updateLightbox();
+                    };
+                }
+                if (lightboxNext) {
+                    lightboxNext.onclick = (e) => {
+                        e.stopPropagation();
+                        currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % images.length;
+                        updateLightbox();
+                    };
+                }
+
+                updateLightbox();
                 lightbox.classList.add('active');
             });
         }

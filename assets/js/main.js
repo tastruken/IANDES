@@ -129,15 +129,21 @@ function initMobileMenu() {
         nav.classList.toggle('active');
     });
 
-    // Control del dropdown en móviles
+    // Control del dropdown desplegable (evitar navegación en la opción Proyectos)
     const dropdown = nav.querySelector('.dropdown');
     const dropdownTrigger = nav.querySelector('.dropdown-trigger');
     
     if (dropdown && dropdownTrigger) {
         dropdownTrigger.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault(); // Evitar navegación directa en móviles para permitir desplegar
-                dropdown.classList.toggle('active');
+            e.preventDefault(); // Evitar cualquier salto de página o navegación al hacer clic en Proyectos
+            e.stopPropagation();
+            dropdown.classList.toggle('active');
+        });
+
+        // Cerrar el dropdown al hacer clic en cualquier otro lugar fuera del menú
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
             }
         });
     }
@@ -1182,7 +1188,7 @@ function openGalleryLightbox(imagesList, startIndex = 0) {
     }
 }
 
-// Inicialización de tarjetas de galería para abrir el lightbox interactivo
+// Inicialización de visor en grande (Lightbox) para páginas de proyectos y tarjetas de galería
 document.addEventListener('DOMContentLoaded', () => {
     const galleryCards = Array.from(document.querySelectorAll('.gallery-card'));
     if (galleryCards.length > 0) {
@@ -1193,6 +1199,72 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Soporte para visor "Ver en grande" en fichas de proyectos
+    const openLightboxBtn = document.getElementById('open-lightbox-btn');
+    const selectedMediaImg = document.getElementById('selected-media-img');
+
+    function launchProjectMediaLightbox() {
+        if (!selectedMediaImg || selectedMediaImg.style.display === 'none') return;
+
+        let photos = [];
+        let startIdx = 0;
+        const currentSrc = selectedMediaImg.src;
+
+        if (window.currentProjectPhotos && window.currentProjectPhotos.length) {
+            photos = window.currentProjectPhotos;
+            if (typeof window.currentProjectIndex === 'number') {
+                startIdx = window.currentProjectIndex;
+            } else {
+                startIdx = photos.indexOf(currentSrc);
+            }
+        } else {
+            const galleryImgs = Array.from(document.querySelectorAll('.media-viewer-container img, .media-gallery-module img, .showcase-image-wrapper img'))
+                .map(img => img.src)
+                .filter(src => src && !src.includes('logo') && !src.includes('icon'));
+
+            photos = galleryImgs.length ? [...new Set(galleryImgs)] : [currentSrc];
+            startIdx = photos.indexOf(currentSrc);
+        }
+
+        if (startIdx < 0) startIdx = 0;
+
+        openGalleryLightbox(photos, startIdx);
+    }
+
+    if (openLightboxBtn) {
+        openLightboxBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            launchProjectMediaLightbox();
+        });
+    }
+
+    if (selectedMediaImg) {
+        selectedMediaImg.addEventListener('click', (e) => {
+            e.stopPropagation();
+            launchProjectMediaLightbox();
+        });
+        selectedMediaImg.style.cursor = 'pointer';
+    }
+
+    // Control de visibilidad del botón "Ver en grande" según la pestaña multimedia activa
+    document.addEventListener('click', (e) => {
+        const tabBtn = e.target.closest('.media-tab-btn');
+        if (tabBtn) {
+            const view = tabBtn.dataset.view;
+            const btn = document.getElementById('open-lightbox-btn');
+            if (btn) {
+                if (view === 'tour-360' || view === 'video') {
+                    btn.style.setProperty('display', 'none', 'important');
+                    btn.classList.add('hidden');
+                } else {
+                    btn.style.setProperty('display', 'inline-flex', 'important');
+                    btn.classList.remove('hidden');
+                }
+            }
+        }
+    });
 });
+
 
 

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#D4A017" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- 3 Sound wave arcs on the left -->
+  <path d="M4 10.5a3 3 0 0 1 0 3"/>
+  <path d="M7.5 8.5a6 6 0 0 1 0 7"/>
+  <path d="M11 6.5a9 9 0 0 1 0 11"/>
+  
+  <!-- Thermopane Glass Structure on the right -->
+  <rect x="15" y="3" width="1.5" height="18" rx="0.75" fill="#D4A017" stroke="none"/>
+  <rect x="17.5" y="3" width="3" height="18" rx="0.5" fill="#D4A017" stroke="none"/>
+  <rect x="21.5" y="3" width="1.5" height="18" rx="0.75" fill="#D4A017" stroke="none"/>
+</svg>

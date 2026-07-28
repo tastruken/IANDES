@@ -57,6 +57,109 @@
             border-color: var(--color-primary) !important;
             transform: translateY(-2px);
         }
+
+        /* Marcadores y Badges de Modelo Agotado - Estilos corregidos */
+        .floorplan-sub-tab {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0.4rem !important;
+            padding: 0.5rem 0.85rem !important;
+            font-size: 0.8rem !important;
+            line-height: 1.2 !important;
+        }
+
+        .badge-agotado-tab {
+            display: inline-block !important;
+            background-color: #111111 !important;
+            color: #FFFFFF !important;
+            font-size: 0.6rem !important;
+            font-weight: 700 !important;
+            padding: 2px 5px !important;
+            border-radius: 3px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.03em !important;
+            vertical-align: middle !important;
+            line-height: 1 !important;
+            white-space: nowrap !important;
+        }
+
+        .floorplan-sub-tab.active .badge-agotado-tab {
+            background-color: #111111 !important;
+            color: #FFFFFF !important;
+        }
+
+        .floorplan-viewer-grid {
+            display: grid !important;
+            grid-template-columns: 1.2fr 1fr !important;
+            gap: 2rem !important;
+            align-items: stretch !important;
+        }
+
+        @media (max-width: 768px) {
+            .floorplan-viewer-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        .floorplan-img-box {
+            position: relative !important;
+            background: var(--color-bg-light) !important;
+            border: 1px solid var(--color-border) !important;
+            padding: 1.5rem !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            min-height: 380px !important;
+            border-radius: 6px !important;
+            box-sizing: border-box !important;
+        }
+
+        .floorplan-img-box img {
+            width: auto !important;
+            max-width: 100% !important;
+            height: auto !important;
+            max-height: 330px !important;
+            object-fit: contain !important;
+            display: block !important;
+            margin: 0 auto !important;
+        }
+
+        .floorplan-agotado-overlay {
+            position: absolute !important;
+            top: 1rem !important;
+            left: 1rem !important;
+            background-color: #111111 !important;
+            color: #FFFFFF !important;
+            font-weight: 700 !important;
+            font-size: 0.75rem !important;
+            letter-spacing: 0.08em !important;
+            padding: 0.35rem 0.75rem !important;
+            border-radius: 4px !important;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3) !important;
+            z-index: 8 !important;
+            text-transform: uppercase !important;
+            pointer-events: none !important;
+            width: auto !important;
+            height: auto !important;
+            align-items: center !important;
+            gap: 0.35rem !important;
+            line-height: 1 !important;
+        }
+
+        .badge-agotado-title {
+            display: inline-flex !important;
+            align-items: center !important;
+            background-color: #FFEBEE !important;
+            color: #C62828 !important;
+            border: 1px solid #FFCDD2 !important;
+            font-size: 0.72rem !important;
+            font-weight: 700 !important;
+            padding: 0.2rem 0.55rem !important;
+            border-radius: 4px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+        }
     </style>
 </head>
 <body>
@@ -84,7 +187,7 @@
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
     <section class="inner-hero project-hero">
         <div class="inner-hero-bg">
-            <img src="assets/images/proyectos/proyecto-andes-macul/render.png" alt="Edificio Andes Macul">
+            <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-1.jpg" alt="Edificio Andes Macul">
         </div>
         <div class="container" style="position: relative; z-index: 5; margin-top: auto; margin-bottom: auto;">
             <div class="inner-hero-content">
@@ -177,6 +280,12 @@
                                 <button id="media-carousel-prev" aria-label="Anterior" style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&lsaquo;</button>
                                 <button id="media-carousel-next" aria-label="Siguiente" style="position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&rsaquo;</button>
                                 <div id="media-carousel-counter" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 10; background: rgba(0,0,0,0.65); color: #fff; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(4px);">1 / 5</div>
+                                
+                                <!-- Botón Ver en Grande / Pantalla Completa -->
+                                <button id="open-lightbox-btn" class="open-lightbox-btn" title="Ver imágenes en grande" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 12; background-color: #0F172A; color: #FFFFFF; border: none; padding: 0.5rem 0.95rem; border-radius: 4px; cursor: pointer; font-size: 0.78rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 14px rgba(0,0,0,0.4); transition: all 0.2s ease;">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                    <span>Ver en grande</span>
+                                </button>
                             </div>
                         </div>
 
@@ -234,32 +343,32 @@
                         <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">Equipamiento del Edificio</h3>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.85rem; margin-bottom: 2.2rem;">
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons-prueba/icon-coworking.svg" alt="Sala Coworking" style="width: 20px; height: 20px;">
+                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons/icon-coworking.svg" alt="Sala Coworking" style="width: 26px; height: 26px;">
                                 </div>
                                 <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Sala Coworking</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons-prueba/icon-gimnasio.svg" alt="Gimnasio Equipado" style="width: 20px; height: 20px;">
+                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons/icon-gimnasio.svg" alt="Gimnasio Equipado" style="width: 26px; height: 26px;">
                                 </div>
                                 <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Gimnasio Equipado</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons-prueba/icon-piscina.svg" alt="Piscina en Azotea" style="width: 20px; height: 20px;">
+                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons/icon-piscina.svg" alt="Piscina en Azotea" style="width: 26px; height: 26px;">
                                 </div>
                                 <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Piscina en Azotea</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons-prueba/icon-quincho.svg" alt="Quinchos Privados" style="width: 20px; height: 20px;">
+                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons/icon-quincho.svg" alt="Quinchos Privados" style="width: 26px; height: 26px;">
                                 </div>
                                 <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Quinchos Privados</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons-prueba/icon-cargadores-ev.svg" alt="Cargadores EV" style="width: 20px; height: 20px;">
+                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons/icon-cargadores-ev.svg" alt="Cargadores EV" style="width: 26px; height: 26px;">
                                 </div>
                                 <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Cargadores EV</span>
                             </div>
@@ -269,27 +378,27 @@
                         <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">Especificaciones Técnicas</h3>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.85rem;">
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-termopanel.svg" alt="Termopanel" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-termopanel.svg" alt="Termopanel" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Ventanas PVC con termopanel</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-puerta.svg" alt="Puerta" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-puerta.svg" alt="Puerta" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Puerta enchapada en madera</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-cocina.svg" alt="Cocina" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-cocina.svg" alt="Cocina" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Cocina equipada completa</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-porcelanato.svg" alt="Porcelanato" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-porcelanato.svg" alt="Porcelanato" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Porcelanato en estar y cocina</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-barandas.svg" alt="Barandas" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-barandas.svg" alt="Barandas" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Barandas de cristal en terraza</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-calefaccion.svg" alt="Calefacción" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-calefaccion.svg" alt="Calefacción" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Calefacción eléctrica individual</span>
                             </div>
                         </div>
@@ -313,19 +422,23 @@
                         
                         <!-- Sub-pestañas para 2D + 1B -->
                         <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d1b">
-                            <button class="floorplan-sub-tab" data-subid="tipo-b">TIPO B</button>
+                            <button class="floorplan-sub-tab active" data-subid="tipo-b">TIPO B</button>
                             <button class="floorplan-sub-tab" data-subid="tipo-b1">TIPO B1</button>
                         </div>
 
                         <!-- Sub-pestañas para 2D + 2B -->
                         <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d2b">
-                            <button class="floorplan-sub-tab" data-subid="tipo-a1">TIPO A1</button>
+                            <button class="floorplan-sub-tab active" data-subid="tipo-a1">TIPO A1</button>
                             <button class="floorplan-sub-tab" data-subid="tipo-d">TIPO D</button>
                             <button class="floorplan-sub-tab" data-subid="tipo-a2">TIPO A2</button>
                         </div>
                         
                         <div class="floorplan-viewer-grid">
                             <div class="floorplan-img-box">
+                                <div id="floorplan-agotado-overlay" class="floorplan-agotado-overlay" style="display: none;">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+                                    MODELO AGOTADO
+                                </div>
                                 <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__C.png" alt="Plano Seleccionado">
                                 <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -334,8 +447,8 @@
                                 </button>
                             </div>
                             <div class="floorplan-details-box">
-                                <h4 id="selected-floorplan-name" style="font-size: 1.5rem; color:var(--color-primary); font-weight:600;">DEPTO 1D + 1B (TIPO C)</h4>
-                                <div style="font-size: 1.3rem; font-weight: 600; color: var(--color-primary);">Desde <span class="highlight" id="selected-floorplan-price">UF 3.920</span></div>
+                                <h4 id="selected-floorplan-name" style="font-size: 1.5rem; color:var(--color-primary); font-weight:600; margin: 0;">DEPTO 1D + 1B (TIPO C)</h4>
+                                <div style="font-size: 1.3rem; font-weight: 600; color: var(--color-primary); margin-top: 0.4rem;">Desde <span class="highlight" id="selected-floorplan-price">UF 3.920</span></div>
                                 <hr class="model-divider" style="margin: 0.5rem 0; border: 0; border-top: 1px solid var(--color-border);">
                                 <ul class="floorplan-specs">
                                     <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg><span id="selected-floorplan-dorm">1 Dormitorio</span></li>
@@ -345,7 +458,7 @@
                                     <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" /></svg><span id="selected-floorplan-sup">Superficie Total: 38,84 m²</span></li>
                                 </ul>
                                 <button class="btn btn-secondary" id="floorplan-cotizar-btn" style="width: 100%; margin-top: 0.5rem;">Cotizar este modelo</button>
-                                <a href="assets/images/proyectos/proyecto-andes-macul/andes-macul.pdf" target="_blank" rel="noopener" class="btn-download-pdf">
+                                <a href="assets/docs/andes-macul-pdf.pdf" target="_blank" rel="noopener" class="btn-download-pdf">
                                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                                         <polyline points="14 2 14 8 20 8"/>
@@ -407,7 +520,7 @@
                         <!-- Ejecutiva comercial humanizada -->
                         <div class="exec-profile" style="display:flex; align-items:center; gap:1rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-top:1rem;">
                             <div class="exec-photo" style="width:45px; height:45px; border-radius:50%; overflow:hidden;">
-                                <img src="assets/images/ejecutiva-ventas.png" alt="Catalina Rivera" style="width:100%; height:100%; object-fit:cover;">
+                                <img src="assets/images/nosotros/ejecutiva-ventas.png" alt="Catalina Rivera" style="width:100%; height:100%; object-fit:cover;">
                             </div>
                             <div class="exec-info">
                                 <h5 style="margin:0; font-size:0.9rem; font-weight:600;">Catalina Rivera</h5>
@@ -500,27 +613,27 @@
                     </p>
                     
                     <!-- Botones de Cómo Llegar -->
-                    <div class="how-to-get-buttons" style="display: flex; gap: 1.2rem; flex-wrap: wrap;">
-                        <a href="https://waze.com/ul?q=Los+Clarines+3093,+Macul" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.png" alt="Waze" style="height: 32px; width: 32px; object-fit: contain; border-radius: 4px; vertical-align: middle;">
-                                <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #05B4E3;">Waze</span>
+                    <div class="how-to-get-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="https://waze.com/ul?q=Los+Clarines+3093,+Macul" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                            <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.png" alt="Waze" style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
+                            <div>
+                                <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #05B4E3; line-height: 1.1;">Waze</div>
+                                <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
                             </div>
-                            <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
                         </a>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Los+Clarines+3093,+Macul" target="_blank" style="display: inline-flex; align-items: center; gap: 1rem; text-decoration: none; padding: 0.6rem 1.2rem; border: 1px solid var(--color-border); background: #FFFFFF; transition: var(--transition-fast); border-radius: 4px;">
-                            <div style="display: flex; align-items: center; gap: 0.5rem;">
-                                <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.png" alt="Google Maps" style="height: 32px; width: 32px; object-fit: contain; vertical-align: middle;">
-                                <span style="font-family: var(--font-sans); font-weight: bold; font-size: 0.95rem; color: #5F6368;">Google Maps</span>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Los+Clarines+3093,+Macul" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                            <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.png" alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
+                            <div>
+                                <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #EA4335; line-height: 1.1;">Google Maps</div>
+                                <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
                             </div>
-                            <span style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.9rem;">¿Cómo llegar?</span>
                         </a>
                     </div>
                 </div>
                 
                 <!-- Columna Derecha: Mapa -->
                 <div class="reveal">
-                    <div style="border: 1px solid var(--color-border); height: 380px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium);">
+                    <div style="border: 1px solid var(--color-border); height: 480px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium); border-radius: 8px;">
                         <iframe 
                             src="https://maps.google.com/maps?q=Los%20Clarines%203093,%20Macul&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             width="100%" 
@@ -570,7 +683,8 @@
                 sup: '38,84 m²',
                 img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__C.png',
                 tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
-                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior.png'
+                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior.png',
+                agotado: true
             },
             'tipo-c1': {
                 title: 'DEPTO 1D + 1B (TIPO C1)',
@@ -583,7 +697,8 @@
                 sup: '34,60 m²',
                 img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__C1.png',
                 tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
-                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior.png'
+                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior.png',
+                agotado: true
             },
             // Sub-tipologías de 2D + 1B
             'tipo-b': {
@@ -597,7 +712,8 @@
                 sup: '44,86 m²',
                 img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__B.png',
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
-                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png'
+                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png',
+                agotado: true
             },
             'tipo-b1': {
                 title: 'DEPTO 2D + 1B (TIPO B1)',
@@ -610,7 +726,8 @@
                 sup: '47,71 m²',
                 img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__B1.png',
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
-                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png'
+                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png',
+                agotado: true
             },
             // Sub-tipologías de 2D + 2B
             'tipo-a1': {
@@ -624,7 +741,8 @@
                 sup: '66,63 m²',
                 img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__A1.png',
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
-                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png'
+                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png',
+                agotado: false
             },
             'tipo-d': {
                 title: 'DEPTO 2D + 2B (TIPO D)',
@@ -637,7 +755,8 @@
                 sup: '59,94 m²',
                 img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__D.png',
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
-                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png'
+                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png',
+                agotado: false
             },
             'tipo-a2': {
                 title: 'DEPTO 2D + 2B (TIPO A2)',
@@ -650,7 +769,8 @@
                 sup: '52,40 m²',
                 img: 'assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__A2.png',
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
-                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png'
+                renderInt: 'assets/images/proyectos/proyecto-andes-macul/render-interior-2.png',
+                agotado: true
             }
         };
 
@@ -747,6 +867,8 @@
             if (mediaCarouselCounter) {
                 mediaCarouselCounter.textContent = (currentFotoIndex + 1) + " / " + andesMaculFotos.length;
             }
+            window.currentProjectPhotos = andesMaculFotos;
+            window.currentProjectIndex = currentFotoIndex;
         }
 
         function updateAmenitiesCarousel() {
@@ -757,7 +879,13 @@
             if (mediaCarouselCounter) {
                 mediaCarouselCounter.textContent = (currentAmenitiesIndex + 1) + " / " + andesMaculAmenities.length;
             }
+            window.currentProjectPhotos = andesMaculAmenities;
+            window.currentProjectIndex = currentAmenitiesIndex;
         }
+
+        // Inicializar array activo en window para el lightbox
+        window.currentProjectPhotos = andesMaculFotos;
+        window.currentProjectIndex = 0;
 
         if (mediaCarouselPrev) {
             mediaCarouselPrev.addEventListener('click', (e) => {
@@ -804,6 +932,7 @@
                 mediaBadge.textContent = `Modelo Seleccionado: ${data.title} (${compactDorm} / ${data.bano})`;
             }
 
+            const openLightboxBtn = document.getElementById('open-lightbox-btn');
             if (view === 'render-int') {
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
@@ -811,6 +940,10 @@
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
+                if (openLightboxBtn) {
+                    openLightboxBtn.style.setProperty('display', 'inline-flex', 'important');
+                    openLightboxBtn.classList.remove('hidden');
+                }
                 updateInteriorCarousel();
             } else if (view === 'amenities') {
                 selectedMediaIframe.style.display = 'none';
@@ -819,12 +952,20 @@
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
+                if (openLightboxBtn) {
+                    openLightboxBtn.style.setProperty('display', 'inline-flex', 'important');
+                    openLightboxBtn.classList.remove('hidden');
+                }
                 updateAmenitiesCarousel();
             } else if (view === 'tour-360') {
                 selectedMediaImg.style.display = 'none';
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
+                if (openLightboxBtn) {
+                    openLightboxBtn.style.setProperty('display', 'none', 'important');
+                    openLightboxBtn.classList.add('hidden');
+                }
                 selectedMediaIframe.style.display = 'block';
                 selectedMediaIframe.src = data.tour;
             } else if (view === 'video') {
@@ -832,6 +973,10 @@
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
+                if (openLightboxBtn) {
+                    openLightboxBtn.style.setProperty('display', 'none', 'important');
+                    openLightboxBtn.classList.add('hidden');
+                }
                 selectedMediaIframe.style.display = 'block';
                 selectedMediaIframe.src = videoUrl;
             }
@@ -848,6 +993,21 @@
             if (selectedFloorplanPrice) selectedFloorplanPrice.textContent = data.price;
             if (selectedFloorplanDorm) selectedFloorplanDorm.textContent = data.dorm;
             if (selectedFloorplanBano) selectedFloorplanBano.textContent = data.bano;
+
+            // Sincronizar overlay de Modelo Agotado y botón
+            const agotadoOverlay = document.getElementById('floorplan-agotado-overlay');
+            const cotizarBtn = document.getElementById('floorplan-cotizar-btn');
+
+            if (data.agotado) {
+                if (agotadoOverlay) agotadoOverlay.style.setProperty('display', 'inline-flex', 'important');
+                if (cotizarBtn) cotizarBtn.style.setProperty('display', 'none', 'important');
+            } else {
+                if (agotadoOverlay) agotadoOverlay.style.setProperty('display', 'none', 'important');
+                if (cotizarBtn) {
+                    cotizarBtn.style.setProperty('display', 'block', 'important');
+                    cotizarBtn.textContent = 'Cotizar este modelo';
+                }
+            }
 
             const supUtilItem = document.getElementById('selected-floorplan-sup-util-item');
             const supUtilSpan = document.getElementById('selected-floorplan-sup-util');
@@ -955,18 +1115,17 @@
                 const mainId = tab.dataset.id;
 
                 // Mostrar u ocultar los bloques de sub-tabs de manera exclusiva
-                if (mainId === '1d1b') {
-                    if (subTabsBlock1D) subTabsBlock1D.style.display = 'flex';
-                    if (subTabsBlock2D1B) subTabsBlock2D1B.style.display = 'none';
-                    if (subTabsBlock2D2B) subTabsBlock2D2B.style.display = 'none';
-                } else if (mainId === '2d1b') {
-                    if (subTabsBlock1D) subTabsBlock1D.style.display = 'none';
-                    if (subTabsBlock2D1B) subTabsBlock2D1B.style.display = 'flex';
-                    if (subTabsBlock2D2B) subTabsBlock2D2B.style.display = 'none';
-                } else if (mainId === '2d2b') {
-                    if (subTabsBlock1D) subTabsBlock1D.style.display = 'none';
-                    if (subTabsBlock2D1B) subTabsBlock2D1B.style.display = 'none';
-                    if (subTabsBlock2D2B) subTabsBlock2D2B.style.display = 'flex';
+                if (subTabsBlock1D) subTabsBlock1D.style.display = (mainId === '1d1b') ? 'flex' : 'none';
+                if (subTabsBlock2D1B) subTabsBlock2D1B.style.display = (mainId === '2d1b') ? 'flex' : 'none';
+                if (subTabsBlock2D2B) subTabsBlock2D2B.style.display = (mainId === '2d2b') ? 'flex' : 'none';
+
+                let targetBlock = (mainId === '1d1b') ? subTabsBlock1D : ((mainId === '2d1b') ? subTabsBlock2D1B : subTabsBlock2D2B);
+                if (targetBlock) {
+                    let currentActive = targetBlock.querySelector('.floorplan-sub-tab.active');
+                    if (!currentActive) {
+                        const firstSubtab = targetBlock.querySelector('.floorplan-sub-tab');
+                        if (firstSubtab) firstSubtab.classList.add('active');
+                    }
                 }
 
                 // Actualizar vistas

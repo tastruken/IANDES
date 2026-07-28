@@ -9,6 +9,295 @@
         content="Departamentos de 1 y 2 dormitorios en el corazón residencial de Ñuñoa, a pasos de la Línea 6 de Metro. Un proyecto que integra diseño, excelente ubicación y calidad de vida.">
     <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Estilos de la sección Sala de Ventas */
+        .sales-room-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        @media (max-width: 992px) {
+            .sales-room-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+        
+        .how-to-get-buttons a {
+            box-shadow: var(--shadow-small);
+        }
+        
+        .how-to-get-buttons a:hover {
+            border-color: var(--color-accent) !important;
+            transform: translateY(-2px);
+        }
+        
+        .btn-download-pdf {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            width: 100%;
+            margin-top: 0.75rem;
+            padding: 0.85rem 1rem;
+            background-color: var(--color-bg-light);
+            color: var(--color-primary);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: var(--transition-fast);
+            box-shadow: var(--shadow-small);
+        }
+        .btn-download-pdf:hover {
+            background-color: var(--color-primary) !important;
+            color: #FFFFFF !important;
+            border-color: var(--color-primary) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Estilos del Módulo de Planos y Modelos Andes Ñuñoa */
+        .floorplan-container {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            padding: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .floorplan-nav-tabs {
+            display: flex;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .floorplan-nav-tab {
+            background: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            padding: 0.8rem 1.5rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            color: var(--color-primary);
+            outline: none;
+            text-transform: uppercase;
+        }
+
+        .floorplan-nav-tab:hover {
+            border-color: var(--color-accent);
+            background: #FFFFFF;
+        }
+
+        .floorplan-nav-tab.active {
+            background: var(--color-primary);
+            border-color: var(--color-primary);
+            color: #FFFFFF;
+        }
+
+        .floorplan-sub-tabs {
+            display: none;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .floorplan-sub-tab {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            color: var(--color-text-main);
+            outline: none;
+            text-transform: uppercase;
+        }
+
+        .floorplan-sub-tab:hover {
+            border-color: var(--color-secondary);
+        }
+
+        .floorplan-sub-tab.active {
+            background: var(--color-secondary);
+            border-color: var(--color-secondary);
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        .floorplan-viewer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .floorplan-img-box {
+            position: relative;
+            background: var(--color-bg-light);
+            border: 1px solid var(--color-border);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+        }
+
+        .floorplan-img-box img {
+            max-width: 100%;
+            max-height: 320px;
+            object-fit: contain;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Controles de carrusel de planos multi-nivel */
+        .floorplan-carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid var(--color-border);
+            color: var(--color-primary);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        }
+
+        .floorplan-carousel-btn:hover {
+            background: var(--color-primary);
+            color: #FFFFFF;
+            border-color: var(--color-primary);
+        }
+
+        .floorplan-carousel-prev {
+            left: 0.75rem;
+        }
+
+        .floorplan-carousel-next {
+            right: 0.75rem;
+        }
+
+        .floorplan-level-tabs {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            gap: 0.4rem;
+            z-index: 10;
+        }
+
+        .floorplan-level-tab {
+            background: #FFFFFF;
+            border: 1px solid var(--color-border);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            color: var(--color-primary);
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+        }
+
+        .floorplan-level-tab:hover {
+            border-color: var(--color-primary);
+        }
+
+        .floorplan-level-tab.active {
+            background: var(--color-primary);
+            color: #FFFFFF;
+            border-color: var(--color-primary);
+        }
+
+        /* Controles de navegación en Lightbox Zoom (Pantalla Completa) */
+        .lightbox-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10001;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .lightbox-nav-btn:hover {
+            background: #FFFFFF;
+            color: var(--color-primary);
+            border-color: #FFFFFF;
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        .lightbox-level-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            z-index: 10001;
+        }
+
+        .lightbox-level-tabs .floorplan-level-tab {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #FFFFFF;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lightbox-level-tabs .floorplan-level-tab:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lightbox-level-tabs .floorplan-level-tab.active {
+            background: #FFFFFF;
+            color: var(--color-primary);
+            border-color: #FFFFFF;
+            font-weight: 700;
+        }
+
+        @media (max-width: 768px) {
+            .floorplan-viewer-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .floorplan-img-box {
+                min-height: 250px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -36,7 +325,7 @@
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
     <section class="inner-hero project-hero">
         <div class="inner-hero-bg">
-            <img src="assets/images/proyectos/proyecto-andes-nunoa/render.png" alt="Edificio Andes Ñuñoa" style="filter: hue-rotate(15deg);">
+            <img src="assets/images/proyectos/proyecto-andes-nunoa/fotos/nunoa-1.jpg" alt="Edificio Andes Ñuñoa">
         </div>
         <div class="container" style="position: relative; z-index: 5; margin-top: auto; margin-bottom: auto;">
             <div class="inner-hero-content">
@@ -129,6 +418,12 @@
                                 <button id="media-carousel-prev" aria-label="Anterior" style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&lsaquo;</button>
                                 <button id="media-carousel-next" aria-label="Siguiente" style="position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&rsaquo;</button>
                                 <div id="media-carousel-counter" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 10; background: rgba(0,0,0,0.65); color: #fff; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(4px);">1 / 8</div>
+                                
+                                <!-- Botón Ver en Grande / Pantalla Completa -->
+                                <button id="open-lightbox-btn" class="open-lightbox-btn" title="Ver imágenes en grande" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 12; background-color: #0F172A; color: #FFFFFF; border: none; padding: 0.5rem 0.95rem; border-radius: 4px; cursor: pointer; font-size: 0.78rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 14px rgba(0,0,0,0.4); transition: all 0.2s ease;">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                                    <span>Ver en grande</span>
+                                </button>
                             </div>
                         </div>
 
@@ -193,32 +488,32 @@
                         <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">Equipamiento del Edificio</h3>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.85rem; margin-bottom: 2.2rem;">
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons-prueba/icon-hall.svg" alt="Hall Doble Altura" style="width: 20px; height: 20px;">
+                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons/icon-hall.svg" alt="Hall Doble Altura" style="width: 26px; height: 26px;">
                                 </div>
                                 <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Hall de Doble Altura</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons-prueba/icon-gourmet.svg" alt="Salón Gourmet" style="width: 20px; height: 20px;">
+                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons/icon-gourmet.svg" alt="Salón Gourmet" style="width: 26px; height: 26px;">
                                 </div>
                                 <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Salón Gourmet</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons-prueba/icon-lockers.svg" alt="e-Commerce Lockers" style="width: 20px; height: 20px;">
+                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons/icon-lockers.svg" alt="e-Commerce Lockers" style="width: 26px; height: 26px;">
                                 </div>
                                 <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">e-Commerce Lockers</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons-prueba/icon-bicicletero.svg" alt="Bicicleteros" style="width: 20px; height: 20px;">
+                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons/icon-bicicletero.svg" alt="Bicicleteros" style="width: 26px; height: 26px;">
                                 </div>
                                 <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Bicicleteros Cubiertos</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 36px; height: 36px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons-prueba/icon-seguridad.svg" alt="Seguridad" style="width: 20px; height: 20px;">
+                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <img src="assets/images/icons/icon-seguridad.svg" alt="Seguridad" style="width: 26px; height: 26px;">
                                 </div>
                                 <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Seguridad Biométrica</span>
                             </div>
@@ -228,27 +523,27 @@
                         <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">Especificaciones Técnicas</h3>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.85rem;">
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-puerta.svg" alt="Altura" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-altura.svg" alt="Altura" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Altura libre de 2.50 metros</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-termopanel.svg" alt="Termopanel" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-termopanel.svg" alt="Termopanel" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Termopanel aluminio oscuro</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-cocina.svg" alt="Cocina" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-cocina.svg" alt="Cocina" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Cocina con cubierta de cuarzo</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-puerta.svg" alt="Baño" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-bano.svg" alt="Baño" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Baño principal con mampara cristal</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-porcelanato.svg" alt="Fotolaminado" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-porcelanato.svg" alt="Fotolaminado" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Piso fotolaminado de alta gama</span>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons-prueba/icon-barandas.svg" alt="Terrazas" style="width: 22px; height: 22px; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-terraza.svg" alt="Terrazas" style="width: 28px; height: 28px; flex-shrink: 0;">
                                 <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Terrazas con cristal templado</span>
                             </div>
                         </div>
@@ -284,8 +579,23 @@
                         </div>
                         
                         <div class="floorplan-viewer-grid">
-                            <div class="floorplan-img-box">
-                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-andes-nunoa/plano.png" alt="Plano Seleccionado">
+                            <div class="floorplan-img-box" id="floorplan-img-container">
+                                <div class="floorplan-level-tabs" id="floorplan-level-tabs" style="display: none;"></div>
+                                
+                                <button class="floorplan-carousel-btn floorplan-carousel-prev" id="floorplan-carousel-prev" aria-label="Plano anterior" style="display: none;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 18l-6-6 6-6" />
+                                    </svg>
+                                </button>
+                                
+                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-andes-nunoa/planos/Plano-A1.png" alt="Plano Seleccionado">
+                                
+                                <button class="floorplan-carousel-btn floorplan-carousel-next" id="floorplan-carousel-next" aria-label="Siguiente plano" style="display: none;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 18l6-6-6-6" />
+                                    </svg>
+                                </button>
+
                                 <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
@@ -302,6 +612,16 @@
                                     <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" /></svg><span id="selected-floorplan-sup">45.0 m² Superficie</span></li>
                                 </ul>
                                 <button class="btn btn-secondary" id="floorplan-cotizar-btn" style="width: 100%; margin-top: 0.5rem;">Cotizar este modelo</button>
+                                <a href="assets/docs/nunoa.pdf" target="_blank" rel="noopener" class="btn-download-pdf">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                        <polyline points="10 9 9 9 8 9"/>
+                                    </svg>
+                                    Ver Brochure PDF
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -354,7 +674,7 @@
                         <!-- Ejecutiva comercial humanizada -->
                         <div class="exec-profile" style="display:flex; align-items:center; gap:1rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-top:1rem;">
                             <div class="exec-photo" style="width:45px; height:45px; border-radius:50%; overflow:hidden;">
-                                <img src="assets/images/ejecutiva-ventas.png" alt="Javiera Muñoz" style="width:100%; height:100%; object-fit:cover;">
+                                <img src="assets/images/nosotros/ejecutiva-ventas.png" alt="Javiera Muñoz" style="width:100%; height:100%; object-fit:cover;">
                             </div>
                             <div class="exec-info">
                                 <h5 style="margin:0; font-size:0.9rem; font-weight:600;">Javiera Muñoz</h5>
@@ -372,68 +692,74 @@
     </section>
 
     <!-- SECCIÓN ENTORNO Y UBICACIÓN -->
-    <section class="section reveal" style="background-color: #FFFFFF; border-top: 1px solid var(--color-border); padding: 5rem 0;">
+    <!-- SECCIÓN SALA DE VENTAS Y UBICACIÓN -->
+    <section class="section" style="background-color: #FAFAFA; border-top: 1px solid var(--color-border); padding: 5rem 0;">
         <div class="container">
-            <h2 style="font-size: 2.2rem; margin-bottom: 3.5rem; text-align: center;">El Barrio y Ubicación</h2>
-            
-            <div class="neighborhood-location-grid">
-                <!-- Columna Izquierda: Información del Barrio y Pines -->
-                <div>
-                    <p style="color: var(--color-text-main); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2.5rem; font-weight: 300;">
-                        Ubicado en el corazón residencial de Ñuñoa, en Capitán Orella 2575, <strong>iAndes Ñuñoa</strong> te ofrece la combinación perfecta de diseño, ubicación y calidad de vida. Vive en un entorno tranquilo, conectado y lleno de carácter, donde cada espacio ha sido pensado para acompañarte en tus mejores momentos.
+            <div class="sales-room-grid">
+                <!-- Columna Izquierda: Información -->
+                <div class="reveal">
+                    <h2 style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 1.5rem; font-family: var(--font-serif);">Sala de ventas</h2>
+                    <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                        Te esperamos en nuestra sala de ventas ubicada en <strong>Capitán Orella 2575</strong>, Ñuñoa, Región Metropolitana.
                     </p>
                     
-                    <div class="neighborhood-highlights-grid" style="margin-top: 0;">
-                        <div class="highlight-item">
-                            <div class="highlight-image-box">
-                                <img src="assets/images/proyectos/proyecto-andes-nunoa/icono-restaurantes.png" alt="Restaurantes y vida nocturna">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="font-size: 1rem; color: var(--color-primary); font-family: var(--font-sans); font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Horarios de atención:</h4>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                            <strong>Lunes a viernes:</strong> 10:30 a 14:00 / 15.00 a 18:00 hrs.
+                        </p>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            <strong>Sábados:</strong> 10:00 a 14:00 hrs.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 2rem;">
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                            <strong>Teléfono de contacto:</strong> +56 2 1234 5678
+                        </p>
+                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                            <strong>WhatsApp:</strong> +56 9 8164 5225
+                        </p>
+                    </div>
+                    
+                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem;">
+                        Nuestro equipo estará encantado de atenderte y acompañarte en cada paso de tu decisión.
+                    </p>
+                    
+                    <!-- Botones de Cómo Llegar -->
+                    <div class="how-to-get-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="https://waze.com/ul?q=Capitán+Orella+2575,+Ñuñoa" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                            <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.png" alt="Waze" style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
+                            <div>
+                                <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #05B4E3; line-height: 1.1;">Waze</div>
+                                <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
                             </div>
-                            <span>Restaurantes y vida nocturna</span>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-image-box">
-                                <img src="assets/images/proyectos/proyecto-andes-nunoa/icono-comercio.png" alt="Comercio local">
+                        </a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Capit%C3%A1n+Orella+2575,+%C3%91u%C3%B1oa" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                            <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.png" alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
+                            <div>
+                                <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #EA4335; line-height: 1.1;">Google Maps</div>
+                                <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
                             </div>
-                            <span>Comercio local</span>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-image-box">
-                                <img src="assets/images/proyectos/proyecto-andes-nunoa/icono-ferias.png" alt="Ferias cercanas">
-                            </div>
-                            <span>Ferias cercanas</span>
-                        </div>
-                        <div class="highlight-item">
-                            <div class="highlight-image-box">
-                                <img src="assets/images/proyectos/proyecto-andes-nunoa/icono-parques.png" alt="Parques y plazas">
-                            </div>
-                            <span>Parques y plazas</span>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 
-                <!-- Columna Derecha: Mapa de Google Maps -->
-                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div style="border: 1px solid var(--color-border); padding: 0.5rem; background: #FFFFFF; box-shadow: var(--shadow-premium);">
+                <!-- Columna Derecha: Mapa -->
+                <div class="reveal">
+                    <div style="border: 1px solid var(--color-border); height: 480px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium); border-radius: 8px;">
                         <iframe 
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.718817757916!2d-70.60337852342084!3d-33.45662769649524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf0cfb89694d%3A0xe2128cd4bc3e8f8!2sCapit%C3%A1n%20Orella%202575%2C%207510165%20%C3%91u%C3%B1oa%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1700000000000!5m2!1ses-419!2scl" 
                             width="100%" 
-                            height="330" 
+                            height="100%" 
                             style="border:0;" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
-                    <div style="display: flex; align-items: center; justify-content: space-between; font-size: 0.85rem; font-weight: 500;">
-                        <span style="color: var(--color-text-muted); display: flex; align-items: center; gap: 0.35rem;">
-                            <svg class="inline-icon" style="color:var(--color-secondary); margin-right: 0;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
-                            Capitán Orella 2575, Ñuñoa
-                        </span>
-                        <a href="https://maps.app.goo.gl/Pwt9jJ5aT1zD5D4n6" target="_blank" class="btn btn-secondary" style="font-size: 0.7rem; padding: 0.5rem 1rem;">Ver en Google Maps</a>
-                    </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- GALERÍA DE FOTOS DEL PROYECTO -->
@@ -513,7 +839,7 @@
                 dorm: '1 Dormitorio',
                 bano: '1 Baño',
                 sup: '45.0 m²',
-                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                images: ['assets/images/proyectos/proyecto-andes-nunoa/planos/Plano-A1.png'],
                 tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior.png'
             },
@@ -523,7 +849,7 @@
                 dorm: '1 Dormitorio',
                 bano: '1 Baño',
                 sup: '46.2 m²',
-                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                images: ['assets/images/proyectos/proyecto-andes-nunoa/planos/Plano-A2.png'],
                 tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior.png'
             },
@@ -533,7 +859,7 @@
                 dorm: '1 Dormitorio',
                 bano: '1 Baño',
                 sup: '45.5 m²',
-                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                images: ['assets/images/proyectos/proyecto-andes-nunoa/planos/Plano-A3.png'],
                 tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior.png'
             },
@@ -543,7 +869,7 @@
                 dorm: '1 Dormitorio',
                 bano: '1 Baño',
                 sup: '47.1 m²',
-                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                images: ['assets/images/proyectos/proyecto-andes-nunoa/planos/Plano-A4.png'],
                 tour: 'https://my.matterport.com/show/?m=uH1fG94kZ2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior.png'
             },
@@ -554,7 +880,7 @@
                 dorm: '2 Dormitorios',
                 bano: '1 Baño',
                 sup: '58.4 m²',
-                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                images: ['assets/images/proyectos/proyecto-andes-nunoa/planos/Plano-B.png'],
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior-2.png'
             },
@@ -565,7 +891,7 @@
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
                 sup: '65.2 m²',
-                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                images: ['assets/images/proyectos/proyecto-andes-nunoa/planos/Plano-C1.png'],
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior-2.png'
             },
@@ -575,7 +901,7 @@
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
                 sup: '67.8 m²',
-                img: 'assets/images/proyectos/proyecto-andes-nunoa/plano.png',
+                images: ['assets/images/proyectos/proyecto-andes-nunoa/planos/Plano-C2.png'],
                 tour: 'https://my.matterport.com/show/?m=sxz74b1m2n',
                 renderInt: 'assets/images/proyectos/proyecto-andes-nunoa/render-interior-2.png'
             }
@@ -677,6 +1003,8 @@
             if (mediaCarouselCounter) {
                 mediaCarouselCounter.textContent = (currentFotoIndex + 1) + " / " + andesNunoaFotos.length;
             }
+            window.currentProjectPhotos = andesNunoaFotos;
+            window.currentProjectIndex = currentFotoIndex;
         }
 
         function updateAmenitiesCarousel() {
@@ -687,7 +1015,13 @@
             if (mediaCarouselCounter) {
                 mediaCarouselCounter.textContent = (currentAmenitiesIndex + 1) + " / " + andesNunoaAmenities.length;
             }
+            window.currentProjectPhotos = andesNunoaAmenities;
+            window.currentProjectIndex = currentAmenitiesIndex;
         }
+
+        // Inicializar array activo en window para el lightbox
+        window.currentProjectPhotos = andesNunoaFotos;
+        window.currentProjectIndex = 0;
 
         if (mediaCarouselPrev) {
             mediaCarouselPrev.addEventListener('click', (e) => {
@@ -735,10 +1069,12 @@
                 mediaBadge.textContent = `Modelo Seleccionado: ${data.title} (${compactDorm} / ${data.bano})`;
             }
 
+            const openLightboxBtn = document.getElementById('open-lightbox-btn');
             if (view === 'render-ext') {
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
+                if (openLightboxBtn) openLightboxBtn.style.display = 'inline-flex';
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
@@ -748,6 +1084,7 @@
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
+                if (openLightboxBtn) openLightboxBtn.style.display = 'inline-flex';
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
@@ -756,6 +1093,7 @@
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
+                if (openLightboxBtn) openLightboxBtn.style.display = 'inline-flex';
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
@@ -764,6 +1102,7 @@
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
+                if (openLightboxBtn) openLightboxBtn.style.display = 'none';
                 selectedMediaImg.style.display = 'none';
                 selectedMediaIframe.style.display = 'block';
                 selectedMediaIframe.src = data.tour;
@@ -771,10 +1110,104 @@
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
                 if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
+                if (openLightboxBtn) openLightboxBtn.style.display = 'none';
                 selectedMediaImg.style.display = 'none';
                 selectedMediaIframe.style.display = 'block';
                 selectedMediaIframe.src = videoUrl;
             }
+        }
+
+        // Lógica y variables del Carrusel de Planos Multi-Nivel
+        let currentFloorplanImageIndex = 0;
+        const floorplanCarouselPrev = document.getElementById('floorplan-carousel-prev');
+        const floorplanCarouselNext = document.getElementById('floorplan-carousel-next');
+        const floorplanLevelTabs = document.getElementById('floorplan-level-tabs');
+        const floorplanImgContainer = document.getElementById('floorplan-img-container');
+
+        function renderFloorplanImage(images) {
+            if (!images || images.length === 0) return;
+            if (currentFloorplanImageIndex >= images.length) currentFloorplanImageIndex = 0;
+
+            if (selectedFloorplanImg) {
+                selectedFloorplanImg.style.opacity = '0.3';
+                setTimeout(() => {
+                    selectedFloorplanImg.src = images[currentFloorplanImageIndex];
+                    selectedFloorplanImg.style.opacity = '1';
+                }, 120);
+            }
+
+            if (images.length > 1) {
+                if (floorplanCarouselPrev) floorplanCarouselPrev.style.display = 'flex';
+                if (floorplanCarouselNext) floorplanCarouselNext.style.display = 'flex';
+
+                if (floorplanLevelTabs) {
+                    floorplanLevelTabs.innerHTML = '';
+                    images.forEach((_, idx) => {
+                        const tabBtn = document.createElement('button');
+                        tabBtn.className = 'floorplan-level-tab' + (idx === currentFloorplanImageIndex ? ' active' : '');
+                        tabBtn.textContent = `Plano ${idx + 1}`;
+                        tabBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            currentFloorplanImageIndex = idx;
+                            renderFloorplanImage(images);
+                        });
+                        floorplanLevelTabs.appendChild(tabBtn);
+                    });
+                    floorplanLevelTabs.style.display = 'flex';
+                }
+            } else {
+                if (floorplanCarouselPrev) floorplanCarouselPrev.style.display = 'none';
+                if (floorplanCarouselNext) floorplanCarouselNext.style.display = 'none';
+                if (floorplanLevelTabs) floorplanLevelTabs.style.display = 'none';
+            }
+        }
+
+        if (floorplanCarouselPrev) {
+            floorplanCarouselPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const activeKey = getActiveModelKey();
+                const data = modelData[activeKey];
+                const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + images.length) % images.length;
+                renderFloorplanImage(images);
+            });
+        }
+
+        if (floorplanCarouselNext) {
+            floorplanCarouselNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const activeKey = getActiveModelKey();
+                const data = modelData[activeKey];
+                const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % images.length;
+                renderFloorplanImage(images);
+            });
+        }
+
+        // Deslizar con gestos táctiles (Swipe)
+        if (floorplanImgContainer) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            floorplanImgContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            floorplanImgContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 40) {
+                    const activeKey = getActiveModelKey();
+                    const data = modelData[activeKey];
+                    const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                    if (images.length > 1) {
+                        if (diff > 0) {
+                            currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % images.length;
+                        } else {
+                            currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + images.length) % images.length;
+                        }
+                        renderFloorplanImage(images);
+                    }
+                }
+            }, { passive: true });
         }
 
         // Función para actualizar el Visor de Planos inferior
@@ -782,8 +1215,10 @@
             const data = modelData[key];
             if (!data) return;
 
-            // Actualizar textos e imagen del visor
-            if (selectedFloorplanImg) selectedFloorplanImg.src = data.img;
+            const images = data.images || (data.img ? [data.img] : []);
+            currentFloorplanImageIndex = 0;
+            renderFloorplanImage(images);
+
             if (selectedFloorplanName) selectedFloorplanName.textContent = data.title;
             if (selectedFloorplanPrice) selectedFloorplanPrice.textContent = data.price;
             if (selectedFloorplanDorm) selectedFloorplanDorm.textContent = data.dorm;
@@ -947,11 +1382,14 @@
             });
         }
 
-        // Lógica de Zoom del Plano (Lightbox/Modal)
+        // Lógica de Zoom del Plano (Lightbox / Modal Completo)
         const zoomFloorplanBtn = document.getElementById('zoom-floorplan-btn');
         if (zoomFloorplanBtn) {
             zoomFloorplanBtn.addEventListener('click', () => {
-                const currentImgSrc = selectedFloorplanImg.src;
+                const activeKey = getActiveModelKey();
+                const data = modelData[activeKey];
+                const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                
                 let lightbox = document.getElementById('model-lightbox');
                 if (!lightbox) {
                     lightbox = document.createElement('div');
@@ -959,7 +1397,16 @@
                     lightbox.className = 'model-lightbox';
                     lightbox.innerHTML = `
                         <span class="lightbox-close">&times;</span>
-                        <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Plano">
+                        <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Plano anterior">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-width: 90vw; position: relative;">
+                            <div class="lightbox-level-tabs" id="lightbox-level-tabs"></div>
+                            <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Plano">
+                        </div>
+                        <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Siguiente plano">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
                     `;
                     document.body.appendChild(lightbox);
                     
@@ -969,9 +1416,97 @@
                     lightbox.addEventListener('click', (e) => {
                         if (e.target === lightbox) lightbox.classList.remove('active');
                     });
+
+                    // Navegación con teclado (Flechas)
+                    window.addEventListener('keydown', (e) => {
+                        if (!lightbox.classList.contains('active')) return;
+                        if (e.key === 'Escape') {
+                            lightbox.classList.remove('active');
+                        } else if (e.key === 'ArrowRight') {
+                            const curKey = getActiveModelKey();
+                            const curImages = modelData[curKey] ? (modelData[curKey].images || [modelData[curKey].img]) : [];
+                            if (curImages.length > 1) {
+                                currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % curImages.length;
+                                const lbImg = lightbox.querySelector('#lightbox-img');
+                                if (lbImg) lbImg.src = curImages[currentFloorplanImageIndex];
+                                renderFloorplanImage(curImages);
+                                updateLightboxTabs(lightbox, curImages);
+                            }
+                        } else if (e.key === 'ArrowLeft') {
+                            const curKey = getActiveModelKey();
+                            const curImages = modelData[curKey] ? (modelData[curKey].images || [modelData[curKey].img]) : [];
+                            if (curImages.length > 1) {
+                                currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + curImages.length) % curImages.length;
+                                const lbImg = lightbox.querySelector('#lightbox-img');
+                                if (lbImg) lbImg.src = curImages[currentFloorplanImageIndex];
+                                renderFloorplanImage(curImages);
+                                updateLightboxTabs(lightbox, curImages);
+                            }
+                        }
+                    });
                 }
+
+                function updateLightboxTabs(lb, imgs) {
+                    const levelTabs = lb.querySelector('#lightbox-level-tabs');
+                    if (levelTabs && imgs.length > 1) {
+                        levelTabs.innerHTML = '';
+                        imgs.forEach((_, idx) => {
+                            const tabBtn = document.createElement('button');
+                            tabBtn.className = 'floorplan-level-tab' + (idx === currentFloorplanImageIndex ? ' active' : '');
+                            tabBtn.textContent = `Plano ${idx + 1}`;
+                            tabBtn.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                currentFloorplanImageIndex = idx;
+                                const lbImg = lb.querySelector('#lightbox-img');
+                                if (lbImg) lbImg.src = imgs[currentFloorplanImageIndex];
+                                renderFloorplanImage(imgs);
+                                updateLightboxTabs(lb, imgs);
+                            });
+                            levelTabs.appendChild(tabBtn);
+                        });
+                        levelTabs.style.display = 'flex';
+                    }
+                }
+
                 const lightboxImg = lightbox.querySelector('#lightbox-img');
-                if (lightboxImg) lightboxImg.src = currentImgSrc;
+                const lightboxPrev = lightbox.querySelector('#lightbox-prev');
+                const lightboxNext = lightbox.querySelector('#lightbox-next');
+                const lightboxLevelTabs = lightbox.querySelector('#lightbox-level-tabs');
+
+                function updateLightbox() {
+                    if (images.length === 0) return;
+                    if (currentFloorplanImageIndex >= images.length) currentFloorplanImageIndex = 0;
+                    
+                    if (lightboxImg) lightboxImg.src = images[currentFloorplanImageIndex];
+                    renderFloorplanImage(images);
+
+                    if (images.length > 1) {
+                        if (lightboxPrev) lightboxPrev.style.display = 'flex';
+                        if (lightboxNext) lightboxNext.style.display = 'flex';
+                        updateLightboxTabs(lightbox, images);
+                    } else {
+                        if (lightboxPrev) lightboxPrev.style.display = 'none';
+                        if (lightboxNext) lightboxNext.style.display = 'none';
+                        if (lightboxLevelTabs) lightboxLevelTabs.style.display = 'none';
+                    }
+                }
+
+                if (lightboxPrev) {
+                    lightboxPrev.onclick = (e) => {
+                        e.stopPropagation();
+                        currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + images.length) % images.length;
+                        updateLightbox();
+                    };
+                }
+                if (lightboxNext) {
+                    lightboxNext.onclick = (e) => {
+                        e.stopPropagation();
+                        currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % images.length;
+                        updateLightbox();
+                    };
+                }
+
+                updateLightbox();
                 lightbox.classList.add('active');
             });
         }

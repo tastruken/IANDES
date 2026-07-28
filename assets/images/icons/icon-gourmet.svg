@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Asa superior -->
+  <path d="M10.5 7.5V6a1.5 1.5 0 0 1 3 0v1.5"/>
+  <!-- Cúpula / Campana gourmet -->
+  <path d="M4.5 15A7.5 7.5 0 0 1 19.5 15"/>
+  <!-- Brillo / Reflejo curvado interior -->
+  <path d="M7 13.5A5.5 5.5 0 0 1 11.5 9"/>
+  <!-- Borde del plato -->
+  <rect x="4" y="15" width="16" height="3" rx="1"/>
+  <!-- Bandeja inferior -->
+  <path d="M2 18h20v1a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 19v-1z"/>
+</svg>
