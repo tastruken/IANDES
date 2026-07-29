@@ -1,4 +1,4 @@
-/**
+﻿/**
  * JavaScript para Inmobiliaria Iandes
  * Funcionalidad interactiva y animaciones premium
  */
@@ -354,7 +354,7 @@ function initProjectMediaTabs() {
             } else if (type === 'tour360') {
                 const tabBtnInterior = document.getElementById('tab-btn-interior');
                 const bgRaw = tabBtnInterior ? tabBtnInterior.dataset.src : '';
-                const bgSrc = bgRaw ? bgRaw.split(',')[0].trim() : 'assets/images/proyectos/proyecto-andes-nunoa/render.png';
+                const bgSrc = bgRaw ? bgRaw.split(',')[0].trim() : 'assets/images/proyectos/proyecto-andes-nunoa/render.webp';
 
                 const overlay = document.createElement('div');
                 overlay.className = 'tour-360-overlay';
@@ -1265,6 +1265,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -44,7 +44,7 @@
 
         <!-- Fallback de navegación para SEO/Accesibilidad -->
         <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
-            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.webp" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.webp" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
             <nav style="display:block;">
                 <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
                     <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
@@ -62,7 +62,7 @@
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
     <section class="inner-hero project-hero">
         <div class="inner-hero-bg">
-            <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.jpg" alt="Altos de Santa Cruz">
+            <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp" alt="Altos de Santa Cruz">
         </div>
         <div class="container" style="position: relative; z-index: 5; margin-top: auto; margin-bottom: auto;">
             <div class="inner-hero-content">
@@ -148,7 +148,7 @@
                     <div class="media-gallery-module reveal">
                         <div class="media-viewer-container">
                             <div class="media-viewer" style="position: relative; padding-top: 56.25%; overflow: hidden; border: 1px solid var(--color-border); background-color: var(--color-primary);">
-                                <img id="selected-media-img" src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.jpg" alt="Vista Interior Altos de Santa Cruz" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: saturate(0.5) brightness(0.9);">
+                                <img id="selected-media-img" src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp" alt="Vista Interior Altos de Santa Cruz" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: saturate(0.5) brightness(0.9);">
                                 <iframe id="selected-media-iframe" src="" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none; display:none;" allowfullscreen></iframe>
                                 
                                 <!-- Botones del carrusel para Vista Interior -->
@@ -176,19 +176,6 @@
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
                                 </span>
                                 <span class="media-tab-label">Interior</span>
-                            </button>
-                            <button class="media-tab-btn" data-view="amenities" id="tab-btn-amenities">
-                                <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path>
-                                        <path d="M1 21h22"></path>
-                                        <path d="M9 7h1"></path>
-                                        <path d="M9 11h1"></path>
-                                        <path d="M14 7h1"></path>
-                                        <path d="M14 11h1"></path>
-                                    </svg>
-                                </span>
-                                <span class="media-tab-label">Amenities</span>
                             </button>
                             <button class="media-tab-btn" data-view="tour-360" id="tab-btn-tour">
                                 <span class="media-tab-icon-wrapper">
@@ -251,7 +238,7 @@
                             </div>
                             <!-- 5. Termopanel -->
                             <div style="display: flex; align-items: center; gap: 0.8rem;">
-                                <img src="assets/images/icons/icon-termopanel.svg" alt="Termopanel" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                <img src="assets/images/icons/icon-termopanel-dark.svg" alt="Termopanel" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
                                 <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">ventanas termopanel en dormitorios</span>
                             </div>
                             <!-- 6. Piso cerámico -->
@@ -271,8 +258,23 @@
                         </div>
                         
                         <div class="floorplan-viewer-grid">
-                            <div class="floorplan-img-box">
-                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-altos-santa-cruz/plano.png" alt="Plano Seleccionado">
+                            <div class="floorplan-img-box" id="floorplan-img-container">
+                                <div class="floorplan-level-tabs" id="floorplan-level-tabs" style="display: none;"></div>
+                                
+                                <button class="floorplan-carousel-btn floorplan-carousel-prev" id="floorplan-carousel-prev" aria-label="Plano anterior" style="display: none;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M15 18l-6-6 6-6" />
+                                    </svg>
+                                </button>
+                                
+                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-altos-santa-cruz/planos/plano-1.webp" alt="Plano Seleccionado">
+                                
+                                <button class="floorplan-carousel-btn floorplan-carousel-next" id="floorplan-carousel-next" aria-label="Siguiente plano" style="display: none;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M9 18l6-6-6-6" />
+                                    </svg>
+                                </button>
+
                                 <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                         <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
@@ -281,7 +283,6 @@
                             </div>
                             <div class="floorplan-details-box">
                                 <h4 id="selected-floorplan-name" style="font-size: 1.5rem; color:var(--color-primary); font-weight:600;">Casa 3D + 2B</h4>
-                                <div style="font-size: 1.3rem; font-weight: 600; color: var(--color-primary);">Desde <span class="highlight" id="selected-floorplan-price">UF 2.994</span></div>
                                 <hr class="model-divider" style="margin: 0.5rem 0; border: 0; border-top: 1px solid var(--color-border);">
                                 <ul class="floorplan-specs">
                                     <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg><span id="selected-floorplan-dorm">3 Dormitorios</span></li>
@@ -332,7 +333,7 @@
                         <!-- Ejecutiva comercial humanizada -->
                         <div class="exec-profile">
                             <div class="exec-photo">
-                                <img src="assets/images/nosotros/ejecutiva-ventas.png" alt="Rodrigo Valdés">
+                                <img src="assets/images/nosotros/ejecutiva-ventas.webp" alt="Rodrigo Valdés">
                             </div>
                             <div class="exec-info">
                                 <h5>Rodrigo Valdés</h5>
@@ -360,37 +361,43 @@
             <div class="photo-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.jpg" alt="Foto Altos de Santa Cruz 1" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/foto-fachada-altos.webp" alt="Fachada Altos de Santa Cruz" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
 
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-2.jpg" alt="Foto Altos de Santa Cruz 2" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp" alt="Foto Altos de Santa Cruz 1" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
 
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-3.jpg" alt="Foto Altos de Santa Cruz 3" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-2.webp" alt="Foto Altos de Santa Cruz 2" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
 
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-4.jpg" alt="Foto Altos de Santa Cruz 4" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-3.webp" alt="Foto Altos de Santa Cruz 3" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
 
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-5.jpg" alt="Foto Altos de Santa Cruz 5" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-4.webp" alt="Foto Altos de Santa Cruz 4" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
 
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-6.jpg" alt="Foto Altos de Santa Cruz 6" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-5.webp" alt="Foto Altos de Santa Cruz 5" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                </div>
+
+                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-6.webp" alt="Foto Altos de Santa Cruz 6" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
             </div>
@@ -431,14 +438,14 @@
                     <!-- Botones de Cómo Llegar -->
                     <div class="how-to-get-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <a href="https://waze.com/ul?q=Adriano+Diaz+911,+Santa+Cruz" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
-                            <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.png" alt="Waze" style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
+                            <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.webp" alt="Waze" style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
                             <div>
                                 <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #05B4E3; line-height: 1.1;">Waze</div>
                                 <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
                             </div>
                         </a>
                         <a href="https://www.google.com/maps/search/?api=1&query=Adriano+Diaz+911,+Santa+Cruz" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
-                            <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.png" alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
+                            <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.webp" alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
                             <div>
                                 <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #EA4335; line-height: 1.1;">Google Maps</div>
                                 <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
@@ -486,32 +493,39 @@
     <script src="assets/js/main.js"></script>
     <script>
         // Módulo Multimedia e Interior Carousel en Altos de Santa Cruz
+        const andesAltosFachada = [
+            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/foto-fachada-altos.webp"
+        ];
+        let currentFachadaIndex = 0;
+
         const andesAltosFotos = [
-            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.jpg",
-            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-2.jpg",
-            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-3.jpg",
-            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-4.jpg",
-            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-5.jpg",
-            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-6.jpg"
+            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp",
+            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-2.webp",
+            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-3.webp",
+            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-4.webp",
+            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-5.webp",
+            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-6.webp"
         ];
         let currentFotoIndex = 0;
-
-        // Array de fotos/renders para Amenities en Altos de Santa Cruz
-        const andesAltosAmenities = [
-            "assets/images/proyectos/proyecto-altos-santa-cruz/render.png",
-            "assets/images/proyectos/proyecto-altos-santa-cruz/render-2.png",
-            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-2.jpg",
-            "assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-5.jpg"
-        ];
-        let currentAmenitiesIndex = 0;
-
         const mediaTabs = document.querySelectorAll('.media-tabs .media-tab-btn');
         const selectedMediaImg = document.getElementById('selected-media-img');
         const selectedMediaIframe = document.getElementById('selected-media-iframe');
         const mediaCarouselPrev = document.getElementById('media-carousel-prev');
         const mediaCarouselNext = document.getElementById('media-carousel-next');
         const mediaCarouselCounter = document.getElementById('media-carousel-counter');
-        const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+        const videoUrl = "https://www.youtube.com/embed/AbBVC_tuzmY";
+
+        function updateFachadaCarousel() {
+            if (selectedMediaImg) {
+                selectedMediaImg.src = andesAltosFachada[currentFachadaIndex];
+                selectedMediaImg.alt = "Fachada Altos de Santa Cruz";
+            }
+            if (mediaCarouselCounter) {
+                mediaCarouselCounter.textContent = (currentFachadaIndex + 1) + " / " + andesAltosFachada.length;
+            }
+            window.currentProjectPhotos = andesAltosFachada;
+            window.currentProjectIndex = currentFachadaIndex;
+        }
 
         function updateInteriorCarousel() {
             if (selectedMediaImg) {
@@ -525,30 +539,18 @@
             window.currentProjectIndex = currentFotoIndex;
         }
 
-        function updateAmenitiesCarousel() {
-            if (selectedMediaImg) {
-                selectedMediaImg.src = andesAltosAmenities[currentAmenitiesIndex];
-                selectedMediaImg.alt = "Amenities - Foto/Render " + (currentAmenitiesIndex + 1);
-            }
-            if (mediaCarouselCounter) {
-                mediaCarouselCounter.textContent = (currentAmenitiesIndex + 1) + " / " + andesAltosAmenities.length;
-            }
-            window.currentProjectPhotos = andesAltosAmenities;
-            window.currentProjectIndex = currentAmenitiesIndex;
-        }
-
         // Inicializar array activo en window para el lightbox
-        window.currentProjectPhotos = andesAltosFotos;
+        window.currentProjectPhotos = andesAltosFachada;
         window.currentProjectIndex = 0;
 
         if (mediaCarouselPrev) {
             mediaCarouselPrev.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const activeViewTab = document.querySelector('.media-tabs .media-tab-btn.active');
-                const view = activeViewTab ? activeViewTab.dataset.view : 'render-int';
-                if (view === 'amenities') {
-                    currentAmenitiesIndex = (currentAmenitiesIndex - 1 + andesAltosAmenities.length) % andesAltosAmenities.length;
-                    updateAmenitiesCarousel();
+                const view = activeViewTab ? activeViewTab.dataset.view : 'render-ext';
+                if (view === 'render-ext') {
+                    currentFachadaIndex = (currentFachadaIndex - 1 + andesAltosFachada.length) % andesAltosFachada.length;
+                    updateFachadaCarousel();
                 } else {
                     currentFotoIndex = (currentFotoIndex - 1 + andesAltosFotos.length) % andesAltosFotos.length;
                     updateInteriorCarousel();
@@ -560,10 +562,10 @@
             mediaCarouselNext.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const activeViewTab = document.querySelector('.media-tabs .media-tab-btn.active');
-                const view = activeViewTab ? activeViewTab.dataset.view : 'render-int';
-                if (view === 'amenities') {
-                    currentAmenitiesIndex = (currentAmenitiesIndex + 1) % andesAltosAmenities.length;
-                    updateAmenitiesCarousel();
+                const view = activeViewTab ? activeViewTab.dataset.view : 'render-ext';
+                if (view === 'render-ext') {
+                    currentFachadaIndex = (currentFachadaIndex + 1) % andesAltosFachada.length;
+                    updateFachadaCarousel();
                 } else {
                     currentFotoIndex = (currentFotoIndex + 1) % andesAltosFotos.length;
                     updateInteriorCarousel();
@@ -585,8 +587,7 @@
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
-                selectedMediaImg.src = "assets/images/proyectos/proyecto-altos-santa-cruz/render.png";
-                selectedMediaImg.alt = "Fachada Altos de Santa Cruz";
+                updateFachadaCarousel();
             } else if (view === 'render-int') {
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
@@ -596,15 +597,6 @@
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
                 updateInteriorCarousel();
-            } else if (view === 'amenities') {
-                if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
-                if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
-                if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
-                if (openLightboxBtn) openLightboxBtn.style.display = 'inline-flex';
-                selectedMediaIframe.style.display = 'none';
-                selectedMediaIframe.src = '';
-                selectedMediaImg.style.display = 'block';
-                updateAmenitiesCarousel();
             } else if (view === 'tour-360') {
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
@@ -640,7 +632,10 @@
                 dorm: '3 Dormitorios',
                 bano: '2 Baños',
                 sup: '66.61 m²',
-                img: 'assets/images/proyectos/proyecto-altos-santa-cruz/plano.png',
+                images: [
+                    'assets/images/proyectos/proyecto-altos-santa-cruz/planos/plano-1.webp',
+                    'assets/images/proyectos/proyecto-altos-santa-cruz/planos/Masterplan.webp'
+                ],
                 tour: 'https://kuula.co/share/hrksC/collection/7H6nQ?logo=0&info=0&logosize=0&fs=1&vr=1&initload=0&autop=120&thumbs=0&inst=es'
             }
         };
@@ -648,7 +643,6 @@
         const floorplanNavTabs = document.querySelectorAll('.floorplan-nav-tab');
         const selectedFloorplanImg = document.getElementById('selected-floorplan-img');
         const selectedFloorplanName = document.getElementById('selected-floorplan-name');
-        const selectedFloorplanPrice = document.getElementById('selected-floorplan-price');
         const selectedFloorplanDorm = document.getElementById('selected-floorplan-dorm');
         const selectedFloorplanBano = document.getElementById('selected-floorplan-bano');
         const selectedFloorplanSup = document.getElementById('selected-floorplan-sup');
@@ -656,13 +650,111 @@
         const cotizadorPrice = document.getElementById('cotizador-price');
         const floorplanCotizarBtn = document.getElementById('floorplan-cotizar-btn');
 
+        const floorplanImgContainer = document.getElementById('floorplan-img-container');
+        const floorplanCarouselPrev = document.getElementById('floorplan-carousel-prev');
+        const floorplanCarouselNext = document.getElementById('floorplan-carousel-next');
+        const floorplanLevelTabs = document.getElementById('floorplan-level-tabs');
+        let currentFloorplanImageIndex = 0;
+
+        function getActiveModelKey() {
+            const activeTab = document.querySelector('.floorplan-nav-tab.active');
+            return activeTab ? activeTab.dataset.id : '3d2b';
+        }
+
+        function renderFloorplanImage(images) {
+            if (!images || images.length === 0) return;
+
+            if (currentFloorplanImageIndex >= images.length) {
+                currentFloorplanImageIndex = 0;
+            }
+
+            if (selectedFloorplanImg) {
+                selectedFloorplanImg.src = images[currentFloorplanImageIndex];
+            }
+
+            if (images.length > 1) {
+                if (floorplanCarouselPrev) floorplanCarouselPrev.style.display = 'flex';
+                if (floorplanCarouselNext) floorplanCarouselNext.style.display = 'flex';
+                
+                if (floorplanLevelTabs) {
+                    floorplanLevelTabs.innerHTML = '';
+                    images.forEach((imgSrc, idx) => {
+                        const tabBtn = document.createElement('button');
+                        tabBtn.className = `floorplan-level-tab ${idx === currentFloorplanImageIndex ? 'active' : ''}`;
+                        tabBtn.textContent = idx === 0 ? 'Plano 1' : 'Masterplan';
+                        tabBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            currentFloorplanImageIndex = idx;
+                            renderFloorplanImage(images);
+                        });
+                        floorplanLevelTabs.appendChild(tabBtn);
+                    });
+                    floorplanLevelTabs.style.display = 'flex';
+                }
+            } else {
+                if (floorplanCarouselPrev) floorplanCarouselPrev.style.display = 'none';
+                if (floorplanCarouselNext) floorplanCarouselNext.style.display = 'none';
+                if (floorplanLevelTabs) floorplanLevelTabs.style.display = 'none';
+            }
+        }
+
+        if (floorplanCarouselPrev) {
+            floorplanCarouselPrev.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const activeKey = getActiveModelKey();
+                const data = modelData[activeKey];
+                const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + images.length) % images.length;
+                renderFloorplanImage(images);
+            });
+        }
+
+        if (floorplanCarouselNext) {
+            floorplanCarouselNext.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const activeKey = getActiveModelKey();
+                const data = modelData[activeKey];
+                const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % images.length;
+                renderFloorplanImage(images);
+            });
+        }
+
+        // Deslizar con gestos táctiles (Swipe)
+        if (floorplanImgContainer) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            floorplanImgContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            floorplanImgContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 40) {
+                    const activeKey = getActiveModelKey();
+                    const data = modelData[activeKey];
+                    const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                    if (images.length > 1) {
+                        if (diff > 0) {
+                            currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % images.length;
+                        } else {
+                            currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + images.length) % images.length;
+                        }
+                        renderFloorplanImage(images);
+                    }
+                }
+            }, { passive: true });
+        }
+
         function updateFloorplanViewer(key) {
             const data = modelData[key];
             if (!data) return;
 
-            if (selectedFloorplanImg) selectedFloorplanImg.src = data.img;
+            const images = data.images || (data.img ? [data.img] : []);
+            currentFloorplanImageIndex = 0;
+            renderFloorplanImage(images);
+
             if (selectedFloorplanName) selectedFloorplanName.textContent = data.title;
-            if (selectedFloorplanPrice) selectedFloorplanPrice.textContent = `UF ${data.price}`;
             if (selectedFloorplanDorm) selectedFloorplanDorm.textContent = data.dorm;
             if (selectedFloorplanBano) selectedFloorplanBano.textContent = data.bano;
             if (selectedFloorplanSup) selectedFloorplanSup.textContent = `${data.sup} Superficie`;
@@ -706,8 +798,135 @@
         });
 
         updateMediaGallery();
+        updateFloorplanViewer('3d2b');
+
+        // Lógica de Zoom del Plano (Lightbox / Modal Completo)
+        const zoomFloorplanBtn = document.getElementById('zoom-floorplan-btn');
+        if (zoomFloorplanBtn) {
+            zoomFloorplanBtn.addEventListener('click', () => {
+                const activeKey = getActiveModelKey();
+                const data = modelData[activeKey];
+                const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
+                
+                let lightbox = document.getElementById('model-lightbox');
+                if (!lightbox) {
+                    lightbox = document.createElement('div');
+                    lightbox.id = 'model-lightbox';
+                    lightbox.className = 'model-lightbox';
+                    lightbox.innerHTML = `
+                        <span class="lightbox-close">&times;</span>
+                        <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Plano anterior">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                        </button>
+                        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; max-width: 90vw; position: relative;">
+                            <div class="lightbox-level-tabs" id="lightbox-level-tabs"></div>
+                            <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Plano">
+                        </div>
+                        <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Siguiente plano">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                        </button>
+                    `;
+                    document.body.appendChild(lightbox);
+                    
+                    lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
+                        lightbox.classList.remove('active');
+                    });
+                    lightbox.addEventListener('click', (e) => {
+                        if (e.target === lightbox) lightbox.classList.remove('active');
+                    });
+
+                    // Navegación con teclado (Flechas)
+                    window.addEventListener('keydown', (e) => {
+                        if (!lightbox.classList.contains('active')) return;
+                        if (e.key === 'Escape') {
+                            lightbox.classList.remove('active');
+                        } else if (e.key === 'ArrowRight') {
+                            const curKey = getActiveModelKey();
+                            const curImages = modelData[curKey] ? (modelData[curKey].images || [modelData[curKey].img]) : [];
+                            if (curImages.length > 1) {
+                                currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % curImages.length;
+                                const lbImg = lightbox.querySelector('#lightbox-img');
+                                if (lbImg) lbImg.src = curImages[currentFloorplanImageIndex];
+                                renderFloorplanImage(curImages);
+                                updateLightboxTabs(lightbox, curImages);
+                            }
+                        } else if (e.key === 'ArrowLeft') {
+                            const curKey = getActiveModelKey();
+                            const curImages = modelData[curKey] ? (modelData[curKey].images || [modelData[curKey].img]) : [];
+                            if (curImages.length > 1) {
+                                currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + curImages.length) % curImages.length;
+                                const lbImg = lightbox.querySelector('#lightbox-img');
+                                if (lbImg) lbImg.src = curImages[currentFloorplanImageIndex];
+                                renderFloorplanImage(curImages);
+                                updateLightboxTabs(lightbox, curImages);
+                            }
+                        }
+                    });
+                }
+
+                function updateLightboxTabs(lb, imgs) {
+                    const levelTabs = lb.querySelector('#lightbox-level-tabs');
+                    if (levelTabs && imgs.length > 1) {
+                        levelTabs.innerHTML = '';
+                        imgs.forEach((_, idx) => {
+                            const tabBtn = document.createElement('button');
+                            tabBtn.className = 'floorplan-level-tab' + (idx === currentFloorplanImageIndex ? ' active' : '');
+                            tabBtn.textContent = idx === 0 ? 'Plano 1' : 'Masterplan';
+                            tabBtn.addEventListener('click', (e) => {
+                                e.stopPropagation();
+                                currentFloorplanImageIndex = idx;
+                                const lbImg = lb.querySelector('#lightbox-img');
+                                if (lbImg) lbImg.src = imgs[currentFloorplanImageIndex];
+                                renderFloorplanImage(imgs);
+                                updateLightboxTabs(lb, imgs);
+                            });
+                            levelTabs.appendChild(tabBtn);
+                        });
+                        levelTabs.style.display = 'flex';
+                    } else if (levelTabs) {
+                        levelTabs.style.display = 'none';
+                    }
+                }
+
+                const lightboxImg = lightbox.querySelector('#lightbox-img');
+                const lightboxPrev = lightbox.querySelector('#lightbox-prev');
+                const lightboxNext = lightbox.querySelector('#lightbox-next');
+
+                if (images.length > 0) {
+                    lightboxImg.src = images[currentFloorplanImageIndex];
+                    updateLightboxTabs(lightbox, images);
+                    
+                    if (images.length > 1) {
+                        lightboxPrev.style.display = 'flex';
+                        lightboxNext.style.display = 'flex';
+
+                        lightboxPrev.onclick = (e) => {
+                            e.stopPropagation();
+                            currentFloorplanImageIndex = (currentFloorplanImageIndex - 1 + images.length) % images.length;
+                            lightboxImg.src = images[currentFloorplanImageIndex];
+                            renderFloorplanImage(images);
+                            updateLightboxTabs(lightbox, images);
+                        };
+
+                        lightboxNext.onclick = (e) => {
+                            e.stopPropagation();
+                            currentFloorplanImageIndex = (currentFloorplanImageIndex + 1) % images.length;
+                            lightboxImg.src = images[currentFloorplanImageIndex];
+                            renderFloorplanImage(images);
+                            updateLightboxTabs(lightbox, images);
+                        };
+                    } else {
+                        lightboxPrev.style.display = 'none';
+                        lightboxNext.style.display = 'none';
+                    }
+
+                    lightbox.classList.add('active');
+                }
+            });
+        }
     </script>
 </body>
 </html>
+
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -50,6 +50,31 @@
             background: var(--color-primary);
             border-color: var(--color-primary);
             color: #FFFFFF;
+        }
+
+        .btn-download-pdf {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            width: 100%;
+            margin-top: 0.75rem;
+            padding: 0.85rem 1rem;
+            background-color: var(--color-bg-light, #F8FAFC);
+            color: var(--color-primary, #0F172A);
+            border: 1px solid var(--color-border, #E2E8F0);
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: var(--transition-fast);
+            box-shadow: var(--shadow-small, 0 1px 3px rgba(0,0,0,0.05));
+        }
+        .btn-download-pdf:hover {
+            background-color: var(--color-primary) !important;
+            color: #FFFFFF !important;
+            border-color: var(--color-primary) !important;
+            transform: translateY(-2px);
         }
 
         /* Sub-pestañas para 3D + 3B */
@@ -326,7 +351,7 @@
 
         <!-- Fallback de navegación para SEO/Accesibilidad -->
         <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
-            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.png" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.png" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.webp" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.webp" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
             <nav style="display:block;">
                 <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
                     <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
@@ -344,7 +369,7 @@
     <!-- INNER HERO (CABECERA DE PROYECTO) -->
     <section class="inner-hero project-hero">
         <div class="inner-hero-bg">
-            <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-1.jpg" alt="Edificio Camino de la Villa">
+            <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-fachada-1.webp" alt="Edificio Camino de la Villa">
         </div>
         <div class="container" style="position: relative; z-index: 5; margin-top: auto; margin-bottom: auto;">
             <div class="inner-hero-content">
@@ -429,7 +454,7 @@
                     <div class="media-gallery-module reveal">
                         <div class="media-viewer-container">
                             <div class="media-viewer" style="position: relative; padding-top: 56.25%; overflow: hidden; border: 1px solid var(--color-border); background-color: var(--color-primary);">
-                                <img id="selected-media-img" src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-1.jpg" alt="Vista Interior Camino de la Villa" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: saturate(0.5) brightness(0.9);">
+                                <img id="selected-media-img" src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-1.webp" alt="Vista Interior Camino de la Villa" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: saturate(0.5) brightness(0.9);">
                                 <iframe id="selected-media-iframe" src="" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none; display:none;" allowfullscreen></iframe>
                                 
                                 <!-- Botones del carrusel para Vista Interior -->
@@ -462,19 +487,6 @@
                                     </svg>
                                 </span>
                                 <span class="media-tab-label">Interior</span>
-                            </button>
-                            <button class="media-tab-btn" data-view="amenities" id="tab-btn-amenities">
-                                <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path>
-                                        <path d="M1 21h22"></path>
-                                        <path d="M9 7h1"></path>
-                                        <path d="M9 11h1"></path>
-                                        <path d="M14 7h1"></path>
-                                        <path d="M14 11h1"></path>
-                                    </svg>
-                                </span>
-                                <span class="media-tab-label">Amenities</span>
                             </button>
                             <button class="media-tab-btn" data-view="tour-360" id="tab-btn-tour">
                                 <span class="media-tab-icon-wrapper">
@@ -567,7 +579,7 @@
                                     </svg>
                                 </button>
                                 
-                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-camino-villa/planos/Plano-1D2B.png" alt="Plano Seleccionado">
+                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-camino-villa/planos/Plano-1D2B.webp" alt="Plano Seleccionado">
                                 
                                 <button class="floorplan-carousel-btn floorplan-carousel-next" id="floorplan-carousel-next" aria-label="Siguiente plano" style="display: none;">
                                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -583,14 +595,23 @@
                             </div>
                             <div class="floorplan-details-box">
                                 <h4 id="selected-floorplan-name" style="font-size: 1.5rem; color:var(--color-primary); font-weight:600;">DEPTO 1D 2B</h4>
-                                <div style="font-size: 1.3rem; font-weight: 600; color: var(--color-primary);">Desde <span class="highlight" id="selected-floorplan-price">UF 9.361</span></div>
                                 <hr class="model-divider" style="margin: 0.5rem 0; border: 0; border-top: 1px solid var(--color-border);">
-                                <ul class="floorplan-specs">
+                                <ul class="floorplan-specs" id="floorplan-specs-list">
                                     <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg><span id="selected-floorplan-dorm">1 Dormitorio</span></li>
                                     <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" /></svg><span id="selected-floorplan-bano">2 Baños</span></li>
                                     <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" /></svg><span id="selected-floorplan-sup">45.2 m² Superficie</span></li>
                                 </ul>
                                 <button class="btn btn-secondary" id="floorplan-cotizar-btn" style="width: 100%; margin-top: 0.5rem;">Cotizar este modelo</button>
+                                <a href="assets/docs/Brochure_Camino_Villa.pdf" target="_blank" rel="noopener" class="btn-download-pdf">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14 2 14 8 20 8"/>
+                                        <line x1="16" y1="13" x2="8" y2="13"/>
+                                        <line x1="16" y1="17" x2="8" y2="17"/>
+                                        <polyline points="10 9 9 9 8 9"/>
+                                    </svg>
+                                    Ver Brochure PDF
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -648,7 +669,7 @@
                         <!-- Ejecutiva comercial humanizada -->
                         <div class="exec-profile" style="display:flex; align-items:center; gap:1rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-top:1rem;">
                             <div class="exec-photo" style="width:45px; height:45px; border-radius:50%; overflow:hidden;">
-                                <img src="assets/images/nosotros/ejecutiva-ventas.png" alt="Javiera Muñoz" style="width:100%; height:100%; object-fit:cover;">
+                                <img src="assets/images/nosotros/ejecutiva-ventas.webp" alt="Javiera Muñoz" style="width:100%; height:100%; object-fit:cover;">
                             </div>
                             <div class="exec-info">
                                 <h5 style="margin:0; font-size:0.9rem; font-weight:600;">Javiera Muñoz</h5>
@@ -702,14 +723,14 @@
                     <!-- Botones de Cómo Llegar -->
                     <div class="how-to-get-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
                         <a href="https://waze.com/ul?q=Av.+La+Dehesa+222,+Lo+Barnechea" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
-                            <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.png" alt="Waze" style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
+                            <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.webp" alt="Waze" style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
                             <div>
                                 <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #05B4E3; line-height: 1.1;">Waze</div>
                                 <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
                             </div>
                         </a>
                         <a href="https://www.google.com/maps/search/?api=1&query=Av.+La+Dehesa+222,+Lo+Barnechea" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
-                            <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.png" alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
+                            <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.webp" alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
                             <div>
                                 <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #EA4335; line-height: 1.1;">Google Maps</div>
                                 <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
@@ -747,37 +768,49 @@
             <div class="photo-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-1.jpg" alt="Foto Camino de la Villa 1" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-fachada-1.webp" alt="Fachada Camino de la Villa 1" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
 
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-2.jpg" alt="Foto Camino de la Villa 2" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-fachada-2.webp" alt="Fachada Camino de la Villa 2" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
 
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-3.jpg" alt="Foto Camino de la Villa 3" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-fachada-3.webp" alt="Fachada Camino de la Villa 3" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
 
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-4.jpg" alt="Foto Camino de la Villa 4" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-1.webp" alt="Foto Camino de la Villa 1" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
 
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-5.jpg" alt="Foto Camino de la Villa 5" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-2.webp" alt="Foto Camino de la Villa 2" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
 
                 <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
                     <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-6.jpg" alt="Foto Camino de la Villa 6" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-3.webp" alt="Foto Camino de la Villa 3" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                </div>
+
+                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-4.webp" alt="Foto Camino de la Villa 4" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                </div>
+
+                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-5.webp" alt="Foto Camino de la Villa 5" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
                     </div>
                 </div>
             </div>
@@ -809,136 +842,192 @@
             '1d2b': {
                 title: 'DEPTO 1D 2B',
                 price: '9.361',
+                orientacion: 'Surponiente',
                 dorm: '1 Dormitorio',
-                bano: '2 Baños',
-                sup: '45.2 m²',
-                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-1D2B.png'],
+                bano: '1 Baño',
+                supUtil: '63,9 m²',
+                supTerraza: '15,8 m²',
+                supJardin: '75,8 m²',
+                supTotal: '155,5 m²',
+                sup: '155,5 m²',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-1D2B.webp'],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.webp'
             },
             // Sub-tipologías de 2D + 2B
             'tipo-a': {
                 title: 'DEPTO 2D + 2B (TIPO A)',
                 price: '12.450',
+                orientacion: 'Norponiente',
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
-                sup: '68.4 m²',
-                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-A.png'],
+                supUtil: '78,5 m²',
+                supTerraza: '25,5 m²',
+                supJardin: '96,0 m²',
+                supTotal: '200,0 m²',
+                sup: '200,0 m²',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-A.webp'],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.webp'
             },
             'tipo-f': {
                 title: 'DEPTO 2D + 2B (TIPO F)',
                 price: '12.600',
+                orientacion: 'Norponiente',
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
-                sup: '69.1 m²',
-                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-F.png'],
+                supUtil: '118,0 m²',
+                supTerraza: '15,5 m²',
+                supTotal: '133,5 m²',
+                sup: '133,5 m²',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-F.webp'],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.webp'
             },
             'tipo-j': {
                 title: 'DEPTO 2D + 2B (TIPO J)',
                 price: '12.550',
+                orientacion: 'Norponiente',
                 dorm: '2 Dormitorios',
                 bano: '2 Baños',
-                sup: '68.8 m²',
+                supUtil: '118,0 m²',
+                supTerraza: '15,5 m²',
+                supMiradorTerraza: '68,3 m²',
+                supTotal: '201,8 m²',
+                sup: '201,8 m²',
                 images: [
-                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-J1.png',
-                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-J2.png'
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-J1.webp',
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-J2.webp'
                 ],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.webp'
             },
             'tipo-h': {
                 title: 'DEPTO 2D + 2B (TIPO H)',
                 price: '12.750',
+                orientacion: 'Surponiente',
                 dorm: '2 Dormitorios',
-                bano: '2 Baños',
-                sup: '70.2 m²',
-                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-H.png'],
+                bano: '3 Baños',
+                supUtil: '117,4 m²',
+                supTerraza: '22,2 m²',
+                supTotal: '139,6 m²',
+                sup: '139,6 m²',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-H.webp'],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.webp'
             },
             'tipo-l': {
                 title: 'DEPTO 2D + 2B (TIPO L)',
                 price: '12.500',
+                orientacion: 'Surponiente',
                 dorm: '2 Dormitorios',
-                bano: '2 Baños',
-                sup: '68.5 m²',
+                bano: '3 Baños',
+                supUtil: '117,4 m²',
+                supTerraza: '22,2 m²',
+                supMiradorTerraza: '55,0 m²',
+                supTotal: '194,6 m²',
+                sup: '194,6 m²',
                 images: [
-                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-L1.png',
-                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-L2.png'
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-L1.webp',
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-L2.webp'
                 ],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior-2.webp'
             },
             // Sub-tipologías de 3D + 3B
             'tipo-b': {
                 title: 'DEPTO 3D + 3B (TIPO B)',
                 price: '15.800',
+                orientacion: 'Nororiente',
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
-                sup: '92.1 m²',
-                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-B.png'],
+                supUtil: '138,7 m²',
+                supTerraza: '41,0 m²',
+                supJardin: '186,8 m²',
+                supTotal: '366,5 m²',
+                sup: '366,5 m²',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-B.webp'],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.webp'
             },
             'tipo-d': {
                 title: 'DEPTO 3D + 3B (TIPO D)',
                 price: '16.100',
+                orientacion: 'Suroriente',
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
-                sup: '93.5 m²',
-                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-D.png'],
+                supUtil: '108,0 m²',
+                supTerraza: '25,0 m²',
+                supJardin: '165,0 m²',
+                supTotal: '298,0 m²',
+                sup: '298,0 m²',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-D.webp'],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.webp'
             },
             'tipo-g': {
                 title: 'DEPTO 3D + 3B (TIPO G)',
                 price: '15.950',
+                orientacion: 'Nororiente',
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
-                sup: '92.8 m²',
-                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-G.png'],
+                supUtil: '137,0 m²',
+                supTerraza: '15,5 m²',
+                supTotal: '152,5 m²',
+                sup: '152,5 m²',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-G.webp'],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.webp'
             },
             'tipo-i': {
                 title: 'DEPTO 3D + 3B (TIPO I)',
                 price: '16.400',
+                orientacion: 'Suroriente',
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
-                sup: '94.2 m²',
-                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-I.png'],
+                supUtil: '134,5 m²',
+                supTerraza: '17,7 m²',
+                supTotal: '152,2 m²',
+                sup: '152,2 m²',
+                images: ['assets/images/proyectos/proyecto-camino-villa/planos/Plano-I.webp'],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.webp'
             },
             'tipo-k': {
                 title: 'DEPTO 3D + 3B (TIPO K)',
                 price: '15.850',
+                orientacion: 'Nororiente',
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
-                sup: '92.3 m²',
+                supUtil: '137,0 m²',
+                supTerraza: '15,5 m²',
+                supMiradorTerraza: '83,8 m²',
+                supTotal: '236,3 m²',
+                sup: '236,3 m²',
                 images: [
-                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-K1.png',
-                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-K2.png'
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-K1.webp',
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-K2.webp'
                 ],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.webp'
             },
             'tipo-m': {
                 title: 'DEPTO 3D + 3B (TIPO M)',
                 price: '16.250',
+                orientacion: 'Suroriente',
                 dorm: '3 Dormitorios',
                 bano: '3 Baños',
-                sup: '93.9 m²',
+                supUtil: '134,5 m²',
+                supTerraza: '17,7 m²',
+                supMiradorTerraza: '99,6 m²',
+                supTotal: '251,8 m²',
+                sup: '251,8 m²',
                 images: [
-                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-M1.png',
-                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-M2.png'
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-M1.webp',
+                    'assets/images/proyectos/proyecto-camino-villa/planos/Plano-M2.webp'
                 ],
                 tour: 'https://360.fazarquitectos.cl/share/collection/71zwN?logo=1&info=0&fs=1&vr=1&autorotate=0.38&autop=10&thumbs=1',
-                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.png'
+                renderInt: 'assets/images/proyectos/proyecto-camino-villa/render-interior.webp'
             }
         };
 
@@ -973,7 +1062,6 @@
 
         const selectedFloorplanImg = document.getElementById('selected-floorplan-img');
         const selectedFloorplanName = document.getElementById('selected-floorplan-name');
-        const selectedFloorplanPrice = document.getElementById('selected-floorplan-price');
         const selectedFloorplanDorm = document.getElementById('selected-floorplan-dorm');
         const selectedFloorplanBano = document.getElementById('selected-floorplan-bano');
         const selectedFloorplanSup = document.getElementById('selected-floorplan-sup');
@@ -982,9 +1070,6 @@
         const groupSubTipologia = document.getElementById('group-sub-tipologia');
         const selectSubTipologia = document.getElementById('select-sub-tipologia');
         const cotizadorPrice = document.getElementById('cotizador-price');
-
-        // Video URL constante
-        const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
 
         // Función para obtener la clave activa del modelo actual
         function getActiveModelKey() {
@@ -1002,29 +1087,40 @@
             return id;
         }
 
+        // Array de fotos de Fachada para Camino de la Villa
+        const caminoVillaFachada = [
+            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-fachada-1.webp",
+            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-fachada-2.webp",
+            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-fachada-3.webp"
+        ];
+        let currentFachadaIndex = 0;
+
         // Array de fotos reales para la Vista Interior en Camino de la Villa
         const caminoVillaFotos = [
-            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-1.jpg",
-            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-2.jpg",
-            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-3.jpg",
-            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-4.jpg",
-            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-5.jpg",
-            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-6.jpg"
+            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-1.webp",
+            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-2.webp",
+            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-3.webp",
+            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-4.webp",
+            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-5.webp"
         ];
         let currentFotoIndex = 0;
-
-        // Array de fotos/renders para Amenities en Camino Villa
-        const caminoVillaAmenities = [
-            "assets/images/proyectos/proyecto-camino-villa/render.png",
-            "assets/images/proyectos/proyecto-camino-villa/render-2.png",
-            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-2.jpg",
-            "assets/images/proyectos/proyecto-camino-villa/fotos/villa-5.jpg"
-        ];
-        let currentAmenitiesIndex = 0;
 
         const mediaCarouselPrev = document.getElementById('media-carousel-prev');
         const mediaCarouselNext = document.getElementById('media-carousel-next');
         const mediaCarouselCounter = document.getElementById('media-carousel-counter');
+        const videoUrl = "https://www.youtube.com/embed/PKUMEpyUUUI";
+
+        function updateFachadaCarousel() {
+            if (selectedMediaImg) {
+                selectedMediaImg.src = caminoVillaFachada[currentFachadaIndex];
+                selectedMediaImg.alt = "Fachada - Foto " + (currentFachadaIndex + 1);
+            }
+            if (mediaCarouselCounter) {
+                mediaCarouselCounter.textContent = (currentFachadaIndex + 1) + " / " + caminoVillaFachada.length;
+            }
+            window.currentProjectPhotos = caminoVillaFachada;
+            window.currentProjectIndex = currentFachadaIndex;
+        }
 
         function updateInteriorCarousel() {
             if (selectedMediaImg) {
@@ -1038,20 +1134,8 @@
             window.currentProjectIndex = currentFotoIndex;
         }
 
-        function updateAmenitiesCarousel() {
-            if (selectedMediaImg) {
-                selectedMediaImg.src = caminoVillaAmenities[currentAmenitiesIndex];
-                selectedMediaImg.alt = "Amenities - Foto/Render " + (currentAmenitiesIndex + 1);
-            }
-            if (mediaCarouselCounter) {
-                mediaCarouselCounter.textContent = (currentAmenitiesIndex + 1) + " / " + caminoVillaAmenities.length;
-            }
-            window.currentProjectPhotos = caminoVillaAmenities;
-            window.currentProjectIndex = currentAmenitiesIndex;
-        }
-
         // Inicializar array activo en window para el lightbox
-        window.currentProjectPhotos = caminoVillaFotos;
+        window.currentProjectPhotos = caminoVillaFachada;
         window.currentProjectIndex = 0;
 
         if (mediaCarouselPrev) {
@@ -1059,9 +1143,9 @@
                 e.stopPropagation();
                 const activeViewTab = document.querySelector('.media-tabs .media-tab-btn.active');
                 const view = activeViewTab ? activeViewTab.dataset.view : 'render-ext';
-                if (view === 'amenities') {
-                    currentAmenitiesIndex = (currentAmenitiesIndex - 1 + caminoVillaAmenities.length) % caminoVillaAmenities.length;
-                    updateAmenitiesCarousel();
+                if (view === 'render-ext') {
+                    currentFachadaIndex = (currentFachadaIndex - 1 + caminoVillaFachada.length) % caminoVillaFachada.length;
+                    updateFachadaCarousel();
                 } else {
                     currentFotoIndex = (currentFotoIndex - 1 + caminoVillaFotos.length) % caminoVillaFotos.length;
                     updateInteriorCarousel();
@@ -1074,9 +1158,9 @@
                 e.stopPropagation();
                 const activeViewTab = document.querySelector('.media-tabs .media-tab-btn.active');
                 const view = activeViewTab ? activeViewTab.dataset.view : 'render-ext';
-                if (view === 'amenities') {
-                    currentAmenitiesIndex = (currentAmenitiesIndex + 1) % caminoVillaAmenities.length;
-                    updateAmenitiesCarousel();
+                if (view === 'render-ext') {
+                    currentFachadaIndex = (currentFachadaIndex + 1) % caminoVillaFachada.length;
+                    updateFachadaCarousel();
                 } else {
                     currentFotoIndex = (currentFotoIndex + 1) % caminoVillaFotos.length;
                     updateInteriorCarousel();
@@ -1102,15 +1186,14 @@
 
             const openLightboxBtn = document.getElementById('open-lightbox-btn');
             if (view === 'render-ext') {
-                if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
-                if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
-                if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'none';
+                if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
+                if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
+                if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
                 if (openLightboxBtn) openLightboxBtn.style.display = 'inline-flex';
                 selectedMediaIframe.style.display = 'none';
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
-                selectedMediaImg.src = "assets/images/proyectos/proyecto-camino-villa/render.png";
-                selectedMediaImg.alt = "Fachada - " + mainModelTitle;
+                updateFachadaCarousel();
             } else if (view === 'render-int') {
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
@@ -1120,15 +1203,6 @@
                 selectedMediaIframe.src = '';
                 selectedMediaImg.style.display = 'block';
                 updateInteriorCarousel();
-            } else if (view === 'amenities') {
-                if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'flex';
-                if (mediaCarouselNext) mediaCarouselNext.style.display = 'flex';
-                if (mediaCarouselCounter) mediaCarouselCounter.style.display = 'block';
-                if (openLightboxBtn) openLightboxBtn.style.display = 'inline-flex';
-                selectedMediaIframe.style.display = 'none';
-                selectedMediaIframe.src = '';
-                selectedMediaImg.style.display = 'block';
-                updateAmenitiesCarousel();
             } else if (view === 'tour-360') {
                 if (mediaCarouselPrev) mediaCarouselPrev.style.display = 'none';
                 if (mediaCarouselNext) mediaCarouselNext.style.display = 'none';
@@ -1252,10 +1326,107 @@
             renderFloorplanImage(images);
 
             if (selectedFloorplanName) selectedFloorplanName.textContent = data.title;
-            if (selectedFloorplanPrice) selectedFloorplanPrice.textContent = data.price;
-            if (selectedFloorplanDorm) selectedFloorplanDorm.textContent = data.dorm;
-            if (selectedFloorplanBano) selectedFloorplanBano.textContent = data.bano;
-            if (selectedFloorplanSup) selectedFloorplanSup.textContent = `${data.sup} Superficie`;
+
+            const specsList = document.getElementById('floorplan-specs-list');
+            if (specsList) {
+                specsList.innerHTML = '';
+                
+                // Orientación
+                if (data.orientacion) {
+                    specsList.innerHTML += `
+                        <li>
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                <circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+                            </svg>
+                            <span>Orientación: <strong>${data.orientacion}</strong></span>
+                        </li>`;
+                }
+
+                // Dormitorios
+                if (data.dorm) {
+                    specsList.innerHTML += `
+                        <li>
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                <path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" />
+                            </svg>
+                            <span>${data.dorm}</span>
+                        </li>`;
+                }
+
+                // Baños
+                if (data.bano) {
+                    specsList.innerHTML += `
+                        <li>
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                <path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" />
+                            </svg>
+                            <span>${data.bano}</span>
+                        </li>`;
+                }
+
+                // Superficie útil
+                if (data.supUtil) {
+                    specsList.innerHTML += `
+                        <li>
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+                            </svg>
+                            <span>Sup. útil: <strong>${data.supUtil}</strong></span>
+                        </li>`;
+                }
+
+                // Superficie terraza
+                if (data.supTerraza) {
+                    specsList.innerHTML += `
+                        <li>
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                <path d="M4 10h16M4 14h16M4 18h16M8 10v10M16 10v10M3 6h18"/>
+                            </svg>
+                            <span>Sup. terraza: <strong>${data.supTerraza}</strong></span>
+                        </li>`;
+                }
+
+                // Superficie mirador terraza
+                if (data.supMiradorTerraza) {
+                    specsList.innerHTML += `
+                        <li>
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                <path d="M2 20h20M5 20V8l7-5 7 5v12M9 20v-6h6v6"/>
+                            </svg>
+                            <span>Mirador terraza: <strong>${data.supMiradorTerraza}</strong></span>
+                        </li>`;
+                }
+
+                // Superficie jardín
+                if (data.supJardin) {
+                    specsList.innerHTML += `
+                        <li>
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                <path d="M12 19v3M12 3a6 6 0 0 0-6 6c0 3.5 3.5 7 6 10 2.5-3 6-6.5 6-10a6 6 0 0 0-6-6z"/>
+                            </svg>
+                            <span>Sup. jardín: <strong>${data.supJardin}</strong></span>
+                        </li>`;
+                }
+
+                // Superficie total
+                if (data.supTotal) {
+                    specsList.innerHTML += `
+                        <li>
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                <path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/>
+                            </svg>
+                            <span>Sup. total: <strong>${data.supTotal}</strong></span>
+                        </li>`;
+                } else if (!data.supUtil && data.sup) {
+                    specsList.innerHTML += `
+                        <li>
+                            <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                <rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" />
+                            </svg>
+                            <span>${data.sup} Superficie</span>
+                        </li>`;
+                }
+            }
         }
 
         // Función para sincronizar y actualizar el Formulario de Cotización
@@ -1566,4 +1737,5 @@
 </body>
 
 </html>
+
 
