@@ -1,4 +1,4 @@
-﻿/**
+/**
  * JavaScript para Inmobiliaria Iandes
  * Funcionalidad interactiva y animaciones premium
  */
@@ -36,7 +36,7 @@ async function loadHeaderFooter() {
                     // Destacar enlace de página activa
                     const currentPath = window.location.pathname;
                     const pageName = currentPath.split('/').pop() || 'index.html';
-                    
+
                     let activeId = 'nav-index';
                     if (pageName.includes('proyecto-')) {
                         activeId = 'nav-proyectos';
@@ -132,7 +132,7 @@ function initMobileMenu() {
     // Control del dropdown desplegable (evitar navegación en la opción Proyectos)
     const dropdown = nav.querySelector('.dropdown');
     const dropdownTrigger = nav.querySelector('.dropdown-trigger');
-    
+
     if (dropdown && dropdownTrigger) {
         dropdownTrigger.addEventListener('click', (e) => {
             e.preventDefault(); // Evitar cualquier salto de página o navegación al hacer clic en Proyectos
@@ -241,9 +241,9 @@ function initFAQAccordion() {
             btn.addEventListener('click', () => {
                 categoryBtns.forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-                
+
                 const targetCategory = btn.dataset.category;
-                
+
                 faqGroupElements.forEach(group => {
                     if (targetCategory === 'todos' || group.id === targetCategory) {
                         group.style.display = 'block';
@@ -365,11 +365,11 @@ function initProjectMediaTabs() {
                     </p>
                     <button class="btn btn-secondary" style="border-color: #FFFFFF; color: #FFFFFF; font-size: 0.7rem;">Iniciar Tour Interactivo</button>
                 `;
-                
+
                 const img = document.createElement('img');
                 img.src = bgSrc;
                 img.alt = 'Vista 360';
-                
+
                 mediaViewer.appendChild(img);
                 mediaViewer.appendChild(overlay);
 
@@ -438,7 +438,7 @@ function initProjectTypologySelector() {
     const cards = explorer.querySelectorAll('.model-card');
     const prevBtn = explorer.querySelector('.prev-btn');
     const nextBtn = explorer.querySelector('.next-btn');
-    
+
     const detailImg = explorer.querySelector('#selected-model-img');
     const detailName = explorer.querySelector('#selected-model-name');
     const detailDorm = explorer.querySelector('#selected-model-dorm');
@@ -558,7 +558,7 @@ function initProjectTypologySelector() {
             // Sincronizar Galería Multimedia con el modelo activo
             const renderInt = card.dataset.renderInt;
             const tourUrl = card.dataset.tour;
-            
+
             const mediaBadge = document.getElementById('media-selected-model-badge');
             if (mediaBadge) {
                 let specsText = "";
@@ -577,10 +577,10 @@ function initProjectTypologySelector() {
                 mediaBadge.style.opacity = '0.5';
                 setTimeout(() => { mediaBadge.style.opacity = '1'; }, 150);
             }
-            
+
             const tabBtnInterior = document.getElementById('tab-btn-interior');
             const tabBtnTour = document.getElementById('tab-btn-tour');
-            
+
             if (tabBtnInterior && renderInt) {
                 tabBtnInterior.dataset.src = renderInt;
                 tabBtnInterior.dataset.title = `Vista Interior ${title}`;
@@ -614,7 +614,7 @@ function initProjectTypologySelector() {
                 setTimeout(() => {
                     cotizador.style.boxShadow = 'var(--shadow-premium)';
                 }, 1000);
-                
+
                 // Enfocar el primer input del formulario
                 const firstInput = cotizador.querySelector('input, select');
                 if (firstInput) {
@@ -657,7 +657,7 @@ function initProjectTypologySelector() {
             const targetCard = Array.from(cards).find(c => c.dataset.id === val);
             if (targetCard) {
                 targetCard.click();
-                
+
                 // Centrar la tarjeta en el carrusel si no es completamente visible
                 const wrapper = track.parentElement;
                 const cardLeft = targetCard.offsetLeft;
@@ -666,7 +666,7 @@ function initProjectTypologySelector() {
                 const visibleRight = visibleLeft + wrapper.clientWidth;
 
                 if (cardLeft < visibleLeft || cardRight > visibleRight) {
-                    currentTranslateX = -Math.min(track.scrollWidth - wrapper.clientWidth, Math.max(0, cardLeft - (wrapper.clientWidth - cardWidth)/2));
+                    currentTranslateX = -Math.min(track.scrollWidth - wrapper.clientWidth, Math.max(0, cardLeft - (wrapper.clientWidth - cardWidth) / 2));
                     track.style.transform = `translateX(${currentTranslateX}px)`;
                     updateCarouselNav();
                 }
@@ -736,10 +736,10 @@ function initInvestorCalculator() {
         // Convertir tasa anual nominal a tasa mensual efectiva
         const tasaMensual = (tasa / 100) / 12;
         const numPagos = plazo * 12;
-        
+
         let dividendoUF = 0;
         if (tasaMensual > 0 && numPagos > 0) {
-            dividendoUF = montoCredito * ( (tasaMensual * Math.pow(1 + tasaMensual, numPagos)) / (Math.pow(1 + tasaMensual, numPagos) - 1) );
+            dividendoUF = montoCredito * ((tasaMensual * Math.pow(1 + tasaMensual, numPagos)) / (Math.pow(1 + tasaMensual, numPagos) - 1));
         } else if (numPagos > 0) {
             dividendoUF = montoCredito / numPagos;
         }
@@ -750,7 +750,7 @@ function initInvestorCalculator() {
         // Ingreso Neto Anual Estimado (considerando 1 mes de vacancia al año)
         const ingresosAnuales = arriendoUF * 11;
         const gastosAnuales = (dividendoUF * 12) + (valorProp * 0.003); // Contribuciones y mantenciones aprox
-        
+
         // Cap Rate (Capitalization Rate) = Ingreso Operativo Neto Anual / Valor Propiedad
         const netOperatingIncome = arriendoUF * 12 - (valorProp * 0.005); // Menos gastos de mantención sutiles
         const capRate = (netOperatingIncome / valorProp) * 100;
@@ -793,11 +793,11 @@ function initProjectFilters() {
     const searchTipo = document.getElementById('search-tipo');
     const searchEstado = document.getElementById('search-estado');
     const searchPrecio = document.getElementById('search-precio');
-    
+
     const tabBtns = document.querySelectorAll('.tab-filter-btn');
     const projectCards = document.querySelectorAll('.project-showcase-card, .project-card');
     const projectsGrid = document.querySelector('.projects-showcase-list, .projects-grid');
-    
+
     if (projectCards.length === 0) return;
 
     // Crear mensaje de "sin resultados" si no existe
@@ -818,13 +818,13 @@ function initProjectFilters() {
             <button class="btn btn-secondary" style="margin-top:1.5rem; font-size:0.75rem; padding:0.6rem 1.2rem;" id="btn-reset-filters">Ver todos los proyectos</button>
         `;
         projectsGrid.appendChild(noResultsMsg);
-        
+
         document.getElementById('btn-reset-filters').addEventListener('click', () => {
             if (searchComuna) searchComuna.value = 'todos';
             if (searchTipo) searchTipo.value = 'todos';
             if (searchEstado) searchEstado.value = 'todos';
             if (searchPrecio) searchPrecio.value = 'todos';
-            
+
             tabBtns.forEach(btn => {
                 if (btn.dataset.filter === 'todos') {
                     btn.classList.add('active');
@@ -832,7 +832,7 @@ function initProjectFilters() {
                     btn.classList.remove('active');
                 }
             });
-            
+
             filterProjects('todos', 'todos', 'todos', 'todos');
         });
     }
@@ -840,7 +840,7 @@ function initProjectFilters() {
     // Función principal de filtrado
     const filterProjects = (comuna, tipo, estado, precio) => {
         let visibleCount = 0;
-        
+
         projectCards.forEach(card => {
             const cardComuna = card.dataset.comuna;
             const cardTipo = card.dataset.tipo;
@@ -881,7 +881,7 @@ function initProjectFilters() {
     if (btnBuscar) {
         btnBuscar.addEventListener('click', () => {
             triggerFilter();
-            
+
             // Desplazar suavemente hasta los proyectos
             if (projectsGrid) {
                 projectsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -901,7 +901,7 @@ function initProjectFilters() {
         btn.addEventListener('click', () => {
             tabBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            
+
             const filterState = btn.dataset.filter;
             if (searchComuna) searchComuna.value = 'todos';
             if (searchTipo) searchTipo.value = 'todos';
@@ -916,7 +916,7 @@ function initProjectFilters() {
 /**
  * 9. Interceptor de Alertas del Navegador (Toast Premium)
  */
-window.alert = function(message) {
+window.alert = function (message) {
     showPremiumToast(message);
 };
 
@@ -1096,7 +1096,7 @@ function initCardCarousels() {
    ========================================================================== */
 function openGalleryLightbox(imagesList, startIndex = 0) {
     if (!imagesList || imagesList.length === 0) return;
-    
+
     let lightbox = document.getElementById('model-lightbox');
     if (!lightbox) {
         lightbox = document.createElement('div');
@@ -1113,15 +1113,15 @@ function openGalleryLightbox(imagesList, startIndex = 0) {
         `;
         document.body.appendChild(lightbox);
     }
-    
+
     const lightboxImg = lightbox.querySelector('#lightbox-img');
     const lightboxClose = lightbox.querySelector('.lightbox-close');
     const prevBtn = lightbox.querySelector('#lightbox-prev');
     const nextBtn = lightbox.querySelector('#lightbox-next');
     const counter = lightbox.querySelector('#lightbox-counter');
-    
+
     let currentIndex = startIndex;
-    
+
     function updateSlide() {
         if (lightboxImg) lightboxImg.src = imagesList[currentIndex];
         if (counter) {
@@ -1140,15 +1140,15 @@ function openGalleryLightbox(imagesList, startIndex = 0) {
             if (nextBtn) nextBtn.style.display = 'none';
         }
     }
-    
+
     updateSlide();
     lightbox.classList.add('active');
-    
+
     function closeLightbox() {
         lightbox.classList.remove('active');
         document.removeEventListener('keydown', handleKeyDown);
     }
-    
+
     function handleKeyDown(e) {
         if (!lightbox.classList.contains('active')) return;
         if (e.key === 'Escape') {
@@ -1161,16 +1161,16 @@ function openGalleryLightbox(imagesList, startIndex = 0) {
             updateSlide();
         }
     }
-    
+
     document.addEventListener('keydown', handleKeyDown);
-    
+
     if (lightboxClose) {
         lightboxClose.onclick = closeLightbox;
     }
     lightbox.onclick = (e) => {
         if (e.target === lightbox) closeLightbox();
     };
-    
+
     if (prevBtn) {
         prevBtn.onclick = (e) => {
             e.stopPropagation();
@@ -1178,7 +1178,7 @@ function openGalleryLightbox(imagesList, startIndex = 0) {
             updateSlide();
         };
     }
-    
+
     if (nextBtn) {
         nextBtn.onclick = (e) => {
             e.stopPropagation();
@@ -1265,6 +1265,161 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+/* ==========================================================================
+   MODAL DE AGENDAR REUNIÓN Y CALUGAS FLOTANTES
+   ========================================================================== */
+function openMeetingModal(projectName) {
+    let modal = document.getElementById('meeting-modal');
+    if (!modal) {
+        // Crear modal dinámicamente si no existe aún en el DOM
+        const div = document.createElement('div');
+        div.id = 'meeting-modal';
+        div.className = 'meeting-modal-overlay';
+        div.innerHTML = `
+            <div class="meeting-modal-content">
+                <div class="meeting-modal-header">
+                    <h3>Agendar Reunión con Asesor</h3>
+                    <button class="meeting-modal-close" onclick="closeMeetingModal()">&times;</button>
+                </div>
+                <div class="meeting-modal-body">
+                    <p style="font-size:0.9rem; color:var(--color-text-muted,#64748B); margin-bottom:1.25rem;">
+                        Selecciona el día, la modalidad y el horario que mejor se adapte a ti para coordinar una atención personalizada sobre <strong>${projectName || 'este proyecto'}</strong>.
+                    </p>
+                    <form id="form-agendar-reunion" onsubmit="handleMeetingSubmit(event)">
+                        <div class="form-group" style="margin-bottom:1rem;">
+                            <label style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.3rem;">Modalidad</label>
+                            <select id="meeting-type" required style="width:100%; padding:0.6rem; border:1px solid var(--color-border,#CBD5E1); border-radius:4px;">
+                                <option value="presencial">Presencial en Sala de Ventas</option>
+                                <option value="online">Online por Google Meet / Zoom</option>
+                            </select>
+                        </div>
+                        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+                            <div class="form-group" style="margin:0;">
+                                <label style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.3rem;">Fecha</label>
+                                <input type="date" id="meeting-date" required style="width:100%; padding:0.6rem; border:1px solid var(--color-border,#CBD5E1); border-radius:4px;">
+                            </div>
+                            <div class="form-group" style="margin:0;">
+                                <label style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.3rem;">Horario Preferido</label>
+                                <select id="meeting-time" required style="width:100%; padding:0.6rem; border:1px solid var(--color-border,#CBD5E1); border-radius:4px;">
+                                    <option value="10:30">10:30 hrs</option>
+                                    <option value="12:00">12:00 hrs</option>
+                                    <option value="15:30">15:30 hrs</option>
+                                    <option value="17:00">17:00 hrs</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-bottom:1rem;">
+                            <label style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.3rem;">Tu Nombre Completo</label>
+                            <input type="text" id="meeting-name" placeholder="Ej: Marcela Soto" required style="width:100%; padding:0.6rem; border:1px solid var(--color-border,#CBD5E1); border-radius:4px;">
+                        </div>
+                        <div class="form-group" style="margin-bottom:1.5rem;">
+                            <label style="display:block; font-size:0.75rem; font-weight:700; text-transform:uppercase; margin-bottom:0.3rem;">Teléfono / WhatsApp</label>
+                            <input type="tel" id="meeting-phone" placeholder="+56 9 1234 5678" required style="width:100%; padding:0.6rem; border:1px solid var(--color-border,#CBD5E1); border-radius:4px;">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%; padding:0.85rem; font-weight:700; font-size:0.95rem; background:var(--color-primary,#0F172A); color:#FFF; border:none; border-radius:6px; cursor:pointer;">
+                            Confirmar Agendamiento
+                        </button>
+                    </form>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(div);
+        modal = div;
+
+        // Establecer fecha mínima como hoy
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('meeting-date').min = today;
+        document.getElementById('meeting-date').value = today;
+    }
+    modal.classList.add('active');
+}
+
+function closeMeetingModal() {
+    const modal = document.getElementById('meeting-modal');
+    if (modal) modal.classList.remove('active');
+}
+
+function handleMeetingSubmit(e) {
+    e.preventDefault();
+    const type = document.getElementById('meeting-type').value;
+    const date = document.getElementById('meeting-date').value;
+    const time = document.getElementById('meeting-time').value;
+    const name = document.getElementById('meeting-name').value;
+
+    const modalBody = document.querySelector('#meeting-modal .meeting-modal-body');
+    if (modalBody) {
+        modalBody.innerHTML = `
+            <div style="text-align:center; padding:1.5rem 0;">
+                <div style="width:60px; height:60px; background:#10B981; color:#FFF; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem auto;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3 style="font-size:1.4rem; color:var(--color-primary,#0F172A); margin-bottom:0.5rem;">¡Reunión Agendada con Éxito!</h3>
+                <p style="font-size:0.95rem; color:var(--color-text-main,#334155); line-height:1.5; margin-bottom:1.5rem;">
+                    Gracias <strong>${name}</strong>. Hemos registrado tu reunión <strong>${type === 'presencial' ? 'Presencial' : 'Online'}</strong> para el <strong>${date}</strong> a las <strong>${time} hrs</strong>. Te enviaremos la confirmación a tu teléfono.
+                </p>
+                <button onclick="closeMeetingModal()" class="btn btn-secondary" style="padding:0.7rem 1.5rem; font-weight:600; cursor:pointer;">Cerrar</button>
+            </div>
+        `;
+    }
+}
+
+function openCotizadorIframeModal(url) {
+    let modal = document.getElementById('cotizador-iframe-modal');
+    if (!modal) {
+        const div = document.createElement('div');
+        div.id = 'cotizador-iframe-modal';
+        div.className = 'meeting-modal-overlay';
+        div.innerHTML = `
+            <div class="cotizador-iframe-modal-content" style="background:#fff; width:95%; max-width:960px; height:88vh; border-radius:12px; position:relative; overflow:hidden; display:flex; flex-direction:column; box-shadow:0 25px 50px -12px rgba(0,0,0,0.35);">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:1rem 1.5rem; background:#0F172A; color:#FFF;">
+                    <h3 style="margin:0; font-size:1.1rem; color:#FFF; font-family:sans-serif;">Cotizador en Línea</h3>
+                    <button onclick="closeCotizadorIframeModal()" style="background:none; border:none; color:#FFF; font-size:1.8rem; cursor:pointer; line-height:1;" aria-label="Cerrar">&times;</button>
+                </div>
+                <iframe id="cotizador-iframe-element" src="" style="width:100%; height:100%; border:none;" title="Cotizador en Línea"></iframe>
+            </div>
+        `;
+        document.body.appendChild(div);
+        modal = div;
+    }
+    const iframe = document.getElementById('cotizador-iframe-element');
+    if (iframe && url) iframe.src = url;
+    modal.classList.add('active');
+}
+
+function closeCotizadorIframeModal() {
+    const modal = document.getElementById('cotizador-iframe-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        const iframe = document.getElementById('cotizador-iframe-element');
+        if (iframe) iframe.src = '';
+    }
+}
+
+// Handler de scroll suave para las calugas flotantes
+document.addEventListener('click', (e) => {
+    const calugaCotizar = e.target.closest('.caluga-cotizar');
+    if (calugaCotizar) {
+        e.preventDefault();
+        const cotizador = document.getElementById('cotizador');
+        if (cotizador) {
+            cotizador.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            cotizador.style.transition = 'outline 0.3s ease';
+            cotizador.style.outline = '3px solid var(--color-secondary, #FFD100)';
+            setTimeout(() => { cotizador.style.outline = 'none'; }, 2000);
+        }
+    }
+
+    const calugaPlantas = e.target.closest('.caluga-plantas');
+    if (calugaPlantas) {
+        e.preventDefault();
+        const plantas = document.getElementById('planos') || document.querySelector('.floorplan-container');
+        if (plantas) {
+            plantas.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+});
+
 
 
 

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -49,7 +49,7 @@
     <section class="section">
         <div class="container">
             
-            <div class="project-details-grid" style="align-items: start;">
+            <div class="project-details-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start;">
                 
                 <!-- Columna Izquierda: Formulario de Contacto -->
                 <div class="reveal" style="background-color: var(--color-bg-card); border: 1px solid var(--color-border); padding: 3rem; box-shadow: var(--shadow-premium);">
@@ -76,15 +76,16 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="ct-proyecto">Proyecto de Interés</label>
+                            <label for="ct-proyecto">Proyecto o Tema de Consulta</label>
                             <select id="ct-proyecto" required>
                                 <option value="">Selecciona una opción</option>
                                 <option value="andes-macul">Andes Macul (Macul)</option>
                                 <option value="andes-nunoa">Andes Ñuñoa (Ñuñoa)</option>
                                 <option value="camino-villa">Camino de la Villa (Lo Barnechea)</option>
                                 <option value="altos-santa-cruz">Altos de Santa Cruz (Santa Cruz)</option>
-                                <option value="work-plaza">Work Plaza Oficinas (Lo Barnechea)</option>
-                                <option value="general">Consulta General / Proveedores</option>
+                                <option value="work-plaza">Work Plaza Egaña (Ñuñoa)</option>
+                                <option value="postventa">Requerimiento de Postventa</option>
+                                <option value="general">Consulta General</option>
                             </select>
                         </div>
 
@@ -101,17 +102,9 @@
                 <div>
                     <!-- Oficinas -->
                     <div class="reveal" style="margin-bottom: 2.5rem;">
-                        <h3 style="font-size: 1.6rem; margin-bottom: 1.5rem;">Nuestras Oficinas</h3>
+                        <h3 style="font-size: 1.6rem; margin-bottom: 1.5rem;">Salas de Ventas y Atención</h3>
                         
                         <div style="display: flex; flex-direction: column; gap: 1.5rem; font-size: 0.9rem;">
-                            <div>
-                                <h4 style="font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; color: var(--color-primary);">Oficina Central Corporativa</h4>
-                                <p style="color: var(--color-text-muted); margin-top: 0.2rem;">
-                                    Av. Apoquindo 4500, Oficina 901, Las Condes, Santiago.
-                                    <br>Lunes a Viernes de 09:00 a 18:00 hrs.
-                                </p>
-                            </div>
-                            
                             <div>
                                 <h4 style="font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; color: var(--color-primary);">Sala de Ventas Ñuñoa</h4>
                                 <p style="color: var(--color-text-muted); margin-top: 0.2rem;">
@@ -131,7 +124,7 @@
                             <div>
                                 <h4 style="font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; color: var(--color-primary);">Oficina de Atención Postventa</h4>
                                 <p style="color: var(--color-text-muted); margin-top: 0.2rem;">
-                                    Av. del Cóndor 600, 8580676 Huechuraba, Región Metropolitana.
+                                    Av. del Cóndor 600, Huechuraba, Región Metropolitana.
                                     <br>Lunes a Viernes de 09:00 a 18:00 hrs.
                                 </p>
                             </div>
@@ -142,12 +135,12 @@
                     <div class="reveal" style="background-color: var(--color-primary); color: var(--color-bg-card); padding: 2.5rem;">
                         <h4 style="color: var(--color-bg-card); font-size: 1.3rem; margin-bottom: 1rem;">Atención Telefónica Directa</h4>
                         <p style="color: rgba(255,255,255,0.7); font-size: 0.85rem; margin-bottom: 1.5rem;">
-                            ¿Prefieres una llamada directa? Comunícate con nuestra central telefónica o escríbenos directamente a nuestro buzón comercial.
+                            ¿Prefieres una llamada o WhatsApp directo? Comunícate con nuestro equipo comercial o escríbenos a nuestro correo oficial.
                         </p>
-                        <span style="font-size: 1.2rem; font-family: var(--font-serif); color: var(--color-accent); display: flex; align-items: center; margin-bottom: 0.5rem;">
+                        <a href="tel:+56979984756" style="font-size: 1.2rem; font-family: var(--font-serif); color: var(--color-accent); display: flex; align-items: center; margin-bottom: 0.5rem; text-decoration: none;">
                             <svg class="inline-icon" style="width: 1.2rem; height: 1.2rem; margin-right: 0.6rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                            +56 2 2840 9000
-                        </span>
+                            +56 9 7998 4756
+                        </a>
                         <span style="font-size: 0.9rem; font-weight: 400; color: rgba(255,255,255,0.8); display: flex; align-items: center;">
                             <svg class="inline-icon" style="width: 1rem; height: 1rem; margin-right: 0.6rem;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                             contacto@iandes.cl
@@ -171,20 +164,20 @@
                     <span class="section-subtitle">Ubicación Estratégica</span>
                     <h2 style="font-size: 2.2rem; font-family: var(--font-serif); color: var(--color-primary); margin-top: 0.3rem;">Encuéntranos en Google Maps</h2>
                     <p style="color: var(--color-text-muted); font-size: 0.9rem; margin-top: 0.3rem;">
-                        Oficina Central Corporativa: Av. Apoquindo 4500, Oficina 901, Las Condes, Santiago.
+                        Sala de Ventas Ñuñoa: Av. Irarrázaval 1400, Ñuñoa, Santiago.
                     </p>
                 </div>
 
                 <!-- Botones "Cómo Llegar" estilo Tarjeta de Proyectos -->
                 <div class="how-to-get-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://waze.com/ul?q=Av.+Apoquindo+4500,+Las+Condes,+Santiago" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                    <a href="https://waze.com/ul?q=Av.+Irarrazaval+1400,+Nunoa,+Santiago" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
                         <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.webp" alt="Waze" style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
                         <div>
                             <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #05B4E3; line-height: 1.1;">Waze</div>
                             <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
                         </div>
                     </a>
-                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Apoquindo+4500,+Las+Condes,+Santiago" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Av.+Irarrazaval+1400,+Nunoa,+Santiago" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
                         <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.webp" alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
                         <div>
                             <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #EA4335; line-height: 1.1;">Google Maps</div>
@@ -197,7 +190,7 @@
             <!-- Contenedor del Mapa en Gran Formato -->
             <div class="reveal" style="border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; height: 480px; box-shadow: var(--shadow-premium); position: relative;">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.133290647313!2d-70.5847321!3d-33.4145781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf025fa8ab13%3A0x6a0a8dcbf89c5658!2sAv.%20Apoquindo%204500%2C%20Las%20Condes%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.345680123!2d-70.6123456!3d-33.456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c57123456789%3A0x123456789abcdef!2sAv.%20Irarr%C3%A1zaval%201400%2C%20%C3%91u%C3%B1oa%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl" 
                     width="100%" 
                     height="100%" 
                     style="border:0;" 
@@ -217,7 +210,7 @@
         <!-- Fallback de pie de página para SEO/Accesibilidad -->
         <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
             <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
-                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados. <span style="opacity:0.3; margin:0 0.5rem;">|</span> <a href="https://boosted.cl" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:var(--color-text-muted); font-weight:500;">Designed by boosted.cl</a></div>
                 <div style="display:flex; gap:1.5rem;">
                     <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">Términos y Condiciones</a>
                     <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">Política de Privacidad</a>

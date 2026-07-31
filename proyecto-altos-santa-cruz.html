@@ -1,13 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Altos de Santa Cruz | Inmobiliaria Iandes</title>
-    <meta name="description" content="Casas en Santa Cruz pensadas para disfrutar la tranquilidad del Valle de Colchagua. Un proyecto residencial que combina un entorno natural privileged, diseño funcional y espacios para construir una vida familiar con mayor bienestar y proyección.">
+    <meta name="description"
+        content="Casas en Santa Cruz pensadas para disfrutar la tranquilidad del Valle de Colchagua. Un proyecto residencial que combina un entorno natural privileged, diseño funcional y espacios para construir una vida familiar con mayor bienestar y proyección.">
     <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
     <style>
         /* Estilos de la sección Sala de Ventas */
         .sales-room-grid {
@@ -22,472 +24,801 @@
                 grid-template-columns: 1fr;
                 gap: 2.5rem;
             }
+
             .santa-cruz-desc-grid {
                 grid-template-columns: 1fr !important;
             }
         }
-        
+
         .how-to-get-buttons a {
             box-shadow: var(--shadow-small);
         }
-        
+
         .how-to-get-buttons a:hover {
             border-color: var(--color-accent) !important;
             transform: translateY(-2px);
         }
     </style>
 </head>
+
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
     <header>
 
         <!-- Fallback de navegación para SEO/Accesibilidad -->
-        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
-            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.webp" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.webp" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+        <div class="container nav-container"
+            style="display:flex; justify-content:space-between; align-items:center; height:100%;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img
+                    src="assets/images/logos/logo-white.webp" alt="IANDES Inmobiliaria" class="logo-white"
+                    style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img
+                    src="assets/images/logos/logo.webp" alt="IANDES Inmobiliaria" class="logo-dark"
+                    style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
             <nav style="display:block;">
-                <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
-                    <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
-                    <li><a href="nosotros.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a></li>
-                    <li><a href="inversionistas.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a></li>
-                    <li><a href="postventa.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a></li>
-                    <li><a href="blog.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
-                    <li><a href="contacto.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a></li>
+                <ul
+                    style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
+                    <li><a href="index.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
+                    <li><a href="nosotros.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a>
+                    </li>
+                    <li><a href="inversionistas.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a>
+                    </li>
+                    <li><a href="postventa.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a>
+                    </li>
+                    <li><a href="blog.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
+                    <li><a href="contacto.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a>
+                    </li>
                 </ul>
             </nav>
         </div>
-</header>
+    </header>
     <main>
 
-    <!-- INNER HERO (CABECERA DE PROYECTO) -->
-    <section class="inner-hero project-hero">
-        <div class="inner-hero-bg">
-            <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp" alt="Altos de Santa Cruz">
-        </div>
-        <div class="container" style="position: relative; z-index: 5; margin-top: auto; margin-bottom: auto;">
-            <div class="inner-hero-content">
-                <div class="inner-hero-breadcrumbs">
-                    <a href="index.html">Inicio</a> &nbsp;/&nbsp; <a href="index.html#proyectos">Proyectos</a> &nbsp;/&nbsp; Altos de Santa Cruz
-                </div>
-                <h1 class="inner-hero-title">Altos de Santa Cruz</h1>
-                <p style="color: var(--color-secondary); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem; font-weight: 500;">
-                    Adriano Díaz 911, Santa Cruz, Región de O'Higgins
-                </p>
+        <!-- INNER HERO (CABECERA DE PROYECTO) -->
+        <section class="inner-hero project-hero">
+            <div class="inner-hero-bg">
+                <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp"
+                    alt="Altos de Santa Cruz">
             </div>
-        </div>
+            <div class="container" style="position: relative; z-index: 5; margin-top: auto; margin-bottom: auto;">
+                <div class="inner-hero-content">
+                    <div class="inner-hero-breadcrumbs">
+                        <a href="index.html">Inicio</a> &nbsp;/&nbsp; <a href="index.html#proyectos">Proyectos</a>
+                        &nbsp;/&nbsp; Altos de Santa Cruz
+                    </div>
+                    <h1 class="inner-hero-title">Altos de Santa Cruz</h1>
+                    <p
+                        style="color: var(--color-secondary); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem; font-weight: 500;">
+                        Adriano Díaz 911, Santa Cruz, Región de O'Higgins
+                    </p>
+                </div>
+            </div>
 
-        <!-- BARRA PRINCIPAL DE PUNTOS CLAVE DEL PROYECTO -->
-        <div class="hero-project-bar">
+            <!-- BARRA PRINCIPAL DE PUNTOS CLAVE DEL PROYECTO -->
+            <div class="hero-project-bar">
+                <div class="container">
+                    <div class="hero-project-bar-card">
+                        <div class="hero-project-bar-grid">
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">COMUNA</span>
+                                    <span class="hero-bar-value">SANTA CRUZ</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <polyline points="9 22 9 12 15 12 15 22" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">TIPO DE PROYECTO</span>
+                                    <span class="hero-bar-value">CASA</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 4v16" />
+                                    <path d="M2 8h18a2 2 0 0 1 2 2v10" />
+                                    <path d="M2 17h20" />
+                                    <path d="M6 8v9" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">DORMITORIOS</span>
+                                    <span class="hero-bar-value">3 DORMITORIOS</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="3" y1="9" x2="21" y2="9" />
+                                    <line x1="9" y1="21" x2="9" y2="9" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">SUPERFICIE</span>
+                                    <span class="hero-bar-value">DESDE 66.6 M²</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                                    <line x1="7" y1="7" x2="7.01" y2="7" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">PRECIO EN UF</span>
+                                    <span class="hero-bar-value highlight" id="hero-price-display">DESDE UF 2.994</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 22h14" />
+                                    <path d="M5 2h14" />
+                                    <path
+                                        d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
+                                    <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">FECHA ENTREGA</span>
+                                    <span class="hero-bar-value">ENTREGA INMEDIATA</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FICHA DETALLADA DE PROYECTO -->
+        <section class="section">
             <div class="container">
-                <div class="hero-project-bar-card">
-                    <div class="hero-project-bar-grid">
-                        
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <div>
-                                <span class="hero-bar-label">COMUNA</span>
-                                <span class="hero-bar-value">SANTA CRUZ</span>
+                <div class="project-details-grid">
+
+                    <!-- Columna Izquierda: Información e interactivos -->
+                    <div>
+
+                        <!-- Módulo Multimedia Integrado -->
+                        <div class="media-gallery-module reveal">
+                            <div class="media-viewer-container">
+                                <div class="media-viewer"
+                                    style="position: relative; padding-top: 56.25%; overflow: hidden; border: 1px solid var(--color-border); background-color: var(--color-primary);">
+                                    <img id="selected-media-img"
+                                        src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp"
+                                        alt="Vista Interior Altos de Santa Cruz"
+                                        style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: none;">
+                                    <iframe id="selected-media-iframe" src=""
+                                        style="position: absolute; top:0; left:0; width:100%; height:100%; border:none; display:none;"
+                                        allowfullscreen></iframe>
+
+                                    <!-- Botones del carrusel para Vista Interior -->
+                                    <button id="media-carousel-prev" aria-label="Anterior"
+                                        style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&lsaquo;</button>
+                                    <button id="media-carousel-next" aria-label="Siguiente"
+                                        style="position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&rsaquo;</button>
+                                    <div id="media-carousel-counter"
+                                        style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 10; background: rgba(0,0,0,0.65); color: #fff; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(4px);">
+                                        1 / 6</div>
+
+                                    <!-- Botón Ver en Grande / Pantalla Completa -->
+                                    <button id="open-lightbox-btn" class="open-lightbox-btn"
+                                        title="Ver imágenes en grande"
+                                        style="position: absolute; bottom: 1rem; right: 1rem; z-index: 12; background-color: #0F172A; color: #FFFFFF; border: none; padding: 0.5rem 0.95rem; border-radius: 4px; cursor: pointer; font-size: 0.78rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 14px rgba(0,0,0,0.4); transition: all 0.2s ease;">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="15 3 21 3 21 9" />
+                                            <polyline points="9 21 3 21 3 15" />
+                                            <line x1="21" y1="3" x2="14" y2="10" />
+                                            <line x1="3" y1="21" x2="10" y2="14" />
+                                        </svg>
+                                        <span>Ver en grande</span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                            <div>
-                                <span class="hero-bar-label">TIPO DE PROYECTO</span>
-                                <span class="hero-bar-value">CASA</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
-                            <div>
-                                <span class="hero-bar-label">DORMITORIOS</span>
-                                <span class="hero-bar-value">3 DORMITORIOS</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                            <div>
-                                <span class="hero-bar-label">SUPERFICIE</span>
-                                <span class="hero-bar-value">DESDE 66.6 M²</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-                            <div>
-                                <span class="hero-bar-label">PRECIO EN UF</span>
-                                <span class="hero-bar-value highlight">DESDE UF 2.994</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>
-                            <div>
-                                <span class="hero-bar-label">FECHA ENTREGA</span>
-                                <span class="hero-bar-value">ENTREGA INMEDIATA</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FICHA DETALLADA DE PROYECTO -->
-    <section class="section">
-        <div class="container">
-            <div class="project-details-grid">
-                
-                <!-- Columna Izquierda: Información e interactivos -->
-                <div>
-                    
-                    <!-- Módulo Multimedia Integrado -->
-                    <div class="media-gallery-module reveal">
-                        <div class="media-viewer-container">
-                            <div class="media-viewer" style="position: relative; padding-top: 56.25%; overflow: hidden; border: 1px solid var(--color-border); background-color: var(--color-primary);">
-                                <img id="selected-media-img" src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp" alt="Vista Interior Altos de Santa Cruz" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: saturate(0.5) brightness(0.9);">
-                                <iframe id="selected-media-iframe" src="" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none; display:none;" allowfullscreen></iframe>
-                                
-                                <!-- Botones del carrusel para Vista Interior -->
-                                <button id="media-carousel-prev" aria-label="Anterior" style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&lsaquo;</button>
-                                <button id="media-carousel-next" aria-label="Siguiente" style="position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&rsaquo;</button>
-                                <div id="media-carousel-counter" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 10; background: rgba(0,0,0,0.65); color: #fff; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(4px);">1 / 6</div>
-                                
-                                <!-- Botón Ver en Grande / Pantalla Completa -->
-                                <button id="open-lightbox-btn" class="open-lightbox-btn" title="Ver imágenes en grande" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 12; background-color: #0F172A; color: #FFFFFF; border: none; padding: 0.5rem 0.95rem; border-radius: 4px; cursor: pointer; font-size: 0.78rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 14px rgba(0,0,0,0.4); transition: all 0.2s ease;">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-                                    <span>Ver en grande</span>
+                            <div class="media-tabs">
+                                <button class="media-tab-btn" data-view="render-ext" id="tab-btn-exterior">
+                                    <span class="media-tab-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6" />
+                                        </svg>
+                                    </span>
+                                    <span class="media-tab-label">Fachada</span>
+                                </button>
+                                <button class="media-tab-btn active" data-view="render-int" id="tab-btn-interior">
+                                    <span class="media-tab-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                            <circle cx="12" cy="13" r="4" />
+                                        </svg>
+                                    </span>
+                                    <span class="media-tab-label">Interior</span>
+                                </button>
+                                <button class="media-tab-btn" data-view="tour-360" id="tab-btn-tour">
+                                    <span class="media-tab-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20" />
+                                        </svg>
+                                    </span>
+                                    <span class="media-tab-label">Recorrido 360°</span>
+                                </button>
+                                <button class="media-tab-btn" data-view="video" id="tab-btn-video">
+                                    <span class="media-tab-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polygon points="5 3 19 12 5 21 5 3" />
+                                        </svg>
+                                    </span>
+                                    <span class="media-tab-label">Video Entorno</span>
                                 </button>
                             </div>
                         </div>
-                        
-                        <div class="media-tabs">
-                            <button class="media-tab-btn" data-view="render-ext" id="tab-btn-exterior">
-                                <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16M9 9h6M9 13h6M9 17h6"/></svg>
-                                </span>
-                                <span class="media-tab-label">Fachada</span>
-                            </button>
-                            <button class="media-tab-btn active" data-view="render-int" id="tab-btn-interior">
-                                <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-                                </span>
-                                <span class="media-tab-label">Interior</span>
-                            </button>
-                            <button class="media-tab-btn" data-view="tour-360" id="tab-btn-tour">
-                                <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20M2 12h20"/></svg>
-                                </span>
-                                <span class="media-tab-label">Recorrido 360°</span>
-                            </button>
-                            <button class="media-tab-btn" data-view="video" id="tab-btn-video">
-                                <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                                </span>
-                                <span class="media-tab-label">Video Entorno</span>
-                            </button>
+
+                        <!-- Descripción General -->
+                        <div class="reveal" style="margin-bottom: 3.5rem;">
+                            <h2
+                                style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--color-primary); font-family: var(--font-serif);">
+                                El amanecer de tu vida en Santa Cruz</h2>
+
+                            <p
+                                style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem;">
+                                Casas en Santa Cruz pensadas para disfrutar la tranquilidad del Valle de Colchagua. Un
+                                proyecto residencial que combina un entorno natural privilegiado, diseño funcional y
+                                espacios para construir una vida familiar con mayor bienestar y proyección.
+                            </p>
+
+                            <p
+                                style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                                El proyecto ofrece una vivienda cómoda, en un barrio residencial consolidado, con buena
+                                conexión a los servicios de la comuna y a su entorno urbano.
+                            </p>
+
+                            <h3
+                                style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; margin-top: 2rem; color: var(--color-primary); font-family: var(--font-sans);">
+                                Casas diseñadas para la vida familiar</h3>
+
+                            <p
+                                style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem;">
+                                En su primera etapa, Altos de Santa Cruz contempla un total de 84 casas aisladas, de 3
+                                dormitorios y 2 baños, con una distribución eficiente y espacios pensados para el uso
+                                diario. El proyecto considera además 2.258,55 m2 de áreas verdes, aportando espacios que
+                                fomenten la vida de barrio y el bienestar de sus residentes.
+                            </p>
+
+                            <p
+                                style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem;">
+                                Altos de Santa Cruz ofrece una alternativa habitacional sólida, en un entorno con
+                                identidad local, buena calidad de vida y un diseño orientado a la funcionalidad y
+                                durabilidad del hogar.
+                            </p>
+
+                            <!-- Grilla de Atributos Destacados -->
+                            <div
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.8rem 1.5rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
+                                <!-- 1. Dormitorios -->
+                                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                    <img src="assets/images/icons/icon-habitaciones.svg" alt="Dormitorios"
+                                        style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">3
+                                        dormitorios</span>
+                                </div>
+                                <!-- 2. Baños -->
+                                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                    <img src="assets/images/icons/icon-baños.svg" alt="Baños"
+                                        style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">2
+                                        baños</span>
+                                </div>
+                                <!-- 3. Superficie -->
+                                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                    <img src="assets/images/icons/icon-metros2.svg" alt="Superficie"
+                                        style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                    <span
+                                        style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">Sup.
+                                        construida: 66,61 m²</span>
+                                </div>
+                                <!-- 4. Estacionamiento -->
+                                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                    <img src="assets/images/icons/icon-estacionamiento.svg" alt="Estacionamiento"
+                                        style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                    <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">1
+                                        estacionamiento</span>
+                                </div>
+                                <!-- 5. Termopanel -->
+                                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                    <img src="assets/images/icons/icon-termopanel-dark.svg" alt="Termopanel"
+                                        style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                    <span
+                                        style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">ventanas
+                                        termopanel en dormitorios</span>
+                                </div>
+                                <!-- 6. Piso cerámico -->
+                                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                                    <img src="assets/images/icons/icon-ceramica.svg" alt="Piso Cerámico"
+                                        style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
+                                    <span
+                                        style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">piso
+                                        cerámico</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Módulo de Tipologías Interactivas (Planos y Modelos) -->
+                        <div class="floorplan-container reveal">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Planos y Modelos</h3>
+
+                            <div class="floorplan-nav-tabs">
+                                <button class="floorplan-nav-tab active" data-id="3d2b">CASA 3D + 2B</button>
+                                <button class="floorplan-nav-tab" data-id="masterplan">MASTERPLAN</button>
+                            </div>
+
+                            <div class="floorplan-viewer-grid">
+                                <div class="floorplan-img-box" id="floorplan-img-container">
+                                    <div class="floorplan-level-tabs" id="floorplan-level-tabs" style="display: none;">
+                                    </div>
+
+                                    <button class="floorplan-carousel-btn floorplan-carousel-prev"
+                                        id="floorplan-carousel-prev" aria-label="Plano anterior" style="display: none;">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M15 18l-6-6 6-6" />
+                                        </svg>
+                                    </button>
+
+                                    <img id="selected-floorplan-img"
+                                        src="assets/images/proyectos/proyecto-altos-santa-cruz/planos/plano-1.webp"
+                                        alt="Plano Seleccionado">
+
+                                    <button class="floorplan-carousel-btn floorplan-carousel-next"
+                                        id="floorplan-carousel-next" aria-label="Siguiente plano"
+                                        style="display: none;">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M9 18l6-6-6-6" />
+                                        </svg>
+                                    </button>
+
+                                    <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano"
+                                        style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="floorplan-details-box">
+                                    <h4 id="selected-floorplan-name"
+                                        style="font-size: 1.5rem; color:var(--color-primary); font-weight:600;">Casa 3D
+                                        + 2B</h4>
+                                    <hr class="model-divider"
+                                        style="margin: 0.5rem 0; border: 0; border-top: 1px solid var(--color-border);">
+                                    <ul class="floorplan-specs">
+                                        <li><svg class="icon-svg" viewBox="0 0 24 24"
+                                                style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                                <path
+                                                    d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" />
+                                            </svg><span id="selected-floorplan-dorm">3 Dormitorios</span></li>
+                                        <li><svg class="icon-svg" viewBox="0 0 24 24"
+                                                style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                                <path
+                                                    d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" />
+                                            </svg><span id="selected-floorplan-bano">2 Baños</span></li>
+                                        <li><svg class="icon-svg" viewBox="0 0 24 24"
+                                                style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                                <path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" />
+                                            </svg><span id="selected-floorplan-sup">66.61 m² Superficie</span></li>
+                                    </ul>
+                                    <button class="btn btn-secondary caluga-cotizar" id="floorplan-cotizar-btn"
+                                        style="width: 100%; margin-top: 0.5rem;">Cotizar este modelo</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Descripción General -->
-                    <div class="reveal" style="margin-bottom: 3.5rem;">
-                        <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem; color: var(--color-primary); font-family: var(--font-serif);">El amanecer de tu vida en Santa Cruz</h2>
-                        
-                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem;">
-                            Casas en Santa Cruz pensadas para disfrutar la tranquilidad del Valle de Colchagua. Un proyecto residencial que combina un entorno natural privilegiado, diseño funcional y espacios para construir una vida familiar con mayor bienestar y proyección.
-                        </p>
-                        
-                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
-                            El proyecto ofrece una vivienda cómoda, en un barrio residencial consolidado, con buena conexión a los servicios de la comuna y a su entorno urbano.
-                        </p>
-                        
-                        <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; margin-top: 2rem; color: var(--color-primary); font-family: var(--font-sans);">Casas diseñadas para la vida familiar</h3>
-                        
-                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1rem;">
-                            En su primera etapa, Altos de Santa Cruz contempla un total de 84 casas aisladas, de 3 dormitorios y 2 baños, con una distribución eficiente y espacios pensados para el uso diario. El proyecto considera además 2.258,55 m2 de áreas verdes, aportando espacios que fomenten la vida de barrio y el bienestar de sus residentes.
-                        </p>
-                        
-                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2.5rem;">
-                            Altos de Santa Cruz ofrece una alternativa habitacional sólida, en un entorno con identidad local, buena calidad de vida y un diseño orientado a la funcionalidad y durabilidad del hogar.
-                        </p>
-                        
-                        <!-- Grilla de Atributos Destacados -->
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.8rem 1.5rem; padding-top: 2rem; border-top: 1px solid var(--color-border);">
-                            <!-- 1. Dormitorios -->
-                            <div style="display: flex; align-items: center; gap: 0.8rem;">
-                                <img src="assets/images/icons/icon-habitaciones.svg" alt="Dormitorios" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
-                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">3 dormitorios</span>
-                            </div>
-                            <!-- 2. Baños -->
-                            <div style="display: flex; align-items: center; gap: 0.8rem;">
-                                <img src="assets/images/icons/icon-baños.svg" alt="Baños" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
-                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">2 baños</span>
-                            </div>
-                            <!-- 3. Superficie -->
-                            <div style="display: flex; align-items: center; gap: 0.8rem;">
-                                <img src="assets/images/icons/icon-metros2.svg" alt="Superficie" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
-                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">Sup. construida: 66,61 m²</span>
-                            </div>
-                            <!-- 4. Estacionamiento -->
-                            <div style="display: flex; align-items: center; gap: 0.8rem;">
-                                <img src="assets/images/icons/icon-estacionamiento.svg" alt="Estacionamiento" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
-                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">1 estacionamiento</span>
-                            </div>
-                            <!-- 5. Termopanel -->
-                            <div style="display: flex; align-items: center; gap: 0.8rem;">
-                                <img src="assets/images/icons/icon-termopanel-dark.svg" alt="Termopanel" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
-                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">ventanas termopanel en dormitorios</span>
-                            </div>
-                            <!-- 6. Piso cerámico -->
-                            <div style="display: flex; align-items: center; gap: 0.8rem;">
-                                <img src="assets/images/icons/icon-ceramica.svg" alt="Piso Cerámico" style="width: 32px; height: 32px; object-fit: contain; flex-shrink: 0;">
-                                <span style="font-size: 0.9rem; font-weight: 600; color: var(--color-text-main);">piso cerámico</span>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Módulo de Tipologías Interactivas (Planos y Modelos) -->
-                    <div class="floorplan-container reveal">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Planos y Modelos</h3>
-                        
-                        <div class="floorplan-nav-tabs">
-                            <button class="floorplan-nav-tab active" data-id="3d2b">CASA 3D + 2B</button>
-                        </div>
-                        
-                        <div class="floorplan-viewer-grid">
-                            <div class="floorplan-img-box" id="floorplan-img-container">
-                                <div class="floorplan-level-tabs" id="floorplan-level-tabs" style="display: none;"></div>
-                                
-                                <button class="floorplan-carousel-btn floorplan-carousel-prev" id="floorplan-carousel-prev" aria-label="Plano anterior" style="display: none;">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 18l-6-6 6-6" />
+        <!-- SECCIÓN FULL-WIDTH FRAME DE COTIZACIÓN Y CONTACTO -->
+        <section id="cotizador" class="section cotizador-fullwidth-frame">
+            <div class="container">
+                <div class="cotizador-frame-card reveal">
+                    <div class="cotizador-frame-grid">
+
+                        <!-- Columna Izquierda: Cotizador Digital Interactivo -->
+                        <div class="cotizador-frame-left"
+                            style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+                            <div>
+                                <div style="margin-bottom: 1.25rem;">
+                                    <img src="assets/images/logos/logo.webp" alt="Inmobiliaria Iandes"
+                                        style="height: 52px; width: auto; object-fit: contain;">
+                                </div>
+                                <h2
+                                    style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 0.6rem; font-family: var(--font-serif); line-height: 1.2;">
+                                    Cotiza tu Propiedad en Línea</h2>
+                                <p
+                                    style="color: var(--color-text-muted); font-size: 0.98rem; margin-bottom: 2rem; line-height: 1.6;">
+                                    Obtén una cotización formal y personalizada para el proyecto Altos de Santa Cruz de
+                                    forma rápida, sencilla y sin compromiso.</p>
+
+                                <div class="cotizador-price-block"
+                                    style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-border);">
+                                    <span id="cotizador-price" class="price"
+                                        style="font-size: 2.4rem; color: var(--color-primary); font-weight: 700; display: block; margin-bottom: 0.2rem;">Desde
+                                        UF 2.994</span>
+                                    <div class="renta-sugerida-badge" id="cotizador-renta-badge">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                                            <polyline points="17 6 23 6 23 12" />
+                                        </svg>
+                                        <span>Renta Sugerida: <strong id="cotizador-renta-val">$320.000</strong> /
+                                            mes</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Botón CTA Ejecutivo y Garantías -->
+                            <div>
+                                <button type="button" class="btn-open-cotizador-modal"
+                                    onclick="openCotizadorIframeModal('https://cotizador.saladeventasdigital.com/cotizador/index.php?id_subagrupaciones=1&key=iandes&portal=&open_dialog=true')"
+                                    style="padding: 1.15rem 2rem; font-size: 1rem;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                        <polyline points="14 2 14 8 20 8" />
+                                        <line x1="16" y1="13" x2="8" y2="13" />
+                                        <line x1="16" y1="17" x2="8" y2="17" />
+                                    </svg>
+                                    <span>Enviar Cotización</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                                        style="margin-left: auto;">
+                                        <line x1="5" y1="12" x2="19" y2="12" />
+                                        <polyline points="12 5 19 12 12 19" />
                                     </svg>
                                 </button>
-                                
-                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-altos-santa-cruz/planos/plano-1.webp" alt="Plano Seleccionado">
-                                
-                                <button class="floorplan-carousel-btn floorplan-carousel-next" id="floorplan-carousel-next" aria-label="Siguiente plano" style="display: none;">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M9 18l6-6-6-6" />
-                                    </svg>
-                                </button>
 
-                                <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                                <div
+                                    style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; font-size: 0.8rem; color: var(--color-text-muted);">
+                                    <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981"
+                                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12" />
+                                        </svg>
+                                        Cotización formal gratuita
+                                    </span>
+                                    <span style="display: inline-flex; align-items: center; gap: 0.4rem;">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981"
+                                            stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="20 6 9 17 4 12" />
+                                        </svg>
+                                        Asesoría personalizada
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Columna Derecha: Contacto Ampliado y Ejecutivo -->
+                        <div class="cotizador-frame-right">
+                            <div>
+                                <div class="exec-profile-large">
+                                    <div class="exec-photo-wrapper">
+                                        <img src="assets/images/nosotros/ejecutiva-ventas.webp" alt="Rodrigo Valdés">
+                                        <span class="exec-online-badge" title="Disponible ahora"></span>
+                                    </div>
+                                    <div class="exec-info-large">
+                                        <h4>Rodrigo Valdés</h4>
+                                        <p>Asesor de Ventas • Altos de Santa Cruz</p>
+                                    </div>
+                                </div>
+
+                                <div class="exec-contact-actions">
+                                    <a href="https://wa.me/56912345678?text=Hola%20Rodrigo,%20me%20gustar%C3%ADa%20recibir%20cotizaci%C3%B3n%20y%20m%C3%A1s%20informaci%C3%B3n%20del%20proyecto%20Altos%20de%20Santa%20Cruz."
+                                        target="_blank" class="btn-contact-whatsapp">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                        </svg>
+                                        <span>Contactar por WhatsApp</span>
+                                    </a>
+                                    <button type="button" class="btn-agendar-reunion"
+                                        onclick="openMeetingModal('Altos de Santa Cruz')">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                            <line x1="16" y1="2" x2="16" y2="6" />
+                                            <line x1="8" y1="2" x2="8" y2="6" />
+                                            <line x1="3" y1="10" x2="21" y2="10" />
+                                        </svg>
+                                        <span>Agendar Reunión</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="contact-info-list-large">
+                                <div class="contact-info-item-large">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
                                     </svg>
-                                </button>
+                                    <div>
+                                        <strong>Horario de Atención Sala de Ventas</strong>
+                                        <div>Lun a Vie: 10:00 a 18:00 hrs</div>
+                                        <div>Sábados: 10:00 a 14:00 hrs</div>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item-large">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                    <div>
+                                        <strong>Correo Electrónico</strong>
+                                        <a href="mailto:ventas@iandes.cl"
+                                            style="color:var(--color-secondary,#FFD100); text-decoration:none;">ventas@iandes.cl</a>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item-large">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                    <div>
+                                        <strong>Teléfono Directo</strong>
+                                        <a href="tel:+56212345678" style="color:#FFFFFF; text-decoration:none;">+56 2
+                                            1234 5678</a>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="floorplan-details-box">
-                                <h4 id="selected-floorplan-name" style="font-size: 1.5rem; color:var(--color-primary); font-weight:600;">Casa 3D + 2B</h4>
-                                <hr class="model-divider" style="margin: 0.5rem 0; border: 0; border-top: 1px solid var(--color-border);">
-                                <ul class="floorplan-specs">
-                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg><span id="selected-floorplan-dorm">3 Dormitorios</span></li>
-                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" /></svg><span id="selected-floorplan-bano">2 Baños</span></li>
-                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" /></svg><span id="selected-floorplan-sup">66.61 m² Superficie</span></li>
-                                </ul>
-                                <button class="btn btn-secondary" id="floorplan-cotizar-btn" style="width: 100%; margin-top: 0.5rem;">Cotizar este modelo</button>
-                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+        </section>
+
+        <!-- GALERÍA DE FOTOS DEL PROYECTO -->
+        <section class="section"
+            style="border-top: 1px solid var(--color-border); padding: 4.5rem 0; background-color: #FFFFFF;">
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+                    <span class="section-subtitle">Imágenes del Proyecto</span>
+                    <h2
+                        style="font-size: 2.2rem; font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 0.8rem;">
+                        Galería Fotográfica</h2>
+                </div>
+
+                <div class="photo-gallery-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/foto-fachada-altos.webp"
+                                alt="Fachada Altos de Santa Cruz"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp"
+                                alt="Foto Altos de Santa Cruz 1"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-2.webp"
+                                alt="Foto Altos de Santa Cruz 2"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-3.webp"
+                                alt="Foto Altos de Santa Cruz 3"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-4.webp"
+                                alt="Foto Altos de Santa Cruz 4"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-5.webp"
+                                alt="Foto Altos de Santa Cruz 5"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-6.webp"
+                                alt="Foto Altos de Santa Cruz 6"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <!-- Columna Derecha (Sidebar Cotizador) -->
-                <div>
-                    <div id="cotizador" class="sidebar-cotizador reveal">
-                        <h3>Cotizar Proyecto</h3>
-                        <span id="cotizador-price" class="price">Desde UF 2.994</span>
-                        
-                        <form action="#" method="POST" id="form-cotizar">
-                            <div class="form-group">
-                                <label for="select-tipologia">Tipología de Interés</label>
-                                <select id="select-tipologia" required>
-                                    <option value="2d1b" data-price="2.994">Modelo S1 (Modelo Único) - UF 2.994</option>
-                                    <option value="2d2b" data-price="2.800">Modelo S2 (2D + 2B) - UF 2.800</option>
-                                    <option value="3d2b" data-price="3.250">Modelo S3 (3D + 2B) - UF 3.250</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="input-nombre">Nombre Completo</label>
-                                <input type="text" id="input-nombre" required placeholder="Ej: Juan Pérez">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-email">Correo Electrónico</label>
-                                <input type="email" id="input-email" required placeholder="nombre@correo.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-telefono">Teléfono</label>
-                                <input type="tel" id="input-telefono" required placeholder="+56 9 1234 5678">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-mensaje">Mensaje (Opcional)</label>
-                                <textarea id="input-mensaje" rows="3" placeholder="Hola, me gustaría recibir más información de este proyecto..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enviar Solicitud</button>
-                        </form>
+        <!-- SECCIÓN SALA DE VENTAS -->
+        <section class="section sales-room-section"
+            style="border-top: 1px solid var(--color-border); background-color: var(--color-bg-light); padding: 5rem 0;">
+            <div class="container">
+                <div class="sales-room-grid">
+                    <!-- Columna Izquierda: Información -->
+                    <div class="reveal">
+                        <h2
+                            style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 1.5rem; font-family: var(--font-serif);">
+                            Sala de ventas</h2>
+                        <p
+                            style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                            Te esperamos en nuestra sala de ventas ubicada en <strong>Adriano Díaz 911</strong>, Santa
+                            Cruz, O'Higgins.
+                        </p>
 
-                        <!-- Ejecutiva comercial humanizada -->
-                        <div class="exec-profile">
-                            <div class="exec-photo">
-                                <img src="assets/images/nosotros/ejecutiva-ventas.webp" alt="Rodrigo Valdés">
-                            </div>
-                            <div class="exec-info">
-                                <h5>Rodrigo Valdés</h5>
-                                <p>Asesor de Ventas - Altos de Santa Cruz</p>
-                            </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4
+                                style="font-size: 1rem; color: var(--color-primary); font-family: var(--font-sans); font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                                Horarios de atención:</h4>
+                            <p
+                                style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                                <strong>Lunes a sábado:</strong> 10:00 a 18:30 hrs.
+                            </p>
                         </div>
-                        <a href="https://wa.me/56912345678?text=Hola%20Rodrigo,%20me%20interesa%20cotizar%20un%20departamento%20en%20Altos%20de%20Santa%20Cruz." target="_blank" class="exec-whatsapp-btn">
-                            Contactar por WhatsApp
-                        </a>
-                    </div>
-                </div>
 
-            </div>
-        </div>
-    </section>
+                        <div style="margin-bottom: 2rem;">
+                            <p
+                                style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                                <strong>Teléfono de contacto:</strong> +56 2 1234 5678
+                            </p>
+                            <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                <strong>WhatsApp:</strong> +56 9 8164 5225
+                            </p>
+                        </div>
 
-    <!-- GALERÍA DE FOTOS DEL PROYECTO -->
-    <section class="section" style="border-top: 1px solid var(--color-border); padding: 4.5rem 0; background-color: #FFFFFF;">
-        <div class="container">
-            <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-                <span class="section-subtitle">Imágenes del Proyecto</span>
-                <h2 style="font-size: 2.2rem; font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 0.8rem;">Galería Fotográfica</h2>
-            </div>
-            
-            <div class="photo-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/foto-fachada-altos.webp" alt="Fachada Altos de Santa Cruz" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp" alt="Foto Altos de Santa Cruz 1" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-2.webp" alt="Foto Altos de Santa Cruz 2" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-3.webp" alt="Foto Altos de Santa Cruz 3" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-4.webp" alt="Foto Altos de Santa Cruz 4" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-5.webp" alt="Foto Altos de Santa Cruz 5" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-6.webp" alt="Foto Altos de Santa Cruz 6" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN SALA DE VENTAS -->
-    <section class="section sales-room-section" style="border-top: 1px solid var(--color-border); background-color: var(--color-bg-light); padding: 5rem 0;">
-        <div class="container">
-            <div class="sales-room-grid">
-                <!-- Columna Izquierda: Información -->
-                <div class="reveal">
-                    <h2 style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 1.5rem; font-family: var(--font-serif);">Sala de ventas</h2>
-                    <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
-                        Te esperamos en nuestra sala de ventas ubicada en <strong>Adriano Díaz 911</strong>, Santa Cruz, O'Higgins.
-                    </p>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 1rem; color: var(--color-primary); font-family: var(--font-sans); font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Horarios de atención:</h4>
-                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
-                            <strong>Lunes a sábado:</strong> 10:00 a 18:30 hrs.
+                        <p
+                            style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem;">
+                            Nuestro equipo estará encantado de atenderte y acompañarte en cada paso de tu decisión.
                         </p>
+
+                        <!-- Botones de Cómo Llegar -->
+                        <div class="how-to-get-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://waze.com/ul?q=Adriano+Diaz+911,+Santa+Cruz" target="_blank"
+                                style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.webp" alt="Waze"
+                                    style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
+                                <div>
+                                    <div
+                                        style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #05B4E3; line-height: 1.1;">
+                                        Waze</div>
+                                    <div
+                                        style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">
+                                        ¿Cómo llegar?</div>
+                                </div>
+                            </a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Adriano+Diaz+911,+Santa+Cruz"
+                                target="_blank"
+                                style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.webp"
+                                    alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
+                                <div>
+                                    <div
+                                        style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #EA4335; line-height: 1.1;">
+                                        Google Maps</div>
+                                    <div
+                                        style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">
+                                        ¿Cómo llegar?</div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
-                            <strong>Teléfono de contacto:</strong> +56 2 1234 5678
-                        </p>
-                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            <strong>WhatsApp:</strong> +56 9 8164 5225
-                        </p>
-                    </div>
-                    
-                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem;">
-                        Nuestro equipo estará encantado de atenderte y acompañarte en cada paso de tu decisión.
-                    </p>
-                    
-                    <!-- Botones de Cómo Llegar -->
-                    <div class="how-to-get-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="https://waze.com/ul?q=Adriano+Diaz+911,+Santa+Cruz" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
-                            <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.webp" alt="Waze" style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
-                            <div>
-                                <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #05B4E3; line-height: 1.1;">Waze</div>
-                                <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
-                            </div>
-                        </a>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Adriano+Diaz+911,+Santa+Cruz" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
-                            <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.webp" alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
-                            <div>
-                                <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #EA4335; line-height: 1.1;">Google Maps</div>
-                                <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Columna Derecha: Mapa -->
-                <div class="reveal">
-                    <div style="border: 1px solid var(--color-border); height: 480px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium); border-radius: 8px;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=Adriano%20Diaz%20911,%20Santa%20Cruz&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+
+                    <!-- Columna Derecha: Mapa -->
+                    <div class="reveal">
+                        <div
+                            style="border: 1px solid var(--color-border); height: 480px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium); border-radius: 8px;">
+                            <iframe
+                                src="https://maps.google.com/maps?q=Adriano%20Diaz%20911,%20Santa%20Cruz&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PIE DE PAGINA (FOOTER) -->
+        <!-- PIE DE PAGINA (FOOTER) -->
     </main>
 
     <footer>
 
         <!-- Fallback de pie de página para SEO/Accesibilidad -->
-        <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
+        <div class="container"
+            style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
             <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
-                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados. <span style="opacity:0.3; margin:0 0.5rem;">|</span> <a href="https://boosted.cl" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:var(--color-text-muted); font-weight:500;">Designed by boosted.cl</a></div>
                 <div style="display:flex; gap:1.5rem;">
-                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">Términos y Condiciones</a>
-                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">Política de Privacidad</a>
+                    <a href="terminos-condiciones.html"
+                        style="text-decoration:none; color:var(--color-text-muted);">Términos y Condiciones</a>
+                    <a href="politica-privacidad.html"
+                        style="text-decoration:none; color:var(--color-text-muted);">Política de Privacidad</a>
                 </div>
             </div>
         </div>
-</footer>
+    </footer>
 
     <!-- Scripts de Funcionalidad -->
     <script src="assets/js/main.js"></script>
@@ -633,10 +964,19 @@
                 bano: '2 Baños',
                 sup: '66.61 m²',
                 images: [
-                    'assets/images/proyectos/proyecto-altos-santa-cruz/planos/plano-1.webp',
-                    'assets/images/proyectos/proyecto-altos-santa-cruz/planos/Masterplan.webp'
+                    'assets/images/proyectos/proyecto-altos-santa-cruz/planos/plano-1.webp'
                 ],
                 tour: 'https://kuula.co/share/hrksC/collection/7H6nQ?logo=0&info=0&logosize=0&fs=1&vr=1&initload=0&autop=120&thumbs=0&inst=es'
+            },
+            'masterplan': {
+                title: 'Masterplan del Proyecto',
+                price: '2.994',
+                dorm: '84 Casas Aisladas',
+                bano: '2.258 m² Áreas Verdes',
+                sup: 'Emplazamiento General',
+                images: [
+                    'assets/images/proyectos/proyecto-altos-santa-cruz/planos/Masterplan.webp'
+                ]
             }
         };
 
@@ -675,7 +1015,7 @@
             if (images.length > 1) {
                 if (floorplanCarouselPrev) floorplanCarouselPrev.style.display = 'flex';
                 if (floorplanCarouselNext) floorplanCarouselNext.style.display = 'flex';
-                
+
                 if (floorplanLevelTabs) {
                     floorplanLevelTabs.innerHTML = '';
                     images.forEach((imgSrc, idx) => {
@@ -758,7 +1098,19 @@
             if (selectedFloorplanDorm) selectedFloorplanDorm.textContent = data.dorm;
             if (selectedFloorplanBano) selectedFloorplanBano.textContent = data.bano;
             if (selectedFloorplanSup) selectedFloorplanSup.textContent = `${data.sup} Superficie`;
-            if (cotizadorPrice) cotizadorPrice.textContent = `Desde UF ${data.price}`;
+            if (cotizadorPrice) {
+                cotizadorPrice.textContent = `Desde UF ${data.price}`;
+                const cotizadorRentaVal = document.getElementById('cotizador-renta-val');
+                let rentaVal = '$320.000';
+                if (data.price >= '3.200' || data.price.startsWith('3.2')) {
+                    rentaVal = '$420.000';
+                } else if (data.price >= '2.800' || data.price.startsWith('2.8')) {
+                    rentaVal = '$370.000';
+                }
+                if (cotizadorRentaVal) cotizadorRentaVal.textContent = rentaVal;
+                const heroPriceDisplay = document.getElementById('hero-price-display');
+                if (heroPriceDisplay) heroPriceDisplay.textContent = `DESDE UF ${data.price}`;
+            }
             if (selectTipologia) selectTipologia.value = key;
         }
 
@@ -784,10 +1136,7 @@
 
         if (floorplanCotizarBtn) {
             floorplanCotizarBtn.addEventListener('click', () => {
-                const cotizadorSection = document.getElementById('cotizador');
-                if (cotizadorSection) {
-                    cotizadorSection.scrollIntoView({ behavior: 'smooth' });
-                }
+                openCotizadorIframeModal('https://cotizador.saladeventasdigital.com/cotizador/index.php?id_subagrupaciones=1&key=iandes&portal=&open_dialog=true');
             });
         }
 
@@ -807,7 +1156,7 @@
                 const activeKey = getActiveModelKey();
                 const data = modelData[activeKey];
                 const images = data ? (data.images || (data.img ? [data.img] : [])) : [];
-                
+
                 let lightbox = document.getElementById('model-lightbox');
                 if (!lightbox) {
                     lightbox = document.createElement('div');
@@ -827,7 +1176,7 @@
                         </button>
                     `;
                     document.body.appendChild(lightbox);
-                    
+
                     lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
                         lightbox.classList.remove('active');
                     });
@@ -895,7 +1244,7 @@
                 if (images.length > 0) {
                     lightboxImg.src = images[currentFloorplanImageIndex];
                     updateLightboxTabs(lightbox, images);
-                    
+
                     if (images.length > 1) {
                         lightboxPrev.style.display = 'flex';
                         lightboxNext.style.display = 'flex';
@@ -925,8 +1274,28 @@
             });
         }
     </script>
+
+    <!-- CALUGAS FLOTANTES LATERALES -->
+    <div class="floating-actions-bar">
+        <button class="floating-caluga caluga-cotizar" aria-label="Cotizar Proyecto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+            <span>Cotizar Proyecto</span>
+        </button>
+        <button class="floating-caluga caluga-plantas" aria-label="Revisar Plantas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span>Revisar Plantas</span>
+        </button>
+    </div>
 </body>
+
 </html>
-
-
-

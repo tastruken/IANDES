@@ -1,13 +1,18 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Andes Macul | Inmobiliaria Iandes</title>
-    <meta name="description" content="Departamentos de 1 y 2 dormitorios en un consolidado barrio residencial de Macul. Disfruta una ubicación estratégica con excelente conectividad, cercano a la futura Línea 8 de Metro, comercio y servicios.">
+    <meta name="description"
+        content="Departamentos de 1 y 2 dormitorios en un consolidado barrio residencial de Macul. Disfruta una ubicación estratégica con excelente conectividad, cercano a la futura Línea 8 de Metro, comercio y servicios.">
     <!-- Hojas de Estilo -->
     <link rel="stylesheet" href="assets/css/style.css">
-    
+    <!-- Script y CSS Mobysuite Web Contact -->
+    <link rel="stylesheet" href="https://cdn.mobysuite.com/customerweb-widget/css/app.css">
+    <script src="https://cdn.mobysuite.com/customerweb-widget/js/app.js" defer></script>
+
     <style>
         /* Estilos de la sección Sala de Ventas */
         .sales-room-grid {
@@ -23,16 +28,16 @@
                 gap: 2.5rem;
             }
         }
-        
+
         .how-to-get-buttons a {
             box-shadow: var(--shadow-small);
         }
-        
+
         .how-to-get-buttons a:hover {
             border-color: var(--color-accent) !important;
             transform: translateY(-2px);
         }
-        
+
         .btn-download-pdf {
             display: flex;
             align-items: center;
@@ -51,6 +56,7 @@
             transition: var(--transition-fast);
             box-shadow: var(--shadow-small);
         }
+
         .btn-download-pdf:hover {
             background-color: var(--color-primary) !important;
             color: #FFFFFF !important;
@@ -162,505 +168,801 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- CABECERA PRINCIPAL (NAVBAR) -->
     <header>
 
         <!-- Fallback de navegación para SEO/Accesibilidad -->
-        <div class="container nav-container" style="display:flex; justify-content:space-between; align-items:center; height:100%;">
-            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img src="assets/images/logos/logo-white.webp" alt="IANDES Inmobiliaria" class="logo-white" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img src="assets/images/logos/logo.webp" alt="IANDES Inmobiliaria" class="logo-dark" style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+        <div class="container nav-container"
+            style="display:flex; justify-content:space-between; align-items:center; height:100%;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img
+                    src="assets/images/logos/logo-white.webp" alt="IANDES Inmobiliaria" class="logo-white"
+                    style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img
+                    src="assets/images/logos/logo.webp" alt="IANDES Inmobiliaria" class="logo-dark"
+                    style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
             <nav style="display:block;">
-                <ul style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
-                    <li><a href="index.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
-                    <li><a href="nosotros.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a></li>
-                    <li><a href="inversionistas.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a></li>
-                    <li><a href="postventa.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a></li>
-                    <li><a href="blog.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
-                    <li><a href="contacto.html" style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a></li>
+                <ul
+                    style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
+                    <li><a href="index.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inicio</a></li>
+                    <li><a href="nosotros.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Nosotros</a>
+                    </li>
+                    <li><a href="inversionistas.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Inversionistas</a>
+                    </li>
+                    <li><a href="postventa.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Postventa</a>
+                    </li>
+                    <li><a href="blog.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Blog</a></li>
+                    <li><a href="contacto.html"
+                            style="text-decoration:none; color:var(--color-text-main); font-weight:500;">Contacto</a>
+                    </li>
                 </ul>
             </nav>
         </div>
-</header>
+    </header>
     <main>
 
-    <!-- INNER HERO (CABECERA DE PROYECTO) -->
-    <section class="inner-hero project-hero">
-        <div class="inner-hero-bg">
-            <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-1.webp" alt="Edificio Andes Macul">
-        </div>
-        <div class="container" style="position: relative; z-index: 5; margin-top: auto; margin-bottom: auto;">
-            <div class="inner-hero-content">
-                <div class="inner-hero-breadcrumbs">
-                    <a href="index.html">Inicio</a> &nbsp;/&nbsp; <a href="index.html#proyectos">Proyectos</a> &nbsp;/&nbsp; Andes Macul
-                </div>
-                <h1 class="inner-hero-title">Andes Macul</h1>
-                <p style="color: var(--color-secondary); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem; font-weight: 500;">
-                    Los Clarines 3093, Macul, Santiago
-                </p>
+        <!-- INNER HERO (CABECERA DE PROYECTO) -->
+        <section class="inner-hero project-hero">
+            <div class="inner-hero-bg">
+                <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-1.webp" alt="Edificio Andes Macul">
             </div>
-        </div>
+            <div class="container" style="position: relative; z-index: 5; margin-top: auto; margin-bottom: auto;">
+                <div class="inner-hero-content">
+                    <div class="inner-hero-breadcrumbs">
+                        <a href="index.html">Inicio</a> &nbsp;/&nbsp; <a href="index.html#proyectos">Proyectos</a>
+                        &nbsp;/&nbsp; Andes Macul
+                    </div>
+                    <h1 class="inner-hero-title">Andes Macul</h1>
+                    <p
+                        style="color: var(--color-secondary); letter-spacing: 0.15em; text-transform: uppercase; font-size: 0.8rem; font-weight: 500;">
+                        Los Clarines 3093, Macul, Santiago
+                    </p>
+                </div>
+            </div>
 
-        <!-- BARRA PRINCIPAL DE PUNTOS CLAVE DEL PROYECTO -->
-        <div class="hero-project-bar">
+            <!-- BARRA PRINCIPAL DE PUNTOS CLAVE DEL PROYECTO -->
+            <div class="hero-project-bar">
+                <div class="container">
+                    <div class="hero-project-bar-card">
+                        <div class="hero-project-bar-grid">
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">COMUNA</span>
+                                    <span class="hero-bar-value">MACUL</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                    <polyline points="9 22 9 12 15 12 15 22" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">TIPO DE PROYECTO</span>
+                                    <span class="hero-bar-value">DEPARTAMENTO</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 4v16" />
+                                    <path d="M2 8h18a2 2 0 0 1 2 2v10" />
+                                    <path d="M2 17h20" />
+                                    <path d="M6 8v9" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">DORMITORIOS</span>
+                                    <span class="hero-bar-value">1 Y 2 DORMITORIOS</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                    <line x1="3" y1="9" x2="21" y2="9" />
+                                    <line x1="9" y1="21" x2="9" y2="9" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">SUPERFICIE</span>
+                                    <span class="hero-bar-value">DESDE 42.5 M²</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z" />
+                                    <line x1="7" y1="7" x2="7.01" y2="7" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">PRECIO EN UF</span>
+                                    <span class="hero-bar-value highlight" id="hero-price-display">DESDE UF 3.920</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-bar-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M5 22h14" />
+                                    <path d="M5 2h14" />
+                                    <path
+                                        d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" />
+                                    <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" />
+                                </svg>
+                                <div>
+                                    <span class="hero-bar-label">FECHA ENTREGA</span>
+                                    <span class="hero-bar-value">EN VERDE / 2026</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FICHA DETALLADA DE PROYECTO -->
+        <section class="section">
             <div class="container">
-                <div class="hero-project-bar-card">
-                    <div class="hero-project-bar-grid">
-                        
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <div>
-                                <span class="hero-bar-label">COMUNA</span>
-                                <span class="hero-bar-value">MACUL</span>
+                <div class="project-details-grid">
+
+                    <!-- Columna Izquierda: Información e interactivos -->
+                    <div>
+
+                        <!-- Módulo Multimedia Integrado -->
+                        <div class="media-gallery-module reveal">
+                            <div class="media-viewer-container">
+                                <div class="media-viewer"
+                                    style="position: relative; padding-top: 56.25%; overflow: hidden; border: 1px solid var(--color-border); background-color: var(--color-primary);">
+                                    <img id="selected-media-img"
+                                        src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-1.webp"
+                                        alt="Vista Interior Andes Macul"
+                                        style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: none;">
+                                    <iframe id="selected-media-iframe" src=""
+                                        style="position: absolute; top:0; left:0; width:100%; height:100%; border:none; display:none;"
+                                        allowfullscreen></iframe>
+
+                                    <!-- Botones del carrusel para Vista Interior -->
+                                    <button id="media-carousel-prev" aria-label="Anterior"
+                                        style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&lsaquo;</button>
+                                    <button id="media-carousel-next" aria-label="Siguiente"
+                                        style="position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&rsaquo;</button>
+                                    <div id="media-carousel-counter"
+                                        style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 10; background: rgba(0,0,0,0.65); color: #fff; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(4px);">
+                                        1 / 5</div>
+
+                                    <!-- Botón Ver en Grande / Pantalla Completa -->
+                                    <button id="open-lightbox-btn" class="open-lightbox-btn"
+                                        title="Ver imágenes en grande"
+                                        style="position: absolute; bottom: 1rem; right: 1rem; z-index: 12; background-color: #0F172A; color: #FFFFFF; border: none; padding: 0.5rem 0.95rem; border-radius: 4px; cursor: pointer; font-size: 0.78rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 14px rgba(0,0,0,0.4); transition: all 0.2s ease;">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <polyline points="15 3 21 3 21 9" />
+                                            <polyline points="9 21 3 21 3 15" />
+                                            <line x1="21" y1="3" x2="14" y2="10" />
+                                            <line x1="3" y1="21" x2="10" y2="14" />
+                                        </svg>
+                                        <span>Ver en grande</span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                            <div>
-                                <span class="hero-bar-label">TIPO DE PROYECTO</span>
-                                <span class="hero-bar-value">DEPARTAMENTO</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4v16"/><path d="M2 8h18a2 2 0 0 1 2 2v10"/><path d="M2 17h20"/><path d="M6 8v9"/></svg>
-                            <div>
-                                <span class="hero-bar-label">DORMITORIOS</span>
-                                <span class="hero-bar-value">1 Y 2 DORMITORIOS</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                            <div>
-                                <span class="hero-bar-label">SUPERFICIE</span>
-                                <span class="hero-bar-value">DESDE 42.5 M²</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-                            <div>
-                                <span class="hero-bar-label">PRECIO EN UF</span>
-                                <span class="hero-bar-value highlight">DESDE UF 3.920</span>
-                            </div>
-                        </div>
-
-                        <div class="hero-bar-item">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>
-                            <div>
-                                <span class="hero-bar-label">FECHA ENTREGA</span>
-                                <span class="hero-bar-value">EN VERDE / 2026</span>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FICHA DETALLADA DE PROYECTO -->
-    <section class="section">
-        <div class="container">
-            <div class="project-details-grid">
-                
-                <!-- Columna Izquierda: Información e interactivos -->
-                <div>
-                    
-                    <!-- Módulo Multimedia Integrado -->
-                    <div class="media-gallery-module reveal">
-                        <div class="media-viewer-container">
-                            <div class="media-viewer" style="position: relative; padding-top: 56.25%; overflow: hidden; border: 1px solid var(--color-border); background-color: var(--color-primary);">
-                                <img id="selected-media-img" src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-1.webp" alt="Vista Interior Andes Macul" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: var(--transition-fast); filter: saturate(0.5) brightness(0.9);">
-                                <iframe id="selected-media-iframe" src="" style="position: absolute; top:0; left:0; width:100%; height:100%; border:none; display:none;" allowfullscreen></iframe>
-                                
-                                <!-- Botones del carrusel para Vista Interior -->
-                                <button id="media-carousel-prev" aria-label="Anterior" style="position: absolute; top: 50%; left: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&lsaquo;</button>
-                                <button id="media-carousel-next" aria-label="Siguiente" style="position: absolute; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 10; background: rgba(0,0,0,0.6); color: #fff; border: none; width: 42px; height: 42px; border-radius: 50%; cursor: pointer; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); transition: background 0.3s;">&rsaquo;</button>
-                                <div id="media-carousel-counter" style="position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 10; background: rgba(0,0,0,0.65); color: #fff; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500; backdrop-filter: blur(4px);">1 / 5</div>
-                                
-                                <!-- Botón Ver en Grande / Pantalla Completa -->
-                                <button id="open-lightbox-btn" class="open-lightbox-btn" title="Ver imágenes en grande" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 12; background-color: #0F172A; color: #FFFFFF; border: none; padding: 0.5rem 0.95rem; border-radius: 4px; cursor: pointer; font-size: 0.78rem; font-weight: 600; display: inline-flex; align-items: center; gap: 0.45rem; box-shadow: 0 4px 14px rgba(0,0,0,0.4); transition: all 0.2s ease;">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
-                                    <span>Ver en grande</span>
+                            <div class="media-tabs">
+                                <button class="media-tab-btn active" data-view="render-int" id="tab-btn-interior">
+                                    <span class="media-tab-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path
+                                                d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                                            <circle cx="12" cy="13" r="4" />
+                                        </svg>
+                                    </span>
+                                    <span class="media-tab-label">Interior</span>
+                                </button>
+                                <button class="media-tab-btn" data-view="amenities" id="tab-btn-amenities">
+                                    <span class="media-tab-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path>
+                                            <path d="M1 21h22"></path>
+                                            <path d="M9 7h1"></path>
+                                            <path d="M9 11h1"></path>
+                                            <path d="M14 7h1"></path>
+                                            <path d="M14 11h1"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="media-tab-label">Amenities</span>
+                                </button>
+                                <button class="media-tab-btn" data-view="video" id="tab-btn-video">
+                                    <span class="media-tab-icon-wrapper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <polygon points="5 3 19 12 5 21 5 3" />
+                                        </svg>
+                                    </span>
+                                    <span class="media-tab-label">Video Entorno</span>
                                 </button>
                             </div>
                         </div>
 
-                        <div class="media-tabs">
-                            <button class="media-tab-btn active" data-view="render-int" id="tab-btn-interior">
-                                <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                                        <circle cx="12" cy="13" r="4" />
-                                    </svg>
-                                </span>
-                                <span class="media-tab-label">Interior</span>
-                            </button>
-                            <button class="media-tab-btn" data-view="amenities" id="tab-btn-amenities">
-                                <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M19 21V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v16"></path>
-                                        <path d="M1 21h22"></path>
-                                        <path d="M9 7h1"></path>
-                                        <path d="M9 11h1"></path>
-                                        <path d="M14 7h1"></path>
-                                        <path d="M14 11h1"></path>
-                                    </svg>
-                                </span>
-                                <span class="media-tab-label">Amenities</span>
-                            </button>
-                            <button class="media-tab-btn" data-view="video" id="tab-btn-video">
-                                <span class="media-tab-icon-wrapper">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <polygon points="5 3 19 12 5 21 5 3" />
-                                    </svg>
-                                </span>
-                                <span class="media-tab-label">Video Entorno</span>
-                            </button>
-                        </div>
-                    </div>
+                        <!-- Descripción General -->
+                        <div class="reveal" style="margin-bottom: 3.5rem;">
+                            <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem;">Vanguardia urbana en un sector de alta
+                                plusvalía</h2>
+                            <p
+                                style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1.8rem;">
+                                Departamentos de 1 y 2 dormitorios en un consolidado barrio residencial de Macul.
+                                Disfruta una ubicación estratégica con excelente conectividad, cercano a la futura Línea
+                                8 de Metro, comercio y servicios.
+                            </p>
 
-                    <!-- Descripción General -->
-                    <div class="reveal" style="margin-bottom: 3.5rem;">
-                        <h2 style="font-size: 2.2rem; margin-bottom: 1.2rem;">Vanguardia urbana en un sector de alta plusvalía</h2>
-                        <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 1.8rem;">
-                            Departamentos de 1 y 2 dormitorios en un consolidado barrio residencial de Macul. Disfruta una ubicación estratégica con excelente conectividad, cercano a la futura Línea 8 de Metro, comercio y servicios.
-                        </p>
-
-                        <!-- Grilla de Equipamiento con Iconos -->
-                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">Equipamiento del Edificio</h3>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.85rem; margin-bottom: 2.2rem;">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons/icon-coworking.svg" alt="Sala Coworking" style="width: 26px; height: 26px;">
+                            <!-- Grilla de Equipamiento con Iconos -->
+                            <h3
+                                style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">
+                                Equipamiento del Edificio</h3>
+                            <div
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.85rem; margin-bottom: 2.2rem;">
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <div
+                                        style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <img src="assets/images/icons/icon-coworking.svg" alt="Sala Coworking"
+                                            style="width: 26px; height: 26px;">
+                                    </div>
+                                    <span
+                                        style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Sala
+                                        Coworking</span>
                                 </div>
-                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Sala Coworking</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons/icon-gimnasio.svg" alt="Gimnasio Equipado" style="width: 26px; height: 26px;">
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <div
+                                        style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <img src="assets/images/icons/icon-gimnasio.svg" alt="Gimnasio Equipado"
+                                            style="width: 26px; height: 26px;">
+                                    </div>
+                                    <span
+                                        style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Gimnasio
+                                        Equipado</span>
                                 </div>
-                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Gimnasio Equipado</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons/icon-piscina.svg" alt="Piscina en Azotea" style="width: 26px; height: 26px;">
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <div
+                                        style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <img src="assets/images/icons/icon-piscina.svg" alt="Piscina en Azotea"
+                                            style="width: 26px; height: 26px;">
+                                    </div>
+                                    <span
+                                        style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Piscina
+                                        en Azotea</span>
                                 </div>
-                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Piscina en Azotea</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons/icon-quincho.svg" alt="Quinchos Privados" style="width: 26px; height: 26px;">
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <div
+                                        style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <img src="assets/images/icons/icon-quincho.svg" alt="Quinchos Privados"
+                                            style="width: 26px; height: 26px;">
+                                    </div>
+                                    <span
+                                        style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Quinchos
+                                        Privados</span>
                                 </div>
-                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Quinchos Privados</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <div style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                                    <img src="assets/images/icons/icon-cargadores-ev.svg" alt="Cargadores EV" style="width: 26px; height: 26px;">
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <div
+                                        style="width: 42px; height: 42px; border-radius: 50%; background: rgba(255, 209, 0, 0.18); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <img src="assets/images/icons/icon-cargadores-ev.svg" alt="Cargadores EV"
+                                            style="width: 26px; height: 26px;">
+                                    </div>
+                                    <span
+                                        style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Cargadores
+                                        EV</span>
                                 </div>
-                                <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-main);">Cargadores EV</span>
                             </div>
-                        </div>
 
-                        <!-- Grilla de Especificaciones Técnicas -->
-                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">Especificaciones Técnicas</h3>
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.85rem;">
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons/icon-termopanel.svg" alt="Termopanel" style="width: 28px; height: 28px; flex-shrink: 0;">
-                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Ventanas PVC con termopanel</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons/icon-puerta.svg" alt="Puerta" style="width: 28px; height: 28px; flex-shrink: 0;">
-                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Puerta enchapada en madera</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons/icon-cocina.svg" alt="Cocina" style="width: 28px; height: 28px; flex-shrink: 0;">
-                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Cocina equipada completa</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons/icon-porcelanato.svg" alt="Porcelanato" style="width: 28px; height: 28px; flex-shrink: 0;">
-                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Porcelanato en estar y cocina</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons/icon-barandas.svg" alt="Barandas" style="width: 28px; height: 28px; flex-shrink: 0;">
-                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Barandas de cristal en terraza</span>
-                            </div>
-                            <div style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
-                                <img src="assets/images/icons/icon-calefaccion.svg" alt="Calefacción" style="width: 28px; height: 28px; flex-shrink: 0;">
-                                <span style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Calefacción eléctrica individual</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Módulo de Tipologías Interactivas (Planos y Modelos) -->
-                    <div class="floorplan-container reveal">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Planos y Modelos</h3>
-                        
-                        <div class="floorplan-nav-tabs">
-                            <button class="floorplan-nav-tab active" data-id="1d1b">DEPTO 1D + 1B</button>
-                            <button class="floorplan-nav-tab" data-id="2d1b">DEPTO 2D + 1B</button>
-                            <button class="floorplan-nav-tab" data-id="2d2b">DEPTO 2D + 2B</button>
-                        </div>
-                        
-                        <!-- Sub-pestañas para 1D + 1B -->
-                        <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-1d1b" style="display: flex;">
-                            <button class="floorplan-sub-tab active" data-subid="tipo-c">TIPO C</button>
-                            <button class="floorplan-sub-tab" data-subid="tipo-c1">TIPO C1</button>
-                        </div>
-                        
-                        <!-- Sub-pestañas para 2D + 1B -->
-                        <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d1b">
-                            <button class="floorplan-sub-tab active" data-subid="tipo-b">TIPO B</button>
-                            <button class="floorplan-sub-tab" data-subid="tipo-b1">TIPO B1</button>
-                        </div>
-
-                        <!-- Sub-pestañas para 2D + 2B -->
-                        <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d2b">
-                            <button class="floorplan-sub-tab active" data-subid="tipo-a1">TIPO A1</button>
-                            <button class="floorplan-sub-tab" data-subid="tipo-d">TIPO D</button>
-                            <button class="floorplan-sub-tab" data-subid="tipo-a2">TIPO A2</button>
-                        </div>
-                        
-                        <div class="floorplan-viewer-grid">
-                            <div class="floorplan-img-box">
-                                <div id="floorplan-agotado-overlay" class="floorplan-agotado-overlay" style="display: none;">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
-                                    MODELO AGOTADO
+                            <!-- Grilla de Especificaciones Técnicas -->
+                            <h3
+                                style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem; color: var(--color-primary);">
+                                Especificaciones Técnicas</h3>
+                            <div
+                                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.85rem;">
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <img src="assets/images/icons/icon-termopanel.svg" alt="Termopanel"
+                                        style="width: 28px; height: 28px; flex-shrink: 0;">
+                                    <span
+                                        style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Ventanas
+                                        PVC con termopanel</span>
                                 </div>
-                                <img id="selected-floorplan-img" src="assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__C.webp" alt="Plano Seleccionado">
-                                <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano" style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
-                                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
-                                    </svg>
-                                </button>
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <img src="assets/images/icons/icon-puerta.svg" alt="Puerta"
+                                        style="width: 28px; height: 28px; flex-shrink: 0;">
+                                    <span
+                                        style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Puerta
+                                        enchapada en madera</span>
+                                </div>
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <img src="assets/images/icons/icon-cocina.svg" alt="Cocina"
+                                        style="width: 28px; height: 28px; flex-shrink: 0;">
+                                    <span
+                                        style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Cocina
+                                        equipada completa</span>
+                                </div>
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <img src="assets/images/icons/icon-porcelanato.svg" alt="Porcelanato"
+                                        style="width: 28px; height: 28px; flex-shrink: 0;">
+                                    <span
+                                        style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Porcelanato
+                                        en estar y cocina</span>
+                                </div>
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <img src="assets/images/icons/icon-barandas.svg" alt="Barandas"
+                                        style="width: 28px; height: 28px; flex-shrink: 0;">
+                                    <span
+                                        style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Barandas
+                                        de cristal en terraza</span>
+                                </div>
+                                <div
+                                    style="display: flex; align-items: center; gap: 0.75rem; background: #FFFFFF; padding: 0.8rem 1rem; border: 1px solid var(--color-border); border-radius: 6px;">
+                                    <img src="assets/images/icons/icon-calefaccion.svg" alt="Calefacción"
+                                        style="width: 28px; height: 28px; flex-shrink: 0;">
+                                    <span
+                                        style="font-size: 0.83rem; color: var(--color-text-main); line-height: 1.3;">Calefacción
+                                        eléctrica individual</span>
+                                </div>
                             </div>
-                            <div class="floorplan-details-box">
-                                <h4 id="selected-floorplan-name" style="font-size: 1.5rem; color:var(--color-primary); font-weight:600; margin: 0;">DEPTO 1D + 1B (TIPO C)</h4>
-                                <hr class="model-divider" style="margin: 0.5rem 0; border: 0; border-top: 1px solid var(--color-border);">
-                                <ul class="floorplan-specs">
-                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" /></svg><span id="selected-floorplan-dorm">1 Dormitorio</span></li>
-                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" /></svg><span id="selected-floorplan-bano">1 Baño</span></li>
-                                    <li id="selected-floorplan-sup-util-item" style="display:flex; align-items:center;"><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18" /></svg><span id="selected-floorplan-sup-util">Superficie Útil: 36,08 m²</span></li>
-                                    <li id="selected-floorplan-terraza-item" style="display:flex; align-items:center;"><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><path d="M3 12h18M3 6h18M3 18h18" /></svg><span id="selected-floorplan-terraza">Terraza: 2,76 m²</span></li>
-                                    <li><svg class="icon-svg" viewBox="0 0 24 24" style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" /></svg><span id="selected-floorplan-sup">Superficie Total: 38,84 m²</span></li>
-                                </ul>
-                                <button class="btn btn-secondary" id="floorplan-cotizar-btn" style="width: 100%; margin-top: 0.5rem;">Cotizar este modelo</button>
-                                <a href="assets/docs/andes-macul-pdf.pdf" target="_blank" rel="noopener" class="btn-download-pdf">
-                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                                        <polyline points="14 2 14 8 20 8"/>
-                                        <line x1="16" y1="13" x2="8" y2="13"/>
-                                        <line x1="16" y1="17" x2="8" y2="17"/>
-                                        <polyline points="10 9 9 9 8 9"/>
-                                    </svg>
-                                    Ver Brochure PDF
-                                </a>
+                        </div>
+
+                        <!-- Módulo de Tipologías Interactivas (Planos y Modelos) -->
+                        <div class="floorplan-container reveal" id="planos">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Planos y Modelos</h3>
+
+                            <div class="floorplan-nav-tabs">
+                                <button class="floorplan-nav-tab active" data-id="1d1b">DEPTO 1D + 1B</button>
+                                <button class="floorplan-nav-tab" data-id="2d1b">DEPTO 2D + 1B</button>
+                                <button class="floorplan-nav-tab" data-id="2d2b">DEPTO 2D + 2B</button>
+                            </div>
+
+                            <!-- Sub-pestañas para 1D + 1B -->
+                            <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-1d1b" style="display: flex;">
+                                <button class="floorplan-sub-tab active" data-subid="tipo-c">TIPO C</button>
+                                <button class="floorplan-sub-tab" data-subid="tipo-c1">TIPO C1</button>
+                            </div>
+
+                            <!-- Sub-pestañas para 2D + 1B -->
+                            <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d1b">
+                                <button class="floorplan-sub-tab active" data-subid="tipo-b">TIPO B</button>
+                                <button class="floorplan-sub-tab" data-subid="tipo-b1">TIPO B1</button>
+                            </div>
+
+                            <!-- Sub-pestañas para 2D + 2B -->
+                            <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d2b">
+                                <button class="floorplan-sub-tab active" data-subid="tipo-a1">TIPO A1</button>
+                                <button class="floorplan-sub-tab" data-subid="tipo-d">TIPO D</button>
+                                <button class="floorplan-sub-tab" data-subid="tipo-a2">TIPO A2</button>
+                            </div>
+
+                            <div class="floorplan-viewer-grid">
+                                <div class="floorplan-img-box">
+                                    <div id="floorplan-agotado-overlay" class="floorplan-agotado-overlay"
+                                        style="display: none;">
+                                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <line x1="15" y1="9" x2="9" y2="15" />
+                                        </svg>
+                                        MODELO AGOTADO
+                                    </div>
+                                    <img id="selected-floorplan-img"
+                                        src="assets/images/proyectos/proyecto-andes-macul/planos/PLANTA__C.webp"
+                                        alt="Plano Seleccionado">
+                                    <button class="model-zoom-btn" id="zoom-floorplan-btn" aria-label="Ampliar plano"
+                                        style="position: absolute; bottom: 1rem; right: 1rem; z-index: 10;">
+                                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="floorplan-details-box">
+                                    <h4 id="selected-floorplan-name"
+                                        style="font-size: 1.5rem; color:var(--color-primary); font-weight:600; margin: 0;">
+                                        DEPTO 1D + 1B (TIPO C)</h4>
+                                    <hr class="model-divider"
+                                        style="margin: 0.5rem 0; border: 0; border-top: 1px solid var(--color-border);">
+                                    <ul class="floorplan-specs">
+                                        <li><svg class="icon-svg" viewBox="0 0 24 24"
+                                                style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                                <path
+                                                    d="M2 4v16M2 8h20M2 17h20M22 8v9M6 8v3a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8" />
+                                            </svg><span id="selected-floorplan-dorm">1 Dormitorio</span></li>
+                                        <li><svg class="icon-svg" viewBox="0 0 24 24"
+                                                style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                                <path
+                                                    d="M9 6a3 3 0 1 1 6 0v4M2 14h20M4 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4H4v4zM7 16v4M17 20v-4" />
+                                            </svg><span id="selected-floorplan-bano">1 Baño</span></li>
+                                        <li id="selected-floorplan-sup-util-item"
+                                            style="display:flex; align-items:center;"><svg class="icon-svg"
+                                                viewBox="0 0 24 24"
+                                                style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                                <path d="M9 3v18M3 9h18" />
+                                            </svg><span id="selected-floorplan-sup-util">Superficie Útil: 36,08
+                                                m²</span></li>
+                                        <li id="selected-floorplan-terraza-item"
+                                            style="display:flex; align-items:center;"><svg class="icon-svg"
+                                                viewBox="0 0 24 24"
+                                                style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                                <path d="M3 12h18M3 6h18M3 18h18" />
+                                            </svg><span id="selected-floorplan-terraza">Terraza: 2,76 m²</span></li>
+                                        <li><svg class="icon-svg" viewBox="0 0 24 24"
+                                                style="margin-right:0.5rem; width:1.1rem; height:1.1rem; color:var(--color-text-muted);">
+                                                <rect x="3" y="3" width="18" height="18" rx="2" />
+                                                <path d="M9 3v18M3 9h18M9 9l3-3M3 15l3-3M15 9l3-3M9 15l3-3" />
+                                            </svg><span id="selected-floorplan-sup">Superficie Total: 38,84 m²</span>
+                                        </li>
+                                    </ul>
+                                    <button class="btn btn-secondary caluga-cotizar" id="floorplan-cotizar-btn"
+                                        style="width: 100%; margin-top: 0.5rem;">Cotizar este modelo</button>
+                                    <a href="assets/docs/andes-macul-pdf.pdf" target="_blank" rel="noopener"
+                                        class="btn-download-pdf">
+                                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                            <polyline points="14 2 14 8 20 8" />
+                                            <line x1="16" y1="13" x2="8" y2="13" />
+                                            <line x1="16" y1="17" x2="8" y2="17" />
+                                            <polyline points="10 9 9 9 8 9" />
+                                        </svg>
+                                        Ver Brochure PDF
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Columna Derecha (Sidebar Cotizador) -->
-                <div>
-                    <div id="cotizador" class="sidebar-cotizador reveal">
-                        <h3>Cotizar Proyecto</h3>
-                        <span id="cotizador-price" class="price">Desde UF 3.920</span>
-                        
-                        <form action="#" method="POST" id="form-cotizar">
-                            <div class="form-group">
-                                <label for="select-tipologia">Tipología de Interés</label>
-                                <select id="select-tipologia" required>
-                                    <option value="1d1b" data-price="3.920">DEPTO 1D + 1B - Desde UF 3.920</option>
-                                    <option value="2d1b" data-price="4.150">DEPTO 2D + 1B - Desde UF 4.150</option>
-                                    <option value="2d2b" data-price="4.620">DEPTO 2D + 2B - Desde UF 4.620</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group" id="group-sub-tipologia" style="display: none; margin-bottom: 1.5rem;">
-                                <label for="select-sub-tipologia">Tipo de Departamento (1D + 1B)</label>
-                                <select id="select-sub-tipologia">
-                                    <option value="" disabled selected>Selecciona un tipo...</option>
-                                    <!-- Dinámico -->
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="input-nombre">Nombre Completo</label>
-                                <input type="text" id="input-nombre" required placeholder="Ej: Juan Pérez">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-email">Correo Electrónico</label>
-                                <input type="email" id="input-email" required placeholder="nombre@correo.com">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-telefono">Teléfono</label>
-                                <input type="tel" id="input-telefono" required placeholder="+56 9 1234 5678">
-                            </div>
-                            <div class="form-group">
-                                <label for="input-mensaje">Mensaje (Opcional)</label>
-                                <textarea id="input-mensaje" rows="3" placeholder="Hola, me gustaría recibir más información de este proyecto..."></textarea>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Enviar Solicitud</button>
-                        </form>
-
-                        <!-- Ejecutiva comercial humanizada -->
-                        <div class="exec-profile" style="display:flex; align-items:center; gap:1rem; border-top:1px solid var(--color-border); padding-top:1rem; margin-top:1rem;">
-                            <div class="exec-photo" style="width:45px; height:45px; border-radius:50%; overflow:hidden;">
-                                <img src="assets/images/nosotros/ejecutiva-ventas.webp" alt="Catalina Rivera" style="width:100%; height:100%; object-fit:cover;">
-                            </div>
-                            <div class="exec-info">
-                                <h5 style="margin:0; font-size:0.9rem; font-weight:600;">Catalina Rivera</h5>
-                                <p style="margin:0; font-size:0.75rem; color:var(--color-text-light);">Asesora de Ventas - Andes Macul</p>
-                            </div>
-                        </div>
-                        <a href="https://wa.me/56912345678?text=Hola%20Catalina,%20me%20interesa%20cotizar%20un%20departamento%20en%20Andes%20Macul." target="_blank" class="exec-whatsapp-btn" style="display:flex; align-items:center; justify-content:center; gap:0.5rem; text-decoration:none; padding: 0.8rem; margin-top:1rem; font-size:0.8rem;">
-                            Contactar por WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-    </section>
-
-    <!-- GALERÍA DE FOTOS DEL PROYECTO -->
-    <section class="section" style="border-top: 1px solid var(--color-border); padding: 4.5rem 0; background-color: #FFFFFF;">
-        <div class="container">
-            <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
-                <span class="section-subtitle">Imágenes del Proyecto</span>
-                <h2 style="font-size: 2.2rem; font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 0.8rem;">Galería Fotográfica</h2>
-            </div>
-            
-            <div class="photo-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-amenities-1.webp" alt="Amenities Andes Macul 1" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-amenities-2.webp" alt="Amenities Andes Macul 2" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-1.webp" alt="Foto Andes Macul 1" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-2.webp" alt="Foto Andes Macul 2" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-3.webp" alt="Foto Andes Macul 3" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
-                </div>
-
-                <div class="gallery-card reveal" style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
-                    <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
-                        <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-4.webp" alt="Foto Andes Macul 4" style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
-                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN SALA DE VENTAS -->
-    <section class="section sales-room-section" style="border-top: 1px solid var(--color-border); background-color: var(--color-bg-light); padding: 5rem 0;">
-        <div class="container">
-            <div class="sales-room-grid">
-                <!-- Columna Izquierda: Información -->
-                <div class="reveal">
-                    <h2 style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 1.5rem; font-family: var(--font-serif);">Sala de ventas</h2>
-                    <p style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
-                        Te esperamos en nuestra sala de ventas ubicada en <strong>Los Clarines 3093</strong>, Macul, Región Metropolitana.
-                    </p>
-                    
-                    <div style="margin-bottom: 1.5rem;">
-                        <h4 style="font-size: 1rem; color: var(--color-primary); font-family: var(--font-sans); font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Horarios de atención:</h4>
-                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
-                            <strong>Lunes a viernes:</strong> 10:30 a 14:00 / 15.00 a 18:00 hrs.
-                        </p>
-                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            <strong>Sábados:</strong> 10:00 a 14:00 hrs.
-                        </p>
-                    </div>
-                    
-                    <div style="margin-bottom: 2rem;">
-                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
-                            <strong>Teléfono de contacto:</strong> +56 2 1234 5678
-                        </p>
-                        <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-                            <strong>WhatsApp:</strong> +56 9 8164 5225
-                        </p>
-                    </div>
-                    
-                    <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem;">
-                        Nuestro equipo estará encantado de atenderte y acompañarte en cada paso de tu decisión.
-                    </p>
-                    
-                    <!-- Botones de Cómo Llegar -->
-                    <div class="how-to-get-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <a href="https://waze.com/ul?q=Los+Clarines+3093,+Macul" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
-                            <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.webp" alt="Waze" style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
+        <!-- SECCIÓN FULL-WIDTH FRAME DE COTIZACIÓN Y CONTACTO -->
+        <section id="cotizador" class="section cotizador-fullwidth-frame">
+            <div class="container">
+                <div class="cotizador-frame-card reveal">
+                    <div class="cotizador-frame-grid">
+
+                        <!-- Columna Izquierda: Cotizador / Formulario de Cotización -->
+                        <div class="cotizador-frame-left">
+                            <div style="margin-bottom: 1.25rem;">
+                                <img src="assets/images/logos/logo.webp" alt="Inmobiliaria Iandes"
+                                    style="height: 48px; width: auto; object-fit: contain;">
+                            </div>
+                            <h2
+                                style="font-size: 2.1rem; color: var(--color-primary); margin-bottom: 0.4rem; font-family: var(--font-serif);">
+                                Cotiza tu Departamento en Línea</h2>
+                            <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Obtén
+                                una cotización formal y personalizada para el proyecto Andes Macul de forma rápida,
+                                sencilla y sin compromiso.</p>
+
+                            <div class="cotizador-price-block"
+                                style="margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--color-border);">
+                                <span id="cotizador-price" class="price">Desde UF 3.920</span>
+                                <div class="renta-sugerida-badge" id="cotizador-renta-badge">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                    </svg>
+                                    <span>Renta Sugerida: <strong id="cotizador-renta-val">$410.000</strong> /
+                                        mes</span>
+                                </div>
+                            </div>
+
+                            <!-- Componente Mobysuite Web Contact -->
+                            <mobysuite-web-contact token="u0Q9R4GHv8xRMSdKUDh3YQ1AqVQ=" project-id="3" is-button="false"
+                                version="1"> </mobysuite-web-contact>
+                        </div>
+
+                        <!-- Columna Derecha: Contacto Ampliado y Ejecutiva -->
+                        <div class="cotizador-frame-right">
                             <div>
-                                <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #05B4E3; line-height: 1.1;">Waze</div>
-                                <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
+                                <div class="exec-profile-large">
+                                    <div class="exec-photo-wrapper">
+                                        <img src="assets/images/nosotros/ejecutiva-ventas.webp" alt="Catalina Rivera">
+                                        <span class="exec-online-badge" title="Disponible ahora"></span>
+                                    </div>
+                                    <div class="exec-info-large">
+                                        <h4>Catalina Rivera</h4>
+                                        <p>Asesora Comercial Senior • Andes Macul</p>
+                                    </div>
+                                </div>
+
+                                <div class="exec-contact-actions">
+                                    <a href="https://wa.me/56912345678?text=Hola%20Catalina,%20me%20gustar%C3%ADa%20recibir%20cotizaci%C3%B3n%20y%20m%C3%A1s%20informaci%C3%B3n%20del%20proyecto%20Andes%20Macul."
+                                        target="_blank" class="btn-contact-whatsapp">
+                                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path
+                                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                                        </svg>
+                                        <span>Contactar por WhatsApp</span>
+                                    </a>
+                                    <button type="button" class="btn-agendar-reunion"
+                                        onclick="openMeetingModal('Andes Macul')">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                            <line x1="16" y1="2" x2="16" y2="6" />
+                                            <line x1="8" y1="2" x2="8" y2="6" />
+                                            <line x1="3" y1="10" x2="21" y2="10" />
+                                        </svg>
+                                        <span>Agendar Reunión</span>
+                                    </button>
+                                </div>
                             </div>
-                        </a>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Los+Clarines+3093,+Macul" target="_blank" style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
-                            <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.webp" alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
-                            <div>
-                                <div style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #EA4335; line-height: 1.1;">Google Maps</div>
-                                <div style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">¿Cómo llegar?</div>
+
+                            <div class="contact-info-list-large">
+                                <div class="contact-info-item-large">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12 6 12 12 16 14" />
+                                    </svg>
+                                    <div>
+                                        <strong>Horario de Atención Sala de Ventas</strong>
+                                        <div>Lun a Vie: 10:30 a 14:00 / 15:00 a 18:00 hrs</div>
+                                        <div>Sábados: 10:00 a 14:00 hrs</div>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item-large">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                        <polyline points="22,6 12,13 2,6" />
+                                    </svg>
+                                    <div>
+                                        <strong>Correo Electrónico</strong>
+                                        <a href="mailto:ventas@iandes.cl"
+                                            style="color:var(--color-secondary,#FFD100); text-decoration:none;">ventas@iandes.cl</a>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item-large">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                    <div>
+                                        <strong>Teléfono Directo</strong>
+                                        <a href="tel:+56212345678" style="color:#FFFFFF; text-decoration:none;">+56 2
+                                            1234 5678</a>
+                                    </div>
+                                </div>
                             </div>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Columna Derecha: Mapa -->
-                <div class="reveal">
-                    <div style="border: 1px solid var(--color-border); height: 480px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium); border-radius: 8px;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=Los%20Clarines%203093,%20Macul&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                        </div>
+
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PIE DE PAGINA (FOOTER) -->
+        <!-- GALERÍA DE FOTOS DEL PROYECTO -->
+        <section class="section"
+            style="border-top: 1px solid var(--color-border); padding: 4.5rem 0; background-color: #FFFFFF;">
+            <div class="container">
+                <div class="reveal" style="text-align: center; margin-bottom: 3rem;">
+                    <span class="section-subtitle">Imágenes del Proyecto</span>
+                    <h2
+                        style="font-size: 2.2rem; font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 0.8rem;">
+                        Galería Fotográfica</h2>
+                </div>
+
+                <div class="photo-gallery-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-amenities-1.webp"
+                                alt="Amenities Andes Macul 1"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-amenities-2.webp"
+                                alt="Amenities Andes Macul 2"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-1.webp"
+                                alt="Foto Andes Macul 1"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-2.webp"
+                                alt="Foto Andes Macul 2"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-3.webp"
+                                alt="Foto Andes Macul 3"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+
+                    <div class="gallery-card reveal"
+                        style="border: 1px solid var(--color-border); overflow: hidden; border-radius: 6px; box-shadow: var(--shadow-sm); background: var(--color-bg-card); cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="position: relative; padding-top: 66.66%; overflow: hidden;">
+                            <img src="assets/images/proyectos/proyecto-andes-macul/fotos/macul-4.webp"
+                                alt="Foto Andes Macul 4"
+                                style="position: absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; transition: transform 0.5s ease;"
+                                onmouseover="this.style.transform='scale(1.08)'"
+                                onmouseout="this.style.transform='scale(1)'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SALA DE VENTAS -->
+        <section class="section sales-room-section"
+            style="border-top: 1px solid var(--color-border); background-color: var(--color-bg-light); padding: 5rem 0;">
+            <div class="container">
+                <div class="sales-room-grid">
+                    <!-- Columna Izquierda: Información -->
+                    <div class="reveal">
+                        <h2
+                            style="font-size: 2.2rem; color: var(--color-primary); margin-bottom: 1.5rem; font-family: var(--font-serif);">
+                            Sala de ventas</h2>
+                        <p
+                            style="color: var(--color-text-main); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem;">
+                            Te esperamos en nuestra sala de ventas ubicada en <strong>Los Clarines 3093</strong>, Macul,
+                            Región Metropolitana.
+                        </p>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4
+                                style="font-size: 1rem; color: var(--color-primary); font-family: var(--font-sans); font-weight: 600; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                                Horarios de atención:</h4>
+                            <p
+                                style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                                <strong>Lunes a viernes:</strong> 10:30 a 14:00 / 15.00 a 18:00 hrs.
+                            </p>
+                            <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                <strong>Sábados:</strong> 10:00 a 14:00 hrs.
+                            </p>
+                        </div>
+
+                        <div style="margin-bottom: 2rem;">
+                            <p
+                                style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0 0 0.4rem 0;">
+                                <strong>Teléfono de contacto:</strong> +56 2 1234 5678
+                            </p>
+                            <p style="color: var(--color-text-main); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                                <strong>WhatsApp:</strong> +56 9 8164 5225
+                            </p>
+                        </div>
+
+                        <p
+                            style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 2.5rem;">
+                            Nuestro equipo estará encantado de atenderte y acompañarte en cada paso de tu decisión.
+                        </p>
+
+                        <!-- Botones de Cómo Llegar -->
+                        <div class="how-to-get-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <a href="https://waze.com/ul?q=Los+Clarines+3093,+Macul" target="_blank"
+                                style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/waze-logo.webp" alt="Waze"
+                                    style="height: 36px; width: 36px; object-fit: contain; border-radius: 4px;">
+                                <div>
+                                    <div
+                                        style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #05B4E3; line-height: 1.1;">
+                                        Waze</div>
+                                    <div
+                                        style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">
+                                        ¿Cómo llegar?</div>
+                                </div>
+                            </a>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Los+Clarines+3093,+Macul"
+                                target="_blank"
+                                style="display: inline-flex; align-items: center; gap: 0.8rem; text-decoration: none; padding: 0.85rem 1.4rem; border: 1px solid var(--color-border); background: #FFFFFF; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s ease;">
+                                <img src="assets/images/proyectos/proyecto-camino-villa/googlemaps.webp"
+                                    alt="Google Maps" style="height: 36px; width: 36px; object-fit: contain;">
+                                <div>
+                                    <div
+                                        style="font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; color: #EA4335; line-height: 1.1;">
+                                        Google Maps</div>
+                                    <div
+                                        style="color: var(--color-text-main); font-family: var(--font-sans); font-weight: 600; font-size: 0.85rem;">
+                                        ¿Cómo llegar?</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Mapa -->
+                    <div class="reveal">
+                        <div
+                            style="border: 1px solid var(--color-border); height: 480px; overflow: hidden; position: relative; box-shadow: var(--shadow-premium); border-radius: 8px;">
+                            <iframe
+                                src="https://maps.google.com/maps?q=Los%20Clarines%203093,%20Macul&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PIE DE PAGINA (FOOTER) -->
     </main>
 
     <footer>
 
         <!-- Fallback de pie de página para SEO/Accesibilidad -->
-        <div class="container" style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
+        <div class="container"
+            style="padding:2rem 0; border-top:1px solid var(--color-border); font-size:0.8rem; color:var(--color-text-muted);">
             <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1.5rem;">
-                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados.</div>
+                <div><strong>Inmobiliaria Iandes S.A.</strong> &copy; 2026 Todos los derechos reservados. <span style="opacity:0.3; margin:0 0.5rem;">|</span> <a href="https://boosted.cl" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:var(--color-text-muted); font-weight:500;">Designed by boosted.cl</a></div>
                 <div style="display:flex; gap:1.5rem;">
-                    <a href="terminos-condiciones.html" style="text-decoration:none; color:var(--color-text-muted);">Términos y Condiciones</a>
-                    <a href="politica-privacidad.html" style="text-decoration:none; color:var(--color-text-muted);">Política de Privacidad</a>
+                    <a href="terminos-condiciones.html"
+                        style="text-decoration:none; color:var(--color-text-muted);">Términos y Condiciones</a>
+                    <a href="politica-privacidad.html"
+                        style="text-decoration:none; color:var(--color-text-muted);">Política de Privacidad</a>
                 </div>
             </div>
         </div>
-</footer>
+    </footer>
 
     <!-- Scripts de Funcionalidad -->
     <script src="assets/js/main.js"></script>
@@ -814,7 +1116,7 @@
             const activeMainTab = document.querySelector('.floorplan-nav-tab.active');
             if (!activeMainTab) return 'tipo-c';
             const id = activeMainTab.dataset.id;
-            
+
             if (id === '1d1b') {
                 const activeSubTab = document.querySelector('#floorplan-sub-tabs-1d1b .floorplan-sub-tab.active');
                 return activeSubTab ? activeSubTab.dataset.subid : 'tipo-c';
@@ -1046,11 +1348,11 @@
                         label.textContent = `Tipo de Departamento (${labelText})`;
                     }
                 }
-                
+
                 if (selectSubTipologia) {
                     // Limpiar opciones
                     selectSubTipologia.innerHTML = '<option value="" disabled selected>Selecciona un tipo...</option>';
-                    
+
                     // Cargar opciones correspondientes
                     const options = subTipologiasOptions[mainId];
                     options.forEach(opt => {
@@ -1059,9 +1361,9 @@
                         el.textContent = opt.label;
                         selectSubTipologia.appendChild(el);
                     });
-                    
+
                     selectSubTipologia.setAttribute('required', 'required');
-                    
+
                     // Sincronizar el valor actual en el select
                     if (modelKey.startsWith('tipo-')) {
                         selectSubTipologia.value = modelKey;
@@ -1072,6 +1374,16 @@
             // 3. Sincronizar precio en formulario
             if (cotizadorPrice) {
                 cotizadorPrice.textContent = `Desde UF ${data.price}`;
+                const cotizadorRentaVal = document.getElementById('cotizador-renta-val');
+                let rentaVal = '$410.000';
+                if (data.price >= '4.600' || data.price.startsWith('4.6') || data.price.startsWith('4.7') || data.price.startsWith('4.8') || data.price.startsWith('4.9')) {
+                    rentaVal = '$510.000';
+                } else if (data.price >= '4.150' || data.price.startsWith('4.1') || data.price.startsWith('4.2')) {
+                    rentaVal = '$450.000';
+                }
+                if (cotizadorRentaVal) cotizadorRentaVal.textContent = rentaVal;
+                const heroPriceDisplay = document.getElementById('hero-price-display');
+                if (heroPriceDisplay) heroPriceDisplay.textContent = `DESDE UF ${data.price}`;
             }
         }
 
@@ -1146,10 +1458,10 @@
                     const parentBlock = subTabToActivate.parentElement;
                     parentBlock.querySelectorAll('.floorplan-sub-tab').forEach(st => st.classList.remove('active'));
                     subTabToActivate.classList.add('active');
-                    
+
                     updateFloorplanViewer(val);
                     updateMediaGallery();
-                    
+
                     // Sincronizar precio
                     const data = modelData[val];
                     if (data && cotizadorPrice) {
@@ -1166,7 +1478,6 @@
                 const cotizador = document.getElementById('cotizador');
                 if (cotizador) {
                     cotizador.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    // Destello sutil
                     cotizador.style.outline = '2px solid var(--color-secondary)';
                     setTimeout(() => {
                         cotizador.style.outline = 'none';
@@ -1190,7 +1501,7 @@
                         <img class="lightbox-content" id="lightbox-img" src="" alt="Zoom Plano">
                     `;
                     document.body.appendChild(lightbox);
-                    
+
                     lightbox.querySelector('.lightbox-close').addEventListener('click', () => {
                         lightbox.classList.remove('active');
                     });
@@ -1205,22 +1516,44 @@
         }
 
         // Simular envío de formulario
-        document.getElementById('form-cotizar').addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('¡Gracias por tu interés! Un asesor comercial se pondrá en contacto contigo a la brevedad.');
-            e.target.reset();
-            // Restablecer valores iniciales
-            const defaultTab = document.querySelector('.floorplan-nav-tab[data-id="1d1b"]');
-            if (defaultTab) defaultTab.click();
-        });
+        const formCotizar = document.getElementById('form-cotizar');
+        if (formCotizar) {
+            formCotizar.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('¡Gracias por tu interés! Un asesor comercial se pondrá en contacto contigo a la brevedad.');
+                e.target.reset();
+                const defaultTab = document.querySelector('.floorplan-nav-tab[data-id="1d1b"]');
+                if (defaultTab) defaultTab.click();
+            });
+        }
 
         // Carga inicial
         updateFloorplanViewer('tipo-c');
         syncForm();
         updateMediaGallery();
     </script>
+
+    <!-- CALUGAS FLOTANTES LATERALES -->
+    <div class="floating-actions-bar">
+        <button class="floating-caluga caluga-cotizar" aria-label="Cotizar Proyecto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+            </svg>
+            <span>Cotizar Proyecto</span>
+        </button>
+        <button class="floating-caluga caluga-plantas" aria-label="Revisar Plantas">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" />
+                <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span>Revisar Plantas</span>
+        </button>
+    </div>
 </body>
+
 </html>
-
-
-
