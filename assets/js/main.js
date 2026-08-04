@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     await loadHeaderFooter();
     initHeaderScroll();
+    initHeroSlider();
     initScrollReveal();
     initFAQAccordion();
     initProjectMediaTabs();
@@ -1419,6 +1420,90 @@ document.addEventListener('click', (e) => {
         }
     }
 });
+
+/**
+ * 10. Slider Interactivo del Hero (Portada)
+ */
+function initHeroSlider() {
+    const heroSection = document.getElementById('hero-slider');
+    if (!heroSection) return;
+
+    const slides = heroSection.querySelectorAll('.hero-slide');
+    const dots = heroSection.querySelectorAll('.hero-dot');
+    const prevBtn = document.getElementById('hero-prev');
+    const nextBtn = document.getElementById('hero-next');
+
+    if (slides.length <= 1) return;
+
+    let currentIndex = 0;
+    let autoSlideTimer = null;
+    const intervalTime = 5500;
+
+    const goToSlide = (index) => {
+        slides.forEach((slide, idx) => {
+            if (idx === index) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+
+        dots.forEach((dot, idx) => {
+            if (idx === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+
+        currentIndex = index;
+    };
+
+    const nextSlide = () => {
+        const newIndex = (currentIndex + 1) % slides.length;
+        goToSlide(newIndex);
+    };
+
+    const prevSlide = () => {
+        const newIndex = (currentIndex - 1 + slides.length) % slides.length;
+        goToSlide(newIndex);
+    };
+
+    const startAutoSlide = () => {
+        stopAutoSlide();
+        autoSlideTimer = setInterval(nextSlide, intervalTime);
+    };
+
+    const stopAutoSlide = () => {
+        if (autoSlideTimer) clearInterval(autoSlideTimer);
+    };
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            startAutoSlide();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            startAutoSlide();
+        });
+    }
+
+    dots.forEach((dot, idx) => {
+        dot.addEventListener('click', () => {
+            goToSlide(idx);
+            startAutoSlide();
+        });
+    });
+
+    heroSection.addEventListener('mouseenter', stopAutoSlide);
+    heroSection.addEventListener('mouseleave', startAutoSlide);
+
+    startAutoSlide();
+}
 
 
 

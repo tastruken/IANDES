@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#D4A017" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Silueta de Corazón envolviendo la huella con espacio equilibrado -->
+  <path d="M12 20.2L10.4 18.8C5.2 14.1 2 11 2 7.2C2 4.2 4.4 1.8 7.4 1.8C9.1 1.8 10.7 2.6 11.7 3.9C12.7 2.6 14.3 1.8 16 1.8C19 1.8 21.4 4.2 21.4 7.2C21.4 9.6 20.2 11.7 18.3 13.5" />
+  
+  <!-- Almohadilla central integrada y proporcionada -->
+  <path d="M15.5 15.5C14.3 15.5 13.3 16.3 13.3 17.3C13.3 18.1 13.9 18.7 14.8 18.7C15.2 18.7 15.5 18.5 15.5 18.5C15.5 18.5 15.8 18.7 16.2 18.7C17.1 18.7 17.7 18.1 17.7 17.3C17.7 16.3 16.7 15.5 15.5 15.5Z" fill="#D4A017" stroke="none" />
+  
+  <!-- Deditos proporcionados con separación ideal -->
+  <circle cx="12.5" cy="14.2" r="0.9" fill="#D4A017" stroke="none" />
+  <circle cx="14.4" cy="12.6" r="0.9" fill="#D4A017" stroke="none" />
+  <circle cx="16.7" cy="12.7" r="0.9" fill="#D4A017" stroke="none" />
+  <circle cx="18.5" cy="14.4" r="0.9" fill="#D4A017" stroke="none" />
+</svg>

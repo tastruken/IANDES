@@ -21,9 +21,9 @@
             style="display:flex; justify-content:space-between; align-items:center; height:100%;">
             <a href="index.html" class="logo" style="display: flex; align-items: center; text-decoration: none;"><img
                     src="assets/images/logos/logo-white.webp" alt="IANDES Inmobiliaria" class="logo-white"
-                    style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"><img
+                    style="height: 76px; width: auto; max-height: 76px; object-fit: contain;"><img
                     src="assets/images/logos/logo.webp" alt="IANDES Inmobiliaria" class="logo-dark"
-                    style="height: 56px; width: auto; max-height: 56px; object-fit: contain;"></a>
+                    style="height: 76px; width: auto; max-height: 76px; object-fit: contain;"></a>
             <nav style="display:block;">
                 <ul
                     style="display:flex; gap:1.5rem; list-style:none; margin:0; padding:0; font-size:0.75rem; text-transform:uppercase;">
@@ -49,23 +49,81 @@
     </header>
     <main>
 
-        <!-- HERO SECCIÓN COMERCIAL -->
-        <section class="hero">
-            <div class="hero-bg">
-                <img src="assets/images/proyectos/proyecto-andes-nunoa/fotos/nunoa-1.webp"
-                    alt="Arquitectura Premium Iandes">
-            </div>
-            <div class="container" style="position: relative; z-index: 10; width: 100%;">
-                <div class="hero-content">
-                    <span class="hero-subtitle">Diseño, Estilo & Solidez</span>
-                    <h1 class="hero-title">Espacios que inspiran tu forma de vivir</h1>
-                    <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem; font-weight: 300;">
-                        Desarrollamos proyectos residenciales y comerciales con un alto estándar de arquitectura,
-                        ubicados en las zonas con mejor conectividad y plusvalía.
-                    </p>
-                    <a href="#proyectos" class="btn btn-secondary" style="border-color: #FFFFFF; color: #FFFFFF;">Ver
-                        Proyectos</a>
+        <!-- HERO SECCIÓN COMERCIAL CON CARRUSEL SLIDER -->
+        <section class="hero" id="hero-slider">
+            <div class="hero-slider-wrapper">
+                <!-- Slide 1: Frase Corporativa Principal -->
+                <div class="hero-slide active">
+                    <div class="hero-slide-bg">
+                        <img src="assets/images/proyectos/proyecto-andes-nunoa/fotos/nunoa-1.webp"
+                            alt="Arquitectura Premium Iandes">
+                    </div>
+                    <div class="container" style="position: relative; z-index: 10; width: 100%;">
+                        <div class="hero-content">
+                            <span class="hero-subtitle">Diseño, Estilo & Solidez</span>
+                            <h1 class="hero-title">Espacios que inspiran tu forma de vivir</h1>
+                            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 2rem; font-weight: 300;">
+                                Desarrollamos proyectos residenciales y comerciales con un alto estándar de arquitectura,
+                                ubicados en las zonas con mejor conectividad y plusvalía.
+                            </p>
+                            <a href="#proyectos" class="btn btn-secondary" style="border-color: #FFFFFF; color: #FFFFFF;">Ver
+                                Proyectos</a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Slide 2: Promoción / Destacado: Camino de la Villa -->
+                <div class="hero-slide">
+                    <div class="hero-slide-bg">
+                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-fachada-1.webp"
+                            alt="Camino de la Villa - Lo Barnechea">
+                    </div>
+                    <div class="container" style="position: relative; z-index: 10; width: 100%;">
+                        <div class="hero-content">
+                            <span class="hero-subtitle" style="color: #FFD100; font-weight: 600;">NUEVO PROYECTO · VENTA EN BLANCO</span>
+                            <h1 class="hero-title">Camino de la Villa</h1>
+                            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 2rem; font-weight: 300;">
+                                Exclusivos departamentos en Lo Barnechea rodeados de naturaleza, privacidad y arquitectura contemporánea. Oportunidad única de inversión en blanco.
+                            </p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="proyecto-camino-villa.html" class="btn btn-primary" style="background-color: #FFD100; color: #050B14; border-color: #FFD100; font-weight: 600;">Ver Proyecto</a>
+                                <a href="contacto.html" class="btn btn-secondary" style="border-color: #FFFFFF; color: #FFFFFF;">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Promoción / Destacado: Altos de Santa Cruz -->
+                <div class="hero-slide">
+                    <div class="hero-slide-bg">
+                        <img src="assets/images/proyectos/proyecto-altos-santa-cruz/fotos/altos-1.webp"
+                            alt="Altos de Santa Cruz - Casas">
+                    </div>
+                    <div class="container" style="position: relative; z-index: 10; width: 100%;">
+                        <div class="hero-content">
+                            <span class="hero-subtitle" style="color: #FFD100; font-weight: 600;">PROYECTO DESTACADO · VENTA EN VERDE</span>
+                            <h1 class="hero-title">Altos de Santa Cruz</h1>
+                            <p style="font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 2rem; font-weight: 300;">
+                                Condominio residencial de casas con diseño de vanguardia y amplio entorno natural en Santa Cruz. Reserva tu casa en verde con excelente plusvalía.
+                            </p>
+                            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="proyecto-altos-santa-cruz.html" class="btn btn-primary" style="background-color: #FFD100; color: #050B14; border-color: #FFD100; font-weight: 600;">Ver Proyecto</a>
+                                <a href="contacto.html" class="btn btn-secondary" style="border-color: #FFFFFF; color: #FFFFFF;">Cotizar Ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controles del Slider Hero -->
+            <button type="button" class="hero-nav-btn hero-prev-btn" id="hero-prev" aria-label="Slide anterior">&lsaquo;</button>
+            <button type="button" class="hero-nav-btn hero-next-btn" id="hero-next" aria-label="Siguiente slide">&rsaquo;</button>
+
+            <!-- Puntos Indicadores (Dots) -->
+            <div class="hero-dots" id="hero-dots">
+                <span class="hero-dot active" data-slide="0"></span>
+                <span class="hero-dot" data-slide="1"></span>
+                <span class="hero-dot" data-slide="2"></span>
             </div>
         </section>
 
@@ -97,6 +155,7 @@
                         <option value="todos">Todos los estados</option>
                         <option value="entrega-inmediata">Entrega Inmediata</option>
                         <option value="en-verde">En Verde</option>
+                        <option value="en-blanco">En Blanco</option>
                         <option value="comercial">Comercial / Oficinas</option>
                     </select>
                 </div>
@@ -123,7 +182,7 @@
                     <div class="project-showcase-card reveal" data-comuna="macul" data-tipo="departamento"
                         data-estado="entrega-inmediata" data-precio="medio">
                         <div class="showcase-image-wrapper">
-                            <span class="project-tag" style="z-index: 12;">Últimas Unidades</span>
+                            <span class="project-tag" style="z-index: 12;">Última Unidad</span>
                             <div class="card-carousel">
                                 <div class="carousel-slides">
                                     <div class="carousel-slide active"><img
@@ -169,7 +228,7 @@
                                             class="price-square"></span>Desde</div>
                                     <div
                                         style="font-size: 2.3rem; font-weight: 400; color: #0F172A; line-height: 1; margin-top: 0.1rem; letter-spacing: -0.02em;">
-                                        3.920</div>
+                                        3.997</div>
                                     <div class="price-uf-tag">UF</div>
                                 </div>
                             </div>
@@ -185,7 +244,7 @@
                             <div class="showcase-specs-table">
                                 <div class="spec-table-row">
                                     <span class="spec-table-label">Entrega</span>
-                                    <span class="spec-table-val">ÚLTIMAS UNIDADES</span>
+                                    <span class="spec-table-val">ÚLTIMA UNIDAD</span>
                                 </div>
                                 <div class="spec-table-row">
                                     <span class="spec-table-label">Dormitorios</span>
@@ -274,7 +333,7 @@
                                             class="price-square"></span>Desde</div>
                                     <div
                                         style="font-size: 2.3rem; font-weight: 400; color: #0F172A; line-height: 1; margin-top: 0.1rem; letter-spacing: -0.02em;">
-                                        3.938</div>
+                                        3.947</div>
                                     <div class="price-uf-tag">UF</div>
                                 </div>
                             </div>
@@ -318,9 +377,9 @@
 
                     <!-- Proyecto 3: Camino de la Villa -->
                     <div class="project-showcase-card reveal" data-comuna="lo-barnechea" data-tipo="departamento"
-                        data-estado="en-verde" data-precio="alto">
+                        data-estado="en-blanco" data-precio="alto">
                         <div class="showcase-image-wrapper">
-                            <span class="project-tag" style="z-index: 12;">1er Semestre 2028</span>
+                            <span class="project-tag" style="z-index: 12; background-color: var(--color-primary); color: var(--color-secondary);">EN BLANCO (1er Semestre 2028)</span>
                             <div class="card-carousel">
                                 <div class="carousel-slides">
                                     <div class="carousel-slide active"><img
@@ -375,7 +434,7 @@
                                             class="price-square"></span>Desde</div>
                                     <div
                                         style="font-size: 2.3rem; font-weight: 400; color: #0F172A; line-height: 1; margin-top: 0.1rem; letter-spacing: -0.02em;">
-                                        9.361</div>
+                                        11.502</div>
                                     <div class="price-uf-tag">UF</div>
                                 </div>
                             </div>
@@ -392,7 +451,7 @@
                             <div class="showcase-specs-table">
                                 <div class="spec-table-row">
                                     <span class="spec-table-label">Entrega</span>
-                                    <span class="spec-table-val">1er semestre 2028</span>
+                                    <span class="spec-table-val">EN BLANCO (1er Semestre 2028)</span>
                                 </div>
                                 <div class="spec-table-row">
                                     <span class="spec-table-label">Dormitorios</span>
@@ -422,9 +481,9 @@
 
                     <!-- Proyecto 4: Altos de Santa Cruz -->
                     <div class="project-showcase-card reveal" data-comuna="santa-cruz" data-tipo="casa"
-                        data-estado="entrega-inmediata" data-precio="bajo">
+                        data-estado="en-verde" data-precio="bajo">
                         <div class="showcase-image-wrapper">
-                            <span class="project-tag" style="z-index: 12;">2do Semestre 2026</span>
+                            <span class="project-tag" style="z-index: 12; background-color: var(--color-primary); color: var(--color-secondary);">EN VERDE (2do Semestre 2026)</span>
                             <div class="card-carousel">
                                 <div class="carousel-slides">
                                     <div class="carousel-slide active"><img
@@ -499,7 +558,7 @@
                             <div class="showcase-specs-table">
                                 <div class="spec-table-row">
                                     <span class="spec-table-label">Entrega</span>
-                                    <span class="spec-table-val">2DO SEMESTRE 2026</span>
+                                    <span class="spec-table-val">EN VERDE (2do Semestre 2026)</span>
                                 </div>
                                 <div class="spec-table-row">
                                     <span class="spec-table-label">Dormitorios</span>
@@ -778,8 +837,8 @@
                 <div class="value-grid">
                     <div class="value-image reveal"
                         style="position: relative; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-premium);">
-                        <img src="assets/images/proyectos/proyecto-work-plaza/fotos/plaza-1.webp"
-                            alt="Diseño Constructivo Premium"
+                        <img src="assets/images/proyectos/proyecto-camino-villa/fotos/villa-fachada-1.webp"
+                            alt="Fachada Arquitectura Contemporánea iAndes"
                             style="width: 100%; height: 100%; min-height: 460px; object-fit: cover; filter: brightness(0.92) contrast(1.03); display: block;">
 
                         <!-- Degradado atmosférico inferior -->
