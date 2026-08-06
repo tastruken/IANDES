@@ -502,7 +502,7 @@
                                             <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
                                             <polyline points="17 6 23 6 23 12" />
                                         </svg>
-                                        <span>Renta Sugerida: <strong id="cotizador-renta-val">$320.000</strong> /
+                                        <span>Renta Sugerida: <strong id="cotizador-renta-val">$2.200.000</strong> /
                                             mes</span>
                                     </div>
                                 </div>
@@ -554,12 +554,12 @@
                             <div>
                                 <div class="exec-profile-large">
                                     <div class="exec-photo-wrapper">
-                                        <img src="assets/images/nosotros/ejecutiva-ventas.webp" alt="Rodrigo Valdés">
+                                        <img src="assets/images/nosotros/ejecutiva-ventas.webp" alt="Carolina Saez / Franchesca Aliaga">
                                         <span class="exec-online-badge" title="Disponible ahora"></span>
                                     </div>
                                     <div class="exec-info-large">
-                                        <h4>Rodrigo Valdés</h4>
-                                        <p>Asesor de Ventas • Altos de Santa Cruz</p>
+                                        <h4>Carolina Saez / Franchesca Aliaga</h4>
+                                        <p>Asesoras Comerciales • Altos de Santa Cruz</p>
                                     </div>
                                 </div>
 
@@ -1117,12 +1117,7 @@
             if (cotizadorPrice) {
                 cotizadorPrice.textContent = `Desde UF ${data.price}`;
                 const cotizadorRentaVal = document.getElementById('cotizador-renta-val');
-                let rentaVal = '$320.000';
-                if (data.price >= '3.200' || data.price.startsWith('3.2')) {
-                    rentaVal = '$420.000';
-                } else if (data.price >= '2.800' || data.price.startsWith('2.8')) {
-                    rentaVal = '$370.000';
-                }
+                let rentaVal = '$2.200.000';
                 if (cotizadorRentaVal) cotizadorRentaVal.textContent = rentaVal;
                 const heroPriceDisplay = document.getElementById('hero-price-display');
                 if (heroPriceDisplay) heroPriceDisplay.textContent = `DESDE UF ${data.price}`;
