@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -506,21 +506,21 @@
 
                             <!-- Sub-pestañas para 1D + 1B -->
                             <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-1d1b">
-                                <button class="floorplan-sub-tab active" data-subid="tipo-c">TIPO C</button>
-                                <button class="floorplan-sub-tab" data-subid="tipo-c1">TIPO C1</button>
+                                <button class="floorplan-sub-tab active" data-subid="tipo-c">TIPO C <span style="font-size:0.68rem; background:#EF4444; color:#FFF; padding:0.1rem 0.35rem; border-radius:3px; font-weight:700; margin-left:0.25rem;">AGOTADO</span></button>
+                                <button class="floorplan-sub-tab" data-subid="tipo-c1">TIPO C1 <span style="font-size:0.68rem; background:#EF4444; color:#FFF; padding:0.1rem 0.35rem; border-radius:3px; font-weight:700; margin-left:0.25rem;">AGOTADO</span></button>
                             </div>
 
                             <!-- Sub-pestañas para 2D + 1B -->
                             <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d1b">
-                                <button class="floorplan-sub-tab active" data-subid="tipo-b">TIPO B</button>
-                                <button class="floorplan-sub-tab" data-subid="tipo-b1">TIPO B1</button>
+                                <button class="floorplan-sub-tab active" data-subid="tipo-b">TIPO B <span style="font-size:0.68rem; background:#EF4444; color:#FFF; padding:0.1rem 0.35rem; border-radius:3px; font-weight:700; margin-left:0.25rem;">AGOTADO</span></button>
+                                <button class="floorplan-sub-tab" data-subid="tipo-b1">TIPO B1 <span style="font-size:0.68rem; background:#EF4444; color:#FFF; padding:0.1rem 0.35rem; border-radius:3px; font-weight:700; margin-left:0.25rem;">AGOTADO</span></button>
                             </div>
 
                             <!-- Sub-pestañas para 2D + 2B -->
                             <div class="floorplan-sub-tabs" id="floorplan-sub-tabs-2d2b" style="display: flex;">
                                 <button class="floorplan-sub-tab active" data-subid="tipo-a1">TIPO A1</button>
-                                <button class="floorplan-sub-tab" data-subid="tipo-d">TIPO D</button>
-                                <button class="floorplan-sub-tab" data-subid="tipo-a2">TIPO A2</button>
+                                <button class="floorplan-sub-tab" data-subid="tipo-d">TIPO D <span style="font-size:0.68rem; background:#EF4444; color:#FFF; padding:0.1rem 0.35rem; border-radius:3px; font-weight:700; margin-left:0.25rem;">AGOTADO</span></button>
+                                <button class="floorplan-sub-tab" data-subid="tipo-a2">TIPO A2 <span style="font-size:0.68rem; background:#EF4444; color:#FFF; padding:0.1rem 0.35rem; border-radius:3px; font-weight:700; margin-left:0.25rem;">AGOTADO</span></button>
                             </div>
 
                             <div class="floorplan-viewer-grid">
@@ -1226,22 +1226,35 @@
 
             // Actualizar textos e imagen del visor
             if (selectedFloorplanImg) selectedFloorplanImg.src = data.img;
-            if (selectedFloorplanName) selectedFloorplanName.textContent = data.title;
             if (selectedFloorplanDorm) selectedFloorplanDorm.textContent = data.dorm;
             if (selectedFloorplanBano) selectedFloorplanBano.textContent = data.bano;
 
-            // Sincronizar overlay de Modelo Agotado y botón
-            const agotadoOverlay = document.getElementById('floorplan-agotado-overlay');
-            const cotizarBtn = document.getElementById('floorplan-cotizar-btn');
+            if (selectedFloorplanName) {
+                if (data.agotado) {
+                    selectedFloorplanName.innerHTML = `${data.title} <span style="background:#EF4444; color:#FFF; font-weight:700; padding:0.2rem 0.6rem; border-radius:4px; font-size:0.75rem; vertical-align:middle; margin-left:0.5rem;">AGOTADO</span>`;
+                } else {
+                    selectedFloorplanName.textContent = data.title;
+                }
+            }
 
-            if (data.agotado) {
-                if (agotadoOverlay) agotadoOverlay.style.setProperty('display', 'inline-flex', 'important');
-                if (cotizarBtn) cotizarBtn.style.setProperty('display', 'none', 'important');
-            } else {
-                if (agotadoOverlay) agotadoOverlay.style.setProperty('display', 'none', 'important');
-                if (cotizarBtn) {
+            // Ocultar overlay antiguo y controlar botón al estilo Ñuñoa
+            const agotadoOverlay = document.getElementById('floorplan-agotado-overlay');
+            if (agotadoOverlay) agotadoOverlay.style.setProperty('display', 'none', 'important');
+
+            const cotizarBtn = document.getElementById('floorplan-cotizar-btn');
+            if (cotizarBtn) {
+                if (data.agotado) {
+                    cotizarBtn.style.setProperty('display', 'block', 'important');
+                    cotizarBtn.textContent = 'Modelo Agotado';
+                    cotizarBtn.disabled = true;
+                    cotizarBtn.style.opacity = '0.6';
+                    cotizarBtn.style.cursor = 'not-allowed';
+                } else {
                     cotizarBtn.style.setProperty('display', 'block', 'important');
                     cotizarBtn.textContent = 'Cotizar este modelo';
+                    cotizarBtn.disabled = false;
+                    cotizarBtn.style.opacity = '1';
+                    cotizarBtn.style.cursor = 'pointer';
                 }
             }
 
